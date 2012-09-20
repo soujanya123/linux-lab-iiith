@@ -1,0 +1,8 @@
+Task 1:
+-------
+Create a GPG key using your username and password.
+
+Task 2:
+-------
+Create a document, encrypt it with the public key and again decrypt it
+with your private key.
