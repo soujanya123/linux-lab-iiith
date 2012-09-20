@@ -1,0 +1,19 @@
+Task 1:
+-------
+
+Examine the line corresponding to your user account on the /etc/passwd file. Understand what each field stand for and check your encrypted password.
+
+Task 2:
+-------
+
+Create a user with name jordan-xxxx where xxxx is a 4 digit random number chosen by you. The user's home directory should be jordan-xxxx. Find his UID and primary GID using the id command.
+
+Task 3:
+-------
+
+Create a group called jordan-group if it doesn't exist. View the users present currently on that group. Add the user created earlier to this group. Now, check the changes using the id command and by examining the /etc/group file. 
+
+Task 4:
+-------
+
+Now delete the user you have created and also make sure the user is removed from the group. 

@@ -1,0 +1,36 @@
+#+TITLE: Systems and Software Lab
+#+SETUPFILE: 
+
+
+* Status on experiments
+- Only feature left is sign-up for LDAP.
+
+  |-----------------------------+------------------------------|
+  | No. of Experiments Proposed | No. of Experiments Completed |
+  |-----------------------------+------------------------------|
+  |                          11 |                           10 |
+  |-----------------------------+------------------------------|
+ 
+  
+
+* Experiment list 
+
+- Removed ::
+ +  Disk Management
+ +  Web  services
+ +  OS installation
+ +  OS updates
+
+- Added ::
+ + Basic networking  concepts
+ + Hard and  Soft Linking
+ + Bash and environment variables
+
+* Feedback
+
+- 29 collected
+- all collected from a local college in Hyderabad
+- mainly 2nd and 3rd year CSE students, including two faculty members
+- most complained with their discomfort with Linux and shell
+- some students wanted a discussion forum 
+- one feedback requested localisation of the lab in Telugu

@@ -1,0 +1,19 @@
+Task 1:
+-------
+Print the environment variables and try to understand the values of
+each of them.
+
+Task 2:
+-------
+Create a folder named "temp-home". Set the base path to
+"tmp-home". Then type the command "cd" and see what happens.
+
+Task 3:
+-------
+Append "temp-home" to your existing base PATHs.
+
+Task4:
+------
+Create an alias for mkdir with md. Try creating a couple of
+directories and files with the alias. Then create an alias for 'ls -a' with
+la and try it.
