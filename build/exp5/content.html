@@ -1,0 +1,679 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+<!-- The lab Header contains the logo and the name of the lab,
+	usually displayed on the top of the page-->
+
+	<header id="experiment-header" >
+
+	<div id="experiment-header-logo" class="logo">
+	<!-- Enclose the logo image of your lab or write it in 
+	text-->
+	<img src="../images/logo.jpg" />
+	</div>
+
+	<div id="experiment-header-heading" class="heading">
+	<!-- Write the name of your lab and link it to the home 
+	page of your lab (h1 tag is preferred while writing your 
+			lab name)-->
+	<a href="../index.html">Systems and Software Virtual Lab</a>	
+	</div>
+
+	<!-- Add any additional element you want to add to the lab 
+	header, For example : Help (Enclosing them with suitable 
+			div is recommended)-->
+
+	</header>
+
+
+	<!-- The lab article is the main content area where all the 
+	experiment content sits-->
+	<article id="experiment-article">
+
+	<!-- The lab article has an header, optional navigational 
+	menu, number of sections, an optional sidebar and a closing 
+	footer-->
+
+	<header id="experiment-article-heading" class="heading">
+	<!-- You can add a welcome message or title of the 
+	experiment here -->
+	User Management
+	<!-- Add any additional element if required with proper 
+	enclosing-->
+	</header>
+
+	<!-- Navigation menu is useful to organize the view of 
+	multiple sections inside the article-->
+	<nav id="experiment-article-navigation" class="default">
+	<ul id="experiment-article-navigation-menu">
+	<!-- The menu can be dynamically generated to contain 
+	the headings of your sections or instead write the 
+	menu items of your choice individually enclosedu in 
+	<li> tag as shown below-->
+	</ul>
+	</nav>
+
+	<!-- All the sections of your lab or experiment can be 
+	enclosed together with a div element as shown below-->
+	<div id="experiment-article-sections">
+
+	<!-- First section of the article-->
+	<section id="experiment-article-section-1">
+
+	<div id="experiment-article-section-1-icon" 
+	class="icon">
+	<!-- Enclose the icon image of your lab -->
+	<img src="../images/introduction.jpg" />
+	</div>	
+
+	<!-- The heading for the section can be enclosed in a 
+	div tag. -->
+	<div id="experiment-article-section-1-heading" 
+	class="heading">
+	Introduction
+	</div>
+	<!-- Write the section content inside a paragraph 
+	element, You can also include images with <img> tag -->
+	<div id="experiment-article-section-1-content" 
+	class="content">	
+	<p>
+	Welcome to the 'User Management' experiment.  This experiment will give you an understanding of user management on Linux. 
+	</p><p>
+
+ The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports a few basic commands to enable the user to learn file management basics. The experiment contains the command line interface and an instructor section (in green background) below it. The instructor section guides the user to peform the experiment which is a series of tasks.
+	</p><p>
+	Proceed to the theory section to get an overview of the commands. Then move to the experiment section to get some hands-on experience and finish the experiment tasks. After you are done with the experiment, go to the quiz section to test your understanding.
+	 
+	</p>
+
+	</div>
+
+
+	</section>
+
+	<!-- Second section of the article-->
+	<section id="experiment-article-section-2">
+
+	<div id="experiment-article-section-2-icon" 
+	class="icon">
+	<!-- Enclose the icon image of your lab. -->
+	<img src="../images/theory.jpg" />
+	</div>
+
+	<!-- The heading for the section can be enclosed in a 
+	div tag. -->
+	<div id="experiment-article-section-2-heading" 
+	class="heading">
+	Theory
+	</div>
+
+
+	<!-- Write the section content inside a paragraph 
+	element, we can also include images with <img> tag -->
+	<div id="experiment-article-section-2-content" 
+	class="content">
+<p>
+User Management Concepts
+</p><p>
+ 
+User Information 
+ 
+</p><p>
+The system keeps track of a number of pieces of information about each user. They are summarized below.
+ 
+</p><p>
+<table border="1"> 
+ 
+<tr>	<td>username</td> 
+	<td>The username is the unique identifier given to every user on the system. Examples of usernames are larry, karl, and mdw. Letters and digits may be used, as well as the characters "_" (underscore) and "." (period). Usernames are usually limited to 8 characters in length.</td> 
+</tr> 
+ 
+<tr>	<td>user ID</td> 
+	<td>The user ID, or UID, is a unique number given to every user on the system. The system usually keeps track of information by UID, not username. </td> 
+</tr> 
+ 
+<tr>	<td>group ID</td> 
+	<td> The group ID, or GID, is the ID of the user's default group. Each user belongs to one or more groups defined by the system administrator.</td> 
+</tr> 
+ 
+<tr>	<td>password</td> 
+	<td> The system also stores the user's encrypted password. The passwd command is used to set and change user passwords.</td> 
+</tr> 
+ 
+<tr>	<td>full name</td> 
+	<td> The user's "real name" or "full name" is stored along with the username. For example, the user schmoj may have the name "Joe Schmo" in real life.</td> 
+</tr> 
+ 
+<tr>	<td>home directory</td> 
+	<td>The home directory is the directory in which the user is initially placed at login time. Every
+user should have his or her own home directory, usually found under /home. </td> 
+</tr> 
+ 
+<tr>	<td>login shell</td> 
+	<td>The user's login shell is the shell which is started for the user at login time. Examples are
+/bin/bash and /bin/tcsh.</td> 
+</tr> 
+ 
+</table> 
+ 
+</p><p>
+The file /etc/passwd contains this information about users. Each line in the file contains information about a single user; the format of each line is</p> 
+<p> 
+	username:encrypted password:UID:GID:full name:home directory:login shell
+</p> 
+<p> 
+An example might be:
+</p> 
+	
+	kiwi:Xv8Q981g71oKK:102:100:Laura Poole:/home/kiwi:/bin/bash
+</p> 
+<p> 
+As we can see, the first field, "kiwi", is the username. The next field, "Xv8Q981g71oKK", is the encrypted password. 
+Passwords are not stored on the system in any human-readable format. The password is encrypted using itself as the secret
+key. In other words, you need to know the password to decrypt it. This form of encryption is fairly secure.
+ 
+Some systems use "shadow password" in which password information is relegated to the file /etc/shadow. Because /etc/passwd
+is world-readable, /etc/shadow provides some degree of extra security because it is not. Shadow password provides some
+other features such as password expiration and so on; we will not go into these features here.
+</p> 
+<p> 
+The third field, "102", is the UID. This must be unique for each user. The fourth field, "100", is the GID.
+This user belongs to the group numbered 100. Group information, like user information, is stored in the file
+/etc/group.
+</p> 
+<p> 
+The fifth field is the user's full name, "Laura Poole". The last two fields are the user's home directory
+(/home/kiwi) and login shell (/bin/bash), respectively. It is not required that the user's home directory
+be given the same name as the username. It does help identify the directory, however.
+</p> 
+<p> 
+The id command: 
+</p><p>
+The id command prints the identity of a user i.e. the UID, GID and the groups the user has been added to. The syntax of the command is id [option]... [username]. Check the following examples.
+ </p>
+<pre class="code"> 
+ 
+root@johndoe-laptop:~/$ whoami
+root
+ 
+root@johndoe-laptop:~/$ id
+uid=0(root) gid=0(root) groups=0(root)
+ 
+root@johndoe-laptop:~/$ id johndoe
+uid=1000(johndoe) gid=1000(johndoe) groups=4(adm),1000(desideratum)
+ 
+root@johndoe-laptop:~/$ su johndoe
+johnodoe@johndoe-laptop:~/$ whoami
+johndoe
+ 
+johnodoe@johndoe-laptop:~/$ id
+uid=1000(johndoe) gid=1000(johndoe) groups=4(adm),1000(desideratum)
+ 
+</pre> 
+ 
+ 
+ <p>
+Adding Users:
+</p><p>
+The easiest way to add users is to use an interactive program which asks you for the required information and updates all of the system files automatically. The name of this program is useradd or adduser, depending on what software was installed. The man pages for these commands should be fairly self-explanatory.
+ 
+</p><p>
+The useradd command enables creation of a new user or updating the default new user information. Use useradd with not arguments to see the set of options available.
+ 
+</p>
+<pre class="code"> 
+ 
+johnodoe@johndoe-laptop:~/$ useradd
+Usage: useradd [options] LOGIN
+ 
+Options:
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
+ 
+</pre> 
+ 
+<p>
+Few examples:
+ 
+http://www.linfo.org/useradd.html
+</p><p>
+1. Let's explore the usage of 'useradd' command. When you execute the command - " useradd jim ", a user account with username jim is created. Then examine the /etc/passwd file to notice the entry of jim in the last line. The entry says that jim is the username, x represents that password is stored in the /etc/shadow file, 1000 is the UID of the user, 1130 is the UID of the new group created with the same name as the user, an empty "" field that indicates that user creation didn't involve any comment, /home/jim is the home directory for jim, /bin/sh is the default login shell. 
+ 
+</p>
+<pre class="code"> 
+ 
+root@johndoe-laptop:~/$ useradd jim
+root@johndoe-laptop:~/$ tail -1 /etc/passwd
+jim:x:1000:1130::/home/jim:/bin/sh
+ 
+</pre> 
+ 
+<p>
+	 If you notice the contents of /home directory, the user's home directory (/home/jim) is not found. If you want the useradd command to create it for you, you should use the -m flag.
+ 
+</p>
+<pre class="code"> 
+ 
+root@johndoe-laptop:~/$ useradd -m shawn
+root@johndoe-laptop:~/$ tail -1 /etc/passwd
+shawn:x:1001:1001::/home/shawn:/bin/sh
+ 
+</pre> 
+ 
+<p>
+	In case, you want to specify the home directory by yourself, you should do it using the -d flag. The -m flag will create will see that the useradd commands creates it for you.
+ </p>
+<pre class="code"> 
+ 
+root@johndoe-laptop:~/$ useradd -m -d /home/craig123 craig
+root@johndoe-laptop:~/$ tail -1 /etc/passwd
+craig:x:1001:1001::/home/craig123:/bin/sh
+ 
+</pre> 
+<p> 
+	Let us examine the contents of the home folder created previously. We see that a few files are already present. These are the files copied onto the user's home directory when created using useradd command. These files are the contents of /etc/skel. The /etc/skel directory contains files and directories that are automatically copied over to a new user's home directory when such user is created by the useradd program.
+ </p>
+<pre class="code"> 
+ 
+root@johndoe-laptop:~/$ ls /home/craig123
+. .. .bash_logout .bashrc .profile
+root@johndoe-laptop:~/$ ls -a /etc/skel
+. .. .bash_logout .bashrc .profile
+ 
+</pre> 
+<p>	
+	By default, the no password is set for the users created above. The password for a user can be set by using the passwd command. If you are logged in as root, the password of a user can be set/changed by using the passwd command followed by the username. If you are logged in as a user, the password of that user can be set/changed by using the passwd command without any arguments.
+</p>
+<p>
+	The password can also be set by using the -p flag. Here, the encryted form of the password should be followed by the -p flag.
+ </p>
+ 
+<pre class="code"> 
+ 
+root@johndoe-laptop:~/$ passwd craig
+Enter new UNIX password: 
+Retype new UNIX password:
+passwd: password updated successfully
+ 
+root@johndoe-laptop:~/$ su craig
+craig@johndoe-laptop:~/$ whoami
+craig
+ 
+craig@johndoe-laptop:~/$ passwd
+Changing password for craig
+(current) UNIX password:
+Enter new UNIX password: 
+Retype new UNIX password:
+passwd: password updated successfully
+ 
+</pre> 
+<p> 
+ 
+	The other parameters like login shell, expiry date of the account can be set by using corresponding flags which are shown in the usage options.
+ 
+</p>
+<p> 
+Deleting Users 
+</p>
+<p> 
+Similarly, deleting users can be accomplished with the commands userdel or deluser depending on
+what software was installed on the system.
+</p><p> 
+If you'd like to temporarily "disable" a user from logging into the system (without deleting the user's
+account), you can simply prepend an asterisk ("*") to the password field in /etc/passwd. For example,
+changing kiwi's /etc/passwd entry to
+</p><p> 
+	kiwi:*Xv8Q981g71oKK:102:100:Laura Poole:/home/kiwi:/bin/bash
+</p><p> 
+will restrict kiwi from logging in.
+</p><p> 
+ 
+Changing User Attributes</p><p>
+ 
+After you have created a user, you may need to change attributes for that user, such as home directory or
+password. The easiest way to do this is to change the values directly in /etc/passwd. However, you can use the usermod command and change the a set of attributes to desired values. The usage is very straight forward and the options can be viewed by entering the usermod command without any arguments.
+ </p>
+<pre class="code"> 
+ 
+root@johndoe-laptop:~/$ usermod
+Usage: usermod [options] LOGIN
+ 
+Options:
+  -c, --comment COMMENT         new value of the GECOS field
+  -d, --home HOME_DIR           new home directory for the user account
+  -e, --expiredate EXPIRE_DATE  set account expiration date to EXPIRE_DATE
+  -f, --inactive INACTIVE       set password inactive after expiration
+                                to INACTIVE
+  -g, --gid GROUP               force use GROUP as new primary group
+  -G, --groups GROUPS           new list of supplementary GROUPS
+  -a, --append                  append the user to the supplemental GROUPS
+                                mentioned by the -G option without removing
+                                him/her from other groups
+  -h, --help                    display this help message and exit
+  -l, --login NEW_LOGIN         new value of the login name
+  -L, --lock                    lock the user account
+  -m, --move-home               move contents of the home directory to the
+                                new location (use only with -d)
+  -o, --non-unique              allow using duplicate (non-unique) UID
+  -p, --password PASSWORD       use encrypted password for the new password
+  -s, --shell SHELL             new login shell for the user account
+  -u, --uid UID                 new UID for the user account
+  -U, --unlock                  unlock the user account
+ 
+ 
+</pre>
+<p> 
+Groups </p>
+<p> 
+Each user belongs to one or more groups. The only real importance of group relationships pertains to file permissions. Each file has a "group ownership" and a set of group permissions which defines how users in that group may access the file.
+</p><p> 
+There are several system-defined groups such as bin, mail, and sys. Users should not belong to any
+of these groups; they are used for system file permissions. Instead, users should belong to an individual
+group such as users. If you want to be cute, you can maintain several groups of users such as student,
+staff, and faculty.</p><p> 
+ 
+The file /etc/group contains information about groups. The format of each line is
+</p><p> 
+group name:password:GID:other members
+</p><pre>
+Some example groups might be:
+root:*:0:
+users:*:100:mdw,larry
+guest:*:200:
+other:*:250:kiwi</pre> 
+<p> 
+The first group, root, is a special system group reserved for the root account. The next group, users, is
+for regular users. It has a GID of 100. The users mdw and larry are given access to this group. Remember
+that in /etc/passwd each user was given a default GID. However, users may belong to more than one
+group, by adding their usernames to other group lines in /etc/group. The groups command lists what
+groups you are given access to.
+</p><p> 
+The third group, guest, is for guest users, and other is for "other" users. The user kiwi is given
+access to this group as well.
+As you can see, the "password" field of /etc/group is rarely used. It is sometimes used to set a
+password on group access. This is seldom necessary. To protect users from changing into privileged groups
+(with the newgroup command), set the password field to "*".
+</p><p> 
+The commands addgroup or groupadd may be used to add groups to your system. Usually, it's easier
+just to add entries in /etc/group yourself, as no other configuration needs to be done to add a group. To
+delete a group, simply delete its entry in /etc/group.
+</p> 
+ 
+Like useradd, a command called groupadd is available to create groups. An example is shown below. groupmod and groupdel can be used to modify and delete groups respectively.
+ 
+<pre class="code"> 
+ 
+root@johndoe-laptop:~/$ groupadd
+Usage: groupadd [options] GROUP
+ 
+Options:
+  -f, --force                   force exit with success status if the
+                                specified group already exists
+  -g, --gid GID                 use GID for the new group
+  -h, --help                    display this help message and exit
+  -K, --key KEY=VALUE           overrides /etc/login.defs defaults
+  -o, --non-unique              allow create group with duplicate
+                                (non-unique) GID
+  -p, --password PASSWORD       use encrypted password for the new group
+  -r, --system                  create a system account
+ 
+root@johndoe-laptop:~/$ groupadd developers
+root@johndoe-laptop:~/$ tail -1 /etc/group
+developers:x:1133:
+ 
+root@johndoe-laptop:~/$ groupadd organisors
+ 
+root@johndoe-laptop:~/$ id kim
+uid=1001(kim) gid=1001(kim) groups=1001(kim)
+ 
+root@johndoe-laptop:~/$ usermod -G developers kim
+root@johndoe-laptop:~/$ grep developers /etc/group
+developers:x:1133:kim
+ 
+root@johndoe-laptop:~/$ usermod -G developers,organisors kim
+root@johndoe-laptop:~/$ id kim
+uid=1001(kim) gid=1001(kim) groups=1001(kim),1133(developers),1134(organisors)
+ 
+root@johndoe-laptop:~/$ gpasswd -a craig developers
+root@johndoe-laptop:~/$ id craig
+uid=1004(craig) gid=1004(craig) groups=1004(craig),1133(developers)
+ 
+ 
+</pre> 
+ 
+       </div>
+      </section>
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	  </div>
+
+	  <div id="experiment-article-section-4-heading" 
+	  class="heading">
+	  Experiment
+	  </div>
+
+	  <div id="experiment-article-section-4-content" 
+	  class="content">
+	  <p>
+	  <div id="login">
+ <br />If you already have Virtual Labs login
+	  credentials, please click 
+<A HREF="javascript:void(0)"
+onclick="window.open('interaction-frame.html',
+'welcome','width=screen.availWidth,height=screen.availHeight,status=yes')">
+here</A>.<br />
+In case you do not have login credentials, please click here.
+	  </div>
+
+	  <div id="signup">
+
+	  <div id="signup-warning"></div>
+
+	  <form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
+
+	  <table><tr>
+
+	  <td>Your name</td><td> <input type="text" name="yourname" value="" id="yourname"/></td></tr>
+
+	  <td>Preferred username</td><td> <input type="text" name="preferredusername" value="" id="preferredusername"/></td></tr>
+
+	  <tr><td>Password</td> <td><input type="password" name="preferredpassword" id="preferredpassword"/></td></tr>
+
+	  <tr><td>Re-enter Password</td> <td><input type="password" name="repreferredpassword" id="repreferredpassword"/></td></tr>
+
+	  <tr><td>Email</td> <td><input type="text" name="email" id="email"/></td></tr>
+
+	  <tr><td>Re-enter Email</td> <td><input type="text" name="reemail" id="reemail"/></td></tr>
+
+	  <tr></tr>
+
+	  <tr><td colspan=2>Enter the black characters present in the below image</td></tr>
+
+	  <tr><td><img src="php/captcha.php" id="captchaimg"/></td><td><input type="text" name="captcha" id="captcha"/></td></tr>
+
+	  <tr><td></td><td><input type="submit" value="Sign up" /></td></tr>
+
+	  </table>
+
+	  </form>
+
+	  </div>
+
+	  <div id="logout">
+
+	  <a href="#" onclick="logout();">Logout</a>
+	  </div>
+
+	  <pre id="terminal" class="code"><div id="input" class="inpcls"><form name='f' class='cmdform' action='' onsubmit="return false;" id="cmdformid"><table class="inputtable" id="inputtableid"><tr><td><div id='prompt' class='less'>user@pascal:~/$</div></td><td class="inputtd"><input id='inputfield' name='q' type='text' class='cmdline' autocomplete="off" value="" onkeypress="showHint(event,this.value)" /></td></tr></table></form><div id="output" class="outcls"></div></div></pre>
+
+<pre class="instr" id="instr">
+
+<div id="instruction" title="0">
+
+Now that we have learnt shell commands to do user management, we have an exercise for you.
+
+The shell above supports few basic shell commands. Play along to get some hands-on experience of the interface.
+
+When you are ready to perform the exercise, which is a set of 5 tasks, enter the command "start".
+
+</div>
+
+try: start,next,prev,clear,logout.
+
+</pre>
+
+
+
+
+          </p>
+        </div>
+
+      </section>
+
+<!--        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quiz
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+<ol>
+<li>What is the command to add an user 'john' to a group 'new-group'
+  and remove from 'old-group' using one command?</li>
+<li>What is the command that you use to delete an user's account but
+  still keep his/her home directory?</li>
+</ol>
+          </div>
+
+        </section>
+-->
+
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+
+	<ul>
+	<li><a href="http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html#USERS">http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html#USERS,</a> </li>
+	<li><a href="http://www.comptechdoc.org/os/linux/commands/linux_cruserman.html">http://www.comptechdoc.org/os/linux/commands/linux_cruserman.html</a></li>
+	<li><a href="http://en.kioskea.net/contents/linux/linusr.php3">http://en.kioskea.net/contents/linux/linusr.php3</a></li>
+</ul>
+          </div>
+
+        </section>
+
+   <section id="experiment-article-section-9">
+
+          <div id="experiment-article-section-9-icon" 
+          class="icon">
+            <!-- Enclose the icon image of your lab.-->
+            <img src="../images/readings.jpg" />
+          </div>
+
+          <div id="experiment-article-section-9-heading" 
+          class="heading">
+      
+        Feedback
+          </div>
+
+          <div id="experiment-article-section-9-content" 
+          class="content">
+        Please provide us feedback <a href="http://virtual-labs.ac.in/feedback/">here</a>
+          </div>
+
+        </section>
+
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+   <footer id="lab-footer" class="footer">
+    <!-- Put the content here-->
+	<a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+  </footer>
+
+</div>		
+
+</body>
+</html>

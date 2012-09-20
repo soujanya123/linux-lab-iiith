@@ -1,0 +1,101 @@
+#+TITLE: GPG Encryption
+
+* Theory
+
+** what is gpg
+GPG stands for GNU Public Guard, an FOSS application that is built on
+top of the OpenPGP standards. It is used to:
+
+- creating keypairs,
+- communicate securely between systems, 
+- encrypt and decrypt documents and
+- authenticating the originality of documents.
+
+Since GPG uses public-key cryptography, the first step is to create a
+public-private keypair.  A private keypair is always kept secret and is
+never shared.  On the other hand, a public key is distributed to
+concerned systems/personnel for secure communication.
+
+** how to create keys
+You can create a public key by typing in the terminal:
+gpg --gen-key
+
+You can use the default options, but you can also create keys only for
+signing, as you may require only to encrypt documents; but not decrypt
+any.  Otherwise, just go ahead and choose the default option.
+
+
+Select a key-size. It is important to notice that longer the keysize,
+the more difficult it is to crack the security; but also more time is
+spent in encrypting or decrypting a document.
+
+
+Sometimes, you might want to de-activate your keys after a certain
+period of time; for example, you might want to renew your keys on a
+yearly basis for your e-mail server.  So, people who use to encrypt
+e-mails/documents will be automatically made aware when they try to
+use your expired public key.  However, the normal trend is to keep a
+set of keys forever.
+
+
+It is also useful to map a key to the owner's name and e-mail ID: for example, if I
+created a key, I should be able to identify the key as my own, and
+hence, I am asked to provide my name and e-mail ID.  Please be careful
+with the name as it cannot be altered after a key is created. 
+Real Name: John Doe
+E-mail: johndoe@virtual-labs.ac.in
+Comment: sample key for demonstration
+
+Press O for Okay.
+
+The computer may now ask for some entropy. Please type in some random
+keystrokes for the system to gather randomness. 
+
+It is highly imperative that nobody uses your key; hence before the
+private key is used for any purpose, it needs to be 'unlocked' using a
+passphrase, which should be known only to you.  
+
+
+At any point of time, you can see your gpg keys by typing gpg
+--list-keys.  This will show any GPG keys that you have created.
+
+** Validate the key
+
+Once a key is imported to your local system, it needs to be
+validated.  In order to validate a key, you must sign it in your local
+system.  In order to do that, please follow the two steps:
+
+- Edit the key
+gpg --edit-key johndoe@virtual-labs.ac.in
+
+- Verify the fingerprint
+>fpr
+
+
+
+** how to encrypt a file using gpg
+
+You are now ready to encrypt the file you want to send to johndoe by
+encrypting with johndoe's public key.
+
+The command for doing this is:
+gpg --output encrypted-file.gpg --encrypt --recipient blake@cyb.org original-document.
+
+
+
+** how to decrypt a file using gpg
+You can decrypt any file that has been encrypted using your public
+key.
+
+gpg --output original-document --decrypt encrypted-file.gpg
+
+You will be asked to provide the passphrase of the private key to
+unlock. Please provide the passphrase to unlock the file.
+
+
+* References
+- http://www.gnupg.org/gph/en/manual/book1.html
+- http://www.madboa.com/geek/gpg-quickstart/
+- http://en.wikipedia.org/wiki/GNU_Privacy_Guard
+- http://www.spywarewarrior.com/uiuc/gpg/gpg-com-4.htm
+- http://www.gnupg.org/documentation/manpage.en.html
