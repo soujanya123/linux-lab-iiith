@@ -124,8 +124,8 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-2-content" 
 	class="content">
-	<p>1. Viewing the contents of a directory using the ls command:</p><p>
-The ls command is used to list the contents of a directory. When it is executed with no arguments, it lists the contents of the current working directory. In order to know the current working directory execute the command pwd. 
+	<p>1. Viewing the contents of a directory using the <code>ls</code> command:</p><p>
+The <code>ls</code> command is used to list the contents of a directory. When it is executed with no arguments, it lists the contents of the current working directory. In order to know the current working directory, execute the command <code>pwd</code>. 
 </p>
 <pre class="code">
 
@@ -140,10 +140,10 @@ backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
 
 </pre>
 
-<br> The most used flags for ls command are l, s, t, R, a.
+<p> The most used flags for ls command are l, s, t, R, a. </p>
 
 <table border="1">
-<thead><tr><td>Flag</td><td>Purpose</td></tr	> </thead>
+<thead><tr><td><u>Flag</u></td><td align="right"><u>Purpose</u></td></tr	> </thead>
 <tbody>
 <tr><td>l</td><td>Displays the detailed view of contents of the folder</td></tr>
 <tr><td>a</td><td>Also display hidden contents of the folder</td></tr>
@@ -161,14 +161,24 @@ total 4
 -rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
 drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
 </pre>
-
-Describe the attributes here
+<p>
+Here, in addition to the name of each file, print the file type, file mode bits, number of hard links, owner name, group name, size, and timestamp
+, normally the modification time. Print question marks for information that cannot be determined.
 <br>
+Normally the size is printed as a byte count without punctuation,
+but this can be overridden. For example, `-h' prints an abbreviated, human-readable count.
+</p>
+<p>
+For more info on <code>ls</code>, type <code>info coreutils 'ls invocation'</code> on your command line.
+</p>
+
 <pre class="code">
 johndoe@laptop:~/Documents$ ls -a
 .  ..  all_about_console.txt  example.txt  my_project
 </pre>
+<p>
 . and .. refer to current folder and previous folder.
+</p>
 <pre class="code">
 johndoe@johndoe-laptop:~/Documents$ ls my_project/
 vlabs_ui
@@ -196,10 +206,10 @@ graphic-logo.gif
 nav.js
 </pre>
 
-<br>	<font size="4">2. Moving through directories:</font>
+<p>	<font size="4">2. Moving through directories:</font></p>
 
-<br><br>The command cd (change directory) allows us to move through directory trees. It has one parameter: target directory path. If parameter "-" is given it'll navigate to the previous working directory. If the paramter "~" is given it'll navigate to the home directory.
-
+<p>The command <code>cd</code> (change directory) allows us to move through directory trees. It has one parameter: target directory path. If parameter "-" is given it'll navigate to the previous working directory. If the paramter "~" is given it'll navigate to the home directory.
+</p>
 <pre class="code">
 
 johndoe@laptop:~/Documents$ cd my_project
@@ -223,8 +233,8 @@ johndoe@laptop:/home/james$ pwd
 
 </pre>
 
-<br><font size="4">	3. Creating files and folders:</font>
-<br><br>The touch command takes one or more parameters. If the parameter is an already existing file, it's modification time will be updated, else it'll be created.
+<p><font size="4">	3. Creating files and folders:</font></p>
+<p>The <code>touch</code> command takes one or more parameters. If the parameter is an already existing file, it's modification time will be updated, else it'll be created.</p>
 <pre class="code">
 johndoe@laptop:~/Documents$ touch newfile.txt
 
@@ -232,7 +242,9 @@ johndoe@laptop:~/Documents$ ls
 all_about_console.txt  example.txt my_project newfile.txt
 
 </pre>
-	The mkdir command takes one or more parameters and creates those folders.
+<p>
+	The <code>mkdir</code> command takes one or more parameters and creates those folders.
+	</p>
 <pre class="code">
 
 johndoe@laptop:~/Documents$ mkdir new_folder
@@ -242,26 +254,56 @@ all_about_console.txt  example.txt  my_project newfile.txt new_folder
 
 </pre>
 
-<br>	<font size="4">4. Copying, Moving and removing files and folders:</font><br><br>
+<p>	<font size="4">4. Copying, Moving and removing files and folders:</font>
 <ul>
-<li>cp - It takes at least two parameters: a source file and a target location to which the file will be copied,</li>
-<li>mv - Used to change the location of directories and files or renaming them. Parameters are taken in similar way as the cp command.</li>
-<li>rm - removes files/directories.</li>
+<li><code>cp</code> - It takes at least two parameters: a source file and a target location to which the file will be copied,</li>
+<li><code>mv</code> - Used to change the location of directories and files or renaming them. Parameters are taken in similar way as the <code>cp
+</code> command.</li>
+<li><code>rm</code> - removes files/directories.</li>
 </ul>
+</p>
+<pre class="code">
+johndoe@laptop:~/Documents$ cp example.txt my_project/example_copy.txt
 
+johndoe@laptop:~/Documents$ ls my_project
+vlabs_ui  example_copy.txt
 
-<br>The commands: cp, mv, and rm have the following common parameters:
+johndoe@laptop:~/Documents$ mv example.txt my_project/example_move.txt
+
+johndoe@laptop:~/Documents$ ls my_project
+vlabs_ui  example_copy.txt example_move.txt
+
+johndoe@laptop:~/Documents$ ls 
+all_about_console.txt  example.txt  my_project  newfile.txt  new_folder
+
+johndoe@laptop:~/Documents$ rm example.txt
+
+johndoe@laptop:~/Documents$ ls
+all_about_console.txt  my_project  newfile.txt  new_folder
+
+</pre>
+
+<p>The commands: <code>cp</code>, <code>mv</code>, and <code>rm</code> have the following common parameters:</p>
 <ul>
-<li>-f force - forces removing a file, even if user has no rights to write the file,</li>
-<li>-i interactive - user will be asked to confirm the operation,</li>
+<li><code>-f<code> force - forces removing a file, even if user has no rights to write the file,</li>
+<li><code>-i<code> interactive - user will be asked to confirm the operation,</li>
+<li><code>-r</code> recursive - recursively performs operation on directory and its contents. </li>
 </ul>
-<br>The commands cp, mv can also take "-b" which creates backup copy of a file to be overwritten (for cp and mv),
+<p>The commands <code>cp</code>, <code>mv</code> can also take<code>-b</code> which creates backup copy of a file to be overwritten.</p>
 
-<br><br><br><font size="4">5. Viewing the contents of a file:</font><br><br>
+<pre class="code">
+johndoe@laptop:~/Documents$ rm -r my_project
+
+johndoe@laptop:~/Documents$ ls 
+all_about_console.txt  newfile.txt  new_folder
+
+</pre>
+
+<p><font size="4">5. Viewing the contents of a file:</font>
 <ul>
-<li>cat - Displays the content of the given files (arguments) concatenated; </li>
+<li><code>cat</code> - Displays the content of the given files (arguments) concatenated. </li>
 </ul>
-
+</p>
 
         </div>
       </section>

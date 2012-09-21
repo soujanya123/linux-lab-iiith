@@ -90,9 +90,12 @@ Process Control
           <div id="experiment-article-section-1-content" 
           class="content">	
 		<p>
-Welcome to Process Control, the second experiment in the Systems and Software Virtual Lab. Process control refers to creating, killing, changing priorities of processes on a machine. The goal of this experiment is to give teach basic process control on a Linux machine. The theory section provides a brief overview of commands needed to do process control.
+Welcome to Process Control, the second experiment in the Systems and Software Virtual Lab. Process control refers to creating, killing, changing priorities of processes on a machine. The goal of this experiment is to teach basic process control on a Linux machine. The theory section provides a brief overview of commands needed to do process control.
+</p>
+
 <p>
 The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports few basic set of commands to enable the user learn process control basics. The experiment contains the command line interface and an instructor section (in green background) below it. The instructor section guides the user to peform the experiment which is a series of tasks.</p>
+<p>
 Proceed to the theory section to get an overview of the commands and then move to the experiment section to get some hands-on experience and finish the experiment tasks. After you are done with the experiment go to the quiz section to test your understanding.
 
 
@@ -124,9 +127,10 @@ Proceed to the theory section to get an overview of the commands and then move t
         <div id="experiment-article-section-2-content" 
         class="content">
           <p>
-	<br>	<font size="4">1. Viewing the processes (the ps command):</font>
-<br><br>		ps command is the short form of process status.ps displays information about a selection of the active processes when it is executed without any flags.
-
+		<font size="4">1. Viewing the processes (the <code>ps</code> command):</font>
+		</p>
+<p>		<code>ps</code> command is the short form of process status. <code>ps</code> displays information about a selection of the active processes when it is executed without any flags.
+</p>
 <pre class="code">
 
 johndoe@laptop:~/Documents$ ps
@@ -137,19 +141,19 @@ johndoe@laptop:~/Documents$ ps
 
 </pre>
 
-<br> The most used flags for ls command are A, e, p, C.
+<p> The most used flags for ls command are A, e, p, C.</p>
 
 <table border="1">
-<thead><tr><td>Flag</td><td>Purpose</td></tr	> </thead>
+<thead><tr><td><u>Flag</u></td><td align="right"><u>Purpose</u></td></tr	> </thead>
 <tbody>
 <tr><td>A</td><td>Displays all the processes running on a system</td></tr>
 <tr><td>e</td><td>Same as 'A' option</td></tr>
-<tr><td>p</td><td>Displays processes whose process numbers occur in pidlist ( -p pidlist)  </td></tr>
+<tr><td>p</td><td>Displays processes whose process numbers occur in pidlist (<code>ps -p pidlist</code>)  </td></tr>
 <tr><td>C</td><td>Displays processes corresponding to a particular command </td></tr>
 
  </tbody>
 </table>
-<br>
+
 <pre class="code">
 
 johndoe@laptop:~/Documents$ ps -e
@@ -165,9 +169,9 @@ PID  TTY          TIME CMD
 
 
 </pre>
-
+<p>
 The above is the abridged version of ps -e
-<br>
+</p>
 <pre class="code">
 
 johndoe@laptop:~/Documents$ ps -p 3111 3151
@@ -175,7 +179,9 @@ PID     TTY     STAT   TIME         COMMAND
 3111   pts/0    S      0:00         bash
 3151   pts/1    S+     0:00         ssh johndoe@vlabs.in
 </pre>
+<p>
 All the processes corresponding to a pidlist are displayed.
+</p>
 <pre class="code">
 
 johndoe@johndoe-laptop:~/Documents$ ps -c chrome
@@ -193,73 +199,75 @@ PID TTY          TIME   CMD
 3256 ?        00:00:01 chrome
 
 </pre>
+<p>
+All the processes running with the commandname(chrome in this case) will be displayed.
+</p>
+<p>	<font size="4">2. Running processes in the background</font></p>
 
-All the processes running with the commandname(chrome in this case) will be displayed.<br><br>
-
-<br>	<font size="4">2. Running processes in the background</font>
-
-<br><br>When we use the shell to launch a process, we wait for the process to be completed before we get back the control of the shell.This is called running a process in the foreground. It is also possible to run a process in the background. In this case, the program is launched and control is returned the the shell immediately, allowing you to run other commands. In the meantime, the initial process continues to run in the background. To place a process in the background, we append '&' at the end of the command.
-
+<p>When we use the shell to launch a process, we wait for the process to be completed before we get back the control of the shell.This is called running a process in the foreground. It is also possible to run a process in the background. In this case, the program is launched and control is returned the the shell immediately, allowing you to run other commands. In the meantime, the initial process continues to run in the background. To place a process in the background, we append '&' at the end of the command.
+</p>
 <pre class="code">
 
 johndoe@laptop:~/Documents/my_projects$ gedit filename.txt &
 johndoe@laptop:~/Documents/my_projects$
 
 </pre>
-<br> We can use the 'jobs' command to view the background processes.
+<p> We can use the 'jobs' command to view the background processes.</p>
 
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ jobs
 [2]+  Done                    gedit filename.txt
 
 </pre>
-<br> If a process running in the foreground is taking a long time, we can relegate it to the background. This is a 2 step process.<br>
+<p> If a process running in the foreground is taking a long time, we can relegate it to the background. This is a 2 step process.<br>
 a). Hold Ctrl + Z key to suspend the process.<br>
 Use jobs to see the current status of the process.<br>
-
+</p>
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ jobs
 [2]  + Suspended        gedit filename.txt
 </pre>
-<br>b) Now type in 'bg %N' where N is the job id - 2 in this case.
-
+<p>b) Now type in 'bg %N' where N is the job id - 2 in this case.
+</p>
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ bg %2
 [2] gedit filename.txt &
 </pre>
-<br>Now control will return to the shell and the process will execute in the background.
-<br>To bring back the process to the foreground, we use the 'fg' command.
+<p>Now control will return to the shell and the process will execute in the background.
+<br>To bring back the process to the foreground, we use the 'fg' command.</p>
 
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ fg %2
 </pre>
-<br> Now the shell prompt goes away and control is given back only after process completes the execution.
-<br>
-<br><font size="4">	3. Killing processes</font>
-<br><br>We use the kill command to kill the processes.The kill command takes the PID of the process as an argument.
+<p> Now the shell prompt goes away and control is given back only after process completes the execution.</p>
+
+<p><font size="4">	3. Killing processes</font></p>
+<p>
+We use the kill command to kill the processes.The kill command takes the PID of the process as an argument.
 <br>Suppose we want to kill the process 'gedit'
+</p>
 <pre class="code">
 johndoe@laptop:~/Documents$ ps -e | grep gedit
 3155 ?        00:00:05 gedit
 </pre>
-<br> The first column of the output gives the PID of the gedit process
+<p> The first column of the output gives the PID of the gedit process </p>
 <pre class="code">
 johndoe@laptop:~/Documents$ kill 3155 
 johndoe@laptop:~/Documents$
 </pre>
-<br> We can now check whether the process has been killed or not.
+<p> We can now check whether the process has been killed or not.</p>
 <pre class="code">
 johndoe@laptop:~/Documents$ ps -e | grep gedit
 johndoe@laptop:~/Documents$  
 </pre>
-<br> Since there is no output, it means that there is no process running with the name gedit, which means that it has been killed.
+<p> Since there is no output, it means that there is no process running with the name gedit, which means that it has been killed.
+</p>
 
-<br>
-
+<p>
 4. Changing Process Priority:
-
-The priority of a process is indicated by its "nice value". Lesser the nice value of a process, more is the priority. Nice value ranges from -20 (fastest) to 20 (slowest). The nice value of a process (pid = 100) can be viewed by using the ps command as:  ps -o pid,nice -p 100
-
+</p><p>
+The priority of a process is indicated by its "nice value". Lesser the nice value of a process, more is the priority. Nice value ranges from -20 (fastest) to 20 (slowest). The nice value of a process (pid = 100) can be viewed by using the ps command as:  ps -o pid,nice -p 100.
+<br>
 The nice value of a process can be changed by using the renice command. The renice command takes two arguments: the new priority and process ID. 
 
 <pre class="code">
