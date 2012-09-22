@@ -124,13 +124,13 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-2-content" 
 	class="content">
-<p>
+<h3>
 User Management Concepts
-</p><p>
+</h3><h2>
  
 User Information 
  
-</p><p>
+</h2><p>
 The system keeps track of a number of pieces of information about each user. They are summarized below.
  
 </p><p>
@@ -175,10 +175,10 @@ The file /etc/passwd contains this information about users. Each line in the fil
 </p> 
 <p> 
 An example might be:
-</p> 
-	
+<br> 	
 	kiwi:Xv8Q981g71oKK:102:100:Laura Poole:/home/kiwi:/bin/bash
-</p> 
+	</p>
+
 <p> 
 As we can see, the first field, "kiwi", is the username. The next field, "Xv8Q981g71oKK", is the encrypted password. 
 Passwords are not stored on the system in any human-readable format. The password is encrypted using itself as the secret
@@ -198,13 +198,19 @@ The fifth field is the user's full name, "Laura Poole". The last two fields are 
 (/home/kiwi) and login shell (/bin/bash), respectively. It is not required that the user's home directory
 be given the same name as the username. It does help identify the directory, however.
 </p> 
-<p> 
-The id command: 
-</p><p>
-The id command prints the identity of a user i.e. the UID, GID and the groups the user has been added to. The syntax of the command is id [option]... [username]. Check the following examples.
+<h3>
+The <code>whoami</code> command:
+</h3>
+<p>
+The <code>whoami</code> command is used to find the username of the user.
+</p>
+<h3> 
+The <code>id</code> command: 
+</h3>
+<p>
+The <code>id</code> command prints the identity of a user i.e. the UID, GID and the groups the user has been added to. The syntax of the command is <code>id [option]... [username]</code>. Check the following examples:
  </p>
 <pre class="code"> 
- 
 root@johndoe-laptop:~/$ whoami
 root
  
@@ -220,21 +226,20 @@ johndoe
  
 johnodoe@johndoe-laptop:~/$ id
 uid=1000(johndoe) gid=1000(johndoe) groups=4(adm),1000(desideratum)
- 
 </pre> 
  
  
- <p>
+ <h3>
 Adding Users:
-</p><p>
-The easiest way to add users is to use an interactive program which asks you for the required information and updates all of the system files automatically. The name of this program is useradd or adduser, depending on what software was installed. The man pages for these commands should be fairly self-explanatory.
- 
-</p><p>
-The useradd command enables creation of a new user or updating the default new user information. Use useradd with not arguments to see the set of options available.
+</h3>
+<p>
+The easiest way to add users is to use an interactive program which asks you for the required information and updates all of the system files automatically. The name of this program is <code>useradd</code> or <code>adduser</code>, depending on what software was installed. The man pages for these commands should be fairly self-explanatory.
  
 </p>
+<p>
+The <code>useradd</code> command enables creation of a new user or updating the default new user information. Use <code>useradd</code> with no arguments to see the set of options available.
+</p>
 <pre class="code"> 
- 
 johnodoe@johndoe-laptop:~/$ useradd
 Usage: useradd [options] LOGIN
  
@@ -267,7 +272,6 @@ Options:
   -u, --uid UID                 user ID of the new account
   -U, --user-group              create a group with the same name as the user
   -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
- 
 </pre> 
  
 <p>
@@ -275,15 +279,13 @@ Few examples:
  
 http://www.linfo.org/useradd.html
 </p><p>
-1. Let's explore the usage of 'useradd' command. When you execute the command - " useradd jim ", a user account with username jim is created. Then examine the /etc/passwd file to notice the entry of jim in the last line. The entry says that jim is the username, x represents that password is stored in the /etc/shadow file, 1000 is the UID of the user, 1130 is the UID of the new group created with the same name as the user, an empty "" field that indicates that user creation didn't involve any comment, /home/jim is the home directory for jim, /bin/sh is the default login shell. 
+1. Let's explore the usage of <code>"useradd"</code> command. When you execute the command - <code>"useradd jim"</code>, a user account with username jim is created. Then examine the /etc/passwd file to notice the entry of jim in the last line. The entry says that jim is the username, x represents that password is stored in the /etc/shadow file, 1000 is the UID of the user, 1130 is the UID of the new group created with the same name as the user, an empty "" field that indicates that user creation didn't involve any comment, /home/jim is the home directory for jim, /bin/sh is the default login shell. 
  
 </p>
 <pre class="code"> 
- 
 root@johndoe-laptop:~/$ useradd jim
 root@johndoe-laptop:~/$ tail -1 /etc/passwd
 jim:x:1000:1130::/home/jim:/bin/sh
- 
 </pre> 
  
 <p>
