@@ -72,8 +72,7 @@ edit -->
 	<!-- First section of the article-->
 	<section id="experiment-article-section-1">
 
-	<div id="experiment-article-section-1-icon" 
-	class="icon">
+	<div id="experiment-article-section-1-icon" class="icon">
 	<!-- Enclose the icon image of your lab -->
 	<img src="../images/introduction.jpg" />
 	</div>	
@@ -86,14 +85,15 @@ edit -->
 	</div>
 	<!-- Write the section content inside a paragraph 
 	element, You can also include images with <img> tag -->
-	<div id="experiment-article-section-1-content" 
-	class="content">	
+	<div id="experiment-article-section-1-content" class="content">	
 	<p>
 	Welcome to File Management, the first experiment of the Systems and Software lab.  File Management consists of creating files and folders, copying and moving them locally etc. The goal of this experiment is to teach how to manipulate files and folders on a Linux Machine. The theory section provides a brief overview of the linux commands which are required to do file management.
-	</p><p>
+	</p>
+	<p>
 
  The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports a few basic commands to enable the user to learn file management basics. The experiment contains the command line interface and an instructor section (in green background) below it. The instructor section guides the user to peform the experiment which is a series of tasks.
-	</p><p>
+	</p>
+	<p>
 	Proceed to the theory section to get an overview of the commands. Then move to the experiment section to get some hands-on experience and finish the experiment tasks. After you are done with the experiment, go to the quiz section to test your understanding.
 	 
 	</p>
@@ -106,28 +106,26 @@ edit -->
 	<!-- Second section of the article-->
 	<section id="experiment-article-section-2">
 
-	<div id="experiment-article-section-2-icon" 
-	class="icon">
+	<div id="experiment-article-section-2-icon" class="icon">
 	<!-- Enclose the icon image of your lab. -->
 	<img src="../images/theory.jpg" />
 	</div>
 
 	<!-- The heading for the section can be enclosed in a 
 	div tag. -->
-	<div id="experiment-article-section-2-heading" 
-	class="heading">
+	<div id="experiment-article-section-2-heading" class="heading">
 	Theory
 	</div>
 
 
 	<!-- Write the section content inside a paragraph 
 	element, we can also include images with <img> tag -->
-	<div id="experiment-article-section-2-content" 
-	class="content">
-	<p>1. Viewing the contents of a directory using the <code>ls</code> command:</p><p>
-The <code>ls</code> command is used to list the contents of a directory. When it is executed with no arguments, it lists the contents of the current working directory. In order to know the current working directory, execute the command <code>pwd</code>. 
-</p>
-<pre class="code">
+	<div id="experiment-article-section-2-content" class="content">
+	<p>1. Viewing the contents of a directory using the <code>"ls"</code> command:</p>
+	<p>
+The <code>"ls"</code> command is used to list the contents of a directory. When it is executed with no arguments, it lists the contents of the current working directory. In order to know the current working directory, execute the command <code>"pwd"</code>. 
+	</p>
+	<pre class="code">
 
 johndoe@laptop:~/Documents$ pwd
 /home/johndoe/Documents
@@ -138,53 +136,53 @@ example.txt  all_about_console.txt my_project
 johndoe@laptop:~/Documents$ ls /var/
 backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
 
-</pre>
+	</pre>
 
-<p> The most used flags for ls command are l, s, t, R, a. </p>
+	<p> The most used flags for ls command are l, s, t, R, a. </p>
 
-<table border="1">
-<thead><tr><td><u>Flag</u></td><td align="right"><u>Purpose</u></td></tr	> </thead>
-<tbody>
-<tr><td>l</td><td>Displays the detailed view of contents of the folder</td></tr>
-<tr><td>a</td><td>Also display hidden contents of the folder</td></tr>
-<tr><td>s</td><td>Displays the size of each of the contents of the folder  </td></tr>
-<tr><td>R</td><td>Displays contents recursively</td></tr>
-<tr><td>t</td><td>displays contents sorted according to modification time </td></tr>
+	<table border="1">
+		<thead><tr><td><u>Flag</u></td><td align="right"><u>Purpose</u></td></tr> </thead>
+		<tbody>
+			<tr><td>l</td><td>Displays the detailed view of contents of the folder</td></tr>
+			<tr><td>a</td><td>Also display hidden contents of the folder</td></tr>
+			<tr><td>s</td><td>Displays the size of each of the contents of the folder  </td></tr>
+			<tr><td>R</td><td>Displays contents recursively</td></tr>
+			<tr><td>t</td><td>displays contents sorted according to modification time </td></tr>
 
- </tbody>
-</table>
-<br>
-<pre class="code">
+		 </tbody>
+	</table>
+
+	<pre class="code">
 johndoe@laptop:~/Documents$ ls -l
 total 4
 -rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 example.txt
 -rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
 drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
-</pre>
-<p>
+	</pre>
+	<p>
 Here, in addition to the name of each file, print the file type, file mode bits, number of hard links, owner name, group name, size, and timestamp
 , normally the modification time. Print question marks for information that cannot be determined.
 <br>
 Normally the size is printed as a byte count without punctuation,
-but this can be overridden. For example, `-h' prints an abbreviated, human-readable count.
-</p>
-<p>
-For more info on <code>ls</code>, type <code>info coreutils 'ls invocation'</code> on your command line.
-</p>
+but this can be overridden. For example, "-h" prints an abbreviated, human-readable count.
+	</p>
+	<p>
+For more info on <code>"ls"</code>, type <code>"info coreutils 'ls invocation'"</code> on your command line.
+	</p>
 
-<pre class="code">
+	<pre class="code">
 johndoe@laptop:~/Documents$ ls -a
 .  ..  all_about_console.txt  example.txt  my_project
-</pre>
-<p>
+	</pre>
+	<p>
 . and .. refer to current folder and previous folder.
-</p>
+	</p>
 <pre class="code">
 johndoe@johndoe-laptop:~/Documents$ ls my_project/
 vlabs_ui
 
 johndoe@johndoe-laptop:~/Documents$ ls my_project/vlabs_ui/
-css  images </font> index.html js  Milikan_oil_drop.html  README  simple_pendulum.html  Sys n sw.html
+css  images  index.html  js  Milikan_oil_drop.html  README  simple_pendulum.html  Sys n sw.html
 
 johndoe@laptop:~/Documents$ ls -R
 .:
@@ -194,7 +192,7 @@ all_about_console.txt  example.txt  my_project
 vlabs_ui
 
 ./my_project/vlabs_ui:
-css  images</font>  index.html  js  Milikan_oil_drop.html  README  simple_pendulum.html  Sys n sw.html
+css  images  index.html  js  Milikan_oil_drop.html  README  simple_pendulum.html  Sys n sw.html
 
 ./my_project/vlabs_ui/css:
 code.css  common.css  corners.css  forms.css  layout.css  reset.css
@@ -205,10 +203,10 @@ graphic-logo.gif
 ./my_project/vlabs_ui/js:
 nav.js
 </pre>
-
+<p>Type the <code>"clear"</code> command to clear your screen.</p>
 <p>	<font size="4">2. Moving through directories:</font></p>
 
-<p>The command <code>cd</code> (change directory) allows us to move through directory trees. It has one parameter: target directory path. If parameter "-" is given it'll navigate to the previous working directory. If the paramter "~" is given it'll navigate to the home directory.
+<p>The command <code>"cd"</code> (change directory) allows us to move through directory trees. It has one parameter: target directory path. If parameter "-" is given it'll navigate to the previous working directory. If the paramter "~" is given it'll navigate to the home directory.
 </p>
 <pre class="code">
 
@@ -234,7 +232,7 @@ johndoe@laptop:/home/james$ pwd
 </pre>
 
 <p><font size="4">	3. Creating files and folders:</font></p>
-<p>The <code>touch</code> command takes one or more parameters. If the parameter is an already existing file, it's modification time will be updated, else it'll be created.</p>
+<p>The <code>"touch"</code> command takes one or more parameters. If the parameter is an already existing file, it's modification time will be updated, else it'll be created.</p>
 <pre class="code">
 johndoe@laptop:~/Documents$ touch newfile.txt
 
@@ -243,7 +241,7 @@ all_about_console.txt  example.txt my_project newfile.txt
 
 </pre>
 <p>
-	The <code>mkdir</code> command takes one or more parameters and creates those folders.
+	The <code>"mkdir"</code> command takes one or more parameters and creates those folders.
 	</p>
 <pre class="code">
 
@@ -253,13 +251,24 @@ johndoe@laptop:~/Documents$ ls
 all_about_console.txt  example.txt  my_project newfile.txt new_folder
 
 </pre>
+<p>The <code>"rmdir"</code> command removes empty directories.</p>
+
+<pre class="code">
+
+johndoe@laptop:~/Documents$ rmdir new_folder
+
+johndoe@laptop:~/Documents$ ls 
+all_about_console.txt  example.txt  my_project newfile.txt 
+
+</pre>
+
 
 <p>	<font size="4">4. Copying, Moving and removing files and folders:</font>
 <ul>
-<li><code>cp</code> - It takes at least two parameters: a source file and a target location to which the file will be copied,</li>
-<li><code>mv</code> - Used to change the location of directories and files or renaming them. Parameters are taken in similar way as the <code>cp
+<li><code>"cp"</code> - It takes at least two parameters: a source file and a target location to which the file will be copied,</li>
+<li><code>"mv"</code> - Used to change the location of directories and files or renaming them. Parameters are taken in similar way as the <code>"cp"
 </code> command.</li>
-<li><code>rm</code> - removes files/directories.</li>
+<li><code>"rm"</code> - removes files/directories.</li>
 </ul>
 </p>
 <pre class="code">
@@ -283,25 +292,16 @@ all_about_console.txt  my_project  newfile.txt  new_folder
 
 </pre>
 
-<p>The commands: <code>cp</code>, <code>mv</code>, and <code>rm</code> have the following common parameters:</p>
+<p>The commands: <code>"cp"</code>, <code>"mv"</code>, and <code>"rm"</code> have the following common parameters:</p>
 <ul>
-<li><code>-f<code> force - forces removing a file, even if user has no rights to write the file,</li>
-<li><code>-i<code> interactive - user will be asked to confirm the operation,</li>
-<li><code>-r</code> recursive - recursively performs operation on directory and its contents. </li>
+<li><code>-f</code> force - forces removing a file, even if user has no rights to write the file,</li>
+<li><code>-i</code> interactive - user will be asked to confirm the operation,</li>
 </ul>
-<p>The commands <code>cp</code>, <code>mv</code> can also take<code>-b</code> which creates backup copy of a file to be overwritten.</p>
-
-<pre class="code">
-johndoe@laptop:~/Documents$ rm -r my_project
-
-johndoe@laptop:~/Documents$ ls 
-all_about_console.txt  newfile.txt  new_folder
-
-</pre>
+<p>The commands <code>"cp"</code>, <code>"mv"</code> can also take <code>"-b"</code> which creates backup copy of a file to be overwritten.</p>
 
 <p><font size="4">5. Viewing the contents of a file:</font>
 <ul>
-<li><code>cat</code> - Displays the content of the given files (arguments) concatenated. </li>
+<li><code>"cat"</code> - Displays the content of the given files (arguments) concatenated. </li>
 </ul>
 </p>
 
@@ -339,7 +339,8 @@ In case you do not have login credentials, please click here.	  </div>
 
 	  <form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
 
-	  <table><tr>
+	  <table>
+	  <tr>
 
 	  <td>Your name</td><td> <input type="text" name="yourname" value="" id="yourname"/></td></tr>
 

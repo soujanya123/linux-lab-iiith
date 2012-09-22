@@ -49,7 +49,7 @@ edit -->
       <header id="experiment-article-heading" class="heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
-Process Control
+Process Management
         <!-- Add any additional element if required with proper 
         enclosing-->
       </header>
@@ -127,35 +127,32 @@ Proceed to the theory section to get an overview of the commands and then move t
         <div id="experiment-article-section-2-content" 
         class="content">
           <p>
-		<font size="4">1. Viewing the processes (the <code>ps</code> command):</font>
+		<font size="4">1. Viewing the processes (the <code>"ps"</code> command):</font>
 		</p>
-<p>		<code>ps</code> command is the short form of process status. <code>ps</code> displays information about a selection of the active processes when it is executed without any flags.
+<p>		<code>"ps"</code> command is the short form of process status. <code>"ps"</code> displays information about a selection of the active processes when it is executed without any flags.
 </p>
 <pre class="code">
-
 johndoe@laptop:~/Documents$ ps
    PID   TTY        TIME    CMD
   2635   pts/9    00:00:00  ps
   26439  pts/9    00:00:00  bash
-
-
 </pre>
 
-<p> The most used flags for ls command are A, e, p, C.</p>
+<p> The most used flags for <code>"ps"</code> command are A, e, p, C, o, | grep.</p>
 
 <table border="1">
-<thead><tr><td><u>Flag</u></td><td align="right"><u>Purpose</u></td></tr	> </thead>
+<thead><tr><td align="center"><u>Flag</u></td><td align="center"><u>Purpose</u></td></tr	> </thead>
 <tbody>
 <tr><td>A</td><td>Displays all the processes running on a system</td></tr>
 <tr><td>e</td><td>Same as 'A' option</td></tr>
 <tr><td>p</td><td>Displays processes whose process numbers occur in pidlist (<code>ps -p pidlist</code>)  </td></tr>
 <tr><td>C</td><td>Displays processes corresponding to a particular command </td></tr>
-
+<tr><td>o</td><td>Displays processes in the specified format.</td></tr>
+<tr><td>| grep</td><td>Displays processes that contain specified string</td></tr>
  </tbody>
 </table>
 
 <pre class="code">
-
 johndoe@laptop:~/Documents$ ps -e
 PID  TTY          TIME CMD
 1    ?        00:00:00 init
@@ -166,14 +163,11 @@ PID  TTY          TIME CMD
 3111 pts/0    00:00:00 bash
 3132 pts/1    00:00:00 bash
 3151 pts/1    00:00:00 ssh
-
-
 </pre>
 <p>
-The above is the abridged version of ps -e
+The above is the abridged version of <code>"ps -e"</code>
 </p>
 <pre class="code">
-
 johndoe@laptop:~/Documents$ ps -p 3111 3151
 PID     TTY     STAT   TIME         COMMAND
 3111   pts/0    S      0:00         bash
@@ -183,7 +177,6 @@ PID     TTY     STAT   TIME         COMMAND
 All the processes corresponding to a pidlist are displayed.
 </p>
 <pre class="code">
-
 johndoe@johndoe-laptop:~/Documents$ ps -c chrome
 PID TTY          TIME   CMD
 2022 ?        00:03:35 chrome
@@ -197,37 +190,72 @@ PID TTY          TIME   CMD
 2921 ?        00:00:03 chrome
 3170 ?        00:00:01 chrome
 3256 ?        00:00:01 chrome
-
 </pre>
 <p>
-All the processes running with the commandname(chrome in this case) will be displayed.
+All the processes running with the command name (chrome in this case) will be displayed.
 </p>
-<p>	<font size="4">2. Running processes in the background</font></p>
+<pre class="code">
+johndoe@johndoe-laptop:~/Documents$ ps -o pid, -o comm
+PID    COMMAND
+17746  bash
+17958  ps
+</pre>
+<p>
+The fields corresponding to the arguments specified (PID and COMMAND in this case) are displayed.
+</p>
+<pre class="code">
+johndoe@johndoe-laptop:~/Documents$ ps | grep bash
+17746 pts/6    00:00:00 bash
+</pre>
+<p>
+The processes containing the string (bash in this case) are displayed.
+</p>
+
+<p>
+<font size="4">2. Control Codes</font>
+</p>
+<p>
+The shell offers a number of control codes that perform a specific command. A control code is issued by holding down the 
+Ctrl key, followed by a key-press.
+<table border="1">
+<thead>
+<tr>
+<td align="center"><u>Control Code</u></td>
+<td align="center"><u>Action</u></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+c</td><td>Cancels a command or interrupts a running program.</td>
+</tr>
+<tr>
+<td>Ctrl+z</td><td>Suspends a process or job, without terminating. <code>"fg"</code> command can be used to restart the suspended job or process</td>
+</tr>
+</tbody>
+</table>
+<p>	<font size="4">3. Running processes in the background</font></p>
 
 <p>When we use the shell to launch a process, we wait for the process to be completed before we get back the control of the shell.This is called running a process in the foreground. It is also possible to run a process in the background. In this case, the program is launched and control is returned the the shell immediately, allowing you to run other commands. In the meantime, the initial process continues to run in the background. To place a process in the background, we append '&' at the end of the command.
 </p>
 <pre class="code">
-
 johndoe@laptop:~/Documents/my_projects$ gedit filename.txt &
 johndoe@laptop:~/Documents/my_projects$
-
 </pre>
 <p> We can use the 'jobs' command to view the background processes.</p>
 
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ jobs
 [2]+  Done                    gedit filename.txt
-
 </pre>
 <p> If a process running in the foreground is taking a long time, we can relegate it to the background. This is a 2 step process.<br>
 a). Hold Ctrl + Z key to suspend the process.<br>
-Use jobs to see the current status of the process.<br>
+Use <code>"jobs"</code> to see the current status of the process.<br>
 </p>
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ jobs
 [2]  + Suspended        gedit filename.txt
 </pre>
-<p>b) Now type in 'bg %N' where N is the job id - 2 in this case.
+<p>b) Now type in <code>"bg %N"</code> where N is the job id - 2 in this case.
 </p>
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ bg %2
@@ -241,9 +269,9 @@ johndoe@laptop:~/Documents/my_project$ fg %2
 </pre>
 <p> Now the shell prompt goes away and control is given back only after process completes the execution.</p>
 
-<p><font size="4">	3. Killing processes</font></p>
+<p><font size="4">	4. Killing processes</font></p>
 <p>
-We use the kill command to kill the processes.The kill command takes the PID of the process as an argument.
+We use the <code>"kill"</code> command to kill the processes.The <code>"kill"</code> command takes the PID of the process as an argument.
 <br>Suppose we want to kill the process 'gedit'
 </p>
 <pre class="code">
@@ -264,24 +292,26 @@ johndoe@laptop:~/Documents$
 </p>
 
 <p>
-4. Changing Process Priority:
+5. Changing Process Priority:
 </p><p>
 The priority of a process is indicated by its "nice value". Lesser the nice value of a process, more is the priority. Nice value ranges from -20 (fastest) to 20 (slowest). The nice value of a process (pid = 100) can be viewed by using the ps command as:  ps -o pid,nice -p 100.
 <br>
 The nice value of a process can be changed by using the renice command. The renice command takes two arguments: the new priority and process ID. 
 
 <pre class="code">
-
 johndoe@laptop:~/Documents$ ps -o pid,nice -p 2292
 PID NI
 2292 0
 johndoe@laptop:~/Documents$ renice -10 2292
 2292: old priority 0, new priority -10
 johndoe@laptop:~/Documents$  
-
 </pre>
 
 		       </p>
+<p><font size="4">
+6. Viewing Linux tasks:</font>
+</p>
+<p>The <code>"top"</code> command is used for viewing Linux tasks.</p>
 
         </div>
       </section>
