@@ -49,7 +49,7 @@ edit -->
 	<header id="experiment-article-heading" class="heading">
 	<!-- You can add a welcome message or title of the 
 	experiment here -->
-	Examining Log and Configuration files
+	Getting Help
 	<!-- Add any additional element if required with proper 
 	enclosing-->
 	</header>
@@ -72,8 +72,7 @@ edit -->
 	<!-- First section of the article-->
 	<section id="experiment-article-section-1">
 
-	<div id="experiment-article-section-1-icon" 
-	class="icon">
+	<div id="experiment-article-section-1-icon" class="icon">
 	<!-- Enclose the icon image of your lab -->
 	<img src="../images/introduction.jpg" />
 	</div>	
@@ -86,14 +85,15 @@ edit -->
 	</div>
 	<!-- Write the section content inside a paragraph 
 	element, You can also include images with <img> tag -->
-	<div id="experiment-article-section-1-content" 
-	class="content">	
+	<div id="experiment-article-section-1-content" class="content">	
 	<p>
-	Welcome to the 'Examining Log and Configuration files' experiment.  This experiment will give you an understanding of various log files which help the user figure out the cause when a certain problem occurs to the system. This experiment will also brief you about some most used configuration files on a linux machine. 
-	</p><p>
+	Welcome to Getting Help. This experiment shall help you learn the various in-built Linux features to getting help. The theory section provides a brief overview of the linux commands which are required to get help.
+	</p>
+	<p>
 
- The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports a few basic commands to enable the user to learn file management basics. The experiment contains the command line interface and an instructor section (in green background) below it. The instructor section guides the user to peform the experiment which is a series of tasks.
-	</p><p>
+ The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports a few basic commands to enable the user to learn the basics of getting help. The experiment contains the command line interface and an instructor section (in green background) below it. The instructor section guides the user to peform the experiment which is a series of tasks.
+	</p>
+	<p>
 	Proceed to the theory section to get an overview of the commands. Then move to the experiment section to get some hands-on experience and finish the experiment tasks. After you are done with the experiment, go to the quiz section to test your understanding.
 	 
 	</p>
@@ -106,64 +106,81 @@ edit -->
 	<!-- Second section of the article-->
 	<section id="experiment-article-section-2">
 
-	<div id="experiment-article-section-2-icon" 
-	class="icon">
+	<div id="experiment-article-section-2-icon" class="icon">
 	<!-- Enclose the icon image of your lab. -->
 	<img src="../images/theory.jpg" />
 	</div>
 
 	<!-- The heading for the section can be enclosed in a 
 	div tag. -->
-	<div id="experiment-article-section-2-heading" 
-	class="heading">
+	<div id="experiment-article-section-2-heading" class="heading">
 	Theory
 	</div>
 
 
 	<!-- Write the section content inside a paragraph 
 	element, we can also include images with <img> tag -->
-	<div id="experiment-article-section-2-content" 
-	class="content">
-<p>
-	Log File:
-</p><p>
-	A file that lists actions that have occurred is called Log file. It maintains a record of things that happen on a system. It is particularly helpful when one is trying to troubleshoot the system in case of any issues. For example, Web servers maintain log files listing every request made to the server. With log file analysis tools, it's possible to get a good idea of where visitors are coming from, how often they return, and how they navigate through a site. 
-</p><p>
-	In a Linux machine, a variety of log files are maintained. Each log file maintains the record of a certain application or a set of applications. Logging is provided by deamons rsyslogd, klogd running on the system.  The former provides logging services to programs and applications, the latter provides logging capability to the Linux kernel. Inorder to check what processes/deamons are providing the log, run the following command on the machine
-</p><p>
+	<div id="experiment-article-section-2-content" class="content">
+	<h3>man</h3>
+	<p>
+	<code>'man'</code> is the system's manual pager. When you type the <code>'man'</code> command followed by an argument, <code>man</code>
+	searches the man pages for the term entered in the argument. Type <code>man man</code> to open up the man page on 'man'.
+	</p>
+	<h3>info</h3>
+	<p>
+	<code>'info'</code> is similar to 'man'. It was implemented as a replacement to man in the early '90s. Info pages are a more 
+	complete and comprehensive documentation than the man pages. Its usage is straightforward. Just type <code>'info'</code> without
+	any options to look at the various options and all the utilities covered. To look into the info page of a utility,
+	just type <code>'info'</code> followed by the name of whatever you are looking for.
+	</p>
+	<h3>whatis</h3>
+	<p>
+	<code>'whatis'</code> displays manual page descriptions. <code>'whatis'</code> searches the manual page names and displays the manual page descriptions of any name matched. There is also the option of using wildcards (-w) and regular expressions (-r).
+	</p>
+	<h3>The '-h' option</h3>
+	<p>
+	Type any Linux command followed by the '-h' option to get help on the command.
+	</p>
 	<pre class="code">
-	johndoe@johndoe-laptop:~$ ps -ef | grep log
-	root        21     1  0 Feb12 ?        00:00:00 [init-logger]
-	root       273     1  0 Feb12 ?        00:00:00 /usr/sbin/rsyslogd -c3
-	johndoe    859   849  0 05:38 pts/0    00:00:00 grep log
+	johndoe@laptop:~$ gzip -h
+	Usage: gzip [OPTION]... [FILE]...
+	Compress or uncompress FILEs (by default, compress FILES in-place).
+
+	Mandatory arguments to long options are mandatory for short options too.
+
+	-c, --stdout      write on standard output, keep original files unchanged
+	-d, --decompress  decompress
+	-f, --force       force overwrite of output file and compress links
+	-h, --help        give this help
+	-l, --list        list compressed file contents
+	-L, --license     display software license
+	-n, --no-name     do not save or restore the original name and time stamp
+	-N, --name        save or restore the original name and time stamp
+	-q, --quiet       suppress all warnings
+	-r, --recursive   operate recursively on directories
+	-S, --suffix=SUF  use suffix SUF on compressed files
+	-t, --test        test compressed file integrity
+	-v, --verbose     verbose mode
+	-V, --version     display version number
+	-1, --fast        compress faster
+	-9, --best        compress better
+	--rsyncable       Make rsync-friendly archive
+
+	With no FILE, or when FILE is -, read standard input.
+
+	Report bugs to bug-gzip@gnu.org.
 	</pre>
-</p><p>
-	We observe that rsyslogd deamon is running. By default most logging to files takes place in /var/log/, and generally speaking programs that handle their own logging (most httpd servers handle their logging internally) log to /var/log/program-name/, which allows you to centralize the log files and makes it easier to place them on a separate partition. Some of the log files require previleged access to read them.
-</p><p>
-	/etc/rsyslog.conf is the main configuration file for rsyslogd. This file specifies rules for logging which indicate what file the log of an application is written to. One exceedingly powerful and often overlooked ability of syslog is to log messages to a remote host running syslog. Since you can define multiple locations for syslog messages (i.e. send all kern messages to the /var/log/messages file, and to console, and to a remote host or multiple remote hosts) this allows you to centralize logging to a single host and easily check log files for security violations and other strangeness.
-	
-</p><p>
-	Some of the important log files are 
-</p><p>
-	/var/log/dmesg - This log file is written upon system boot. It contains messages from the kernel that were raised during the boot process. You can also view them using the command 'dmesg'. This log file can be viewed by any non-privileged user.
-</p><p>
-	/var/log/messages - This is the standard system log file, which contains messages from all your system software, non-kernel boot issues, and messages that go to 'dmesg'. This log file can be viewed by only privileged users.
-</p><p>
-	/var/log/maillog - This log file contains messages and errors from your sendmail. This log file can be viewed by only privileged users.
-</p><p>
-	/var/log/secure - This log file contains messages and errors from security related systems such as login, tcp_wrappers, and xinetd. This log file is very useful in detecting and investigating network abuse. As I said earlier, syslogd and klogd daemons provide centralized logging in linux. The configuration file for syslogd is /etc/syslogd.conf. System logging is provided by syslogd and klogd intercepts kernel messages and provides them to syslogd daemon. This log file can be viewed by only privileged users.
-</p><p>
-	/etc/rc.d/init.d/syslog script controls both syslogd and klogd daemons.
-</p><p>
-Messages can be logged to files, broadcast to connected users, written to the console, or even transmitted to remote logging daemons across the network.
-</p><p>
-By default, the messages of emergency or higher (more severe) are broadcast to all users, and most other messages are written to /var/log/messages file, which is where you should look for non-kernel boot errors, error messages from most application-level services, such as automount, login services etc. After system boot, kernel messages are also written to this file.
-</p><p>
-Usually a system administrator will run the command :
-# tail -f /var/log/messages
-at the console, to get a running display of the messages logged by the syslogd daemon. Thus he will be able to keep track of any system wide errors that may be generated.
-</p>
-      </div>
+	<h3>apropos</h3>
+	<p>
+	The <code>'apropos'</code> command searches the man page names and descriptions for the search keyword. It is useful for finding the rightman pages and commands. Like the <code>'whatis'</code> command, you can enter wilcards (-w) and regular expressions (-r) as keywords.
+	</p>
+	<h3>Bash autocomplete</h3>
+	<p>
+	For the lazy ones amongst you, Bash provides an autocomplete option. Once you type part of the command on the command line, just hit 
+	the [TAB] key and Bash autocompletes the rest. In case of more than one possibilities, Bash returns the set of possibilities.
+	</p>
+
+        </div>
       </section>
 
       <section id="experiment-article-section-4">
@@ -183,14 +200,13 @@ at the console, to get a running display of the messages logged by the syslogd d
 	  class="content">
 	  <p>
 	  <div id="login">
- <br />If you already have Virtual Labs login
+If you already have Virtual Labs login
 	  credentials, please click 
 <A HREF="javascript:void(0)"
 onclick="window.open('interaction-frame.html',
 'welcome','width=screen.availWidth,height=screen.availHeight,status=yes')">
 here</A>.<br />
-In case you do not have login credentials, please click here.
-	  </div>
+In case you do not have login credentials, please click here.	  </div>
 
 	  <div id="signup">
 
@@ -198,7 +214,8 @@ In case you do not have login credentials, please click here.
 
 	  <form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
 
-	  <table><tr>
+	  <table>
+	  <tr>
 
 	  <td>Your name</td><td> <input type="text" name="yourname" value="" id="yourname"/></td></tr>
 
@@ -216,7 +233,7 @@ In case you do not have login credentials, please click here.
 
 	  <tr><td colspan=2>Enter the black characters present in the below image</td></tr>
 
-	  <tr><td><img src="php/captcha.php" id="captchaimg"/></td><td><input type="text" name="captcha" id="captcha"/></td></tr>
+	  <tr><td><img src="../php/captcha.php" id="captchaimg"/></td><td><input type="text" name="captcha" id="captcha"/></td></tr>
 
 	  <tr><td></td><td><input type="submit" value="Sign up" /></td></tr>
 
@@ -237,7 +254,7 @@ In case you do not have login credentials, please click here.
 
 <div id="instruction" title="0">
 
-Hey, now that you've learnt shell commands to do basic file management, we have an exercise for you.
+Now that we have learnt shell commands to do basic file management, we have an exercise for you.
 
 The shell above supports few basic shell commands. Play along to get some hands-on experience of the interface.
 
@@ -261,6 +278,7 @@ try: start,next,prev,clear,logout.
       
           <div id="experiment-article-section-6-icon" 
           class="icon">
+	    <!-- Enclose the icon image of your lab.-->
 	    <img src="../images/quizzes.jpg" />
 	  </div>
 
@@ -271,16 +289,18 @@ try: start,next,prev,clear,logout.
 
           <div id="experiment-article-section-6-content" 
           class="content">
-	    <ol>
-<li>What command would you use to stream the log entries of Apache
-  onto your screen?</li>
-<li>Suppose you are unable to ssh into one machine. Which log file
-  would you look into?</li>
-</ol>
+<ul><li>The command "rm xyz" is enough to delete the directory xyz containing subdirectories. True or false?</li>
+<li>Permission for a file "-rw-r--r--" means it can be executed by anyone in the group. True or false?</li>
+<li>The pwd command gives the absolute path of the current directory. True or false?</li>
+<li>The latest edited file/folder comes last in the output of ls -t. True or false?</li>
+<li> In the output of ls -l, the second column for directories denotes which one of the following:<ul>
+<li>No of subdirectories </li>
+<li>No of subdirectories + No. of files int the directory</li>
+<li>c. No of subdirectories including hidden directories</li></ul></li></ul>
+
           </div>
 
         </section>
-
 
         <section id="experiment-article-section-8">
    
@@ -292,18 +312,22 @@ try: start,next,prev,clear,logout.
 
           <div id="experiment-article-section-8-heading" 
           class="heading">
-            Further Readings
+            Readings
           </div>
 
           <div id="experiment-article-section-8-content" 
           class="content">
-<ol>
-<li><a href="http://www.thegeekstuff.com/2011/08/linux-var-log-files">http://www.thegeekstuff.com/2011/08/linux-var-log-files</a>/</li>
-<li><a href="http://www.nixtutor.com/linux/getting-familiar-with-linux-logs/">http://www.nixtutor.com/linux/getting-familiar-with-linux-logs/</a></li>
-</ol>
+	<ul>
+	<li><a href="http://polishlinux.org/console/file-management-in-linux/">http://polishlinux.org/console/file-management-in-linux/</a> </li>
+	<li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?ls">ls man page</a></li>
+	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html</a></li>
+	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html</a></li>
+	<li><a href="http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml">http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml</a></li>
+</ul>
           </div>
 
         </section>
+
     <section id="experiment-article-section-9">
 
           <div id="experiment-article-section-9-icon" 
@@ -324,6 +348,8 @@ try: start,next,prev,clear,logout.
           </div>
 
         </section>
+	
+        
 
       </div>
 
@@ -352,7 +378,6 @@ try: start,next,prev,clear,logout.
     <!-- Put the content here-->
 	<a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
   </footer>
-
 </div>		
 
 </body>
