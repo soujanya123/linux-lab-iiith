@@ -49,7 +49,7 @@ edit -->
 	<header id="experiment-article-heading" class="heading">
 	<!-- You can add a welcome message or title of the 
 	experiment here -->
-	Hard and Soft Linking
+	Advanced File Management
 	<!-- Add any additional element if required with proper 
 	enclosing-->
 	</header>
@@ -124,6 +124,132 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-2-content" 
 	class="content">
+	<h3>
+	File Hierarchy System
+	</h3>
+	<p>
+	The File Hierarchy Standard (FHS) defines the main directories and their contents in GNU operating systems like Linux. All
+	files and directories appear under the root directory. Type the <code>'ls -a'</code> command to view all files and folders in the current
+	working directory, including the hidden directories.
+	</p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ ls -a
+	.  ..  all_about_console.txt  example.txt  my_project
+	</pre>
+	<p>
+	Here, '.' refers to the current directory, and '..' refers to the parent directory.
+	</p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ pwd
+	/home/johndoe/Documents
+
+	johndoe@laptop:~/Documents$ cd .
+	johndoe@laptop:~/Documents$ pwd
+	/home/johndoe/Documents
+
+	johndoe@laptop:~/Documents$ cd ..
+	johndoe@laptop:~/Documents$ pwd
+	/home/johndoe
+	</pre>
+	<h3>
+	<h3>
+	Shell Wildcards
+	</h3>
+	<p>
+	Wildcards are a shell feature that allow you to select a big group of files using certain special characters. It is useful when you want
+	to perform an operation on a particular group of files.
+	</p>
+	<p>
+	The following are the most commonly used wildcards in bash:
+	</p>
+	<table border="1">
+	<thead>
+	<tr>
+	<td align="center"><u>Wildcard</u></td>
+	<td align="center"><u>Matches</u></td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>*</td>
+	<td>zero or more characters</td>
+	</tr>
+	<tr>
+	<td>?</td>
+	<td>exactly one character</td>
+	</tr>
+	<tr>
+	<td>[abcde]</td>
+	<td>exactly one character listed</td>
+	</tr>
+	<tr>
+	<td>[a-e]</td>
+	<td>exactly one character in the given range.</td>
+	</tr>
+	<tr>
+	<td>[!abcde]</td>
+	<td>any character that is not listed</td>
+	</tr>
+	<tr>
+	<td>[!a-e]</td>
+	<td>any character that is not in the given range</td>
+	</tr>
+	<tr>
+	<td>{debian,linux}</td>
+	<td>exactly one entire word in the options given</td>
+	</tr>
+	</table>
+	<h3>'find' command</h3>
+	<p>
+	The <code>'find'</code> command is used to search for files in a directory. find searches the directory tree rooted under the file name.
+	</p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ find my_project
+	my_project
+	my_project/vlabs_ui
+	my_project/vlabs_ui/css
+	my_project/vlabs_ui/css/code.css
+	my_project/vlabs_ui/css/common.css
+	my_project/vlabs_ui/css/corners.css
+	my_project/vlabs_ui/css/forms.css
+	my_project/vlabs_ui/css/layout.css
+	my_project/vlabs_ui/css/reset.css
+	my_project/vlabs_ui/images
+	my_project/vlabs_ui/images/graphic-logo.gif
+	my_project/vlabs_ui/index.html
+	my_project/vlabs_ui/js
+	my_project/vlabs_ui/js/nav.js
+	my_project/vlabs_ui/Milikan_oil_drop.html
+	my_project/vlabs_ui/README
+	my_project/vlabs_ui/simple_pendulum.html
+	my_project/vlabs_ui/Sys
+	my_project/vlabs_ui/n
+	my_project/vlabs_ui/sw.html
+	</pre>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ find my_project/*
+	my_project
+	my_project/vlabs_ui
+	</pre>
+	<h3>
+	nano
+	</h3>
+	<p>
+	nano is a text editor that is easy to use and offers a lot of functionality to the user. Type <code>nano</code> form your command line, 
+	without any arguments to open the nano editor.
+	</p>
+	<p>
+	There are four main sections of the editor. The top line shows the program version, the current filename being edited and whether or not
+	the file has been modified. Next is the main window showing the main file being edited. The status line is the third line from the bottom
+	and shows important messages. The bottom two lines show the most commonly used shortcuts in the editor.
+	</p>
+	<p>
+	In the shortcuts section, the Ctrl-key is represented by a '^' and can be entered either using the Ctrl-key or by pressing Esc-key twice.
+	Type ^G to get help and ^O to save the file to disk.
+	</p>
+	<h3>
+	Linking of Files
+	</h3>
 	<p>1. Soft or Sym linking a file:</p>
 	<p>
 The ln -s command is used to soft link files. A Soft link refers to symbolic path indicating the abstract location of another file. 
@@ -137,11 +263,12 @@ johndoe@laptop:~/Documents$ ls -l
 lrwxr-xr-x   1 saint  staff       10 Jul  1 13:56 link_name -> source_file
 
 </pre>
+<p>
 <font size="4">2. Hard Linking:</font>
-
-<br><br>
+</p>
+<p>
 A hard link to a file is indistinguishable from the original directory entry; any changes to a file are effectively independent of the name used to reference the file. Hard links may not normally refer to directories and may not span file systems. The Command for hardlinking is ln. It can be used for files as well as directories.
-
+</p>
 <pre class="code">
 
 johndoe@laptop:~/Documents$ mkdir foo
@@ -149,6 +276,184 @@ johndoe@laptop:~/Documents$ mkdir foo
 johndoe@laptop:~/Documents/my_project$ mkdir bar
 
 johndoe@laptop:~/Documents/my_project$ ln foo bar
+</pre>
+	<h3><code>'du'</code> command</h3>
+	<p>
+	The <code>'du'</code> command gives an estimate of the disk space usage of each file listed in the argument, recursively for directories.
+	<code>'du'</code> command entered without any arguments recursively gives the disk space usage of all files and directories in the
+	current working directory. When arguments are entered, <code>'du'</code> returns the space occupied by each of the files entered in the 
+	arguments. Some useful options are: '-c' which prints the total size occupied by the directory, '-h' which prints the file size in 
+	human-readable format. Check out the man page for a complete list of options.
+	</p>
+	<pre class="code">
+	johndoe@laptop:~/Documents/my_project/vlabs_ui$ du css
+	8	css/lab
+	24	css
+	</pre>
+	<h3><code>'file'</code> command</h3>
+	<p>
+	The <code>'file'</code> is used to determine the file type of its argument. file tests each of its arguments using three sets of tests,
+	performed in the following order: filesystem tests, magic tests and language tests. The first test that succeeds returns the file type.
+	The type printed usually contains the one of the words, 'text', which means the file contains only printing characters and is probably
+	safe to read on an ASCII terminal, 'executable', which means the file contains the result of compiling a program in a form understandable
+	     to some UNIX kernel or another, or 'data', meaning anything else, usually binary or non-printable.
+	     </p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ file my_project
+	my_project: directory
+
+	johndoe@laptop:~/Documents$ file example.txt
+	example.txt: ASCII text
+	</pre>
+	<h3>tar</h3>
+	<p>
+	<code>'tar'</code> command is used for creating tape archives or adding and extracting files from a tape archive. The syntax is:
+	<code>tar -[function-letter] [options] [tarfile] [pathname ...]</code>
+	</p>
+	<p>
+	Here, the function-letter specifies the function to be performed on the files. It is prefixed with a '-' or with a '--' if the long-form
+	of the function name is used. The 'tarfile' is the name of the archive and the 'pathname' specifies the individual files.
+	</p>
+	<table border="1">
+	<thead><tr>
+	<td align="center"><u>function</u></td>
+	<td align="center"><u>operation</u></td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>-A</td><td>append tar files to an archive</td></tr>
+	<tr>
+	<td>-c</td><td>create a new archive</td></tr>
+	<tr>
+	<td>-d</td><td>find differences between archive and file system</td></tr>
+	<tr>
+	<td>--delete</td><td>delete from the archive</td></tr>
+	<tr>
+	<td>-r</td><td>append files to the end of an archive</td></tr>
+	<tr>
+	<td>-t</td><td>list the contents of an archive</td></tr>
+	<tr>
+	<td>-u</td><td>only append files newer than the copy in archive</td></tr>
+	<tr>
+	<td>-x</td><td>extract files from an archive</td></tr>
+	</tbody>
+	</table>
+	<p>Some commonly used options are:</p>
+	<table border="1">
+	<thead>
+	<tr>
+	<td align="center"><u>Option</u></td><td align="center"><u>Usage</u></td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>-f</td><td>Use the tarfile argument as the name of the tarfile.</td></tr>
+	<tr>
+	<td>-v</td><td>Verbose. Outputs the name of each file, preceded by the function letter.</td>
+	</tr>
+	</tbody>
+	</table>
+	<p>
+	For a complete list of options, type <code>tar --help</code> in your command line.
+	</p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ tar -cvf example.tar example.txt all_about_console.txt
+	example.txt 
+	all_about_console.txt
+
+	johndoe@laptop:~/Documents$ tar -rvf example.tar my_project
+	my_project/
+	my_project/vlab_ui
+	</pre>
+	<h3>zip/unzip</h3>
+	<p>
+	zip is used for compression and file packaging. unzip unpacks zip archives. The syntax is <code>zip [options] [archive] [inpath ...]</code>
+	where archive is the name of a new or existing archive and inpath is a directrory or file path, optionally including wildcards. Type
+	<code>zip</code> without any arguments to look at the list of options.
+	</p>
+	<pre class="code">
+johndoe@laptop:~/Documents$ zip
+Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license.
+Zip 3.0 (July 5th 2008). Usage:
+zip [-options] [-b path] [-t mmddyyyy] [-n suffixes] [zipfile list] [-xi list]
+The default action is to add or replace zipfile entries from list, which
+can include the special name - to compress standard input.
+If zipfile and list are omitted, zip compresses stdin to stdout.
+-f   freshen: only changed files  
+-u   update: only changed or new files
+-d   delete entries in zipfile    
+-m   move into zipfile (delete OS files)
+-r   recurse into directories     
+-j   junk (don't record) directory names
+-0   store only                   
+-l   convert LF to CR LF (-ll CR LF to LF)
+-1   compress faster              
+-9   compress better
+-q   quiet operation              
+-v   verbose operation/print version info
+-c   add one-line comments        
+-z   add zipfile comment
+-@   read names from stdin        
+-o   make zipfile as old as latest entry
+-x   exclude the following names  
+-i   include only the following names
+-F   fix zipfile (-FF try harder) 
+-D   do not add directory entries
+-A   adjust self-extracting exe   
+-J   junk zipfile prefix (unzipsfx)
+-T   test zipfile integrity       
+-X   eXclude eXtra file attributes
+-y   store symbolic links as the link instead of the referenced file
+-e   encrypt                      
+-n   don't compress these suffixes
+-h2  show more help
+</pre>
+<p>
+unzip is used to list, test and extract files from a zip archive. The syntax is <code>unzip [options] [zipfile] [file-list] [-x xlist] [-d exdir]
+</code> where zipfile is the archive path, the rest are optional arguments - file-list specifies the list of files to be extracted, xlist the
+list of files to be ignored and exdir the directory to which the files are to be extracted. Type unzip without any arguments to view the complete
+usage and options.
+</p>
+<pre class="code">
+UnZip 6.00 of 20 April 2009, by Debian. Original by Info-ZIP.
+
+Usage: unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir]
+Default action is to extract files in list, except those in xlist, to exdir;
+file[.zip] may be a wildcard.  -Z => ZipInfo mode ("unzip -Z" for usage).
+
+-p  extract files to pipe, no messages     
+-l  list files (short format)
+-f  freshen existing files, create none    
+-t  test compressed archive data
+-u  update files, create if necessary      
+-z  display archive comment only
+-v  list verbosely/show version info       
+-T  timestamp archive to latest
+-x  exclude files that follow (in xlist)   
+-d  extract files into exdir
+modifiers:
+-n  never overwrite existing files         
+-q  quiet mode (-qq => quieter)
+-o  overwrite files WITHOUT prompting      
+-a  auto-convert any text files
+-j  junk paths (do not make directories)   
+-aa treat ALL files as text
+-U  use escapes for all non-ASCII Unicode  
+-UU ignore any Unicode fields
+-C  match filenames case-insensitively     
+-L  make (some) names lowercase
+-X  restore UID/GID info                   
+-V  retain VMS version numbers
+-K  keep setuid/setgid/tacky permissions   
+-M  pipe through "more" pager
+-O CHARSET  specify a character encoding for DOS, Windows and OS/2 archives
+-I CHARSET  specify a character encoding for UNIX and other archives
+
+See "unzip -hh" or unzip.txt for more help.  Examples:
+unzip data1 -x joe   => extract all files except joe from zipfile data1.zip
+unzip -p foo | more  => send contents of foo.zip via pipe into program more
+unzip -fo foo ReadMe => quietly replace existing ReadMe if archive file newer
 </pre>
 	</div>
       </section>
