@@ -282,6 +282,143 @@ root@johndoe-laptop:~#  ifconfig eth0:2 up
 root@johndoe-laptop:~#  ifconfig eth0:2 down
 </pre>
 </p>
+<h3>ip command</h3>
+<p>
+The <code>'ip'</code> command is used for showing/manipulating routing, devices, policy routing and tunnels. The syntax is: <code>
+ip [options] &ltobject&gt {command | help}</code><br>
+The set of objects are:</p>
+<table border="1">
+<thead><tr align="center">
+<td><u>Object</u></td><td><u>Meaning</u></td>
+</tr></thead>
+<tbody>
+<tr>
+<td>link</td><td>network device</td>
+</tr><tr>
+<td>address</td><td>IP or IPv6 address on a device.</td>
+</tr><tr>
+<td>route</td><td>routing table entry</td>
+</tr><tr>
+<td>rule</td><td>rule in routing policy database</td>
+</tr><tr>
+<td>maddress</td><td>multicast address</td>
+</tr><tr>
+<td>mroute</td><td>multicast routing cache entry</td>
+</tr><tr>
+<td>tunnel</td><td>tunnel over IP</td>
+</tr></tbody>
+</table>
+<p>
+Commonly used options are:
+<table border="1">
+<thead><tr align="center">
+<td><u>Option</u></td><td><u>Purpose</u></td>
+</tr></thead>
+<tbody><tr>
+<td>-s</td><td>outputs more information. If the option appears twice or more, the amount of information increases. The information is statistics
+or some time value.</td>
+</tr><tr>
+<td>-f</td><td>the option followed by the family identifier like inet, inet6 or link, enforce the protocol family to use.</td>
+</tr><tr>
+<td>-r</td><td>print the DNS names instead of host addresses using the systems name resolver.</td>
+</tr>
+</tbody></table>
+<p>
+'Command' specifies the action to perform on the object. Most objects allow you to execute the add, delete and show/list commands. The help command gives the set of all commands for an object. When the command is not specified, the default command, generally list, is executed. If the object
+doesnot allow list, then the help command is executed by default.
+</p>
+<pre class="code">
+johndoe@laptop:~$ ip address help
+Usage: ip addr {add|change|replace} IFADDR dev STRING [ LIFETIME ]                                                      [ CONFFLAG-LIST ]
+						             ip addr del IFADDR dev STRING
+							            ip addr {show|flush} [ dev STRING ] [ scope SCOPE-ID ] [ to PREFIX ] [ FLAG-LIST ] [ label PATTERN ]
+												IFADDR := PREFIX | ADDR peer PREFIX
+												          [ broadcast ADDR ] [ anycast ADDR ]
+													            [ label STRING ] [ scope SCOPE-ID ]
+														    SCOPE-ID := [ host | link | global | NUMBER ]
+														    FLAG-LIST := [ FLAG-LIST ] FLAG
+														    FLAG  := [ permanent | dynamic | secondary | primary | tentative | deprecated | dadfailed | temporary | CONFFLAG-LIST ]
+																	  CONFFLAG-LIST := [ CONFFLAG-LIST ] CONFFLAG
+																	  CONFFLAG  := [ home | nodad ]
+																	  LIFETIME := [ valid_lft LFT ] [ preferred_lft LFT ]
+																	  LFT := forever | SECONDS
+
+johndoe@laptop:~$ ip address show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+	    inet6 ::1/128 scope host 
+	           valid_lft forever preferred_lft forever
+		   2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+		       link/ether 00:26:9e:56:6e:6a brd ff:ff:ff:ff:ff:ff
+		           inet 10.1.34.162/24 brd 10.1.34.255 scope global eth0
+			       inet6 fe80::226:9eff:fe56:6e6a/64 scope link 
+			              valid_lft forever preferred_lft forever
+				      3: wlan0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+					  link/ether 00:1e:64:4a:56:c0 brd ff:ff:ff:ff:ff:ff
+
+johndoe@laptop:~$ ip address show dev lo scope host
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+	    inet6 ::1/128 scope host 
+	           valid_lft forever preferred_lft forever
+</pre>
+<p>
+This command displays the list of network interfaces and the ip address of the active interface. For example, the eth0 interface has an ip address of 10.1.34.255 and an IPv6 address of fe80::226:9eff:fe56:6e6a/64.</p>
+<p>Adding the dev and scope argument displays only those interfaces that have the specified device name and scope, respectively.</p>
+<pre class="code">
+johndoe@laptop:~$ ip link set eth0 up
+</pre>
+<p>
+This command behaves similar to the <code>ifconfig</code> command, and activates the eth0 interface. Similarly, using the 'down' keyword will
+deactivate the eth0 interface.
+</p>
+<p>The command <code>ip address add</code> adds a new protocol address to an interface. <code>ip address delete</code> deletes the ip address
+of that interface.</p>
+<pre class="code">
+root@johndoe-laptop:~$ ip address add dev lo 127.0.0.3
+root@johndoe-laptop:~$ ip address show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+	    inet 127.0.0.3/32 scope host lo
+	        inet6 ::1/128 scope host 
+		       valid_lft forever preferred_lft forever
+		       2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+		           link/ether 00:26:9e:56:6e:6a brd ff:ff:ff:ff:ff:ff
+			       inet 10.1.34.162/24 brd 10.1.34.255 scope global eth0
+			           inet6 fe80::226:9eff:fe56:6e6a/64 scope link 
+				          valid_lft forever preferred_lft forever
+					  3: wlan0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+					      link/ether 00:1e:64:4a:56:c0 brd ff:ff:ff:ff:ff:ff
+
+root@johndoe-laptop:~$ ip address delete dev lo 127.0.0.3
+root@johndoe-laptop:~$ ip address show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+	        inet6 ::1/128 scope host 
+		       valid_lft forever preferred_lft forever
+		       2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+		           link/ether 00:26:9e:56:6e:6a brd ff:ff:ff:ff:ff:ff
+			       inet 10.1.34.162/24 brd 10.1.34.255 scope global eth0
+			           inet6 fe80::226:9eff:fe56:6e6a/64 scope link 
+				          valid_lft forever preferred_lft forever
+					  3: wlan0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+					      link/ether 00:1e:64:4a:56:c0 brd ff:ff:ff:ff:ff:ff
+</pre>
+<h3>hostname command</h3>
+<p>
+The <code>'hostname'</code> command is used to show or set the system's hostname. When called without any arguments, the current host name of the system is displayed. When followed by an argument, the hostname is changed to the given argument.</p>
+<pre class="code">
+johndoe@laptop:~$ hostname
+laptop
+
+johndoe@laptop:~$ hostname vlabs
+johndoe@laptop:~$ hostname
+vlabs
+</pre>
 <h3>The <code>"ping"</code> command</h3>
 <p>
 <code>"ping"</code> command is used mainly for network testing, measurement and management. When you type <code>"ping"</code> followed by the 
@@ -315,6 +452,41 @@ traceroute to virtual-labs.ac.in (10.4.7.5), 30 hops max, 60 byte packets
 3  10.4.7.5 (10.4.7.5)  0.571 ms  0.928 ms  1.167 ms
 </pre>
 </p>
+
+<h3>ssh</h3>
+<p>
+ssh is a program used for logging into and executing commands on a remote machine. It provides secure encrypted communication between two untrusted hosts over an insecure network. <code>ssh &lt[user@]hostname&gt</code> connects and logs into the specified hostname. Usage is straightforward.
+Type ssh without any arguments to look at the syntax and the list of options.
+</p>
+<pre class="code">
+usage: ssh [-1246AaCfgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
+[-D [bind_address:]port] [-e escape_char] [-F configfile]
+[-I pkcs11] [-i identity_file]
+[-L [bind_address:]port:host:hostport]
+[-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+[-R [bind_address:]port:host:hostport] [-S ctl_path]
+[-W host:port] [-w local_tun[:remote_tun]]
+[user@]hostname [command]
+</pre>									     
+<h3>Wget</h3>
+<p>
+Wget is a utility that facilitates the non-interactive download of files from the Web. HTTP, HTTPS and FTP protocols are supported. It can also
+retreive files through an HTTP proxy. The syntax is: <code>wget [option]... [URL]...</code> Type <code>wget --help</code> for its usage and
+complete list of options.
+</p>
+<p>
+The -b option makes Wget work in the background. You can disconnect from the system and Wget will do the download work for you.
+</p>
+<p>
+The -r option facilitates recursive download of files from a remote website, creating a local copy of the website, fully recreating the directory
+structure of the original website. This is useful for viewing websites offline.
+</p>
+<p>
+When a download fails due to a network problem, Wget will keep retrying until it retrieves the entire file. This feature is useful when working
+over slow or unstable network conditions. The -c option is used to continue download of a partially downloaded file.
+</p>
+<p>Another useful option is '--no-proxy' which makes Wget override any system proxy settings and download files without proxies.</p>
+
         </div>
       </section>
 
