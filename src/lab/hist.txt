@@ -1,0 +1,1000 @@
+  955  vim content.html 
+  956  cd ../..
+  957  make clean all
+  958  cd lab/exp1
+  959  ls
+  960  vim content.html 
+  961  cd ../exp2
+  962  vim content.html 
+  963  cd ../..
+  964  make clean all
+  965  cd lab/exp1
+  966  ls
+  967  vim index.html 
+  968  vimdiff
+  969  vimdiff index.html ../exp2/index.html 
+  970  vim index.html 
+  971  vim content.html 
+  972  cd ../exp2
+  973  vim index.html 
+  974  cd ../../
+  975  make clean all
+  976  cd ..
+  977  svn update
+  978  svn cleanup
+  979  svn commit -m "Content update till exp2. bugs in exp1"
+  980  svn update
+  981  top
+  982  cd cse09/
+  983  svn update 
+  984  cd src
+  985  cd lab
+  986  cd exp1
+  987  vim content.html 
+  988  cd ../exp2
+  989  ls
+  990  vim content.html 
+  991  cd ../exp3
+  992  vim content.html 
+  993  cd ../..
+  994  make clean all
+  995  cd
+  996  cd cse09/src/lab/exp2
+  997  vim content.html 
+  998  cd ../..
+  999  make clean all
+ 1000  man rmdir
+ 1001  make clean all
+ 1002  cd lab
+ 1003  vim index.html 
+ 1004  cd ..
+ 1005  man ps
+ 1006  man top
+ 1007  man ping
+ 1008  man traceroute
+ 1009  man traceroute6
+ 1010  traceroute
+ 1011  sudo apt-get install traceroute
+ 1012  man traceroute
+ 1013  ps -o
+ 1014  ps -o pid
+ 1015  ps -o pid, ruser=RealUser
+ 1016  ps
+ 1017  ps -o pid tty
+ 1018  ps -o pid time
+ 1019  ps
+ 1020  ps -o pid=17746
+ 1021  ps -o pid, -o comm=ps
+ 1022  ps -o pid, -o comm
+ 1023  ps -o pid comm
+ 1024  ps -o pid, comm
+ 1025  ps -o pid, -o comm
+ 1026  ps | grep bash
+ 1027  make clean all
+ 1028  cd lab
+ 1029  vim content.html 
+ 1030  make clean all
+ 1031  cd ..
+ 1032  make clean all
+ 1033  ping google.com
+ 1034  traceroute google.com
+ 1035  ping virtual-labs.ac.in
+ 1036  make clean all
+ 1037  traceroute virtual-labs.ac.in
+ 1038  make clean all
+ 1039  cd ..
+ 1040  svn update
+ 1041  svn commit -m "exp3 till mid-traceroute"
+ 1042  svn update
+ 1043  cd cse09/src/lab/exp4
+ 1044  vim content.html 
+ 1045  cd ../exp5
+ 1046  vim content.html 
+ 1047  cd ../../
+ 1048  make clean all
+ 1049  man whoami 
+ 1050  make clean all
+ 1051  svn commit -m "till exp4, networking left"
+ 1052  mkdir icpc
+ 1053  cd icpc
+ 1054  vim p4.c
+ 1055  man chmod
+ 1056  ls
+ 1057  cd cse09/
+ 1058  cd src
+ 1059  make clean all
+ 1060  groups
+ 1061  newgroup
+ 1062  addgroup
+ 1063  groupadd
+ 1064  make clean all
+ 1065  su
+ 1066  sudo
+ 1067  sudo su
+ 1068  make clean all
+ 1069  su
+ 1070  92
+ 1071  su
+ 1072  gpasswd
+ 1073  groups
+ 1074  gpasswd kaushik
+ 1075  gpasswd
+ 1076  make clean all
+ 1077  ls -l
+ 1078  make clean all
+ 1079  who
+ 1080  w
+ 1081  ls -l
+ 1082  chown makefile
+ 1083  chown root makefile
+ 1084  sudo su
+ 1085  sudo chown root makefile
+ 1086  ls -l
+ 1087  sudo chown root root makefile
+ 1088  sudo chown root :root makefile
+ 1089  sudo chown root .root makefile
+ 1090  groups
+ 1091  sudo chown root .sudo makefile
+ 1092  sudo chown root :sudo makefile
+ 1093  groups
+ 1094  sudo chown root :sudo makefile
+ 1095  sudo chown :sudo makefile
+ 1096  ls -l
+ 1097  make clean all
+ 1098  ls
+ 1099  ls -l
+ 1100  sudo chmod +x makefile
+ 1101  ls -l
+ 1102  sudo chmod -x makefile
+ 1103  ls -l
+ 1104  sudo chmod +rwx makefile
+ 1105  ls -l
+ 1106  sudo chown kaushik makefile 
+ 1107  sudo chown :kaushik makefile 
+ 1108  ls -l
+ 1109  sudo chmod -x makefile
+ 1110  ls -l
+ 1111  chmod
+ 1112  chmod --help
+ 1113  ls -l
+ 1114  chmod makefile u+x
+ 1115  chmod makefile u+=x
+ 1116  chmod makefile u +=x
+ 1117  chmod --help
+ 1118  chmod u+x makefile 
+ 1119  ls -l
+ 1120  chmod u+x makefile, g+w makefile 
+ 1121  chmod u+x makefile g+w makefile 
+ 1122  chmod u+x g+w makefile
+ 1123  chmod u+x,g+w makefile
+ 1124  ls -l
+ 1125  chmod u-x,g=r makefile
+ 1126  ls -l
+ 1127  make clean all
+ 1128  man
+ 1129  info man
+ 1130  info
+ 1131  inco copy
+ 1132  info copy
+ 1133  info cp
+ 1134  info
+ 1135  whatis
+ 1136  gzip -h
+ 1137  apropos
+ 1138  apropos bash autocomplete
+ 1139  cd lab
+ 1140  vim index.html 
+ 1141  vim content.html 
+ 1142  cd ..
+ 1143  make clean all
+ 1144  cd lab/exp5
+ 1145  vim content.html 
+ 1146  cd ../exp6
+ 1147  vim content.html 
+ 1148  cd ..
+ 1149  ls
+ 1150  cp exp10 exp11
+ 1151  ls
+ 1152  cp exp10 exp11
+ 1153  mkdir exp11
+ 1154  cp exp10/* exp11
+ 1155  ls exp11
+ 1156  rm -r exp11
+ 1157  ls
+ 1158  cp exp1 exp11
+ 1159  mkdir exp11
+ 1160  cp exp10/* exp11
+ 1161  ls exp11
+ 1162  cd exp11
+ 1163  vim content.html 
+ 1164  cd ..
+ 1165  ls
+ 1166  rm -r exp11
+ 1167  ls
+ 1168  cp exp1 exp11
+ 1169  ls
+ 1170  mkdir exp11
+ 1171  ls exp11
+ 1172  cp exp1/* exp11
+ 1173  ls exp11
+ 1174  cd exp11
+ 1175  vim content.html 
+ 1176  man whoami 
+ 1177  man su
+ 1178  man gpasswd
+ 1179  man chmod
+ 1180  man chown
+ 1181  man chmod
+ 1182  demesg
+ 1183  dmesg
+ 1184  man man
+ 1185  man info
+ 1186  info whatis
+ 1187  man -h
+ 1188  ls -h
+ 1189  cd -h
+ 1190  info -h
+ 1191  wget -h
+ 1192  wget
+ 1193  man
+ 1194  info
+ 1195  info apropos
+ 1196  cd lab
+ 1197  svn add exp11
+ 1198  cd ..
+ 1199  svn update
+ 1200  svn commit -m "getting help added. exp5, 6 are done."
+ 1201  svn update
+ 1202  nano
+ 1203  ping google.com
+ 1204  find lab
+ 1205  ls
+ 1206  find theme
+ 1207  find themes
+ 1208  ls
+ 1209  find help
+ 1210  ls
+ 1211  find lib
+ 1212  find
+ 1213  ping intranet.iiit.ac.in
+ 1214  ping google.com
+ 1215  ping intranet.iiit.ac.in
+ 1216  ps
+ 1217  ps -c firefox
+ 1218  ps -e | grep firefox
+ 1219  killall 2002
+ 1220  kill 2002
+ 1221  cd ../exp1
+ 1222  ls
+ 1223  vim content.html 
+ 1224  cd ../..
+ 1225  make clean all
+ 1226  man nano
+ 1227  man find
+ 1228  cd cse09/
+ 1229  cd src
+ 1230  make clean all
+ 1231  cd lab/exp7
+ 1232  vim content.html 
+ 1233  cd
+ 1234  cd Downloads/
+ 1235  ls |grep *.flv
+ 1236  rm |grep *.flv
+ 1237  rm < grep *.flv
+ 1238  rm -rf | grep *.flv
+ 1239  rm |grep *.flv
+ 1240  ls |grep *.flv
+ 1241  rm -rf | grep *.flv
+ 1242  ls |grep *.flv
+ 1243  rm -r | grep *.flv
+ 1244  rm --help
+ 1245  rm *.flv
+ 1246  ls |grep *.flv
+ 1247  rm *.wmv
+ 1248  ls |grep *.wmv
+ 1249  cd ../Documents/
+ 1250  ls
+ 1251  ls css/
+ 1252  cd css
+ 1253  tar -cvf ex.tar code.css common.css
+ 1254  tar -Avf ex.tar lab
+ 1255  ls
+ 1256  tar -Avf ex.tar lab
+ 1257  tar -xvf ex1.tar lab
+ 1258  tar -cvf ex1.tar lab
+ 1259  tar -rvf ex.tar lab
+ 1260  cd lab
+ 1261  mkdir ex
+ 1262  cd ex
+ 1263  vim 2.txt
+ 1264  cd ../..
+ 1265  ls
+ 1266  taqr -uvf ex.tar lab
+ 1267  tar -uvf ex.tar lab
+ 1268  ls
+ 1269  tar -tvf ex.tar
+ 1270  tar -Avf ex.tar lab
+ 1271  tar -Avf ex.tar corners.css
+ 1272  tar -tvf ex.tar
+ 1273  tar -tf ex.tar
+ 1274  cd cse09
+ 1275  svn updaqte
+ 1276  svn update
+ 1277  cd src
+ 1278  make clean all
+ 1279  cd lab/exp7
+ 1280  vim content.html 
+ 1281  man find
+ 1282  man nano
+ 1283  nano
+ 1284  nano test.txt
+ 1285  man du
+ 1286  man file
+ 1287  man tar
+ 1288  man zip
+ 1289  man unzip
+ 1290  find
+ 1291  ls
+ 1292  cd ..
+ 1293  find exp7/*
+ 1294  find exp7
+ 1295  find exp7/*
+ 1296  cd ..
+ 1297  make clean all
+ 1298  nano
+ 1299  du
+ 1300  ls
+ 1301  du themes
+ 1302  du -c
+ 1303  ls
+ 1304  du nano.save themes
+ 1305  cd 
+ 1306  cd Documents/
+ 1307  ls
+ 1308  vim all_about_console.txt
+ 1309  vim example.txt
+ 1310  mkdir my_project
+ 1311  cd my_project
+ 1312  mkdir vlabs_ui
+ 1313  cd vlabs_ui/
+ 1314  mkdir css
+ 1315  cd css
+ 1316  ls
+ 1317  cd ../..
+ 1318  cd ..
+ 1319  rm -rf *
+ 1320  ls
+ 1321  mkdir css
+ 1322  cd css
+ 1323  vim code.css
+ 1324  vim common.css
+ 1325  vim corners.css
+ 1326  mkdir lab
+ 1327  cd lab
+ 1328  vim 1.txt
+ 1329  cd ..
+ 1330  du css
+ 1331  du
+ 1332  cd
+ 1333  cd cse09
+ 1334  du
+ 1335  cd
+ 1336  cd Documents/
+ 1337  du css
+ 1338  file css
+ 1339  file css/code.css
+ 1340  cd
+ 1341  cd cse09/
+ 1342  cd src/lab
+ 1343  cd exp2
+ 1344  ls
+ 1345  file content.html 
+ 1346  file
+ 1347  cd
+ 1348  cd Documents/
+ 1349  ls
+ 1350  cd css
+ 1351  ls
+ 1352  file lab
+ 1353  cd lab
+ 1354  ls
+ 1355  file 1.txt
+ 1356  tar
+ 1357  tar --help
+ 1358  cd exp1
+ 1359  ls
+ 1360  cd
+ 1361  cd cse09/src/lab/exp1
+ 1362  ls
+ 1363  vim interaction-frame.html 
+ 1364  vim tasks 
+ 1365  vim tasks
+ 1366  cd ../../..
+ 1367  cd src
+ 1368  make clean all
+ 1369  zip
+ 1370  make clean all
+ 1371  unzip
+ 1372  make clean all
+ 1373  cd ..
+ 1374  cd -
+ 1375  cd lab/
+ 1376  ls
+ 1377  vim content.html 
+ 1378  cd cse09/
+ 1379  svn update
+ 1380  svn commit -m "adv. file mgmt added"
+ 1381  svn update
+ 1382  ls
+ 1383  ls scripts/
+ 1384  cd src
+ 1385  ls
+ 1386  cd lab
+ 1387  ls
+ 1388  cd php
+ 1389  ls
+ 1390  vim task-fetch.php 
+ 1391  cd ../
+ 1392  ls
+ 1393  cd ..
+ 1394  make clean all
+ 1395  gparted
+ 1396  sudo apt-get install gparted
+ 1397  sudo apt-get install ntfs-3g
+ 1398  mount
+ 1399  mount /dev/sdab
+ 1400  mount /dev/sdb
+ 1401  mount /dev/sdbman mount
+ 1402  man mount
+ 1403  sudo mount /dev/sdb
+ 1404  mount -t /dev/sdb
+ 1405  sudo fdisk -l
+ 1406  mount -t /dev/sdb1
+ 1407  sudo mkdir /media/external
+ 1408  sudo mount -t ntfs-3g /dev/sdb1 /media/external
+ 1409  p7zip
+ 1410  sudo apt-get install p7zip
+ 1411  links
+ 1412  ip
+ 1413  man llinks
+ 1414  man links
+ 1415  links
+ 1416  sudo apt-get install links
+ 1417  man links
+ 1418  ssh kaushik.srinivasan@mirage.iiit.ac.in
+ 1419  ssh
+ 1420  man hostname
+ 1421  ip link
+ 1422  sudo ip link
+ 1423  cd cse09/
+ 1424  svn update 
+ 1425  cd src/lab
+ 1426  ls
+ 1427  cd exp3
+ 1428  vim content.html 
+ 1429  cd ..
+ 1430  make clean all
+ 1431  man ssh
+ 1432  man ip
+ 1433  info ip
+ 1434  vim  /usr/share/doc/iproute-2.4.7/ip-cref.ps   
+ 1435  vimdd  /usr/share/doc/iproute-2.4.7/ip-cref.ps   
+ 1436  info ip
+ 1437  man ip
+ 1438  ip
+ 1439  make clean all
+ 1440  ip link help
+ 1441  ip link
+ 1442  ip link help
+ 1443  ip link
+ 1444  ip link list
+ 1445  ip link add vlan
+ 1446  ip link add v1 vlan
+ 1447  ip link list
+ 1448  ip link add v1 vlan
+ 1449  ip link add v1 dummy
+ 1450  ip link help
+ 1451  ip link add dummy d1
+ 1452  ip address
+ 1453  ip address help
+ 1454  make clean all
+ 1455  ping google.com
+ 1456  cd cse09
+ 1457  cd src
+ 1458  make clean all
+ 1459  cd cse09/
+ 1460  cd src
+ 1461  make clean all
+ 1462  ip
+ 1463  cd lab/exp3
+ 1464  cim content.html 
+ 1465  vim content.html 
+ 1466  ip link show
+ 1467  ip link set lo up
+ 1468  sudo ip link set lo up
+ 1469  ip address show
+ 1470  ip addr show
+ 1471  sudo ip link set lo up
+ 1472  sudo ip link set lo down
+ 1473  sudo ip link set lo up
+ 1474  cd ../..
+ 1475  make clean all
+ 1476  sudo ip address add lo 127.0.0.3
+ 1477  sudo ip address add 127.0.0.3
+ 1478  sudo ip address add dev lo 127.0.0.3
+ 1479  ip address show
+ 1480  ifconfig
+ 1481  ip address show
+ 1482  sudo ip address delete dev lo 127.0.0.3
+ 1483  ip address show
+ 1484  make clean all
+ 1485  ip address show to 10.*
+ 1486  ip address show to 10
+ 1487  ip address show to 127
+ 1488  ip address show label 127.*
+ 1489  ip address ashow
+ 1490  ip address show
+ 1491  ip address show dev lo
+ 1492  ip address show dev lo to 127.*
+ 1493  ip address show dev lo to 127
+ 1494  ip address show dev lo to 127.0.0.1
+ 1495  ip address show dev lo to 127.0.0.0
+ 1496  ip address show dev lo scope host
+ 1497  ip address show scope host
+ 1498  make clean all
+ 1499  ip address show scope host
+ 1500  ip address show dev eth0 -s
+ 1501  ip -s address show dev eth0
+ 1502  ip address show dev eth0
+ 1503  ip -r address show dev eth0
+ 1504  ip address help
+ 1505  man hostname
+ 1506  man wget
+ 1507  man lnk
+ 1508  man link
+ 1509  info coreutils 'link invocation'
+ 1510  hostname
+ 1511  domainname
+ 1512  hostname whatever
+ 1513  sudo hostname whatever
+ 1514  hostname
+ 1515  hostname --file whatever
+ 1516  hostname --fqdn
+ 1517  hostname
+ 1518  hostname --fqdn
+ 1519  sudo hostname --fqdn
+ 1520  hostname
+ 1521  hostname kaushik-Compaq-Presario-CQ61-Notebook-PC
+ 1522  sudo hostname kaushik-Compaq-Presario-CQ61-Notebook-PC
+ 1523  hostname
+ 1524  hostname --fqdn
+ 1525  hostname -a
+ 1526  hostname -i
+ 1527  make clean all
+ 1528  wget
+ 1529  wget --help
+ 1530  make clean all
+ 1531  ping google.com
+ 1532  cd cse09/src/lab/exp2
+ 1533  vim index.html 
+ 1534  sudo su
+ 1535  vim makefile 
+ 1536  vim test 
+ 1537  ping google.com
+ 1538  cd cse09/src/
+ 1539  make clean all
+ 1540  vi
+ 1541  cd lab/exp3
+ 1542  vim index.html 
+ 1543  vimdiff index.html ../exp2/index.html 
+ 1544  cd ..
+ 1545  ls
+ 1546  mkdir exp12
+ 1547  cd exp12
+ 1548  cd ..
+ 1549  cd exp12
+ 1550  cp ../exp1/* .
+ 1551  ls
+ 1552  vim tasks
+ 1553  vim content.html 
+ 1554  cd ..
+ 1555  ping google.com
+ 1556  ls
+ 1557  cd exp12
+ 1558  vim content.html 
+ 1559  cd ..
+ 1560  cp exp1 exp12
+ 1561  cd exp12
+ 1562  ls
+ 1563  vim content.html 
+ 1564  cd ..
+ 1565  mkdir exp13
+ 1566  ls
+ 1567  cp exp1 exp13
+ 1568  ls exp13
+ 1569  cp exp1/* exp13
+ 1570  ls exp13
+ 1571  cp exp1/* exp13
+ 1572  ls exp13
+ 1573  cd exp1/'
+ 1574  cd exp1/
+ 1575  touch t.txt
+ 1576  cd ..
+ 1577  cp exp1/* exp13
+ 1578  ls exp13
+ 1579  rm exp1/t.txt 
+ 1580  ls exp1
+ 1581  rm exp13/t.txt 
+ 1582  cd exp13
+ 1583  ls
+ 1584  vim content.html 
+ 1585  cd ../..
+ 1586  make clean all
+ 1587  man whoami
+ 1588  man who
+ 1589  man w
+ 1590  man who
+ 1591  info coreutils 'who invocation'
+ 1592  info coreutils 'w invocation'
+ 1593  man w
+ 1594  man uname
+ 1595  man lsb_release 
+ 1596  man df
+ 1597  man free
+ 1598  man df
+ 1599  man free
+ 1600  man date
+ 1601  info coreutils 'date invocation'
+ 1602  man cal
+ 1603  man grep
+ 1604  info grep
+ 1605  man wc
+ 1606  vim diff
+ 1607  man diff
+ 1608  man cut
+ 1609  who
+ 1610  whoami
+ 1611  who
+ 1612  w
+ 1613  cd lab/exp2
+ 1614  vim content.html 
+ 1615  cd ../..
+ 1616  make clean all
+ 1617  uname
+ 1618  uname --help
+ 1619  lsb_release
+ 1620  lsb_release --help
+ 1621  lsb_release -i
+ 1622  lsb_release -d
+ 1623  lsb_release -r
+ 1624  lsb_release -c
+ 1625  lsb_release -a
+ 1626  lsb_release -s
+ 1627  lsb_release 
+ 1628  lsb_release -as
+ 1629  uname -h
+ 1630  df
+ 1631  ls
+ 1632  df lab
+ 1633  df /dev/sda3
+ 1634  df lab /dos/Movies/
+ 1635  df .
+ 1636  df . /dos/Movies/
+ 1637  free
+ 1638  df -h
+ 1639  df --help
+ 1640  free
+ 1641  free -l
+ 1642  date
+ 1643  date -s "WED Oct 3 00:57:42 IST 2012"
+ 1644  sudo date -s "WED Oct 3 00:57:42 IST 2012"
+ 1645  date
+ 1646  sudo date -s "thu Oct 3 00:57:42 IST 2012"
+ 1647  date %d
+ 1648  date "%d"
+ 1649  date --help
+ 1650  make clean all
+ 1651  ping google.com
+ 1652  man make
+ 1653  man make install
+ 1654  make install
+ 1655  make
+ 1656  make clean all
+ 1657  ls -a
+ 1658  ping http://developer.virtual-labs.ac.in/
+ 1659  date %H '02'
+ 1660  date --help
+ 1661  date %H 
+ 1662  date %02
+ 1663  date +%02
+ 1664  dagte
+ 1665  date -s +%02
+ 1666  cal
+ 1667  ncal
+ 1668  cal -e
+ 1669  cal -Je
+ 1670  cal -J -e
+ 1671  ncal -e
+ 1672  cal
+ 1673  cal -J
+ 1674  cal -j
+ 1675  cal --help
+ 1676  cal -m september
+ 1677  cal -p
+ 1678  cal -y 2011
+ 1679  cal -y 2011 -m september
+ 1680  make clean all
+ 1681  lsb_release -a
+ 1682  make clean all
+ 1683  uname --help
+ 1684  cd lab
+ 1685  vim content.html 
+ 1686  cd ..
+ 1687  make clean all
+ 1688  cd -
+ 1689  vim content.html 
+ 1690  make clean all
+ 1691  cd ..
+ 1692  make clean all
+ 1693  man nano
+ 1694  ls
+ 1695  vim makefile 
+ 1696  grep build makefile
+ 1697  grep build
+ 1698  cat makefile 
+ 1699  grep build dir makefile
+ 1700  grep -e build dir makefile
+ 1701  grep -f build makefile 
+ 1702  grep -f makefile build
+ 1703  grep -f test build makefile
+ 1704  touch test
+ 1705  grep -f test build makefile
+ 1706  grep --file=makefile build
+ 1707  grep build -f makefile
+ 1708  grep build makefile 
+ 1709  ls
+ 1710  nano.save
+ 1711  nano nano.save
+ 1712  vim test
+ 1713  grep -f test makefile 
+ 1714  grep -e build makefile 
+ 1715  grep -e build dir makefile 
+ 1716  grep -e {build,dir} makefile 
+ 1717  grep -e [build,dir] makefile 
+ 1718  grep -e {build,dir} makefile 
+ 1719  grep -e (build,dir) makefile 
+ 1720  grep [build,dir] makefile 
+ 1721  vim test
+ 1722  grep -f test makefile 
+ 1723  grep -fw test makefile 
+ 1724  grep -w build makefile 
+ 1725  cat makefile 
+ 1726  grep -all makefile 
+ 1727  grep all makefile 
+ 1728  ls
+ 1729  cat makefile 
+ 1730  grep eme makefile 
+ 1731  grep -w eme makefile 
+ 1732  grep -f test makefile -c 1
+ 1733  grep build makefile 
+ 1734  grep build makefile -c 1
+ 1735  grep -c 1 build makefile 
+ 1736  grep -c build makefile 
+ 1737  make clean all
+ 1738  wc --help
+ 1739  wc
+ 1740  wc --help
+ 1741  wc
+ 1742  diff
+ 1743  diff --help
+ 1744  ip link
+ 1745  ip addr show
+ 1746  info coreutils 'cut invocation'
+ 1747  make clean all
+ 1748  cd cse09/src/lab
+ 1749  ls
+ 1750  cd exp13
+ 1751  vim content.html 
+ 1752  man cut
+ 1753  cut -
+ 1754  ls -l | cut -3
+ 1755  ls -l | cut -d -3
+ 1756  ls -l | cut -d '\t' -3
+ 1757  cut --help
+ 1758  cut -d 3
+ 1759  cut -c 3
+ 1760  ls -l | cut -f 3
+ 1761  cut -f 3 | ls -l
+ 1762  ls -l | cut -f 3
+ 1763  ls -l | cut -f -3
+ 1764  ls -l | cut -f 3-
+ 1765  ls -l | cut -d "\t"
+ 1766  ls -l | cut -d \t
+ 1767  ls -l | cut -d 
+ 1768  ls -l | cut -d ' '
+ 1769  ls -l | cut -cd ' '
+ 1770  ls -l | cut -cd
+ 1771  ls -l | cut -cd ' ' 3
+ 1772  ls -l | cut -c ' ' 3
+ 1773  ls -l | cut -c 3
+ 1774  ls -l
+ 1775  ls -l | cut -c 4
+ 1776  ls -l | cut -c 3
+ 1777  ls -l | cut -c 5
+ 1778  ls -l | cut -c 6
+ 1779  ls -l | cut -d 6
+ 1780  ls -l | cut -f 6
+ 1781  ls -l | cut -d   3
+ 1782  ls -l | cut -d ' ' 3
+ 1783  ls -l | cut --delimiter=' ' 3
+ 1784  ls -l | cut --delimiter=' ' 3-
+ 1785  ls -l | cut --delimiter=" " 3-
+ 1786  ls -l | cut --delimiter={" "} 3
+ 1787  ls -l | cut --delimiter=[" "] 3
+ 1788  ls -l | cut -c -f 3
+ 1789  ls -l | cut -c -s 3
+ 1790  ls -l | cut -cs 3
+ 1791  ls -l | cut -s -c 3
+ 1792  ls -l | cut -s -f 3
+ 1793  cut -c 3 -
+ 1794  ls -l
+ 1795  ls -l | wc -l
+ 1796  vim cp.txt
+ 1797  cd cse09
+ 1798  svn update 
+ 1799  svn commit
+ 1800  ls
+ 1801  cd src/lab
+ 1802  ls
+ 1803  svn add *
+ 1804  cd ../..
+ 1805  svn commit
+ 1806  ls
+ 1807  cd src/lab/
+ 1808  ls
+ 1809  cd exp13
+ 1810  ls
+ 1811  vim content.html 
+ 1812  cd ../..
+ 1813  make clean all
+ 1814  man cut
+ 1815  man paste
+ 1816  man sort
+ 1817  man head
+ 1818  man tail
+ 1819  ping google.com
+ 1820  cd lab
+ 1821  vim content.html 
+ 1822  cd ..
+ 1823  make clean all
+ 1824  man cut
+ 1825  make clean all
+ 1826  ls -l | cut -c 3
+ 1827  ls -l
+ 1828  ls -l | cut -c 13-20
+ 1829  ls -l | cut -c 14-20
+ 1830  ls
+ 1831  paste tasks
+ 1832  cp tasks tasks1
+ 1833  paste tasks tasks1
+ 1834  paste -s tasks tasks1
+ 1835  paste
+ 1836  sort tasks tasks1
+ 1837  head tasks tasks1
+ 1838  ping google.com
+ 1839  sudo apt-get install python-gpgme
+ 1840  vim .bashrc 
+ 1841  man grep
+ 1842  grep http_proxy /etc/environment 
+ 1843  sudo apt-get install dropbox 
+ 1844  ping google.com
+ 1845  vim cogsci_projNotes.txt
+ 1846  man apt-get 
+ 1847  sudo apt-get remove dropbox 
+ 1848  sudo apt-get purge dropbox 
+ 1849  ps
+ 1850  top
+ 1851  ps | grep firefox
+ 1852  ps -c firefox
+ 1853  cd repo/
+ 1854  svn add *
+ 1855  svn update
+ 1856  svn commit -m "assignment 2"
+ 1857  cd ..
+ 1858  ls -a
+ 1859  vim .subversion/
+ 1860  cd repo
+ 1861  ls
+ 1862  svn commit -m "assignment 2"
+ 1863  cd ../Desktop/
+ 1864  ls
+ 1865  svn co svn+ssh://kaushiksrinivasan@10.4.7.79/home/kaushiksrinivasan/svn/repo/
+ 1866  cd ..
+ 1867  ls
+ 1868  sudo sshkeygen
+ 1869  ssh-keygen 
+ 1870  ls -a .ssh
+ 1871  svn+ssh://kaushiksrinivasan@10.4.7.80/home/kaushiksrinivasan/svn/repo/
+ 1872  svn co svn+ssh://kaushiksrinivasan@10.4.7.80/home/kaushiksrinivasan/svn/repo/
+ 1873  ls
+ 1874  cd repo
+ 1875  ls
+ 1876  cd ..
+ 1877  ls
+ 1878  cd Desktop/
+ 1879  svn co svn+ssh://kaushiksrinivasan@10.4.7.80/home/kaushiksrinivasan/svn/repo/
+ 1880  cd repo
+ 1881  ls
+ 1882  svn add *
+ 1883  svn update
+ 1884  svn commit -m "assignment 2"
+ 1885  ls
+ 1886  cd assignment2
+ 1887  ls
+ 1888  cd ..
+ 1889  cd ../assignment2/
+ 1890  racket run.ss
+ 1891  cd ../repo/
+ 1892  svn update 
+ 1893  ls
+ 1894  wget -r --no-proxy http://pascal.iiit.ac.in/~popl/index.html
+ 1895  ls
+ 1896  cd pascal.iiit.ac.in/
+ 1897  ls
+ 1898  cd \~popl/
+ 1899  ls
+ 1900  firefox& index.html
+ 1901  ping google.com
+ 1902  man pipes
+ 1903  man
+ 1904  apropos pipe
+ 1905  cd ..
+ 1906  ls
+ 1907  ls >> l.txt
+ 1908  ls
+ 1909  cat l.txt
+ 1910  cat test
+ 1911  vim test
+ 1912  cd cse09/
+ 1913  ls
+ 1914  ls -a
+ 1915  cd src
+ 1916  ls -a
+ 1917  make clean all
+ 1918  ls
+ 1919  cd lab
+ 1920  ls
+ 1921  cp exp1/* exp14
+ 1922  mkdir exp14
+ 1923  cp exp1/* exp14
+ 1924  ls
+ 1925  cd exp13
+ 1926  ls
+ 1927  vim content.html 
+ 1928  cd ../exp14
+ 1929  vim content.html 
+ 1930  man more
+ 1931  man less
+ 1932  man more
+ 1933  man less
+ 1934  cd ../..
+ 1935  make clean all
+ 1936  cd lab
+ 1937  ls
+ 1938  vim content.html 
+ 1939  cd ..
+ 1940  make clean all
+ 1941  history
+ 1942  ls
+ 1943  history > hist.txt
+ 1944  vim hist.txt 
+ 1945  history!
+ 1946  history !
+ 1947  hist!
+ 1948  info history
+ 1949  $HISTFILE
+ 1950  sudo $HISTFILE
+ 1951  vim hist.txt 
+ 1952  $HISTTIMEFORMAT
+ 1953  HISTCONTROL="erasedups:ignoreboth"
+ 1954  history > hist.txt 
