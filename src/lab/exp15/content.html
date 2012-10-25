@@ -49,7 +49,7 @@ edit -->
 	<header id="experiment-article-heading" class="heading">
 	<!-- You can add a welcome message or title of the 
 	experiment here -->
-	Pipes and Redirection
+	Executing Commands
 	<!-- Add any additional element if required with proper 
 	enclosing-->
 	</header>
@@ -188,11 +188,23 @@ edit -->
 	<li>'r' removes the trailing extension of the file. e.g. /etc/magic.mine becomes /etc/magic</li>
 	<li>'e' removes all but the trailing suffix, giving the extension of the file. e.g. /etc/magic.mine becomes mine</li>
 	<li>'p' causes the command to be displayed, but not run.</li>
-	<ul>
-
-
-
-	
+	</ul>
+	<h3>Searching History</h3>
+	<p>Typing Ctrl+r on the terminal allows you to search history. Type the pattern that you want to search for. The last command that contained the input pattern is displayed. Press 'Enter' to execute that command or 'Ctrl+r' to look for the previous command that contains the pattern.
+	</p>
+	<pre class="code">
+	(reverse-i-search)`his': history | tail -3
+	</pre>
+	<p>The up and down arrow keys also display commands from history. The up key displays the previous command that was executed. The down key displays the command executed after the current command. Hitting enter executes the command. </p>
+	<h3>Environment Variables</h3>
+	<p>The Linux shell stores program data in variables called environment variables. The 'set' command lists all the environment variables
+	of your system. The environment variable can be used in the execution of commands in the shell. Prefixing the environment variable with
+	$ gives the value of the environment variable.
+	</p>
+	<pre class="code">
+	johnodoe@johndoe-laptop:~/$ echo $PATH
+	/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+	</pre>
 
         </div>
       </section>
