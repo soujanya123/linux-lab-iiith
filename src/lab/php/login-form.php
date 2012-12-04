@@ -3,18 +3,17 @@
 $login_message = "Login";
 
 $expid=$_REQUEST["expid"];
-	  echo $expid;
 if (isset($_REQUEST['login'])) {
   include_once('ldapexec.php');
 
   if (check_user_account($_REQUEST['login'], $_REQUEST['password'])) {
 	  session_start();
-	  $filename="/home/kaushik/cse09/src/lab/exp" . $expid . "/interaction-frame.html";
+	  $filename="../exp" . $expid . "/interaction-frame.html";
     $_SESSION['authenticated'] = true;
     $_SESSION['username'] = $_REQUEST['login'];
     $_SESSION['password'] = $_REQUEST['password'];	
     $head="Location: ".$filename;
-//    header($head);
+    header($head);
   } else {
     $login_message = 'Login failed, please try again';
   }
