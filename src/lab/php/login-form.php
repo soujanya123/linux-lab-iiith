@@ -2,7 +2,6 @@
 
 $login_message = "Login";
 
-$expid=$_REQUEST["expid"];
 if (isset($_REQUEST['login'])) {
   include_once('ldapexec.php');
 
