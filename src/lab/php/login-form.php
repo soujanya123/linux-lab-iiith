@@ -9,7 +9,7 @@ if (isset($_REQUEST['login'])) {
   if (check_user_account($_REQUEST['login'], $_REQUEST['password'])) {
     session_start();
     echo $expid;
-    $filename="../exp" . $expid . "/interaction-frame.html";
+    $filename="/home/kaushik/cse09/src/lab/exp" . $expid . "/interaction-frame.html";
     $_SESSION['authenticated'] = true;
     $_SESSION['username'] = $_REQUEST['login'];
     $_SESSION['password'] = $_REQUEST['password'];	
