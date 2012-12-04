@@ -14,7 +14,7 @@ if (isset($_REQUEST['login'])) {
     $_SESSION['username'] = $_REQUEST['login'];
     $_SESSION['password'] = $_REQUEST['password'];	
     $head="Location: ".$filename;
-    header($head);
+//    header($head);
   } else {
     $login_message = 'Login failed, please try again';
   }
