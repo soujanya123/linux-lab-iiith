@@ -9,11 +9,12 @@ if (isset($_REQUEST['login'])) {
   if (check_user_account($_REQUEST['login'], $_REQUEST['password'])) {
 	  session_start();
 	  $filename="../exp" . $expid . "/interaction-frame.html";
+	  echo $filename;
     $_SESSION['authenticated'] = true;
     $_SESSION['username'] = $_REQUEST['login'];
     $_SESSION['password'] = $_REQUEST['password'];	
     $head="Location: ".$filename;
-    header($head);
+//    header($head);
   } else {
     $login_message = 'Login failed, please try again';
   }
