@@ -9,7 +9,7 @@ if (isset($_REQUEST['login'])) {
   if (check_user_account($_REQUEST['login'], $_REQUEST['password'])) {
 	  session_start();
 	  $filename="../exp" 
-	  echo $expid;
+	  echo $_REQUEST["expid"];
     $_SESSION['authenticated'] = true;
     $_SESSION['username'] = $_REQUEST['login'];
     $_SESSION['password'] = $_REQUEST['password'];	
