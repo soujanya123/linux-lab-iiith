@@ -1,26 +1,24 @@
 Task 1:
 -------
 
-List the contents of the home directory along with their properties. If no files are present create a directory by name "demo" and an empty file by name "demo.txt"
+List the last ten commands executed in your shell.
 
 Task 2:
 -------
 
-Create 5 directories - a,b,c,d,e in the current directory. 
-Then, move them such that the following hierarchy is created: 
-
-1. Directory a/ is in your home directory.
-2. Directory b/ is in a/
-3. Directories c/ and d/ are in directory b/
-4. Directory e/ is in directory d/
+Execute the 4th last command in history.
 
 Task 3:
 -------
 
-Create 5 files named 1,2,3,4,5 in the current folder. Now copy them into previously created 
-a,b,c,d,e respectively. 
+Execute the most recent ls command in history.
 
 Task 4:
 -------
 
-Delete the entire directory structure (including the files) you've created.
+Search for commands in history using reverse-i-search.
+
+Task 5:
+-------
+
+Print the value of HISTFILE environment variable.

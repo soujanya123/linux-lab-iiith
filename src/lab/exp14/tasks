@@ -1,26 +1,14 @@
 Task 1:
 -------
 
-List the contents of the home directory along with their properties. If no files are present create a directory by name "demo" and an empty file by name "demo.txt"
+Print the output of the ls command in the file ls.txt.
 
 Task 2:
 -------
 
-Create 5 directories - a,b,c,d,e in the current directory. 
-Then, move them such that the following hierarchy is created: 
-
-1. Directory a/ is in your home directory.
-2. Directory b/ is in a/
-3. Directories c/ and d/ are in directory b/
-4. Directory e/ is in directory d/
+Append the output of the ls command of any directory to ls.txt
 
 Task 3:
 -------
 
-Create 5 files named 1,2,3,4,5 in the current folder. Now copy them into previously created 
-a,b,c,d,e respectively. 
-
-Task 4:
--------
-
-Delete the entire directory structure (including the files) you've created.
+Print the lines that contain ab from ls.txt.
