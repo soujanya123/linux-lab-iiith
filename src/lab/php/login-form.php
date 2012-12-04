@@ -2,13 +2,13 @@
 
 $login_message = "Login";
 $filename="../exp" . $_REQUEST["expid"] . "/interaction-frame.html";
-	  echo $filename;
+//	  echo $filename;
 if (isset($_REQUEST['login'])) {
   include_once('ldapexec.php');
 
   if (check_user_account($_REQUEST['login'], $_REQUEST['password'])) {
 	  session_start();
-	  echo $filename;
+//	  echo $filename;
     $_SESSION['authenticated'] = true;
     $_SESSION['username'] = $_REQUEST['login'];
     $_SESSION['password'] = $_REQUEST['password'];	
