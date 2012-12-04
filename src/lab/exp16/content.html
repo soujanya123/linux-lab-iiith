@@ -1,0 +1,410 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+<!-- The lab Header contains the logo and the name of the lab,
+	usually displayed on the top of the page-->
+
+	<header id="experiment-header" >
+
+	<div id="experiment-header-logo" class="logo">
+	<!-- Enclose the logo image of your lab or write it in 
+	text-->
+	<img src="../images/logo.jpg" />
+	</div>
+
+	<div id="experiment-header-heading" class="heading">
+	<!-- Write the name of your lab and link it to the home 
+	page of your lab (h1 tag is preferred while writing your 
+			lab name)-->
+	<a href="../index.html">Systems and Software Virtual Lab</a>	
+	</div>
+
+	<!-- Add any additional element you want to add to the lab 
+	header, For example : Help (Enclosing them with suitable 
+			div is recommended)-->
+
+	</header>
+
+
+	<!-- The lab article is the main content area where all the 
+	experiment content sits-->
+	<article id="experiment-article">
+
+	<!-- The lab article has an header, optional navigational 
+	menu, number of sections, an optional sidebar and a closing 
+	footer-->
+
+	<header id="experiment-article-heading" class="heading">
+	<!-- You can add a welcome message or title of the 
+	experiment here -->
+	Executing Commands
+	<!-- Add any additional element if required with proper 
+	enclosing-->
+	</header>
+
+	<!-- Navigation menu is useful to organize the view of 
+	multiple sections inside the article-->
+	<nav id="experiment-article-navigation" class="default">
+	<ul id="experiment-article-navigation-menu">
+	<!-- The menu can be dynamically generated to contain 
+	the headings of your sections or instead write the 
+	menu items of your choice individually enclosedu in 
+	<li> tag as shown below-->
+	</ul>
+	</nav>
+
+	<!-- All the sections of your lab or experiment can be 
+	enclosed together with a div element as shown below-->
+	<div id="experiment-article-sections">
+
+	<!-- First section of the article-->
+	<section id="experiment-article-section-1">
+
+	<div id="experiment-article-section-1-icon" class="icon">
+	<!-- Enclose the icon image of your lab -->
+	<img src="../images/introduction.jpg" />
+	</div>	
+
+	<!-- The heading for the section can be enclosed in a 
+	div tag. -->
+	<div id="experiment-article-section-1-heading" 
+	class="heading">
+	Introduction
+	</div>
+	<!-- Write the section content inside a paragraph 
+	element, You can also include images with <img> tag -->
+	<div id="experiment-article-section-1-content" class="content">	
+	<p>
+	Welcome to File Management, the first experiment of the Systems and Software lab.  File Management consists of creating files and folders, copying and moving them locally etc. The goal of this experiment is to teach how to manipulate files and folders on a Linux Machine. The theory section provides a brief overview of the linux commands which are required to do file management.
+	</p>
+	<p>
+
+ The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports a few basic commands to enable the user to learn file management basics. The experiment contains the command line interface and an instructor section (in green background) below it. The instructor section guides the user to peform the experiment which is a series of tasks.
+	</p>
+	<p>
+	Proceed to the theory section to get an overview of the commands. Then move to the experiment section to get some hands-on experience and finish the experiment tasks. After you are done with the experiment, go to the quiz section to test your understanding.
+	 
+	</p>
+
+	</div>
+
+
+	</section>
+
+	<!-- Second section of the article-->
+	<section id="experiment-article-section-2">
+
+	<div id="experiment-article-section-2-icon" class="icon">
+	<!-- Enclose the icon image of your lab. -->
+	<img src="../images/theory.jpg" />
+	</div>
+
+	<!-- The heading for the section can be enclosed in a 
+	div tag. -->
+	<div id="experiment-article-section-2-heading" class="heading">
+	Theory
+	</div>
+
+
+	<!-- Write the section content inside a paragraph 
+	element, we can also include images with <img> tag -->
+	<div id="experiment-article-section-2-content" class="content">
+	<h3>history</h3>
+	<p>'history' command prints all the commands that you have entered in the terminal. All commands that you enter into your terminal are
+	stored in a file on disk. Default location of this file is ~/.bash_history. The HISTFILE variable stores the location of the history
+	file. You can overwrite the file location by setting this variable to your desired file location.<br>
+	<code>HISTFILE='filename'</code></br>
+	Typing history -c will erase all history.</p>
+	<p>There are a number of bash variables to control the behaviour of the history list.</p>
+	<ul>
+	<li>
+	$HISTCONTROL - provides some control over what commands are stored in the history list.
+	<ul>
+	<li>ignoredups does not save commands that are identical to the last command saved.</li>
+	<li>ignorespace does not save commands that start with space.</li>
+	<li>ignoreboth is the same as ignoredups:ignorespace.</li>
+	<li>erasedups eliminates duplicate commands from history.</li>
+	</ul></li>
+	<li>$HISTIGNORE - The list of patterns to omit from the history list. The patterns are separated by a colon. Useful for excluding
+	unnecessary information from your output.</li>
+	</ul>
+	<pre class="code">
+	johnodoe@johndoe-laptop:~/$ HISTCONTROL="erasedups:ignoreboth"
+	johnodoe@johndoe-laptop:~/$ HISTIGNORE="pwd:ls:ls -l:ls -la:ll:cd:cd \-:cd /:cd .." 
+	johnodoe@johndoe-laptop:~/$ HISTIGNORE="??"
+	</pre>
+	<p>
+	The last command makes the history list ignore any two character command.</p>
+	<h3>bang command</h3>
+	<p>The bang command allows you to re-execute a command you executed in history. You can specify which command in history you want to 
+	re-execute using one of the following <b>event specifiers</b></p>
+	<ul>
+	<li>!n executes the n'th line in the history list.</li>
+	<li>!-n executes the n'th line from the end of the history list.</li>
+	<li>!! executes the last line. Same as !-1.</li>
+	<li>![str] executes the most recent line that starts with 'str'.</li>
+	<li>!?[str][?] executes the most recent line containg 'str'.</li>
+	<li>^[str1]^[str2]^ executes the last line, replacing 'str1' with 'str2'</li>
+	<li>!# executes the entire command line typed so far.</li>
+	</ul>
+	<p>
+	You can also retrieve words/arguments from a command in history. The following <b>word specifiers</b> are available:</p>
+	<ul>
+	<li>!:n extracts the n'th argument.</li>
+	<li>!:0 is the command name or first word on line. Same as !!.</li>
+	<li>!^ is the first argument.</li>
+	<li>!* extracts all arguments.</li>
+	<li>!$ extracts the last argument.</li>
+	<li>!%[str] extracts the most recent word that contains the pattern 'str'.</li>
+	<li>!m-n extracts the words in the range m-n including m and n. -n extracts all words in range 0-n. m* or m- extracts all words from
+	m till end.</li>
+	</ul>
+	<p>The event specifier determines which command the words are extracted from. For example, !n:m extracts the m'th word from the n'th
+	command. If no event specifier is mentioned, the words are extracted from the last command.</p>
+	<p>Word specifiers are also used to concatenate the arguments of the previous command to a command that you type. Example:
+	<ul>
+	<li>
+	<code>sudo !!</code> executes the last command with the prefix 'sudo'. </li>
+	<li><code>ls !$</code> lists the files and folders in the directory that is the last argument of the previous command.</li>
+	</ul>
+	<p>
+	Modifiers are used to modify the command in a useful way. They are specified by adding a ':' after the optional word specifier. If no
+	event is specified, the last command is modified.</p>
+	<ul>
+	<li>'h' removes the filename after the last '/', leaving only the path. e.g. /etc/magic.mine becomes /etc/</li>
+	<li>'t' removes all but the filename after the last '/', leaving the filename alone. e.g. /etc/magic.mine becomes magic.mine</li>
+	<li>'r' removes the trailing extension of the file. e.g. /etc/magic.mine becomes /etc/magic</li>
+	<li>'e' removes all but the trailing suffix, giving the extension of the file. e.g. /etc/magic.mine becomes mine</li>
+	<li>'p' causes the command to be displayed, but not run.</li>
+	</ul>
+	<h3>Searching History</h3>
+	<p>Typing Ctrl+r on the terminal allows you to search history. Type the pattern that you want to search for. The last command that contained the input pattern is displayed. Press 'Enter' to execute that command or 'Ctrl+r' to look for the previous command that contains the pattern.
+	</p>
+	<pre class="code">
+	(reverse-i-search)`his': history | tail -3
+	</pre>
+	<p>The up and down arrow keys also display commands from history. The up key displays the previous command that was executed. The down key displays the command executed after the current command. Hitting enter executes the command. </p>
+	<h3>Environment Variables</h3>
+	<p>The Linux shell stores program data in variables called environment variables. The 'set' command lists all the environment variables
+	of your system. The environment variable can be used in the execution of commands in the shell. Prefixing the environment variable with
+	$ gives the value of the environment variable.
+	</p>
+	<pre class="code">
+	johnodoe@johndoe-laptop:~/$ echo $PATH
+	/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+	</pre>
+
+        </div>
+      </section>
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	  </div>
+
+	  <div id="experiment-article-section-4-heading" 
+	  class="heading">
+	  Experiment
+	  </div>
+
+	  <div id="experiment-article-section-4-content" 
+	  class="content">
+	  <p>
+	  <div id="login">
+If you already have Virtual Labs login
+	  credentials, please click 
+<A HREF="javascript:void(0)"
+onclick="window.open('interaction-frame.html',
+'welcome','width=screen.availWidth,height=screen.availHeight,status=yes')">
+here</A>.<br />
+In case you do not have login credentials, please click here.	  </div>
+
+	  <div id="signup">
+
+	  <div id="signup-warning"></div>
+
+	  <form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
+
+	  <table>
+	  <tr>
+
+	  <td>Your name</td><td> <input type="text" name="yourname" value="" id="yourname"/></td></tr>
+
+	  <td>Preferred username</td><td> <input type="text" name="preferredusername" value="" id="preferredusername"/></td></tr>
+
+	  <tr><td>Password</td> <td><input type="password" name="preferredpassword" id="preferredpassword"/></td></tr>
+
+	  <tr><td>Re-enter Password</td> <td><input type="password" name="repreferredpassword" id="repreferredpassword"/></td></tr>
+
+	  <tr><td>Email</td> <td><input type="text" name="email" id="email"/></td></tr>
+
+	  <tr><td>Re-enter Email</td> <td><input type="text" name="reemail" id="reemail"/></td></tr>
+
+	  <tr></tr>
+
+	  <tr><td colspan=2>Enter the black characters present in the below image</td></tr>
+
+	  <tr><td><img src="../php/captcha.php" id="captchaimg"/></td><td><input type="text" name="captcha" id="captcha"/></td></tr>
+
+	  <tr><td></td><td><input type="submit" value="Sign up" /></td></tr>
+
+	  </table>
+
+	  </form>
+
+	  </div>
+
+	  <div id="logout">
+
+	  <a href="#" onclick="logout();">Logout</a>
+	  </div>
+
+	  <pre id="terminal" class="code"><div id="input" class="inpcls"><form name='f' class='cmdform' action='' onsubmit="return false;" id="cmdformid"><table class="inputtable" id="inputtableid"><tr><td><div id='prompt' class='less'>user@pascal:~/$</div></td><td class="inputtd"><input id='inputfield' name='q' type='text' class='cmdline' autocomplete="off" value="" onkeypress="showHint(event,this.value)" /></td></tr></table></form><div id="output" class="outcls"></div></div></pre>
+
+<pre class="instr" id="instr">
+
+<div id="instruction" title="0">
+
+Now that we have learnt shell commands to do basic file management, we have an exercise for you.
+
+The shell above supports few basic shell commands. Play along to get some hands-on experience of the interface.
+
+When you are ready to perform the exercise, which is a set of 5 tasks, enter the command "start".
+
+</div>
+
+try: start,next,prev,clear,logout.
+
+</pre>
+
+
+
+
+          </p>
+        </div>
+
+      </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quiz
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+<ul><li>The command "rm xyz" is enough to delete the directory xyz containing subdirectories. True or false?</li>
+<li>Permission for a file "-rw-r--r--" means it can be executed by anyone in the group. True or false?</li>
+<li>The pwd command gives the absolute path of the current directory. True or false?</li>
+<li>The latest edited file/folder comes last in the output of ls -t. True or false?</li>
+<li> In the output of ls -l, the second column for directories denotes which one of the following:<ul>
+<li>No of subdirectories </li>
+<li>No of subdirectories + No. of files int the directory</li>
+<li>c. No of subdirectories including hidden directories</li></ul></li></ul>
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+	<ul>
+	<li><a href="http://polishlinux.org/console/file-management-in-linux/">http://polishlinux.org/console/file-management-in-linux/</a> </li>
+	<li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?ls">ls man page</a></li>
+	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html</a></li>
+	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html</a></li>
+	<li><a href="http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml">http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml</a></li>
+</ul>
+          </div>
+
+        </section>
+
+    <section id="experiment-article-section-9">
+
+          <div id="experiment-article-section-9-icon" 
+          class="icon">
+            <!-- Enclose the icon image of your lab.-->
+            <img src="../images/readings.jpg" />
+          </div>
+
+          <div id="experiment-article-section-9-heading" 
+          class="heading">
+	
+	Feedback
+          </div>
+
+          <div id="experiment-article-section-9-content" 
+          class="content">
+	Please provide us feedback <a href="http://virtual-labs.ac.in/feedback/" >here</a>
+          </div>
+
+        </section>
+	
+        
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+   <footer id="lab-footer" class="footer">
+    <!-- Put the content here-->
+	<a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+  </footer>
+</div>		
+
+</body>
+</html>

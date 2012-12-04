@@ -1,0 +1,2 @@
+example.txt all_about_console.txt my_project
+backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
