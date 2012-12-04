@@ -2,6 +2,7 @@
 
 $login_message = "Login";
 $filename="../exp" . $_REQUEST["expid"] . "/interaction-frame.html";
+	  echo $filename;
 if (isset($_REQUEST['login'])) {
   include_once('ldapexec.php');
 
