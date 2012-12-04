@@ -28,7 +28,7 @@ if (isset($_REQUEST['login'])) {
 <body>
 <h2><?php echo $login_message;?></h2>
 <p>&nbsp;</p>
-<form id="loginForm" name="loginForm" method="post" action="login-form.php">
+<form id="loginForm" name="loginForm" method="post" action="login-form.php?$_REQUEST['expid']">
   <table width="300" border="0" align="center" cellpadding="2" cellspacing="0">
     <tr>
       <td width="112"><b>Login</b></td>
