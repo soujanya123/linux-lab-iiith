@@ -154,14 +154,14 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-4-content" class="content">
 	<h3>1. Linux File System</h3>
-	<p>A linux system is comprised of files and processes. These files are organized in a tree-like structure under the root
+	<p>A linux system is comprised of files and processes. The files are organized in a tree-like structure under the root
 	directory.</p>
 	<p>There are different types of files in a Linux system. Most are just regular text, executable files or programs. Other types of files 
-	include directories, which are a list of files, and links, which is a mechanism to make a file accessible from a different part of a 
+	include directories, which is a list of files, and links, which is a mechanism to make a file accessible from a different part of a 
 	linux filesystem (discussed in detail in <a href="../exp7/index.html">Advanced File Management</a>)</p>
 	<p>The <i>path</i> of a file is the location of a file in the filesystem. There are two ways of specifying the path of a file: <i>relative
 	path</i> and <i>absolute path</i>. <i>Relative path</i> is the location of a file relative to your current location in the filesystem.
-	<i>Absolute path</i> is the location of the file from the root directory.<p>
+	<i>Absolute path</i> is the location of the file from the root directory. It is independent of the current working directory.<p>
 	<h3>2. Viewing the contents of files and directories </h3>
 	<ul>
 	<li>
@@ -212,15 +212,16 @@ drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
 	</pre>
 	<p>
 Here, in addition to the name of each file, the file type, file mode bits, number of hard links, owner name, group name, size, and timestamp
-,normally the modification time are printed. The first field refers to the file type. 'd' means the file is a directory, 'l' means it is a link,
-'-' means it is a regular file. The next nine fields are the permissions of the owner, group and other, respectively. 'r', 'w' and 'x' in a field
-means 'read', 'write' and 'execute' permissions, respectively. If a '-' is printed in a field, it means that particular permission is not present
-for the corresponding user, group or other.</p?>
+,normally the modification time are printed. </p>
+<p>The file mode bits contains details regarding the properties of the file. It has 10 fields. The first field refers to the file type. 'd' means 
+the file is a directory, 'l' means it is a link, '-' means it is a regular file. The next nine fields are the permissions of the owner, group and
+other, respectively. 'r', 'w' and 'x' in a field means 'read', 'write' and 'execute' permissions, respectively. If a '-' is printed in a field, it
+means that particular permission is not present for the corresponding user, group or other.</p?>
 	<p>
 	In the above example, 'my_project' is a directory (<b>d</b>). The owner and group is 'johndoe'. The size is 4096 bytes. Modification time
 	is '2010-08-02 14:03'. Owner has read, write and execute (<b>rwx</b>) permissions, group has read and execute (<b>r-x</b>) permissions 
 	and others have read and execute (<b>r-x</b>) permissions.</p> 
-By default, the size is printed in bytes. Use the "-h" option to print the size in an abbreviated, human-readable format.
+<p>By default, the size is printed in bytes. Use the "-h" option to print the size in an abbreviated, human-readable format.
 	</p>
 
 	<pre class="code">
@@ -260,11 +261,11 @@ nav.js
 For more info on 'ls', type "info coreutils 'ls invocation'" on your command line.
 	</p>
 <p>Type the 'clear' command to clear your screen.</p>
-<h3>2. Moving through directories:</h3>
+<h3>3. Moving through directories:</h3>
 
 <p>
 The command 'cd' (<b>c</b>hange <b>d</b>irectory) allows us to move through directory trees. It has one parameter: target 
-directory path. If parameter '-' is given it will navigate to the previous working directory. If the paramter '~' is given iti will navigate to 
+directory path. If parameter '-' is given it will navigate to the previous working directory. If the paramter '~' is given it will navigate to 
 the home directory.
 </p>
 <pre class="code">
@@ -290,7 +291,7 @@ johndoe@laptop:/home/james$ pwd
 
 </pre>
 
-<h3>	3. Creating files and folders:</h3>
+<h3>	4. Creating files and folders:</h3>
 <p>The 'touch' command creates the files whose names are passed as parameters. If the parameter is an already existing file, it's 
 modification time will be updated. Otherwise, the file will be created.</p>
 <pre class="code">
@@ -314,7 +315,7 @@ all_about_console.txt  example.txt  my_project newfile.txt new_folder
 
 
 
-<h3>4. Copying, Moving and removing files and folders:</h3>
+<h3>5. Copying, Moving and removing files and folders:</h3>
 <ul>
 <li>'cp' - It takes at least two parameters: a source file and a target location to which the file will be copied,</li>
 <li>'mv' - Used to change the location of directories and files or renaming them. Parameters are taken in similar way as the 'cp'
