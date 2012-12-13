@@ -126,10 +126,12 @@ Proceed to the theory section to get an overview of the commands and then move t
         element, we can also include images with <img> tag -->
         <div id="experiment-article-section-2-content" 
         class="content">
-          <p>
-		<font size="4">1. Viewing the processes (the <code>"ps"</code> command):</font>
-		</p>
-<p>		<code>"ps"</code> command is the short form of process status. <code>"ps"</code> displays information about a selection of the active processes when it is executed without any flags.
+	  <h3>What is a process?</h3>
+	  <p>A process, also known as task, is an executing instance of a program.</p>
+		<h3>1. Viewing the processes:</h3>
+		<h2>the 'ps' command</h2>
+<p>		'ps' command is the short form of <b>p</b>rocess <b>s</b>tatus. 'ps' displays information about a selection of the active 
+processes when it is executed without any flags.
 </p>
 <pre class="code">
 johndoe@laptop:~/Documents$ ps
@@ -137,18 +139,18 @@ johndoe@laptop:~/Documents$ ps
   2635   pts/9    00:00:00  ps
   26439  pts/9    00:00:00  bash
 </pre>
-
-<p> The most used flags for <code>"ps"</code> command are A, e, p, C, o, | grep.</p>
+<p>Here, <i>PID</i> refers to process ID, which is a unique ID for each process.  <i>TTY</i> (<b>t</b>erminal <b>ty</b>pe) is the name of the 
+console or terminal that the user logged into, and can also be found using the 'tty' command. <i>TIME</i> is the amount of CPU time for which the process has been running. <i>CMD</i> is the name of the command that launched the process.</p>
+<p> The most used flags for 'ps' command are A, e, p, C, o.</p>
 
 <table border="1">
-<thead><tr><td align="center"><u>Flag</u></td><td align="center"><u>Purpose</u></td></tr	> </thead>
+<thead><tr><td align="center"><u>Flag</u></td><td align="center"><u>Purpose</u></td></tr> </thead>
 <tbody>
 <tr><td>A</td><td>Displays all the processes running on a system</td></tr>
 <tr><td>e</td><td>Same as 'A' option</td></tr>
-<tr><td>p</td><td>Displays processes whose process numbers occur in pidlist (<code>ps -p pidlist</code>)  </td></tr>
+<tr><td>p</td><td>Displays processes whose process numbers occur in pidlist ("ps -p pidlist")  </td></tr>
 <tr><td>C</td><td>Displays processes corresponding to a particular command </td></tr>
 <tr><td>o</td><td>Displays processes in the specified format.</td></tr>
-<tr><td>| grep</td><td>Displays processes that contain specified string</td></tr>
  </tbody>
 </table>
 
@@ -165,7 +167,7 @@ PID  TTY          TIME CMD
 3151 pts/1    00:00:00 ssh
 </pre>
 <p>
-The above is the abridged version of <code>"ps -e"</code>
+The truncated output of 'ps -e' command is shown above.
 </p>
 <pre class="code">
 johndoe@laptop:~/Documents$ ps -p 3111 3151
@@ -174,10 +176,10 @@ PID     TTY     STAT   TIME         COMMAND
 3151   pts/1    S+     0:00         ssh johndoe@vlabs.in
 </pre>
 <p>
-All the processes corresponding to a pidlist are displayed.
+All the processes corresponding to PID 3111 and 3151 are displayed.
 </p>
 <pre class="code">
-johndoe@johndoe-laptop:~/Documents$ ps -c chrome
+johndoe@johndoe-laptop:~/Documents$ ps -C chrome
 PID TTY          TIME   CMD
 2022 ?        00:03:35 chrome
 2025 ?        00:00:02 chrome
@@ -210,10 +212,128 @@ johndoe@johndoe-laptop:~/Documents$ ps | grep bash
 <p>
 The processes containing the string (bash in this case) are displayed.
 </p>
+<h2>top command</h2>
+<p>To view the processor activity in real time, use the <b>top</b> command.
+<pre class="code">
+top - 14:36:25 up 43 min,  3 users,  load average: 0.16, 0.11, 0.25
+Tasks: 191 total,   1 running, 190 sleeping,   0 stopped,   0 zombie
+Cpu(s):  4.0%us,  1.2%sy,  0.0%ni, 94.8%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   3028152k total,  1792836k used,  1235316k free,    92944k buffers
+Swap:  4194300k total,        0k used,  4194300k free,   749404k cached
 
-<p>
-<font size="4">2. Control Codes</font>
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                  
+   1156 root      20   0  115m  21m 7964 S    2  0.7   0:49.47 Xorg                                                                                     
+    4383 kaushik   20   0  254m 101m  22m S    2  3.4   0:12.21 chrome                                                                                   
+     2148 kaushik   20   0  291m  64m  25m S    1  2.2   0:29.49 compiz                                                                                   
+      4108 kaushik   20   0 93620  15m  10m S    1  0.5   0:03.75 gnome-terminal                                                                           
+       4495 kaushik   20   0  2856 1192  888 R    1  0.0   0:00.13 top                                                                                      
+         892 messageb  20   0  4228 2012  876 S    0  0.1   0:01.37 dbus-daemon                                                                              
+	  1574 root      20   0 28692 4296 3212 S    0  0.1   0:00.46 upowerd                                                                                  
+	   2166 kaushik   20   0  169m  30m  17m S    0  1.0   0:05.30 nautilus                                                                                 
+	    2670 kaushik   20   0  489m 129m  44m S    0  4.4   0:35.29 chrome                                                                                   
+	     2784 kaushik   20   0  193m  42m  19m S    0  1.4   0:12.00 chrome                                                                                   
+	      2822 kaushik   20   0  177m  33m  18m S    0  1.1   0:01.94 chrome                                                                                   
+	       4398 kaushik   20   0  239m  95m  23m S    0  3.2   0:14.59 chrome                                                                                   
+	        4427 kaushik   20   0  230m  84m  23m S    0  2.8   1:51.66 chrome                                                                                   
+		 4496 root      20   0     0    0    0 S    0  0.0   0:00.05 kworker/0:1                                                                              
+		     1 root      20   0  3536 1996 1312 S    0  0.1   0:00.68 init                                                                                     
+		         2 root      20   0     0    0    0 S    0  0.0   0:00.00 kthreadd                                                                                 
+			     3 root      20   0     0    0    0 S    0  0.0   0:00.13 ksoftirqd/0                                                                              
+			         6 root      RT   0     0    0    0 S    0  0.0   0:00.00 migration/0                                                                              
+				     7 root      RT   0     0    0    0 S    0  0.0   0:00.01 watchdog/0                                                                               
+				        13 root       0 -20     0    0    0 S    0  0.0   0:00.00 cpuset                                                                                   
+					   14 root       0 -20     0    0    0 S    0  0.0   0:00.00 khelper                                                                                  
+					      15 root      20   0     0    0    0 S    0  0.0   0:00.00 kdevtmpfs                                                                                
+					         16 root       0 -20     0    0    0 S    0  0.0   0:00.00 netns                                                                                    
+						    18 root      20   0     0    0    0 S    0  0.0   0:00.00 sync_supers                                                                              
+						       19 root      20   0     0    0    0 S    0  0.0   0:00.00 bdi-default                                                                              
+						          20 root       0 -20     0    0    0 S    0  0.0   0:00.00 kintegrityd                                                                              
+							     21 root       0 -20     0    0    0 S    0  0.0   0:00.00 kblockd                                                                                  
+							        22 root       0 -20     0    0    0 S    0  0.0   0:00.00 ata_sff                                                                                  
+								   23 root      20   0     0    0    0 S    0  0.0   0:00.00 khubd                                                                                    
+								      24 root       0 -20     0    0    0 S    0  0.0   0:00.00 md                                                                                       
+								         26 root      20   0     0    0    0 S    0  0.0   0:00.00 khungtaskd                                                                               
+									    27 root      20   0     0    0    0 S    0  0.0   0:00.00 kswapd0                                                                                  
+</pre>
+<p>The first few lines display the system summary. The uptime, process information, CPU and memory state is displayed. The display of these can be toggled using single-key commands.</p>
+<p>The first line displays the time for which the system has been up and the three load averages of the system. The <i>load averages</i> are the 
+average number of processes ready to run during the last 1, 5 and 15 minutes. The <b>uptime</b> command gives the same output as this line. The
+display of uptime can be toggled by typing <b>l</b>.</p>
+<p>The second line displays information about the number of processes.</p>
+<p>The third line displays information about CPU states. Shows the percentage of CPU time in user mode, system mode, niced tasks, iowait and 
+idle. The display of processes and states can be toggled by typing <b>t</b>.</p>
+<p>The fourth line displays the memory usage statistics, including total available memory, free memory, used memory, shared memory, and memory 
+used for buffers.</p>
+<p>The fourth line displays statistics on swap space, including total swap space, available swap space, and used swap space. The display of 
+<i>Mem</i> and <i>Swap</i> can be toggled typing <b>m</b>. The <b>free</b> command displays the same output as that of <i>Mem</i> and <i>Swap</i>.
 </p>
+<p>
+The columns display the following information:</p>
+<table border="1">
+<thead align="center">
+<tr>
+<td><u>Field</u></td>
+<td><u>Meaning</u></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>The process ID of the process.</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>The user name of the process' owner.</td>
+</tr>
+<tr>
+<td>PR</td>
+<td>The priority of the process.</td>
+</tr>
+<tr>
+<td>NI</td>
+<td>The nice value of the process.</td>
+</tr>
+<tr>
+<td>VIRT</td>
+<td>Virtual size of the process, the sum of the memory which the process is using.</td>
+</tr>
+<tr>
+<td>RES</td>
+<td>Resident size, the amount of physical memory the process is using.</td>
+</tr>
+<tr>
+<td>SHR</td>
+<td>The amount of VIRT size that is sharable.</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>The process' share of CPU time.</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>The process' share of physical memory.</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>The total CPU time the process has used since it started.</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>The command that started the process.</td>
+</tr>
+</tbody></table>
+<p>The processes are by default sorted on the basis of highest %CPU value. The processes which take up maximum CPU time are displayed on screen.
+To sort the processes based on some different field, single-key commands can be used. Typing <b>M</b> sorts the processes based on memory usage.
+<b>T</b> sorts the processes based on the total running time. <b>N</b> sorts the processes on the PID value. <b>P</b> sorts processes on CPU
+usage time. Sorting is done in the decreasing order in all cases. Also, the commands are case-sensitive.</p>
+<p>
+The number of processes displayed by default depends on the screen size. We can change this by typing the <b>n</b> command, which will prompt you 
+to enter the number of processes to be displayed. Setting this to '0' will will reset the default behaviour.</p>
+<p>The time interval in which the display is updated is called the 'delay time'. Type <b>s</b> or <b>d</b> command to change the delay time.
+Hit space to update the ouput immediately.</p>
+<p>Type <b>q</b> to quit.</p>
+
+<h3>2. Control Codes</h3>
 <p>
 The shell offers a number of control codes that perform a specific command. A control code is issued by holding down the 
 Ctrl key, followed by a key-press.
@@ -308,10 +428,6 @@ johndoe@laptop:~/Documents$
 </pre>
 
 		       </p>
-<p><font size="4">
-6. Viewing Linux tasks:</font>
-</p>
-<p>The <code>"top"</code> command is used for viewing Linux tasks.</p>
 
         </div>
       </section>
