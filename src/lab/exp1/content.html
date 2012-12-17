@@ -204,7 +204,7 @@ johndoe@laptop:~/Documents$ ls -a
 .  ..  all_about_console.txt  example.txt  my_project
 	</pre>
 	<p>
-. and .. refer to current folder and previous folder.
+<b>. and .. refer to current folder and previous folder, respectively.</b>
 	</p>
 <pre class="code">
 johndoe@johndoe-laptop:~/Documents$ ls my_project/
@@ -233,7 +233,7 @@ graphic-logo.gif
 nav.js
 </pre>
 	<p>
-For more info on 'ls', type "info coreutils 'ls invocation'" on your command line.
+For more info on <b>ls</b>, type <b>info coreutils 'ls invocation'</b> on your command line.
 	</p>
 	<p><font size="3"><b>cat command</b></font></p>
 	<p>
@@ -242,6 +242,7 @@ For more info on 'ls', type "info coreutils 'ls invocation'" on your command lin
 <p>Type the <b>clear</b> command to clear your screen.</p>
 <h3>3. Moving through directories:</h3>
 
+	<p><font size="3"><b>cd command</b></font></p>
 <p>
 The command <b>cd</b> (<b>c</b>hange <b>d</b>irectory) allows us to move through directory trees. It has one parameter: target 
 directory path. If parameter '-' is given it will navigate to the previous working directory. If the paramter '~' is given it will navigate to 
@@ -255,6 +256,7 @@ johndoe@laptop:~/Documents/my_project$ pwd
 /home/johndoe/Documents/my_project
 
 johndoe@laptop:~/Documents/my_project$ cd ..
+/home/johndoe/Documents
 
 johndoe@laptop:~/Documents$ cd -
 
@@ -271,6 +273,8 @@ johndoe@laptop:/home/james$ pwd
 </pre>
 
 <h3>	4. Creating files and folders:</h3>
+
+	<p><font size="3"><b>touch command</b></font></p>
 <p>The <b>touch</b> command creates the files whose names are passed as parameters. If the parameter is an already existing file, it's 
 modification time will be updated. Otherwise, the file will be created.</p>
 <pre class="code">
@@ -280,6 +284,7 @@ johndoe@laptop:~/Documents$ ls
 all_about_console.txt  example.txt my_project newfile.txt
 
 </pre>
+	<p><font size="3"><b>mkdir command</b></font></p>
 <p>
 	The <b>mkdir</b> command takes one or more parameters and creates the folders corresponding to the parameters.
 	</p>
@@ -316,24 +321,29 @@ all_about_console.txt  example.txt  newfile.txt
 <p>For copying directories, the <b>-r</b> (recursive) option is used.</p>
 <p><font size="3"><b>mv command</b></font></p>
 <p>The <b>mv</b> command is used to change the location of directories and files or renaming them. Parameters are taken in a similar way as the 
-'cp' command.</p>
+<b>cp</b> command.</p>
 <pre class="code">
 johndoe@laptop:~/Documents$ mv example.txt my_project/example_move.txt
 
 johndoe@laptop:~/Documents$ ls my_project
 vlabs_ui  example_copy.txt example_move.txt
 
-johndoe@laptop:~/Documents$ ls 
-all_about_console.txt  example.txt  my_project  newfile.txt  new_folder 
 </pre>
 <p><font size="3"><b>rm command</b></font></p>
 <p><b>rm</b> command removes files. It can be used with the <b>-r</b> option to remove directories.</p>
+<pre class="code">
+johndoe@laptop:~/Documents$ ls 
+all_about_console.txt  example.txt  my_project  newfile.txt  new_folder 
+
+johndoe@laptop:~/Documents$ rm example.txt
+
+johndoe@laptop:~/Documents$ ls
+all_about_console.txt  my_project  newfile.txt new_folder
+</pre>
 <p><font size="3"><b>rmdir command</b></font></p>
 <p><b>rmdir</b> command removes empty directories.</p>
 
 <pre class="code">
-johndoe@laptop:~/Documents$ rm example.txt
-
 johndoe@laptop:~/Documents$ rmdir new_folder
 
 johndoe@laptop:~/Documents$ ls
@@ -341,7 +351,7 @@ all_about_console.txt  my_project  newfile.txt
 
 </pre>
 
-<p>The commands: 'cp', 'mv', and 'rm' have the following commonly used parameters:</p>
+<p>The commands <b>cp</b>, <b>mv</b>, and <b>rm</b> have the following commonly used parameters:</p>
 <table border="1">
 <thead>
 <tr align="center">
@@ -354,7 +364,7 @@ all_about_console.txt  my_project  newfile.txt
 <tr><td>-b</td><td>creates backup copy of a file to be overwritten.</td></tr>
 </tbody>
 </table>
-
+<p><u>Warning:</u> rm -rf should be used cautiously. Carelessly invoking it could lead to loss of files key to the functioning of your system.</p>
 
         </div>
       </section>
