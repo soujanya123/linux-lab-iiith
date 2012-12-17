@@ -87,16 +87,9 @@ edit -->
 	element, You can also include images with <img> tag -->
 	<div id="experiment-article-section-1-content" class="content">	
 	<p>
-	Welcome to File Management, the first experiment of the Systems and Software lab.  File Management consists of creating files and folders, copying and moving them locally etc. The goal of this experiment is to teach how to manipulate files and folders on a Linux Machine. The theory section provides a brief overview of the linux commands which are required to do file management.
+	This experiment deals with the basic tasks of managing files in a Linux system, including the various ways of creating, viewing, moving
+	and deleting files and folders, using a command-line interface.
 	</p>
-	<p>
-
- The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports a few basic commands to enable the user to learn file management basics. There are a series of tasks which need to be performed in each experiment.	</p>
-	<p>
-	Proceed to the theory section to get an overview of the commands. Then move to the experiment section to get some hands-on experience and finish the experiment tasks. After you are done with the experiment, go to the quiz section to test your understanding.
-	 
-	</p>
-
 	</div>
 
 
@@ -113,29 +106,13 @@ edit -->
 	</div>
 
 	<div id="experiment-article-section-2-content" class="content">
-	<p>Learning how to create and manipulate files and directories using a Linux shell.</p>
+	<p>The goal of this experiment is to learn how to create and manipulate files and directories using a Linux command-line interface.</p>
 	</div>
 	
 	</section>
 
 	
-	<!-- Third section of the article-->
-	<section id="experiment-article-section-3">
 
-	<div id="experiment-article-section-3-icon" class="icon">
-	<!-- Enclose the icon image of your lab. -->
-	<img src="../images/procedure.jpg"/>
-	</div>
-	
-	<div id="experiment-article-section-3-heading" class="heading">
-	Pre-requisites
-	</div>
-	<div id="experiment-article-section-3-content" class="content">
-	<p>No pre-requisites.</p>
-	</div>
-	</section>
-
-	<!-- Third section of the article-->
 	<section id="experiment-article-section-4">
 
 	<div id="experiment-article-section-4-icon" class="icon">
@@ -162,44 +139,41 @@ edit -->
 	linux filesystem (discussed in detail in <a href="../exp7/index.html">Advanced File Management</a>)</p>
 	<p>The <i>path</i> of a file is the location of a file in the filesystem. There are two ways of specifying the path of a file: <i>relative
 	path</i> and <i>absolute path</i>. <i>Relative path</i> is the location of a file relative to your current location in the filesystem.
-	<i>Absolute path</i> is the location of the file from the root directory. It is independent of the current working directory.<p>
+	<i>Absolute path</i> is the location of the file with respect to the root directory. It is independent of the current working directory.<p>
 	<h3>2. Viewing the contents of files and directories </h3>
-	<ul>
-	<li>
-	To know the current working directory, enter the command 'pwd' (<b>P</b>resent <b>W</b>orking <b>D</b>irectory).
-	</li>
-	<li>
-	To list the contents of a directory, the 'ls' command is used. When it is executed with no arguments, it lists the contents of the 
-	current working directory. 'ls' followed by directory path prints the contents of the specified directory.
-	</li>
-	<li>'cat' command  displays the contents of the file passed as argument. If multiple files are passed, it prints the concatenated content
-	of all the files.
-	</li>
-	</ul>
+	<p>We shall see how to view the contents of files and directories using three commands, namely <b>pwd</b>, <b>ls</b> and <b>cat</b>.</p>
+<p>	<font size="3"><b>pwd command</b></font></p>
+<p>	To know the current working directory, enter the command <b>pwd</b> (<b>P</b>resent <b>W</b>orking <b>D</b>irectory).</p>
 	<pre class="code">
-
 johndoe@laptop:~/Documents$ pwd
 /home/johndoe/Documents
-
+</pre>
+<p>     <font size="3"><b>ls command</b></font></p>
+<p>
+	To list the contents of a directory, the <b>ls</b> command is used. When it is executed with no arguments, it lists the contents of the 
+	current working directory. <b>ls</b> followed by directory path prints the contents of the specified directory.</p>
+	<pre class="code">
 johndoe@laptop:~/Documents$ ls
 example.txt  all_about_console.txt my_project
 
 johndoe@laptop:~/Documents$ ls my_project
 vlabs_ui
-
-johndoe@laptop:~/Documents$ ls /var/
-backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
+</pre>
+<p>Here, the <i>relative path</i> of the directory has been used.</p>
+<pre class="code">
+johndoe@laptop:~/Documents$ ls /home/johndoe/Documents/my_project/
+vlabs_ui
 	</pre>
-<p>In the third example above, the <i>relative path</i> is used, and in the fourth one, <i>absolute path</i> is used.</p>
-<p> The most used flags for 'ls' command are l, s, t, R, a. </p>
+<p>Here, the <i>absolute path</i> of the directory has been used. As you can see, the two paths are equivalent.</p>
+<p> The most used flags for the <b>ls</b> command are l, s, t, R, a. </p>
 	<table border="1">
 		<thead><tr><td><u>Flag</u></td><td align="right"><u>Purpose</u></td></tr> </thead>
 		<tbody>
-			<tr><td>l</td><td>Displays the detailed view of contents of the folder</td></tr>
-			<tr><td>a</td><td>Also display hidden contents of the folder</td></tr>
+			<tr><td>l</td><td>Displays the detailed view of the contents of the folder</td></tr>
+			<tr><td>a</td><td>Also displays hidden contents of the folder</td></tr>
 			<tr><td>s</td><td>Displays the size of each of the contents of the folder  </td></tr>
 			<tr><td>R</td><td>Displays contents recursively</td></tr>
-			<tr><td>t</td><td>displays contents sorted according to modification time </td></tr>
+			<tr><td>t</td><td>Displays contents sorted according to modification time </td></tr>
 
 		 </tbody>
 	</table>
@@ -212,8 +186,8 @@ total 4
 drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
 	</pre>
 	<p>
-Here, in addition to the name of each file, the file type, file mode bits, number of hard links, owner name, group name, size, and timestamp
-,normally the modification time are printed. </p>
+Here, in addition to the name of each file, the file type, file mode bits, number of hard links, owner name, group name, size, and timestamp, 
+normally the modification time are printed. </p>
 <p>The file mode bits contains details regarding the properties of the file. It has 10 fields. The first field refers to the file type. 'd' means 
 the file is a directory, 'l' means it is a link, '-' means it is a regular file. The next nine fields are the permissions of the owner, group and
 other, respectively. 'r', 'w' and 'x' in a field means 'read', 'write' and 'execute' permissions, respectively. If a '-' is printed in a field, it
@@ -261,11 +235,15 @@ nav.js
 	<p>
 For more info on 'ls', type "info coreutils 'ls invocation'" on your command line.
 	</p>
-<p>Type the 'clear' command to clear your screen.</p>
+	<p><font size="3"><b>cat command</b></font></p>
+	<p>
+	<b>cat</b> command displays the contents of the file passed as argument. If multiple files are passed, it prints the concatenated content 
+	of all the files.</p>
+<p>Type the <b>clear</b> command to clear your screen.</p>
 <h3>3. Moving through directories:</h3>
 
 <p>
-The command 'cd' (<b>c</b>hange <b>d</b>irectory) allows us to move through directory trees. It has one parameter: target 
+The command <b>cd</b> (<b>c</b>hange <b>d</b>irectory) allows us to move through directory trees. It has one parameter: target 
 directory path. If parameter '-' is given it will navigate to the previous working directory. If the paramter '~' is given it will navigate to 
 the home directory.
 </p>
@@ -293,7 +271,7 @@ johndoe@laptop:/home/james$ pwd
 </pre>
 
 <h3>	4. Creating files and folders:</h3>
-<p>The 'touch' command creates the files whose names are passed as parameters. If the parameter is an already existing file, it's 
+<p>The <b>touch</b> command creates the files whose names are passed as parameters. If the parameter is an already existing file, it's 
 modification time will be updated. Otherwise, the file will be created.</p>
 <pre class="code">
 johndoe@laptop:~/Documents$ touch newfile.txt
@@ -303,7 +281,7 @@ all_about_console.txt  example.txt my_project newfile.txt
 
 </pre>
 <p>
-	The 'mkdir' command takes one or more parameters and creates those folders.
+	The <b>mkdir</b> command takes one or more parameters and creates the folders corresponding to the parameters.
 	</p>
 <pre class="code">
 
@@ -317,20 +295,29 @@ all_about_console.txt  example.txt  my_project newfile.txt new_folder
 
 
 <h3>5. Copying, Moving and removing files and folders:</h3>
-<ul>
-<li>'cp' - It takes at least two parameters: a source file and a target location to which the file will be copied,</li>
-<li>'mv' - Used to change the location of directories and files or renaming them. Parameters are taken in similar way as the 'cp'
-command.</li>
-<li>'rm' - removes files/directories.</li>
-<li>'rmdir' command removes empty directories.</li>
-</ul>
-
+<p><font size="3"><b>cp command</b></font></p>
+<p><b>cp</b> command is used to create a copy of files. It can be invoked with two arguments, <i>SOURCE</i> and <i>DEST</i> in which case it 
+copies <i>SOURCE</i> to <i>DEST</i>.</p>
 <pre class="code">
 johndoe@laptop:~/Documents$ cp example.txt my_project/example_copy.txt
 
 johndoe@laptop:~/Documents$ ls my_project
 vlabs_ui  example_copy.txt
+</pre>
+<p>
+When invoked with more than two arguments, the last argument must be a directory. In this case, all the files passed as arguments are copied into 
+the directory corresponding to the last argument.</p>
+<pre class="code">
+johndoe@laptop:~/Documents$ cp all_about_console.txt  example.txt  newfile.txt new_folder/
 
+johndoe@laptop:~/Documents$ ls new_folder
+all_about_console.txt  example.txt  newfile.txt
+</pre>
+<p>For copying directories, the <b>-r</b> (recursive) option is used.</p>
+<p><font size="3"><b>mv command</b></font></p>
+<p>The <b>mv</b> command is used to change the location of directories and files or renaming them. Parameters are taken in a similar way as the 
+'cp' command.</p>
+<pre class="code">
 johndoe@laptop:~/Documents$ mv example.txt my_project/example_move.txt
 
 johndoe@laptop:~/Documents$ ls my_project
@@ -338,7 +325,13 @@ vlabs_ui  example_copy.txt example_move.txt
 
 johndoe@laptop:~/Documents$ ls 
 all_about_console.txt  example.txt  my_project  newfile.txt  new_folder 
+</pre>
+<p><font size="3"><b>rm command</b></font></p>
+<p><b>rm</b> command removes files. It can be used with the <b>-r</b> option to remove directories.</p>
+<p><font size="3"><b>rmdir command</b></font></p>
+<p><b>rmdir</b> command removes empty directories.</p>
 
+<pre class="code">
 johndoe@laptop:~/Documents$ rm example.txt
 
 johndoe@laptop:~/Documents$ rmdir new_folder
@@ -348,12 +341,19 @@ all_about_console.txt  my_project  newfile.txt
 
 </pre>
 
-<p>The commands: 'cp', 'mv', and 'rm' have the following common parameters:</p>
-<ul>
-<li>-f&#47;force -- forces removing a file, even if user has no rights to write the file,</li>
-<li>-i&#47;interactive -- user will be asked to confirm the operation,</li>
-<li>'-b' -- creates backup copy of a file to be overwritten.</li>
-</ul>
+<p>The commands: 'cp', 'mv', and 'rm' have the following commonly used parameters:</p>
+<table border="1">
+<thead>
+<tr align="center">
+<td><u>Flag</u></td>
+<td><u>Purpose</u></td>
+</tr></thead>
+<tbody>
+<tr><td>-f</td><td>forces removing a file, even if user has no rights to write the file.</td></tr>
+<tr><td>-i</td><td>user will be asked to confirm the operation for each file.</td></tr>
+<tr><td>-b</td><td>creates backup copy of a file to be overwritten.</td></tr>
+</tbody>
+</table>
 
 
         </div>
