@@ -1,9 +1,0 @@
-help whatever
-lab
-lib
-l.txt
-makefile
-nano.save
-presentations
-test
-themes
