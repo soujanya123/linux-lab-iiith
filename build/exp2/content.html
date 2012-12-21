@@ -49,7 +49,7 @@ edit -->
       <header id="experiment-article-heading" class="heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
-Process Control
+Process Management
         <!-- Add any additional element if required with proper 
         enclosing-->
       </header>
@@ -90,9 +90,12 @@ Process Control
           <div id="experiment-article-section-1-content" 
           class="content">	
 		<p>
-Welcome to Process Control, the second experiment in the Systems and Software Virtual Lab. Process control refers to creating, killing, changing priorities of processes on a machine. The goal of this experiment is to give teach basic process control on a Linux machine. The theory section provides a brief overview of commands needed to do process control.
+Welcome to Process Control, the second experiment in the Systems and Software Virtual Lab. Process control refers to creating, killing, changing priorities of processes on a machine. The goal of this experiment is to teach basic process control on a Linux machine. The theory section provides a brief overview of commands needed to do process control.
+</p>
+
 <p>
-The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports few basic set of commands to enable the user learn process control basics. The experiment contains the command line interface and an instructor section (in green background) below it. The instructor section guides the user to peform the experiment which is a series of tasks.</p>
+The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports few basic set of commands to enable the user learn process control basics. There are a series of tasks which need to be performed in each experiment. </p>
+<p>
 Proceed to the theory section to get an overview of the commands and then move to the experiment section to get some hands-on experience and finish the experiment tasks. After you are done with the experiment go to the quiz section to test your understanding.
 
 
@@ -102,20 +105,19 @@ Proceed to the theory section to get an overview of the commands and then move t
 
       </section>
 
-      <!-- Second section of the article-->
       <section id="experiment-article-section-2">
         
         <div id="experiment-article-section-2-icon" 
         class="icon">
 	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/theory.jpg" />
+	  <img src="../images/objective.jpg" />
 	</div>
 				
         <!-- The heading for the section can be enclosed in a 
         div tag. -->
         <div id="experiment-article-section-2-heading" 
         class="heading">
-          Theory
+	Objective
         </div>
 
 
@@ -123,35 +125,61 @@ Proceed to the theory section to get an overview of the commands and then move t
         element, we can also include images with <img> tag -->
         <div id="experiment-article-section-2-content" 
         class="content">
-          <p>
-	<br>	<font size="4">1. Viewing the processes (the ps command):</font>
-<br><br>		ps command is the short form of process status.ps displays information about a selection of the active processes when it is executed without any flags.
+      <!-- Second section of the article-->
+      <p>The goal of this experiment is to give a basic understanding of system processes and the ways to view and manipulate them.</p>
+      </div>
+      </section>
 
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-3-content" 
+        class="content">
+	  <h3>What is a process?</h3>
+	  <p>A process, also known as task, is an executing instance of a program.</p>
+		<h3>1. Viewing the processes:</h3>
+		<h2>the 'ps' command</h2>
+<p>		'ps' command is the short form of <b>p</b>rocess <b>s</b>tatus. 'ps' displays information about a selection of the active 
+processes when it is executed without any flags.
+</p>
 <pre class="code">
-
 johndoe@laptop:~/Documents$ ps
    PID   TTY        TIME    CMD
   2635   pts/9    00:00:00  ps
   26439  pts/9    00:00:00  bash
-
-
 </pre>
-
-<br> The most used flags for ls command are A, e, p, C.
+<p>Here, <i>PID</i> refers to process ID, which is a unique ID for each process.  <i>TTY</i> (<b>t</b>erminal <b>ty</b>pe) is the name of the 
+console or terminal that the user logged into, and can also be found using the 'tty' command. <i>TIME</i> is the amount of CPU time for which the process has been running. <i>CMD</i> is the name of the command that launched the process.</p>
+<p> The most used flags for 'ps' command are A, e, p, C, o.</p>
 
 <table border="1">
-<thead><tr><td>Flag</td><td>Purpose</td></tr	> </thead>
+<thead><tr><td align="center"><u>Flag</u></td><td align="center"><u>Purpose</u></td></tr> </thead>
 <tbody>
 <tr><td>A</td><td>Displays all the processes running on a system</td></tr>
 <tr><td>e</td><td>Same as 'A' option</td></tr>
-<tr><td>p</td><td>Displays processes whose process numbers occur in pidlist ( -p pidlist)  </td></tr>
+<tr><td>p</td><td>Displays processes whose process numbers occur in pidlist ("ps -p pidlist")  </td></tr>
 <tr><td>C</td><td>Displays processes corresponding to a particular command </td></tr>
-
+<tr><td>o</td><td>Displays processes in the specified format.</td></tr>
  </tbody>
 </table>
-<br>
-<pre class="code">
 
+<pre class="code">
 johndoe@laptop:~/Documents$ ps -e
 PID  TTY          TIME CMD
 1    ?        00:00:00 init
@@ -162,23 +190,21 @@ PID  TTY          TIME CMD
 3111 pts/0    00:00:00 bash
 3132 pts/1    00:00:00 bash
 3151 pts/1    00:00:00 ssh
-
-
 </pre>
-
-The above is the abridged version of ps -e
-<br>
+<p>
+The truncated output of 'ps -e' command is shown above.
+</p>
 <pre class="code">
-
 johndoe@laptop:~/Documents$ ps -p 3111 3151
 PID     TTY     STAT   TIME         COMMAND
 3111   pts/0    S      0:00         bash
 3151   pts/1    S+     0:00         ssh johndoe@vlabs.in
 </pre>
-All the processes corresponding to a pidlist are displayed.
+<p>
+All the processes corresponding to PID 3111 and 3151 are displayed.
+</p>
 <pre class="code">
-
-johndoe@johndoe-laptop:~/Documents$ ps -c chrome
+johndoe@johndoe-laptop:~/Documents$ ps -C chrome
 PID TTY          TIME   CMD
 2022 ?        00:03:35 chrome
 2025 ?        00:00:02 chrome
@@ -191,86 +217,239 @@ PID TTY          TIME   CMD
 2921 ?        00:00:03 chrome
 3170 ?        00:00:01 chrome
 3256 ?        00:00:01 chrome
-
 </pre>
-
-All the processes running with the commandname(chrome in this case) will be displayed.<br><br>
-
-<br>	<font size="4">2. Running processes in the background</font>
-
-<br><br>When we use the shell to launch a process, we wait for the process to be completed before we get back the control of the shell.This is called running a process in the foreground. It is also possible to run a process in the background. In this case, the program is launched and control is returned the the shell immediately, allowing you to run other commands. In the meantime, the initial process continues to run in the background. To place a process in the background, we append '&' at the end of the command.
-
+<p>
+All the processes running with the command name (chrome in this case) will be displayed.
+</p>
 <pre class="code">
+johndoe@johndoe-laptop:~/Documents$ ps -o pid, -o comm
+PID    COMMAND
+17746  bash
+17958  ps
+</pre>
+<p>
+The fields corresponding to the arguments specified (PID and COMMAND in this case) are displayed.
+</p>
+<pre class="code">
+johndoe@johndoe-laptop:~/Documents$ ps | grep bash
+17746 pts/6    00:00:00 bash
+</pre>
+<p>
+The processes containing the string (bash in this case) are displayed.
+</p>
+<h2>top command</h2>
+<p>To view the processor activity in real time, use the <b>top</b> command.
+<pre class="code">
+top - 14:36:25 up 43 min,  3 users,  load average: 0.16, 0.11, 0.25
+Tasks: 191 total,   1 running, 190 sleeping,   0 stopped,   0 zombie
+Cpu(s):  4.0%us,  1.2%sy,  0.0%ni, 94.8%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   3028152k total,  1792836k used,  1235316k free,    92944k buffers
+Swap:  4194300k total,        0k used,  4194300k free,   749404k cached
 
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                  
+   1156 root      20   0  115m  21m 7964 S    2  0.7   0:49.47 Xorg                                                                                     
+    4383 kaushik   20   0  254m 101m  22m S    2  3.4   0:12.21 chrome                                                                                   
+     2148 kaushik   20   0  291m  64m  25m S    1  2.2   0:29.49 compiz                                                                                   
+      4108 kaushik   20   0 93620  15m  10m S    1  0.5   0:03.75 gnome-terminal                                                                           
+       4495 kaushik   20   0  2856 1192  888 R    1  0.0   0:00.13 top                                                                                      
+         892 messageb  20   0  4228 2012  876 S    0  0.1   0:01.37 dbus-daemon                                                                              
+	  1574 root      20   0 28692 4296 3212 S    0  0.1   0:00.46 upowerd                                                                                  
+	   2166 kaushik   20   0  169m  30m  17m S    0  1.0   0:05.30 nautilus                                                                                 
+	    2670 kaushik   20   0  489m 129m  44m S    0  4.4   0:35.29 chrome                                                                                   
+	     2784 kaushik   20   0  193m  42m  19m S    0  1.4   0:12.00 chrome                                                                                   
+	      2822 kaushik   20   0  177m  33m  18m S    0  1.1   0:01.94 chrome                                                                                   
+	       4398 kaushik   20   0  239m  95m  23m S    0  3.2   0:14.59 chrome                                                                                   
+	        4427 kaushik   20   0  230m  84m  23m S    0  2.8   1:51.66 chrome                                                                                   
+		 4496 root      20   0     0    0    0 S    0  0.0   0:00.05 kworker/0:1                                                                              
+		     1 root      20   0  3536 1996 1312 S    0  0.1   0:00.68 init                                                                                     
+		         2 root      20   0     0    0    0 S    0  0.0   0:00.00 kthreadd                                                                                 
+			     3 root      20   0     0    0    0 S    0  0.0   0:00.13 ksoftirqd/0                                                                              
+			         6 root      RT   0     0    0    0 S    0  0.0   0:00.00 migration/0                                                                              
+				     7 root      RT   0     0    0    0 S    0  0.0   0:00.01 watchdog/0                                                                               
+				        13 root       0 -20     0    0    0 S    0  0.0   0:00.00 cpuset                                                                                   
+					   14 root       0 -20     0    0    0 S    0  0.0   0:00.00 khelper                                                                                  
+					      15 root      20   0     0    0    0 S    0  0.0   0:00.00 kdevtmpfs                                                                                
+					         16 root       0 -20     0    0    0 S    0  0.0   0:00.00 netns                                                                                    
+						    18 root      20   0     0    0    0 S    0  0.0   0:00.00 sync_supers                                                                              
+						       19 root      20   0     0    0    0 S    0  0.0   0:00.00 bdi-default                                                                              
+						          20 root       0 -20     0    0    0 S    0  0.0   0:00.00 kintegrityd                                                                              
+							     21 root       0 -20     0    0    0 S    0  0.0   0:00.00 kblockd                                                                                  
+							        22 root       0 -20     0    0    0 S    0  0.0   0:00.00 ata_sff                                                                                  
+								   23 root      20   0     0    0    0 S    0  0.0   0:00.00 khubd                                                                                    
+								      24 root       0 -20     0    0    0 S    0  0.0   0:00.00 md                                                                                       
+								         26 root      20   0     0    0    0 S    0  0.0   0:00.00 khungtaskd                                                                               
+									    27 root      20   0     0    0    0 S    0  0.0   0:00.00 kswapd0                                                                                  
+</pre>
+<p>The first few lines display the system summary. The uptime, process information, CPU and memory state is displayed. The display of these can be toggled using single-key commands.</p>
+<p>The first line displays the time for which the system has been up and the three load averages of the system. The <i>load averages</i> are the 
+average number of processes ready to run during the last 1, 5 and 15 minutes. The <b>uptime</b> command gives the same output as this line. The
+display of uptime can be toggled by typing <b>l</b>.</p>
+<p>The second line displays information about the number of processes.</p>
+<p>The third line displays information about CPU states. Shows the percentage of CPU time in user mode, system mode, niced tasks, iowait and 
+idle. The display of processes and states can be toggled by typing <b>t</b>.</p>
+<p>The fourth line displays the memory usage statistics, including total available memory, free memory, used memory, shared memory, and memory 
+used for buffers.</p>
+<p>The fourth line displays statistics on swap space, including total swap space, available swap space, and used swap space. The display of 
+<i>Mem</i> and <i>Swap</i> can be toggled typing <b>m</b>. The <b>free</b> command displays the same output as that of <i>Mem</i> and <i>Swap</i>.
+</p>
+<p>
+The columns display the following information:</p>
+<table border="1">
+<thead align="center">
+<tr>
+<td><u>Field</u></td>
+<td><u>Meaning</u></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>The process ID of the process.</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>The user name of the process' owner.</td>
+</tr>
+<tr>
+<td>PR</td>
+<td>The priority of the process.</td>
+</tr>
+<tr>
+<td>NI</td>
+<td>The nice value of the process.</td>
+</tr>
+<tr>
+<td>VIRT</td>
+<td>Virtual size of the process, the sum of the memory which the process is using.</td>
+</tr>
+<tr>
+<td>RES</td>
+<td>Resident size, the amount of physical memory the process is using.</td>
+</tr>
+<tr>
+<td>SHR</td>
+<td>The amount of VIRT size that is sharable.</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>The process' share of CPU time.</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>The process' share of physical memory.</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>The total CPU time the process has used since it started.</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>The command that started the process.</td>
+</tr>
+</tbody></table>
+<p>The processes are by default sorted on the basis of highest %CPU value. The processes which take up maximum CPU time are displayed on screen.
+To sort the processes based on some different field, single-key commands can be used. Typing <b>M</b> sorts the processes based on memory usage.
+<b>T</b> sorts the processes based on the total running time. <b>N</b> sorts the processes on the PID value. <b>P</b> sorts processes on CPU
+usage time. Sorting is done in the decreasing order in all cases. Also, the commands are case-sensitive.</p>
+<p>
+The number of processes displayed by default depends on the screen size. We can change this by typing the <b>n</b> command, which will prompt you 
+to enter the number of processes to be displayed. Setting this to '0' will will reset the default behaviour.</p>
+<p>The time interval in which the display is updated is called the 'delay time'. Type <b>s</b> or <b>d</b> command to change the delay time.
+Hit space to update the ouput immediately.</p>
+<p>Type <b>q</b> to quit.</p>
+
+<h3>2. Control Codes</h3>
+<p>
+The shell offers a number of control codes that perform a specific command. A control code is issued by holding down the 
+Ctrl key, followed by a key-press.
+<table border="1">
+<thead>
+<tr>
+<td align="center"><u>Control Code</u></td>
+<td align="center"><u>Action</u></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+c</td><td>Cancels a command or interrupts a running program.</td>
+</tr>
+<tr>
+<td>Ctrl+z</td><td>Suspends a process or job, without terminating. <code>"fg"</code> command can be used to restart the suspended job or process</td>
+</tr>
+</tbody>
+</table>
+<p>	<font size="4">3. Running processes in the background</font></p>
+
+<p>When we use the shell to launch a process, we wait for the process to be completed before we get back the control of the shell.This is called running a process in the foreground. It is also possible to run a process in the background. In this case, the program is launched and control is returned the the shell immediately, allowing you to run other commands. In the meantime, the initial process continues to run in the background. To place a process in the background, we append '&' at the end of the command.
+</p>
+<pre class="code">
 johndoe@laptop:~/Documents/my_projects$ gedit filename.txt &
 johndoe@laptop:~/Documents/my_projects$
-
 </pre>
-<br> We can use the 'jobs' command to view the background processes.
+<p> We can use the 'jobs' command to view the background processes.</p>
 
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ jobs
 [2]+  Done                    gedit filename.txt
-
 </pre>
-<br> If a process running in the foreground is taking a long time, we can relegate it to the background. This is a 2 step process.<br>
+<p> If a process running in the foreground is taking a long time, we can relegate it to the background. This is a 2 step process.<br>
 a). Hold Ctrl + Z key to suspend the process.<br>
-Use jobs to see the current status of the process.<br>
-
+Use <code>"jobs"</code> to see the current status of the process.<br>
+</p>
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ jobs
 [2]  + Suspended        gedit filename.txt
 </pre>
-<br>b) Now type in 'bg %N' where N is the job id - 2 in this case.
-
+<p>b) Now type in <code>"bg %N"</code> where N is the job id - 2 in this case.
+</p>
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ bg %2
 [2] gedit filename.txt &
 </pre>
-<br>Now control will return to the shell and the process will execute in the background.
-<br>To bring back the process to the foreground, we use the 'fg' command.
+<p>Now control will return to the shell and the process will execute in the background.
+<br>To bring back the process to the foreground, we use the 'fg' command.</p>
 
 <pre class="code">
 johndoe@laptop:~/Documents/my_project$ fg %2
 </pre>
-<br> Now the shell prompt goes away and control is given back only after process completes the execution.
-<br>
-<br><font size="4">	3. Killing processes</font>
-<br><br>We use the kill command to kill the processes.The kill command takes the PID of the process as an argument.
+<p> Now the shell prompt goes away and control is given back only after process completes the execution.</p>
+
+<p><font size="4">	4. Killing processes</font></p>
+<p>
+We use the <code>"kill"</code> command to kill the processes.The <code>"kill"</code> command takes the PID of the process as an argument.
 <br>Suppose we want to kill the process 'gedit'
+</p>
 <pre class="code">
 johndoe@laptop:~/Documents$ ps -e | grep gedit
 3155 ?        00:00:05 gedit
 </pre>
-<br> The first column of the output gives the PID of the gedit process
+<p> The first column of the output gives the PID of the gedit process </p>
 <pre class="code">
 johndoe@laptop:~/Documents$ kill 3155 
 johndoe@laptop:~/Documents$
 </pre>
-<br> We can now check whether the process has been killed or not.
+<p> We can now check whether the process has been killed or not.</p>
 <pre class="code">
 johndoe@laptop:~/Documents$ ps -e | grep gedit
 johndoe@laptop:~/Documents$  
 </pre>
-<br> Since there is no output, it means that there is no process running with the name gedit, which means that it has been killed.
+<p> Since there is no output, it means that there is no process running with the name gedit, which means that it has been killed.
+</p>
 
+<p>
+5. Changing Process Priority:
+</p><p>
+The priority of a process is indicated by its "nice value". Lesser the nice value of a process, more is the priority. Nice value ranges from -20 (fastest) to 20 (slowest). The nice value of a process (pid = 100) can be viewed by using the ps command as:  ps -o pid,nice -p 100.
 <br>
-
-4. Changing Process Priority:
-
-The priority of a process is indicated by its "nice value". Lesser the nice value of a process, more is the priority. Nice value ranges from -20 (fastest) to 20 (slowest). The nice value of a process (pid = 100) can be viewed by using the ps command as:  ps -o pid,nice -p 100
-
 The nice value of a process can be changed by using the renice command. The renice command takes two arguments: the new priority and process ID. 
 
 <pre class="code">
-
 johndoe@laptop:~/Documents$ ps -o pid,nice -p 2292
 PID NI
 2292 0
 johndoe@laptop:~/Documents$ renice -10 2292
 2292: old priority 0, new priority -10
 johndoe@laptop:~/Documents$  
-
 </pre>
 
 		       </p>
@@ -300,8 +479,8 @@ johndoe@laptop:~/Documents$
  <br />If you already have Virtual Labs login
 	  credentials, please click 
 <A HREF="javascript:void(0)"
-onclick="window.open('interaction-frame.html',
-'welcome','width=screen.availWidth,height=screen.availHeight,status=yes')">
+onclick="window.open('../php/login-form.php?expid=2',
+'welcome',width=screen.availWidth,height=screen.availHeight,status='yes')">
 here</A>.<br />
 In case you do not have login credentials, please click here.	  </div>
 

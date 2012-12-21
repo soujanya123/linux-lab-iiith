@@ -23,4 +23,29 @@ a,b,c,d,e respectively.
 Task 4:
 -------
 
-Delete the entire directory structure (including the files) you've created.
+Create a soft link for file 1 named 1lns in the same directory as file 1.
+
+Task 5:
+-------
+
+Create a hard link for file for file 2 named 2lnh.
+
+Task 6:
+-------
+
+Find the total amount of disk space used.
+
+Task 7:
+-------
+
+Archive the directories a and b in an archive named ab.tar
+
+Task 8:
+-------
+
+List the contents of the tar file without extracting the files.
+
+Task 9:
+-------
+
+Extract the folder a from the tar file.

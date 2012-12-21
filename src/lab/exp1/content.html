@@ -87,8 +87,11 @@ edit -->
 	element, You can also include images with <img> tag -->
 	<div id="experiment-article-section-1-content" class="content">	
 	<p>
-	This experiment deals with the basic tasks of managing files in a Linux system, including the various ways of creating, viewing, moving
-	and deleting files and folders, using a command-line interface.
+	File Managment deals with manipulations of the files, folders
+	and directories on the system.  This experiment provides a brief
+	overview on the basic tasks of managing files including the
+	various ways of creating, viewing, moving and deleting files and
+	folders using the command-line interface.
 	</p>
 	</div>
 
@@ -106,7 +109,9 @@ edit -->
 	</div>
 
 	<div id="experiment-article-section-2-content" class="content">
-	<p>The goal of this experiment is to learn how to create and manipulate files and directories using a Linux command-line interface.</p>
+	<p>The goal of this experiment is to provide a brief overview on
+	how to create and manipulate files and directories using the Linux
+	command-line interface.</p>
 	</div>
 	
 	</section>
@@ -131,27 +136,42 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-4-content" class="content">
 	<h3>1. Linux File System</h3>
-	<p>A linux system is comprised of files and processes. In this experiment we shall look at file management. The next experiment deals
-	with processes.</p>
-	<p>The files are organized in a tree-like structure under the root
-	directory. There are different types of files in a Linux system. Most are just regular text, executable files or programs. Other types of 
-	files include directories, which is a list of files, and links, which is a mechanism to make a file accessible from a different part of a 
-	linux filesystem (discussed in detail in <a href="../exp7/index.html">Advanced File Management</a>)</p>
-	<p>The <i>path</i> of a file is the location of a file in the filesystem. There are two ways of specifying the path of a file: <i>relative
-	path</i> and <i>absolute path</i>. <i>Relative path</i> is the location of a file relative to your current location in the filesystem.
-	<i>Absolute path</i> is the location of the file with respect to the root directory. It is independent of the current working directory.<p>
+	<p>A linux system is comprised of files and processes. In this
+	experiment we shall look at file management. The next experiment
+	deals with processes.</p>
+	<p>The files are organized in a tree-like structure under the
+	root directory. There are different types of files in a Linux
+	system. Most are just regular text, executable files or
+	programs. Other types of files include directories, which is a
+	list of files, and links, which is a mechanism to make a file
+	accessible from a different part of a linux filesystem
+	(discussed in detail in <a href="../exp7/index.html">Advanced
+	File Management</a>)</p>
+	<p>The <i>path</i> of a file is the location of a file in the
+	filesystem. There are two ways of specifying the path of a
+	file: <i>relative path</i> and <i>absolute path</i>. <i>Relative
+	path</i> is the location of a file relative to your current
+	location in the filesystem.
+	<i>Absolute path</i> is the location of the file with respect to
+	the root directory. It is independent of the current working
+	directory.<p>
 	<h3>2. Viewing the contents of files and directories </h3>
-	<p>We shall see how to view the contents of files and directories using three commands, namely <b>pwd</b>, <b>ls</b> and <b>cat</b>.</p>
-<p>	<font size="3"><b>pwd command</b></font></p>
-<p>	To know the current working directory, enter the command <b>pwd</b> (<b>P</b>resent <b>W</b>orking <b>D</b>irectory).</p>
+	<p>We shall see how to view the contents of files and
+	directories using three commands, namely <b>pwd</b>, <b>ls</b>
+	and <b>cat</b>.</p>
+        <p><font size="3"><b>pwd command</b></font></p>
+        <p>To know the current working directory, enter the command <b>pwd</b>
+        (<b>P</b>resent <b>W</b>orking <b>D</b>irectory).</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ pwd
-/home/johndoe/Documents
+johndoe@laptop:~/Documents$ pwd /home/johndoe/Documents
 </pre>
-<p>     <font size="3"><b>ls command</b></font></p>
+<p> <font size="3"><b>ls command</b></font></p>
 <p>
-	To list the contents of a directory, the <b>ls</b> command is used. When it is executed with no arguments, it lists the contents of the 
-	current working directory. <b>ls</b> followed by directory path prints the contents of the specified directory.</p>
+	To list the contents of a directory, the <b>ls</b> command is
+	used. When it is executed with no arguments, it lists the
+	contents of the current working directory. <b>ls</b> followed by
+	directory path prints the contents of the specified
+	directory.</p>
 	<pre class="code">
 johndoe@laptop:~/Documents$ ls
 example.txt  all_about_console.txt my_project
