@@ -1,0 +1,58 @@
+* File management
+** Theory 
+*** Relative path or absolute path
+    Explanation has to be improved. What is a file or a
+    directory needs to be explained. What is / or root
+    folder? There are no drives in Linux. / is used for
+    separating parent and child entries. Unnecessary
+    information about processes and links at this stage.
+*** pwd
+*** ls (-l, -a, -s, -R, -t, -h)
+     + sRt options are not required
+     + h requires understanding of units bytes, etc
+     + Explaination of ls with directory as argument is not
+       required
+*** File permissions 
+     + Not explained properly, best to indicate to ignore
+       them
+*** . and .. explaination needs to be improved
+*** Suggested use of info 
+     + Very bad idea. No explanation on how to navigate in
+       info window or how to quit it
+*** cat
+     + Explaination is poor. Needs examples.
+     + Explaining cat without explaining editor or echo
+       with redirection is not advisable
+*** cd (-, ~)
+     + Explaination can be improved. 
+     + Should include information on effect of using cd
+       command without any argument
+     + Should be explained right after pwd and before ls
+*** touch
+     + What if directory is touched?
+*** mkdir
+     + Explaination needs to be improved. What is a parameter?
+*** cp (-r)
+     + Explain what 'copy' actual means?
+     + Explaination of recursive copying should be improved.
+*** mv
+     + Improve explaination
+     + Explain overwriting of one file with other using mv
+     + Difference between cp followed by rm of source and mv
+*** rm (-r)
+     + Move before mv command
+     + Add warning and information that file/folder deleted
+       cannot be recovered. 
+     + Mention about absence of "Recycle bin" or "Trash"
+       when using command line
+     + Caution about deleting home folder
+*** rmdir 
+     + Move before rm command
+*** -f, -i, -b options for cp, mv and rm
+     + Not required and can be removed
+** Experiment
+*** Login and register are not working for some reason, hence cannot check the experiment.
+
+      
+       
+   
