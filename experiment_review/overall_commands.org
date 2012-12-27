@@ -29,6 +29,7 @@
 *** Searching - grep (Regular expression, -v, -A, -B, -C, -o), find (-iname, -delete)
 *** Basic networking - ifconfig, ping, ssh, scp, rsync (-vtrpaz), passwd
 ** Extra experiments
+*** Version control - Bazaar
 *** Process management - Ctrl+C, Ctrl+Z, bg, fg, ps, jobs, kill, killall
 *** Commands history - history, HISTTIMEFORMAT, Ctrl+R, .bash_history, !
 *** Environment variables - echo, export, PATH, set, 
