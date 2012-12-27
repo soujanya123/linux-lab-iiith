@@ -1,0 +1,37 @@
+#+TAGS: Saurabh(s) Chandan(c) Pranitha(p) Swathy(y) Swaroop(o) Mahesh(m) Kaushik(k)
+* List of existing experiments
+** Getting help - man, info, whatis, -h, apropos,
+** File management - pwd, ls, cat, cd, touch, mkdir, cp, mv, rm, rmdir
+** Process management - ps, top, Ctrl+c, Ctrl+z, fg, jobs, bg, kill, renice
+** Basic networking concepts - ifconfig, ip, hostname, ping, traceroute, wget, ssh
+** Version control - svn
+** User management - whoami, su, id, useradd, passwd, userdel, usermod, gpasswd, groupadd or addgroup, chown, chmod
+** Examining log and configuration files - No special account
+** Advanced File Management - Shell wildcards, find, nano, ln, du, file, tar, zip, unzip
+** BASH and environment variables - .bashrc, .bash_profile, .bash_logout, source, uname, sed, awk, uptime, grep, rsync, alias, env, export, PATH
+** RSYNC - rsync, 
+** GPG Encryption and Decryption - gpg
+** Status commands - whoami, who, w, uname, lsb_release, df, free, date, cal 
+** Text processing - Pipes and redirection, more, less, grep, wc, diff, paste, sort, head, tail
+** Executing commands - history, bang(!), sudo, environment variables 
+
+
+* Proposed list of experiments
+
+** Selected experiments
+*** File management - pwd, cd, ls (-a, -l), man, touch, rm (-r, -f), mkdir, rmdir, cp (-r), mv, du (-sh), tree :Pranitha:
+*** Text editor - vim, vimtutor					    :Chandan:
+*** File content - echo, cat, less, more, wc, head (-n), tail (-n), diff, sort :Swaroop:
+*** Permissions - chmod (a=, u+, 754) 				    :Saurabh:
+*** Archival and compression - tar (xcvjfz), gzip, gunzip, bzip2, bunzip2, zip, unzip :Swathy:
+*** Getting system information - free (-m), ps (aux, -C, -F, -f), top, more /etc/issue, df -h, more /proc/cpuinfo, w, whoami, uname, date, cal, uptime :Mahesh:
+*** Pipes and redirection - >, <, |, 2>, >>, $()		    :Kaushik:
+*** Searching - grep (Regular expression, -v, -A, -B, -C, -o), find (-iname, -delete)
+*** Basic networking - ifconfig, ping, ssh, scp, rsync (-vtrpaz), passwd
+** Extra experiments
+*** Process management - Ctrl+C, Ctrl+Z, bg, fg, ps, jobs, kill, killall
+*** Commands history - history, HISTTIMEFORMAT, Ctrl+R, .bash_history, !
+*** Environment variables - echo, export, PATH, set, 
+*** Links - ln
+*** Encryption and Decryption - gpg
+
