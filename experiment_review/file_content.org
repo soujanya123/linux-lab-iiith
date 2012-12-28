@@ -1,0 +1,79 @@
+#+Title: File Content Experiment Review
+#+Author: Swaroop
+
+* Review of File Content commands
+** Location of Experiment 
+- There is no separate experiment page for file content. All the
+  commands of file content are distributed to different other
+  experiment pages, for example: echo is projected in bash and
+  environment and "cat" projected in file management.
+** Theory
+*** echo
+**** Location of Experiment 
+- Located in bash and environment variables.
+*** cat
+**** Existing 
+- Theory just explains about displaying content of file.
+**** Improvements 
+- Need to improve cat options (Ex: numbering the output line with -n
+  option etc), functionality of inserting data and over writing a file
+  in both sections theory and experiment.
+**** Location of Experiment 
+- Located in File Management.
+  
+*** less
+
+*** more
+*** wc
+**** Existing 
+- Good enough explanation with example.
+**** Improvements 
+- Need to improve format of theory part. Syntax was continued in the
+  same paragraph better to present it in new line.
+**** Location
+- 
+*** head 
+*** tail 
+*** diff
+**** Existing 
+- Enough explanation was projected with example.
+**** Improvements
+- If necessary good to include wdiff for comparing word, sdiff for
+  merging.
+**** Location of Experiment 
+- Located in Text Processing 
+
+*** sort
+
+** Experiment
+* New Content for File Content Commands
+** echo
+- Description :: echo is command used to display line of a text file,
+                 and to append a line to a text file. More description
+                 about echo and its options can be found in man page
+                 ($man echo).
+            
+- Syntax      :: echo {options} {file-name} 
+
+- Examples    :: echo $(date)
+                 echo "Today's date is $(date)" > /tmp/temp.txt.
+** cat 
+
+- Description  :: cat is one of the flexible command. It is used to
+                  create, display and concatenate files. Man page give
+                  you more information about its usage and options.
+
+- Syntax       :: cat {options} {file-name} 
+                 
+- Example      :: cat example.txt (to display content of file)
+                  cat > example2.txt (Creates file, allow to enter content).
+
+** less
+
+** more
+** wc
+** head
+** tail
+** diff
+** sort
+

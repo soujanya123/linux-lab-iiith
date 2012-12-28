@@ -1,0 +1,217 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+<!-- The lab Header contains the logo and the name of the lab,
+	usually displayed on the top of the page-->
+
+	<header id="experiment-header" >
+
+	<div id="experiment-header-logo" class="logo">
+	<!-- Enclose the logo image of your lab or write it in 
+	text-->
+	<img src="../images/logo.jpg" />
+	</div>
+
+	<div id="experiment-header-heading" class="heading">
+	<!-- Write the name of your lab and link it to the home 
+	page of your lab (h1 tag is preferred while writing your 
+			lab name)-->
+	<a href="../index.html">Systems and Software Virtual Lab</a>	
+	</div>
+
+	<!-- Add any additional element you want to add to the lab 
+	header, For example : Help (Enclosing them with suitable 
+			div is recommended)-->
+
+	</header>
+
+
+	<!-- The lab article is the main content area where all the 
+	experiment content sits-->
+	<article id="experiment-article">
+
+	<!-- The lab article has an header, optional navigational 
+	menu, number of sections, an optional sidebar and a closing 
+	footer-->
+
+	<header id="experiment-article-heading" class="heading">
+	<!-- You can add a welcome message or title of the 
+	experiment here -->
+	File Management
+	<!-- Add any additional element if required with proper 
+	enclosing-->
+	</header>
+
+	<!-- Navigation menu is useful to organize the view of 
+	multiple sections inside the article-->
+	<nav id="experiment-article-navigation" class="default">
+	<ul id="experiment-article-navigation-menu">
+	<!-- The menu can be dynamically generated to contain 
+	the headings of your sections or instead write the 
+	menu items of your choice individually enclosedu in 
+	<li> tag as shown below-->
+	</ul>
+	</nav>
+
+	<!-- All the sections of your lab or experiment can be 
+	enclosed together with a div element as shown below-->
+	<div id="experiment-article-sections">
+
+	<!-- First section of the article-->
+	<section id="experiment-article-section-1">
+
+	<div id="experiment-article-section-1-icon" class="icon">
+	<!-- Enclose the icon image of your lab -->
+	<img src="../images/introduction.jpg" />
+	</div>	
+
+	<!-- The heading for the section can be enclosed in a 
+	div tag. -->
+	<div id="experiment-article-section-1-heading" 
+	class="heading">
+	Introduction
+	</div>
+	<!-- Write the section content inside a paragraph 
+	element, You can also include images with <img> tag -->
+	<div id="experiment-article-section-1-content" class="content">	
+	<p>
+	File Content deals with displaying text file in different
+	dimensions with different unix commands.
+	</p>
+	</div>
+
+
+	</section>
+
+	<section id="experiment-article-section-2">
+
+	<div id="experiment-article-section-2-icon" class="icon">
+	<img src="../images/objective.jpg"/>
+	</div>
+
+	<div id="experiment-article-section-2-heading" class="heading">
+	Objective
+	</div>
+
+	<div id="experiment-article-section-2-content" class="content">
+	<p>The goal of this experiment is to provide a brief overview
+	on how to display content of a text file using the Linux
+	command-line interface.</p>
+	</div>
+	
+	</section>
+
+	
+
+	<section id="experiment-article-section-4">
+
+	<div id="experiment-article-section-4-icon" class="icon">
+	<!-- Enclose the icon image of your lab. -->
+	<img src="../images/theory.jpg" />
+	</div>
+
+	<!-- The heading for the section can be enclosed in a 
+	div tag. -->
+	<div id="experiment-article-section-4-heading" class="heading">
+	Theory
+	</div>
+
+	<div id="experiment-article-section-2-content" class="content">
+	<p> Below are various linux commands which help in getting
+	content of a text file in different views.</p>
+	</div>
+
+	<!-- Write the section content inside a paragraph 
+	element, we can also include images with <img> tag -->
+	<div id="experiment-article-section-4-content" class="content">
+	
+	<h3>1.echo</h3>
+	<p>echo is a built in command in the <b>bash</b> and <b>C</b>
+	shells that writes its character strings to standard output. More
+	description of its usage and option will be available in man
+	page( type in terminal $man echo)</p>
+	<p>Syntax of echo command<p>
+	<pre class="code">
+	  username@hostname:~$ echo [options] [string]
+	</pre>
+	<p>We shall see how to display current day date by
+	using <b>echo command</b>.</p>
+	<p>Syntax of echo command<p>
+	<pre class="code">
+	  username@hostname:~$ echo [options] [string]
+	</pre>
+	<p>To display current day date, enter the command <b>echo $(date)</b>
+	<pre class="code">
+	  swaroop@Kundeti:~$ echo $(date)
+	  Fri Dec 28 14:42:40 IST 2012
+	</pre>
+	
+	<h3>2.cat</h3>
+	<p>Cat is a one of the most frequently used command. It reach
+	file parameters and writes it to standard output.</p>
+
+	<p>Cat can be used in multi ways like "display text files on
+	screen", "copy text files", "combine text files", create new
+	text files". More decription of usage and its options can be
+	found in man pages.</p>
+	<p>Syntax of cat command</p>
+	<pre class="code">
+	  username@hostname:~$ cat [options] [filename]
+	</pre>
+	<p>We shall see how to use <b>cat command</b> for displaying
+	content of text file and copying contents from one file to
+	other file.</p>
+        <p>To know the content of file example.txt </p>
+      	<pre class="code">
+	  swaroop@Kundeti:~$ cat example.txt 
+	  this a example text file.
+	</pre>
+	<p>To copy content of file to another file</p>
+	<pre class="code">
+	  swaroop@Kundeti:~$ cat example.txt > example2.txt
+	  swaroop@Kundeti:~$ cat example2.txt 
+	  this a example text file.
+	</pre>
+
+	<h3>3.wc</h3>
+	<p>wc will display a count of lines, words, and characters in a file.</p>
+	<p>Syntax of wc command</p>
+	<pre class="code">
+	  username@hostname:~ wc [options] [file]
+	</pre>
+	<p>Below are the available options for wc command</p>
+	<table border="1">
+	  <thead><tr><td><u>Option</u></td><td align="right"><u>Purpose</u></td></tr> </thead>
+	  <tbody>
+	         <tr><td>c</td><td>Counts and displays number of bytes in a file</td></tr>
+		 <tr><td>m</td><td>Counts and displays number of characters in a file.</td></tr>
+		 <tr><td>l</td><td>Counts and displays the number os lines in a file</td></tr>
+		 <tr><td>w</td><td>Counts and display number of words in a file</td></tr>
+	  </tbody>
+	  
+	 </table>
+
+	<p>We see how to display count of lines, words and characters
+	in a file using <b>wc command</b></p>
+	<pre class="code">
+	  swaroop@Kundeti:~$ wc example.txt 
+	  1  5 26 example.txt
+	  
+	  Above output is :
+	  1  = Lines
+	  5  = Words
+	  26 = characters
+	  </pre>
+
