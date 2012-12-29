@@ -15,14 +15,14 @@
 ** Text processing - Pipes and redirection, more, less, grep, wc, diff, paste, sort, head, tail
 ** Executing commands - history, bang(!), sudo, environment variables 
 
-
+   
 * Proposed list of experiments
 
 ** Selected experiments
 *** File management - pwd, cd, ls (-a, -l), man, touch, rm (-r, -f), mkdir, rmdir, cp (-r), mv, du (-sh), tree :Pranitha:
 *** Text editor - vim, vimtutor					    :Chandan:
 *** File content - echo, cat, less, more, wc, head (-n), tail (-n), diff, sort :Swaroop:
-*** Permissions - chmod (a=, u+, 754) 				    :Saurabh:
+*** File Permissions - chmod (a=, u+, 754) 			    :Saurabh:
 *** Archival and compression - tar (xcvjfz), gzip, gunzip, bzip2, bunzip2, zip, unzip :Swathy:
 *** Getting system information - free (-m), ps (aux, -C, -F, -f), top, more /etc/issue, df -h, more /proc/cpuinfo, w, whoami, uname, date, cal, uptime :Mahesh:
 *** Pipes and redirection - >, <, |, 2>, >>, $()		    :Kaushik:
