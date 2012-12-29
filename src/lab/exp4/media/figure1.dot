@@ -1,10 +1,10 @@
 graph files
 {
-	computer [color="#6666FF",style="filled"];
+	layout=fdp;
+	nodesep=10;
 	files   [color="#66FFFF",style="filled",shape=box];
-	users   [color="#66FFFF",style="filled",shape=box];
-	computer -- files;
-	computer -- users;
+	teachers   [color="#66FFFF",style="filled",shape=box];
+	students  [color="#66FFFF",style="filled",shape=box];
 	files {
 		node [color="#FF6666",style=filled];
 		files -- "english.txt";
@@ -13,10 +13,6 @@ graph files
 		files -- "marks.txt";
 		files -- "students.txt";
 	};
-	teachers [color="#33FF33",style="filled"];
-	students [color="#33FF33",style="filled"];
-	users -- teachers;
-	users -- students;
 	teachers {
 		node [color="#11AA66",style=filled,shape=box,width=2];
 		teachers -- "english_teacher";
