@@ -5,11 +5,13 @@ build-js-dir=${build-dir}/js
 theme=blue-icon
 
 
-all:  help-dir 
+all:  exp4 help-dir
 
 help-dir:
-
 	(touch ${build-dir}/theme-${theme}; rsync -avC --exclude ${mathjax}.zip lab/* lib/* help themes/${theme}/* ${build-dir})
+
+exp4:
+	(cd lab/exp4/media; make)
 
 
 
