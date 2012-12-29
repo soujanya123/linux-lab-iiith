@@ -1,0 +1,417 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+<!-- The lab Header contains the logo and the name of the lab,
+	usually displayed on the top of the page-->
+
+	<header id="experiment-header" >
+
+	<div id="experiment-header-logo" class="logo">
+	<!-- Enclose the logo image of your lab or write it in 
+	text-->
+	<img src="../images/logo.jpg" />
+	</div>
+
+	<div id="experiment-header-heading" class="heading">
+	<!-- Write the name of your lab and link it to the home 
+	page of your lab (h1 tag is preferred while writing your 
+			lab name)-->
+	<a href="../index.html">Systems and Software Virtual Lab</a>	
+	</div>
+
+	<!-- Add any additional element you want to add to the lab 
+	header, For example : Help (Enclosing them with suitable 
+			div is recommended)-->
+
+	</header>
+
+
+	<!-- The lab article is the main content area where all the 
+	experiment content sits-->
+	<article id="experiment-article">
+
+	<!-- The lab article has an header, optional navigational 
+	menu, number of sections, an optional sidebar and a closing 
+	footer-->
+
+	<header id="experiment-article-heading" class="heading">
+	<!-- You can add a welcome message or title of the 
+	experiment here -->
+	Pipes and Redirection
+	<!-- Add any additional element if required with proper 
+	enclosing-->
+	</header>
+
+	<!-- Navigation menu is useful to organize the view of 
+	multiple sections inside the article-->
+	<nav id="experiment-article-navigation" class="default">
+	<ul id="experiment-article-navigation-menu">
+	<!-- The menu can be dynamically generated to contain 
+	the headings of your sections or instead write the 
+	menu items of your choice individually enclosedu in 
+	<li> tag as shown below-->
+	</ul>
+	</nav>
+
+	<!-- All the sections of your lab or experiment can be 
+	enclosed together with a div element as shown below-->
+	<div id="experiment-article-sections">
+
+	<!-- First section of the article-->
+	<section id="experiment-article-section-1">
+
+	<div id="experiment-article-section-1-icon" class="icon">
+	<!-- Enclose the icon image of your lab -->
+	<img src="../images/introduction.jpg" />
+	</div>	
+
+	<!-- The heading for the section can be enclosed in a 
+	div tag. -->
+	<div id="experiment-article-section-1-heading" 
+	class="heading">
+	Introduction
+	</div>
+	<!-- Write the section content inside a paragraph 
+	element, You can also include images with <img> tag -->
+	<div id="experiment-article-section-1-content" class="content">	
+	<p>
+	The Bash Shell provides a number of programs (commands) that are focussed towards a specific and simple task. In practical applications, it is often required to perform complex tasks that involve multiple programs (commands) and the manipulation of the input and output of these programs. For example, you may wish to execute a set of consecutive commands, with the output of one command forming the input of the next; or you may wish to take input for a command from a file. For this purpose, the Bash Shell provides the powerful tool of Pipes and Redirection.
+	 
+	</p>
+
+	</div>
+
+
+	</section>
+
+
+	<section id="experiment-article-section-2">
+
+	<div id="experiment-article-section-2-icon" class="icon">
+	<!-- Enclose the icon image of your lab. -->
+	<img src="../images/objective.jpg" />
+	</div>
+
+	<!-- The heading for the section can be enclosed in a 
+	div tag. -->
+	<div id="experiment-article-section-2-heading" class="heading">
+	Objective
+	</div>
+
+
+	<!-- Write the section content inside a paragraph 
+	element, we can also include images with <img> tag -->
+	<div id="experiment-article-section-2-content" class="content">
+	<p>
+The goal of this experiment is to learn the various ways of executing multiple commands together and manipulating the input and output of these commands.
+</p>
+	</div>
+	</section>
+
+
+	<!-- Second section of the article-->
+	<section id="experiment-article-section-3">
+
+	<div id="experiment-article-section-3-icon" class="icon">
+	<!-- Enclose the icon image of your lab. -->
+	<img src="../images/theory.jpg" />
+	</div>
+
+	<!-- The heading for the section can be enclosed in a 
+	div tag. -->
+	<div id="experiment-article-section-3-heading" class="heading">
+	Theory
+	</div>
+
+
+	<!-- Write the section content inside a paragraph 
+	element, we can also include images with <img> tag -->
+	<div id="experiment-article-section-3-content" class="content">
+	<h3>Standard Input, Standard Output, Standard Error</h3>
+	<p>There are three important concepts you should know about: standard input, standard output and standard error.</p>
+	<p><b>Standard input</b> (stdin) is the data taken by the program at runtime. By default, the standard input stream is the keyboard. The standard input is classified as <b>Type 0</b> by the Bash shell.</p>
+	<p><b>Standard Output</b> (stdout) is where data written by the program. By default, this is the terminal where the program is run from. The standard output is classified as <b>Type 1</b> by the Bash shell.</p>
+	<p><b>Standard Error</b> (stderr) is the output stream where the error messages are written. It is independent of standard output. The default standard error stream is the terminal where the program was run from. The standard error is classified as <b>Type 2</b> by the Bash shell.</p>
+	<p>Here, the type 0, 1 and 2 are <i>file descriptors</i>, which is a low-level Linux abstraction. Details of this are not required with regards to this experiment. You can simply consider type 0, type 1 and type 2 as different classifications of the input, output and error streams by the system.</p>
+	<h3>Pipes and Redirection</h3>
+	<p>By default, shell commands take input from <i>stdin</i>, write output to <i>stdout</i> and write error output to <i>stderr</i>. It is often desirable to take input from other locations, such as a file or the output of another command. Pipes and redirections are special characters or a set of special characters, which are used to redirect the input and output of commands to another location. 
+Some commonly used pipes and redirects are: &gt;, &gt;&gt;, &lt;, |, 2> and $().
+	</p>
+	<p>
+	<b>&gt</b> prints the output from the command to the specified file. If the file already exists, it is overwritten.
+	</p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ ls
+	example.txt  all_about_console.txt my_project
+	johndoe@laptop:~/Documents$ ls > out.txt
+	johndoe@laptop:~/Documents$ cat out.txt
+	example.txt  all_about_console.txt my_project
+	</pre>
+	<p>
+	<b>&gt&gt</b> appends the output from the command to the specified file.
+	</p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ ls /var/
+	backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
+	johndoe@laptop:~/Documents$ ls /var/ >> out.txt
+	johndoe@laptop:~/Documents$ cat out.txt
+	example.txt  all_about_console.txt my_project
+	backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
+	</pre>
+	<p>
+	<b>&lt</b> reads the command input from the specified file.
+	</p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ cat &lt; file1 &gt; file2
+	</pre>
+	<p>The contents of file1 are printed to file2. Equivalent to <b>cp file1 file2</b>.</p>
+	
+	
+	<p><b>2></b> passes the error output from the command to the specified file. Here, 2 is a reference to the <i>file descriptor</i> of the error stream (1 is assumed by default, so there is no need to specify the type number for stdout). </p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ $(ls) 2> err.txt
+	johndoe@laptop:~/Documents$ cat err.txt
+	example.txt: command not found
+	</pre>
+	<p>
+	<b>|</b> passes the output from the command on the left side of the pipe as input to the command on the right side of the pipe.
+	</p>
+	<pre class="code">
+johndoe@laptop:~/Documents$ ls -l | sort -r -k 5
+total 4
+drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
+-rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 example.txt
+-rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
+	</pre>
+	<p>
+	Prints the files, sorted by size in the current working directory.
+	</p>
+	<pre class="code">
+johndoe@laptop:~/Documents$ ps aux | more
+	</pre>
+	<p>Prints all the processes on the system, one screen at a time.</p>
+
+	</pre>	
+	<p>
+	<b>$()</b> returns the output of the command, instead of writing it to stdout. Useful for passing it as the parameter of another command. 
+	</p>
+	<pre class="code">
+	johndoe@laptop:~/Documents$ echo $(ls)
+	err.txt  example.txt  all_about_console.txt my_project
+	</pre>
+
+	
+        </div>
+      </section>
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	  </div>
+
+	  <div id="experiment-article-section-4-heading" 
+	  class="heading">
+	  Experiment
+	  </div>
+
+	  <div id="experiment-article-section-4-content" 
+	  class="content">
+	  <p>
+	  <div id="login">
+If you already have Virtual Labs login
+	  credentials, please click 
+<A HREF="javascript:void(0)"
+onclick="window.open('interaction-frame.html',
+'welcome',width=screen.availWidth,height=screen.availHeight,status='yes')">
+here</A>.<br />
+In case you do not have login credentials, please click here.	  </div>
+
+	  <div id="signup">
+
+	  <div id="signup-warning"></div>
+
+	  <form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
+
+	  <table>
+	  <tr>
+
+	  <td>Your name</td><td> <input type="text" name="yourname" value="" id="yourname"/></td></tr>
+
+	  <td>Preferred username</td><td> <input type="text" name="preferredusername" value="" id="preferredusername"/></td></tr>
+
+	  <tr><td>Password</td> <td><input type="password" name="preferredpassword" id="preferredpassword"/></td></tr>
+
+	  <tr><td>Re-enter Password</td> <td><input type="password" name="repreferredpassword" id="repreferredpassword"/></td></tr>
+
+	  <tr><td>Email</td> <td><input type="text" name="email" id="email"/></td></tr>
+
+	  <tr><td>Re-enter Email</td> <td><input type="text" name="reemail" id="reemail"/></td></tr>
+
+	  <tr></tr>
+
+	  <tr><td colspan=2>Enter the black characters present in the below image</td></tr>
+
+	  <tr><td><img src="../php/captcha.php" id="captchaimg"/></td><td><input type="text" name="captcha" id="captcha"/></td></tr>
+
+	  <tr><td></td><td><input type="submit" value="Sign up" /></td></tr>
+
+	  </table>
+
+	  </form>
+
+	  </div>
+
+	  <div id="logout">
+
+	  <a href="#" onclick="logout();">Logout</a>
+	  </div>
+
+	  <pre id="terminal" class="code"><div id="input" class="inpcls"><form name='f' class='cmdform' action='' onsubmit="return false;" id="cmdformid"><table class="inputtable" id="inputtableid"><tr><td><div id='prompt' class='less'>user@pascal:~/$</div></td><td class="inputtd"><input id='inputfield' name='q' type='text' class='cmdline' autocomplete="off" value="" onkeypress="showHint(event,this.value)" /></td></tr></table></form><div id="output" class="outcls"></div></div></pre>
+
+<pre class="instr" id="instr">
+
+<div id="instruction" title="0">
+
+Now that we have learnt shell commands to do basic file management, we have an exercise for you.
+
+The shell above supports few basic shell commands. Play along to get some hands-on experience of the interface.
+
+When you are ready to perform the exercise, which is a set of 5 tasks, enter the command "start".
+
+</div>
+
+try: start,next,prev,clear,logout.
+
+</pre>
+
+
+
+
+          </p>
+        </div>
+
+      </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quiz
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+	<h3>True or False</h3>
+	<ol>
+	<li>'less ls -l' displays the output of 'ls -l' in less.</li>
+	<li>'sort &lt; f1.txt &gt; f2.txt' sorts the contents of f2.txt and prints the output to f1.txt.</li>
+	<li>'ls -l > output.txt' overwrites 'output.txt'.</li>
+	<li>'ls -l >> output.txt' overwrites 'output.txt'.</li>
+	<li>'sort -r -k 3 | ps aux' prints the processed sorted on CPU time.</li>
+	</ul>
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+	<ul>
+	<li><a href="http://polishlinux.org/console/file-management-in-linux/">http://polishlinux.org/console/file-management-in-linux/</a> </li>
+	<li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?ls">ls man page</a></li>
+	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html</a></li>
+	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html</a></li>
+	<li><a href="http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml">http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml</a></li>
+</ul>
+          </div>
+
+        </section>
+
+    <section id="experiment-article-section-9">
+
+          <div id="experiment-article-section-9-icon" 
+          class="icon">
+            <!-- Enclose the icon image of your lab.-->
+            <img src="../images/readings.jpg" />
+          </div>
+
+          <div id="experiment-article-section-9-heading" 
+          class="heading">
+	
+	Feedback
+          </div>
+
+          <div id="experiment-article-section-9-content" 
+          class="content">
+	Please provide us feedback <a href="http://virtual-labs.ac.in/feedback/" >here</a>
+          </div>
+
+        </section>
+	
+        
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+   <footer id="lab-footer" class="footer">
+    <!-- Put the content here-->
+	<a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+  </footer>
+</div>		
+
+</body>
+</html>
