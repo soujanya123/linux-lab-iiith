@@ -153,37 +153,37 @@ Some commonly used pipes and redirects are: &gt;, &gt;&gt;, &lt;, |, 2> and $().
 	<b>&gt</b> prints the output from the command to the specified file. If the file already exists, it is overwritten.
 	</p>
 	<pre class="code">
-	johndoe@laptop:~/Documents$ ls
-	example.txt  all_about_console.txt my_project
-	johndoe@laptop:~/Documents$ ls > out.txt
-	johndoe@laptop:~/Documents$ cat out.txt
-	example.txt  all_about_console.txt my_project
+johndoe@laptop:~/Documents$ ls
+example.txt  all_about_console.txt my_project
+johndoe@laptop:~/Documents$ ls > out.txt
+johndoe@laptop:~/Documents$ cat out.txt
+example.txt  all_about_console.txt my_project
 	</pre>
 	<p>
 	<b>&gt&gt</b> appends the output from the command to the specified file.
 	</p>
 	<pre class="code">
-	johndoe@laptop:~/Documents$ ls /var/
-	backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
-	johndoe@laptop:~/Documents$ ls /var/ >> out.txt
-	johndoe@laptop:~/Documents$ cat out.txt
-	example.txt  all_about_console.txt my_project
-	backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
+johndoe@laptop:~/Documents$ ls /var/
+backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
+johndoe@laptop:~/Documents$ ls /var/ >> out.txt
+johndoe@laptop:~/Documents$ cat out.txt
+example.txt  all_about_console.txt my_project
+backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
 	</pre>
 	<p>
 	<b>&lt</b> reads the command input from the specified file.
 	</p>
 	<pre class="code">
-	johndoe@laptop:~/Documents$ cat &lt; file1 &gt; file2
+johndoe@laptop:~/Documents$ cat &lt; file1 &gt; file2
 	</pre>
 	<p>The contents of file1 are printed to file2. Equivalent to <b>cp file1 file2</b>.</p>
 	
 	
 	<p><b>2></b> passes the error output from the command to the specified file. Here, 2 is a reference to the <i>file descriptor</i> of the error stream (1 is assumed by default, so there is no need to specify the type number for stdout). </p>
 	<pre class="code">
-	johndoe@laptop:~/Documents$ $(ls) 2> err.txt
-	johndoe@laptop:~/Documents$ cat err.txt
-	example.txt: command not found
+johndoe@laptop:~/Documents$ mkdir /x 2> err.txt
+johndoe@laptop:~/Documents$ cat err.txt
+mkdir: cannot create directory `/x': Permission denied
 	</pre>
 	<p>
 	<b>|</b> passes the output from the command on the left side of the pipe as input to the command on the right side of the pipe.
@@ -208,10 +208,27 @@ johndoe@laptop:~/Documents$ ps aux | more
 	<b>$()</b> returns the output of the command, instead of writing it to stdout. Useful for passing it as the parameter of another command. 
 	</p>
 	<pre class="code">
-	johndoe@laptop:~/Documents$ echo $(ls)
-	err.txt  example.txt  all_about_console.txt my_project
+johndoe@laptop:~/Documents$ touch $(ls -1 *.c)
 	</pre>
-
+	<p>Updates timestamp on all .c files in current folder</p>
+	<pre class="code">
+johndoe@laptop:~/Documents$ wc $(ls *.txt)
+	</pre>
+	<p>Displays number of characters, words and lines in all text files in current system.</p>
+	<pre class="code">
+johndoe@laptop:~/Documents$ chmod 755 $(ls -1 *.org)
+	</pre>
+	<p>Changes permissions of all .org files in current folder to 755.</p>
+	<pre class="code">
+johndoe@laptop:~/Documents$ head -n 5 $(ls -1 *.c)
+	</pre>
+	<p>Displays the first five lines (typically include statements) of all C files in current folder.</p>
+	<pre class="code">
+johndoe@laptop:~/Documents$ tar cf "$(date +'%Y-%m-%d %H%M').tar" imp
+johndoe@laptop:~/Documents$ ls
+example.txt  all_about_console.txt my_project imp 2012-12-31 1142.tar
+	</pre>
+	<p>Take backup of imp folder in a tar file, where name of tar file reflects current date and time.</p>
 	
         </div>
       </section>
