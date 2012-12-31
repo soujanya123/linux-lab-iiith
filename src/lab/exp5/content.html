@@ -96,14 +96,6 @@ This is useful when the files need to be transferred or sent across
 e-mails.  Compressions involves reducing the file size so as to save the
 disk space or to create backups of the data. 
 
-<br />
-<br />
-
-In this experiment, few archival and compressions commands would be
-introduced and explained.  It is suggestible to try out the commands in
-the theory section on your own machines before going to the <i>Experiment</i>
-Section.  
-
 	</p>
 
 	</div>
@@ -244,10 +236,341 @@ total 508
 </pre>
 </p>
 
+<p align="justify">
+Observe the total directory size in Example 1 and Example 2.  The
+directory size is 268K in Example 1 where as the size of the archived
+file =abc.zip= in Example 2 is 250K.  There is a 18K of compression.
+Since, zipping all the files separately is not a convenient solution,
+there exists a way to zip the entire directory at one go.
 
+<pre class="code">
+$ ls
+abc.org image1.jpg image2.jpg
 
+$ zip -r abc * 
+  adding: abc.org (deflated 39%)
+  adding: image1.jpg (deflated 2%)
+  adding: image2.jpg (deflated 6%)
 
+$ ls -l
+total 508
+-rw-rw-r-- 1 admin admin    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 admin admin 250422 2012-12-27 16:30 abc.zip
+-rw-rw-r-- 1 admin admin 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 admin admin 124945 2012-12-16 12:34 image2.jpg
+</pre>
+</p>
 
+<p align="justify">
+To archive an entire directory, <code>-r</code> attribute is used with the command <code>zip</code>.
+
+<pre class="code">
+$ zip -r test.zip test/ 
+  adding: test/ (stored 0%)
+  adding: test/dir/ (stored 0%)
+  adding: test/dir/abc.org (deflated 39%)
+  adding: test/image2.jpg (deflated 6%)
+  adding: test/image1.jpg (deflated 2%)
+  adding: test/abc.zip (stored 0%)
+  adding: test/abd (deflated 39%)
+  adding: test/abc.org (deflated 39%)
+</pre>
+</p>
+
+<p align="justify">
+<b> Unzip </b>
+
+<br />
+<br />
+
+Unzip is used to extract the files from the archive.  The syntax =unzip
+[archive name]= is the regular syntax to unzip the files in the current
+directory.  If you would like to extract the files at a specified file
+location =-d= option should be used followed by the directory path. 
+
+<pre class="code">
+$ ls
+test.zip  
+
+$ unzip test.zip
+Archive:  test.zip
+   creating: test/
+   creating: test/dir/
+  inflating: test/dir/abc.org        
+  inflating: test/image2.jpg         
+  inflating: test/image1.jpg         
+ extracting: test/abc.zip            
+  inflating: test/abd                
+  inflating: test/abc.org      
+
+$ unzip test.zip -d dir/
+Archive:  test.zip
+   creating: dir/test/
+   creating: dir/test/dir/
+  inflating: dir/test/dir/abc.org    
+  inflating: dir/test/image2.jpg     
+  inflating: dir/test/image1.jpg     
+ extracting: dir/test/abc.zip        
+  inflating: dir/test/abd            
+  inflating: dir/test/abc.org        
+
+$ cd dir/
+$ ls -l
+total 8
+-rw-rw-r-- 1 swathy swathy  451 2012-12-28 10:30 abc.org
+drwxrwxr-x 3 swathy swathy 4096 2012-12-28 11:31 test
+</pre>
+</p>
+
+<p align="justify">
+The archived files have been extracted in the specified directory.
+</p>
+
+<h3>Tar</h3>
+
+<p align="justify">
+Tar is used to convert the files into an archive.  The syntax is: 
+<br />
+<code>tar [options] [archive name] [file name]</code>
+<br />
+<br />
+Tar provides a lot of options. Some of the most common used ones are:
+c - used when creating the tar files
+v - verbose mode which shows the list of files being archived on the command line
+f - indicates that next argument will be the name of new/existing archive file
+x - extracts the files from the archive
+
+<pre class="code">
+$ ls
+test
+
+$ tar -cvf test.tar test/
+test/
+test/dir/
+test/dir/abc.org
+test/image2.jpg
+test/image1.jpg
+test/abc.tar
+test/abc.zip
+test/abd
+test/abc.org
+
+test test.tar
+
+$ rm -rf test
+$ tar -xvf test.tar
+$ ls
+test/
+test/dir/
+test/dir/abc.org
+test/image2.jpg
+test/image1.jpg
+test/abc.tar
+test/abc.zip
+test/abd
+test/abc.org
+
+$ ls
+test  test.tar
+</pre>
+</p>
+
+<p align="justify">
+By default, tar doesn't provide any compression and decompression
+capabilities.  But, it can use external compression utilities like bzip2
+and gzip.  The options for these utilities are:
+j - for compressing and decompressing using bzip2
+z - for compressing and decompressing using gzip
+
+<pre class="code">
+$ ls
+test
+
+$ tar -cjvf test.tar.bz2 *
+test/
+test/dir/
+test/dir/abc.org
+test/image2.jpg
+test/image1.jpg
+test/abc.tar
+test/abc.zip
+test/abd
+test/abc.org
+
+$ ls -l
+total 728
+drwxrwxr-x 3 swathy swathy   4096 2012-12-28 14:56 test
+-rw-rw-r-- 1 swathy swathy 737525 2012-12-28 15:18 test.tar.bz2
+
+$ tar -czvf test.tar.gz *
+test/
+test/dir/
+test/dir/abc.org
+test/image2.jpg
+test/image1.jpg
+test/abc.tar
+test/abc.zip
+test/abd
+test/abc.org
+
+$ ls -l
+total 984
+drwxrwxr-x 3 swathy swathy    4096 2012-12-28 14:56 test
+-rw-rw-r-- 1 swathy swathy 737525 2012-12-28 15:18 test.tar.bz2
+-rw-rw-r-- 1 swathy swathy 1003263 2012-12-28 15:26 test.tar.gz
+
+$ cd test/
+$ ls -l
+total 1028
+-rw-rw-r-- 1 swathy swathy    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 swathy swathy 522240 2012-12-28 14:46 abc.tar
+-rw-rw-r-- 1 swathy swathy 250981 2012-12-28 10:31 abc.zip
+-rw-rw-r-- 1 swathy swathy    451 2012-12-28 10:30 abd
+drwxrwxr-x 2 swathy swathy   4096 2012-12-28 10:30 dir
+-rw-rw-r-- 1 swathy swathy 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 swathy swathy 124945 2012-12-16 12:34 image2.jpg
+</pre>
+</p>
+
+<p align="justify">
+<b>Note: .tgz is same as .tar.g</b>
+
+<br />
+<br />
+
+Files can be added to the existing tar archive by using the =-r= option.
+But, this option is not available for the compressed archives. 
+
+<pre class="code">
+$ ls
+test test.tar
+
+$ touch abcd.txt
+$ tar -rvf test.tar abcd.txt
+abcd.txt
+</pre>
+</p>
+
+<p align="justify">
+Similarly, certain files can be deleted from the archives using
+=--delete= option.
+
+<pre class="code">
+$ tar -vf test.tar --delete abcd.org
+</pre>
+</p>
+
+<h3>Gzip</h3>
+
+<p align="justify">
+Gzip is a compression utility which compresses only the files.  To
+decompress using gzip, =-d= option is used.  It replaces the original
+file, compresses it and appends the file name with the extension .gz.
+Gzip utility can also be reiterated over a directory using =-r= option.
+It compresses all the files inside the directory. 
+
+<br/>
+<br />
+
+<b>This compression can be used along with tar command using the option z.</b>
+
+<br />
+<br />
+
+<pre class="code">
+$ ls
+abcd.org test/
+
+$ gzip abcd.org
+$ ls
+abcd.org.gz test/
+
+$ gzip -d abcd.org.gz
+$ls
+abcd.org test/
+
+$ gzip -r test/
+$ cd test
+$ ls
+abc.org.gz  abc.tar.gz  abc.zip.gz  abd.gz  dir/  image1.jpg.gz  image2.jpg.gz
+</pre>
+</p>
+
+<h3>Gunzip</h3>
+
+<p align="justify">
+Gunzip is a decompression utility which can decompress files created by
+gzip, zip and compress.  The =-r= option is used to decompress all the
+files in a directory.  
+
+<pre class="code">
+$ ls
+abcd.org.gz  test/
+
+$ gunzip abcd.org.gz
+$ ls
+abcd.org  test/
+
+$ gunzip -r test/
+$ cd test
+$ ls
+abc.org  abc.tar  abc.zip  abd  dir/  image1.jpg  image2.jpg
+</pre>
+</p>
+
+<h3>Bzip2</h3>
+
+<p align="justify">
+Bzip2 provides a high rate of lossless compression when compared to Gzip
+and Zip.  But, it is slower than either.  It replaces the original file
+with the compressed file by appending the file name with .bz2 file
+extension.  The original files can be retained using =-k= option.  The
+file can be decompressed using the =-d= option.  Since bzip2 doesn't
+archive the files, the command does not work on the directories.
+
+<br />
+<br />
+
+<b>This compression can be used along with tar command using the option j.</b>
+
+<br />
+<br />
+
+<pre class="code">
+$ ls
+abcd.org test/
+
+$ bzip2 -v abcd.org
+  abcd.org:  no data compressed.
+
+$ ls 
+abcd.org.bz2 test/
+
+$ bzip2 -d abcd.org.bz2
+$ ls
+abcd.org test/
+
+$ bzip2 -k abcd.org
+abcd.org abcd.org.bz2 test/
+</pre>
+</p>
+
+<h3>Bunzip2</h3>
+
+<p align="justify">
+Bunzip2 is a decompression utility which decompresses only the files
+with extensions .bz2, .bz, .tbz2, .tbz.  In case of any other file name,
+it throws an error. 
+
+<pre class="code">
+$ ls
+abcd.org.bz2  test/
+
+$ bunzip2 abcd.org.bz2
+abcd.org  test/
+</pre>
+</p>
+	  
 	  </div>
 	  </section>
 
