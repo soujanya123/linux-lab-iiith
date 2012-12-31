@@ -87,11 +87,12 @@ edit -->
 	element, You can also include images with <img> tag -->
 	<div id="experiment-article-section-1-content" class="content">	
 	<p>
-	File Managment deals with manipulations of the files, folders
-	and directories on the system.  This experiment provides a brief
-	overview on the basic tasks of managing files including the
-	various ways of creating, viewing, moving and deleting files and
-	folders using the command-line interface.
+	This experiment provides a brief overview on the basic tasks
+	of managing files and directories.  Everything in Linux is a
+	file, so start on the right path with a solid grounding in
+	file and directory management -- listing, moving, copying,
+	deleting and finding.
+	
 	</p>
 	</div>
 
@@ -134,242 +135,254 @@ edit -->
 
 	<!-- Write the section content inside a paragraph 
 	element, we can also include images with <img> tag -->
-	<div id="experiment-article-section-4-content" class="content">
-	<h3>1. Linux File System</h3>
-	<p>A linux system is comprised of files and processes. In this
-	experiment we shall look at file management. The next experiment
-	deals with processes.</p>
-	<p>The files are organized in a tree-like structure under the
-	root directory. There are different types of files in a Linux
-	system. Most are just regular text, executable files or
-	programs. Other types of files include directories, which is a
-	list of files, and links, which is a mechanism to make a file
-	accessible from a different part of a linux filesystem
-	(discussed in detail in <a href="../exp7/index.html">Advanced
-	File Management</a>)</p>
-	<p>The <i>path</i> of a file is the location of a file in the
-	filesystem. There are two ways of specifying the path of a
-	file: <i>relative path</i> and <i>absolute path</i>. <i>Relative
-	path</i> is the location of a file relative to your current
-	location in the filesystem.
-	<i>Absolute path</i> is the location of the file with respect to
-	the root directory. It is independent of the current working
-	directory.<p>
+	<div id="experiment-article-section-4-content"
+	class="content">
+        <p> The commands that will be described are meant to be
+         executed from a command line terminal.  In order to open a
+         terminal, access from the menu: Applications → Accessories →
+         Terminal.  You will see a window opening, with a command line
+         prompt where you can type commands. </p>
+
+	<h3>1. The Command Line Prompt</h3>
+	<p>The command line prompt that shows up in the terminal
+        window contains useful information.  It has the form:</p>
+        <pre class='code'>
+        johndoe@laptop:~/Documents$
+        </pre>
+        <p>
+        There are three parts in the command line prompt, separated by
+        @ : and $
+        </p>
+	<p>The first part before the @ shows the user which is logged
+	  in at the moment. In our example it is the user johndoe. The
+	  second part between the @ and the : shows the name of the
+	  computer you are working on. In our example it is
+	  laptop. The third part, between the : and the $ shows the
+	  current directory you are working in. In our example it is
+	  ~/Documents (~ is a shortcut for the user’s home directory;
+	  ~/Documents is equivalent to /home/johndoe/Documents). When
+	  you will change the current directory, you will see the
+	  third part of the command line prompt changing.</p>
+
+
 	<h3>2. Viewing the contents of files and directories </h3>
 	<p>We shall see how to view the contents of files and
 	directories using three commands, namely <b>pwd</b>, <b>ls</b>
 	and <b>cat</b>.</p>
         <p><font size="3"><b>pwd command</b></font></p>
-        <p>To know the current working directory, enter the command <b>pwd</b>
-        (<b>P</b>resent <b>W</b>orking <b>D</b>irectory).</p>
+        <p>At any time, in order to see the current directory you can
+        type <b>pwd</b>(<b>P</b>resent <b>W</b>orking <b>D</b>irectory).</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ pwd /home/johndoe/Documents
-</pre>
-<p> <font size="3"><b>ls command</b></font></p>
-<p>
+	  johndoe@laptop:~/Documents$ pwd /home/johndoe/Documents
+	</pre>
+	<p> <font size="3"><b>ls command</b></font></p>
+	<p>
 	To list the contents of a directory, the <b>ls</b> command is
 	used. When it is executed with no arguments, it lists the
 	contents of the current working directory. <b>ls</b> followed by
 	directory path prints the contents of the specified
 	directory.</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ ls
-example.txt  all_about_console.txt my_project
-
-johndoe@laptop:~/Documents$ ls my_project
-vlabs_ui
-</pre>
-<p>Here, the <i>relative path</i> of the directory has been used.</p>
-<pre class="code">
-johndoe@laptop:~/Documents$ ls /home/johndoe/Documents/my_project/
-vlabs_ui
+	  johndoe@laptop:~/Documents$ ls
+	  example.txt  all_about_console.txt my_project
+        </pre> 
+	<p>The path of a file is the location of a file in the
+	filesystem. There are two ways of specifying the path of a
+	file: <i>relative path</i> and <i>absolute
+	path</i>. <i>Relative path</i> is the location of a file
+	relative to your current location in the filesystem.
+	<i>Absolute path</i> is the location of the file with respect to
+	the root directory. It is independent of the current working
+	directory.<p>
+        <pre class='code'>
+	  johndoe@laptop:~/Documents$ ls my_project
+	  vlabs_ui
 	</pre>
-<p>Here, the <i>absolute path</i> of the directory has been used. As you can see, the two paths are equivalent.</p>
-<p> The most used flags for the <b>ls</b> command are l, s, t, R, a. </p>
+	<p>Here, the <i>relative path</i> of the directory has been
+	used.</p>
+	<pre class="code">
+	  johndoe@laptop:~/Documents$ ls /home/johndoe/Documents/my_project/
+	  vlabs_ui
+	</pre>
+	<p>Here, the <i>absolute path</i> of the directory has been
+	used. As you can see, the two paths are equivalent.</p>
+	<p> The most used flags for the <b>ls</b> command are l,
+	a. </p>
 	<table border="1">
 		<thead><tr><td><u>Flag</u></td><td align="right"><u>Purpose</u></td></tr> </thead>
 		<tbody>
-			<tr><td>l</td><td>Displays the detailed view of the contents of the folder</td></tr>
+			<tr><td>l</td><td>Displays the detailed view
+			of the contents of the folder</td></tr>
 			<tr><td>a</td><td>Also displays hidden contents of the folder</td></tr>
-			<tr><td>s</td><td>Displays the size of each of the contents of the folder  </td></tr>
-			<tr><td>R</td><td>Displays contents recursively</td></tr>
-			<tr><td>t</td><td>Displays contents sorted according to modification time </td></tr>
-
-		 </tbody>
+		</tbody>
 	</table>
 
 	<pre class="code">
-johndoe@laptop:~/Documents$ ls -l
-total 4
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 example.txt
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
-drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
+	  johndoe@laptop:~/Documents$ ls -l
+	  total 4
+	  -rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 example.txt
+	  -rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
+	  drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
 	</pre>
-	<p>
-Here, in addition to the name of each file, the file type, file mode bits, number of hard links, owner name, group name, size, and timestamp, 
-normally the modification time are printed. </p>
-<p>The file mode bits contains details regarding the properties of the file. It has 10 fields. The first field refers to the file type. 'd' means 
-the file is a directory, 'l' means it is a link, '-' means it is a regular file. The next nine fields are the permissions of the owner, group and
-other, respectively. 'r', 'w' and 'x' in a field means 'read', 'write' and 'execute' permissions, respectively. If a '-' is printed in a field, it
-means that particular permission is not present for the corresponding user, group or other.</p?>
-	<p>
-	In the above example, 'my_project' is a directory (<b>d</b>). The owner and group is 'johndoe'. The size is 4096 bytes. Modification time
-	is '2010-08-02 14:03'. Owner has read, write and execute (<b>rwx</b>) permissions, group has read and execute (<b>r-x</b>) permissions 
-	and others have read and execute (<b>r-x</b>) permissions.</p> 
-<p>By default, the size is printed in bytes. Use the "-h" option to print the size in an abbreviated, human-readable format.
-	</p>
-
+	<p>Here, in addition to the name of each file, the file type,
+	  file mode bits, number of hard links, owner name, group name, size,
+	  and timestamp, normally the modification time are printed. </p>
+	<p>The file mode bits contains details regarding the
+	  properties of the file. It has 10 fields. The first field
+	  refers to the file type. 'd' means the file is a directory,
+	  'l' means it is a link, '-' means it is a regular file. The
+	  next nine fields are the permissions of the owner, group and
+	  other, respectively. 'r', 'w' and 'x' in a field means
+	  'read', 'write' and 'execute' permissions, respectively. If
+	  a '-' is printed in a field, it means that particular
+	  permission is not present for the corresponding user, group
+	  or other.</p?>
+	<p> In the above example, 'my_project' is a directory
+	(<b>d</b>). The owner and group is 'johndoe'. The size is 4096
+	bytes. Modification time is '2010-08-02 14:03'. Owner has
+	read, write and execute (<b>rwx</b>) permissions, group has
+	read and execute (<b>r-x</b>) permissions and others have read
+	and execute (<b>r-x</b>) permissions.</p>
+       
 	<pre class="code">
-johndoe@laptop:~/Documents$ ls -a
-.  ..  all_about_console.txt  example.txt  my_project
+	  johndoe@laptop:~/Documents$ ls -a
+	  .  ..  all_about_console.txt  example.txt  my_project virtual-lab.txt
 	</pre>
+        <p> In the above example virtual-lab.txt was the hidden file,
+        which was displayed when ls was used with -a option</p>
 	<p>
-<b>. and .. refer to current folder and previous folder, respectively.</b>
+	  <b>. and .. refer to current folder and previous folder, respectively.</b>
 	</p>
-<pre class="code">
-johndoe@johndoe-laptop:~/Documents$ ls my_project/
-vlabs_ui
-
-johndoe@johndoe-laptop:~/Documents$ ls my_project/vlabs_ui/
-css  images  index.html  js  Milikan_oil_drop.html  README  simple_pendulum.html  Sys n sw.html
-
-johndoe@laptop:~/Documents$ ls -R
-.:
-all_about_console.txt  example.txt  my_project
-
-./my_project:
-vlabs_ui
-
-./my_project/vlabs_ui:
-css  images  index.html  js  Milikan_oil_drop.html  README  simple_pendulum.html  Sys n sw.html
-
-./my_project/vlabs_ui/css:
-code.css  common.css  corners.css  forms.css  layout.css  reset.css
-
-./my_project/vlabs_ui/images:
-graphic-logo.gif
-
-./my_project/vlabs_ui/js:
-nav.js
-</pre>
-	<p>
-For more info on <b>ls</b>, type <b>info coreutils 'ls invocation'</b> on your command line.
-	</p>
+	
 	<p><font size="3"><b>cat command</b></font></p>
 	<p>
-	<b>cat</b> command displays the contents of the file passed as argument. If multiple files are passed, it prints the concatenated content 
-	of all the files.</p>
-<p>Type the <b>clear</b> command to clear your screen.</p>
-<h3>3. Moving through directories:</h3>
+	<b>cat</b> command displays the contents of the file passed as
+	argument. If multiple files are passed, it prints the
+	concatenated content of all the files.</p>
+       <pre class='code'>
+       johndoe@laptop:~/Documents$ cat virtual-lab.txt
+       Welcome to System and Software Lab!
+       </pre> 
+       <p>In the above example cat displays content of the file
+       virtual-lab.txt. </p>
+       <p>Type the <b>clear</b> command to clear your screen.</p>
+
+       <h3>3. Moving through directories:</h3>
 
 	<p><font size="3"><b>cd command</b></font></p>
-<p>
-The command <b>cd</b> (<b>c</b>hange <b>d</b>irectory) allows us to move through directory trees. It has one parameter: target 
-directory path. If parameter '-' is given it will navigate to the previous working directory. If the paramter '~' is given it will navigate to 
-the home directory.
-</p>
-<pre class="code">
+        <p>The command <b>cd</b> (<b>c</b>hange <b>d</b>irectory)
+	  allows us to move through directory trees. It has one
+	  parameter: target directory path. If parameter '-' is given
+	  it will navigate to the previous working directory. If the
+	  paramter '~' is given it will navigate to the home
+	  directory.</p>
+	<pre class="code">
+	  johndoe@laptop:~/Documents$ cd my_project
 
-johndoe@laptop:~/Documents$ cd my_project
+          johndoe@laptop:~/Documents/my_project$ pwd
+          /home/johndoe/Documents/my_project
 
-johndoe@laptop:~/Documents/my_project$ pwd
-/home/johndoe/Documents/my_project
+	  johndoe@laptop:~/Documents/my_project$ cd ..
+	  /home/johndoe/Documents
 
-johndoe@laptop:~/Documents/my_project$ cd ..
-/home/johndoe/Documents
+	  johndoe@laptop:~/Documents$ cd -
 
-johndoe@laptop:~/Documents$ cd -
+	  johndoe@laptop:~Documents/my_project$ cd ~
 
-johndoe@laptop:~Documents/my_project$ cd ~
+	  johndoe@laptop:~$ pwd
+	  /home/johndoe
 
-johndoe@laptop:~$ pwd
-/home/johndoe
+	  johndoe@laptop:~$ cd ~james
 
-johndoe@laptop:~$ cd ~james
+	  johndoe@laptop:/home/james$ pwd
+	  /home/james
 
-johndoe@laptop:/home/james$ pwd
-/home/james
+	</pre>
 
-</pre>
-
-<h3>	4. Creating files and folders:</h3>
+	<h3>4. Creating files and folders:</h3>
 
 	<p><font size="3"><b>touch command</b></font></p>
-<p>The <b>touch</b> command creates the files whose names are passed as parameters. If the parameter is an already existing file, it's 
-modification time will be updated. Otherwise, the file will be created.</p>
-<pre class="code">
-johndoe@laptop:~/Documents$ touch newfile.txt
+	<p>In general the text editors are able to create empty files
+	  on disk. However, sometimes it is useful to create an empty
+	  file directly from the command line. In order to do it,
+	  type:</p>
+	<pre class="code">
+	  johndoe@laptop:~/Documents$ touch newfile.txt
 
-johndoe@laptop:~/Documents$ ls 
-all_about_console.txt  example.txt my_project newfile.txt
+	  johndoe@laptop:~/Documents$ ls 
+	  all_about_console.txt  example.txt my_project newfile.txt
+	</pre>
+	<p>An empty file with the specified name will be created.  If
+	  a file with that name already exists on disk, it will remain
+	  there and moment of last update is changed in the properties
+	  of the file.</p>
 
-</pre>
 	<p><font size="3"><b>mkdir command</b></font></p>
-<p>
-	The <b>mkdir</b> command takes one or more parameters and creates the folders corresponding to the parameters.
+        <p>The <b>mkdir</b> command takes one or more parameters and
+        creates the folders corresponding to the parameters.
 	</p>
-<pre class="code">
+	<pre class="code">
+	  johndoe@laptop:~/Documents$ mkdir new_folder
+	  johndoe@laptop:~/Documents$ ls 
+	  all_about_console.txt  example.txt  my_project newfile.txt new_folder
+	</pre>
 
-johndoe@laptop:~/Documents$ mkdir new_folder
+	<h3>5. Copying, Moving and removing files and folders:</h3>
 
-johndoe@laptop:~/Documents$ ls 
-all_about_console.txt  example.txt  my_project newfile.txt new_folder
+	<p><font size="3"><b>cp command</b></font></p>
+        <p><b>cp</b> command is used to create a copy of files. It can
+	  be invoked with two arguments, <i>SOURCE</i> and <i>DEST</i>
+	  in which case it copies <i>SOURCE</i> to <i>DEST</i>.</p>
+	<pre class="code">
+	  johndoe@laptop:~/Documents$ cp example.txt my_project/example_copy.txt
+	  johndoe@laptop:~/Documents$ ls my_project
+	  vlabs_ui  example_copy.txt
+	</pre>
+       <p>When invoked with more than two arguments, the last argument
+          must be a directory. In this case, all the files passed as
+          arguments are copied into the directory corresponding to the
+          last argument.</p>
+       <pre class="code">
+	 johndoe@laptop:~/Documents$ cp all_about_console.txt  example.txt  newfile.txt new_folder/
 
-</pre>
+	 johndoe@laptop:~/Documents$ ls new_folder
+	 all_about_console.txt  example.txt  newfile.txt
+       </pre>
+       <p>For copying directories, the <b>-r</b> (recursive) option is
+       used.</p>
 
+       <p><font size="3"><b>mv command</b></font></p>
+       <p>The <b>mv</b> command is used to change the location of
+       directories and files or renaming them. Parameters are taken in
+       a similar way as the <b>cp</b> command.</p>
+       <pre class="code">
+	 johndoe@laptop:~/Documents$ mv example.txt my_project/example_move.txt
 
+	 johndoe@laptop:~/Documents$ ls my_project
+	 vlabs_ui  example_copy.txt example_move.txt
+       </pre>
 
-<h3>5. Copying, Moving and removing files and folders:</h3>
-<p><font size="3"><b>cp command</b></font></p>
-<p><b>cp</b> command is used to create a copy of files. It can be invoked with two arguments, <i>SOURCE</i> and <i>DEST</i> in which case it 
-copies <i>SOURCE</i> to <i>DEST</i>.</p>
-<pre class="code">
-johndoe@laptop:~/Documents$ cp example.txt my_project/example_copy.txt
+      <p><font size="3"><b>rm command</b></font></p>
+      <p><b>rm</b> command removes files. It can be used with
+      the <b>-r</b> option to remove directories.</p>
+      <pre class="code">
+	johndoe@laptop:~/Documents$ ls 
+	all_about_console.txt  example.txt  my_project  newfile.txt  new_folder 
 
-johndoe@laptop:~/Documents$ ls my_project
-vlabs_ui  example_copy.txt
-</pre>
-<p>
-When invoked with more than two arguments, the last argument must be a directory. In this case, all the files passed as arguments are copied into 
-the directory corresponding to the last argument.</p>
-<pre class="code">
-johndoe@laptop:~/Documents$ cp all_about_console.txt  example.txt  newfile.txt new_folder/
+	johndoe@laptop:~/Documents$ rm example.txt
 
-johndoe@laptop:~/Documents$ ls new_folder
-all_about_console.txt  example.txt  newfile.txt
-</pre>
-<p>For copying directories, the <b>-r</b> (recursive) option is used.</p>
-<p><font size="3"><b>mv command</b></font></p>
-<p>The <b>mv</b> command is used to change the location of directories and files or renaming them. Parameters are taken in a similar way as the 
-<b>cp</b> command.</p>
-<pre class="code">
-johndoe@laptop:~/Documents$ mv example.txt my_project/example_move.txt
+	johndoe@laptop:~/Documents$ ls
+	all_about_console.txt  my_project  newfile.txt new_folder
+      </pre>
 
-johndoe@laptop:~/Documents$ ls my_project
-vlabs_ui  example_copy.txt example_move.txt
+     <p><font size="3"><b>rmdir command</b></font></p>
+     <p><b>rmdir</b> command removes empty directories.</p>
+     <pre class="code">
+      johndoe@laptop:~/Documents$ rmdir new_folder
 
-</pre>
-<p><font size="3"><b>rm command</b></font></p>
-<p><b>rm</b> command removes files. It can be used with the <b>-r</b> option to remove directories.</p>
-<pre class="code">
-johndoe@laptop:~/Documents$ ls 
-all_about_console.txt  example.txt  my_project  newfile.txt  new_folder 
-
-johndoe@laptop:~/Documents$ rm example.txt
-
-johndoe@laptop:~/Documents$ ls
-all_about_console.txt  my_project  newfile.txt new_folder
-</pre>
-<p><font size="3"><b>rmdir command</b></font></p>
-<p><b>rmdir</b> command removes empty directories.</p>
-
-<pre class="code">
-johndoe@laptop:~/Documents$ rmdir new_folder
-
-johndoe@laptop:~/Documents$ ls
-all_about_console.txt  my_project  newfile.txt
-
-</pre>
+      johndoe@laptop:~/Documents$ ls
+      all_about_console.txt  my_project  newfile.txt
+     </pre>
 
 <p>The commands <b>cp</b>, <b>mv</b>, and <b>rm</b> have the following commonly used parameters:</p>
 <table border="1">
@@ -384,9 +397,18 @@ all_about_console.txt  my_project  newfile.txt
 <tr><td>-b</td><td>creates backup copy of a file to be overwritten.</td></tr>
 </tbody>
 </table>
-<p><u>Warning:</u> rm -rf should be used cautiously. Carelessly invoking it could lead to loss of files key to the functioning of your system.</p>
+   <h3>6.Getting Help in Linux:</h3>
+   <p>Whenever you need help about commands in Linux, you can read the
+   man pages, which contain detailed information about commands and
+   their options. To see the man page about a command, type:</p>
+   <pre class='code'>
+     johndoe@laptop:~/Documents$ man ls
+   </pre>
+   <p>Information about the command will appear on the screen. You can
+   move up and down using the arrow keys. In order to exit from the
+   man page and return to the command line type the letter q.</p>
 
-        </div>
+   </div>
       </section>
 
       <section id="experiment-article-section-5">
