@@ -49,7 +49,7 @@ edit -->
 	<header id="experiment-article-heading" class="heading">
 	<!-- You can add a welcome message or title of the 
 	experiment here -->
-	User Management
+	Experiment 5 - Archival and Compression Commands
 	<!-- Add any additional element if required with proper 
 	enclosing-->
 	</header>
@@ -60,7 +60,7 @@ edit -->
 	<ul id="experiment-article-navigation-menu">
 	<!-- The menu can be dynamically generated to contain 
 	the headings of your sections or instead write the 
-	menu items of your choice individually enclosedu in 
+	menu items of your choice individually enclosed in 
 	<li> tag as shown below-->
 	</ul>
 	</nav>
@@ -88,13 +88,22 @@ edit -->
 	element, You can also include images with <img> tag -->
 	<div id="experiment-article-section-1-content" 
 	class="content">	
-	<p>
-	Welcome to the 'User Management' experiment.  This experiment will give you an understanding of user management on Linux. 
-	</p><p>
+	<p align="justify">
 
- The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports a few basic commands to enable the user to learn user management basics. There are a series of tasks which need to be performed in each experiment.	</p><p>
-	Proceed to the theory section to get an overview of the commands. Then move to the experiment section to get some hands-on experience and finish the experiment tasks. After you are done with the experiment, go to the quiz section to test your understanding.
-	 
+File Compression and Archiving are two different functions.  Archiving
+is useful when a number of files need to be combined into a single file.
+This is useful when the files need to be transferred or sent across
+e-mails.  Compressions involves reducing the file size so as to save the
+disk space or to create backups of the data. 
+
+<br />
+<br />
+
+In this experiment, few archival and compressions commands would be
+introduced and explained.  It is suggestible to try out the commands in
+the theory section on your own machines before going to the <i>Experiment</i>
+Section.  
+
 	</p>
 
 	</div>
@@ -123,8 +132,13 @@ edit -->
 	<div id="experiment-article-section-2-content" 
 	class="content">
 	<!-- Second section of the article-->
-	<p>The goal of this experiment is to learn the management of multiple users, including adding and deleting users and groups, changing the
-	ownership and permissions of files and folders, password protection and so on.</p>
+	<p align="justify">
+
+The objective of this experiment is to familiarize the users with some
+of the widely used commands for archiving the files and folders on Linux
+system.
+
+	</p>
 	</div>
 	</section>
 
@@ -148,486 +162,94 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-3-content" 
 	class="content">
-<h3>
-User Management Concepts
-</h3><h2>
- 
-User Information 
- 
-</h2><p>
-The system keeps track of a number of pieces of information about each user. They are summarized below.
- 
-</p><p>
-<table border="1"> 
- 
-<tr>	<td>username</td> 
-	<td>The username is the unique identifier given to every user on the system. Examples of usernames are larry, karl, and mdw. Letters and digits may be used, as well as the characters "_" (underscore) and "." (period). Usernames are usually limited to 8 characters in length.</td> 
-</tr> 
- 
-<tr>	<td>user ID</td> 
-	<td>The user ID, or UID, is a unique number given to every user on the system. The system usually keeps track of information by UID, not username. </td> 
-</tr> 
- 
-<tr>	<td>group ID</td> 
-	<td> The group ID, or GID, is the ID of the user's default group. Each user belongs to one or more groups defined by the system administrator.</td> 
-</tr> 
- 
-<tr>	<td>password</td> 
-	<td> The system also stores the user's encrypted password. The passwd command is used to set and change user passwords.</td> 
-</tr> 
- 
-<tr>	<td>full name</td> 
-	<td> The user's "real name" or "full name" is stored along with the username. For example, the user schmoj may have the name "Joe Schmo" in real life.</td> 
-</tr> 
- 
-<tr>	<td>home directory</td> 
-	<td>The home directory is the directory in which the user is initially placed at login time. Every
-user should have his or her own home directory, usually found under /home. </td> 
-</tr> 
- 
-<tr>	<td>login shell</td> 
-	<td>The user's login shell is the shell which is started for the user at login time. Examples are
-/bin/bash and /bin/tcsh.</td> 
-</tr> 
- 
-</table> 
- 
-</p><p>
-The file /etc/passwd contains this information about users. Each line in the file contains information about a single user; the format of each line is</p> 
-<p> 
-	username:encrypted password:UID:GID:full name:home directory:login shell
-</p> 
-<p> 
-An example might be:
-<br> 	
-	kiwi:Xv8Q981g71oKK:102:100:Laura Poole:/home/kiwi:/bin/bash
-	</p>
 
-<p> 
-As we can see, the first field, "kiwi", is the username. The next field, "Xv8Q981g71oKK", is the encrypted password. 
-Passwords are not stored on the system in any human-readable format. The password is encrypted using itself as the secret
-key. In other words, you need to know the password to decrypt it. This form of encryption is fairly secure.
- 
-Some systems use "shadow password" in which password information is relegated to the file /etc/shadow. Because /etc/passwd
-is world-readable, /etc/shadow provides some degree of extra security because it is not. Shadow password provides some
-other features such as password expiration and so on; we will not go into these features here.
-</p> 
-<p> 
-The third field, "102", is the UID. This must be unique for each user. The fourth field, "100", is the GID.
-This user belongs to the group numbered 100. Group information, like user information, is stored in the file
-/etc/group.
-</p> 
-<p> 
-The fifth field is the user's full name, "Laura Poole". The last two fields are the user's home directory
-(/home/kiwi) and login shell (/bin/bash), respectively. It is not required that the user's home directory
-be given the same name as the username. It does help identify the directory, however.
-</p> 
-<h3>
-The <code>whoami</code> command:
-</h3>
-<p>
-The <code>'whoami'</code> command is used to find the current effective username of the user ID.
+<p align="justify">
+There are many commands available in Linux which help with archiving or
+compressing the files and folders.  Zip and Tar are the most widely
+used, in general.  But, in this section, a few more commands would be
+explained. 
 </p>
-<h3>
-The <code>su</code> command:
-</h3>
-<p>
-The <code>'su'</code> command is used to become another user during a login session. The command when invoked without any arguments, defaults to becoming the superuser. When the command is used followed by an argument, the current user is changed to the argument specified. The syntax is:
-<code>su &ltusername&gt</code>
-</p>
-<pre class="code">
-johnodoe@johndoe-laptop:~/$ whoami
-johndoe
 
-johnodoe@johndoe-laptop:~/$ su
-root@johndoe-laptop:~/$ whoami
-root
+<h3> Zip and Unzip </h3>
 
-root@johndoe-laptop:~/$ su johndoe
-johnodoe@johndoe-laptop:~/$ whoami
-johndoe
-</pre>
-<h3> 
-The <code>id</code> command: 
-</h3>
-<p>
-The <code>id</code> command prints the identity of a user i.e. the UID, GID and the groups the user has been added to. The syntax of the command is <code>id [option]... [username]</code>. Check the following examples:
- </p>
-<pre class="code"> 
-root@johndoe-laptop:~/$ whoami
-root
- 
-root@johndoe-laptop:~/$ id
-uid=0(root) gid=0(root) groups=0(root)
- 
-root@johndoe-laptop:~/$ id johndoe
-uid=1000(johndoe) gid=1000(johndoe) groups=4(adm),1000(desideratum)
- 
-root@johndoe-laptop:~/$ su johndoe
-johnodoe@johndoe-laptop:~/$ whoami
-johndoe
- 
-johnodoe@johndoe-laptop:~/$ id
-uid=1000(johndoe) gid=1000(johndoe) groups=4(adm),1000(desideratum)
-</pre> 
- 
- 
- <h3>
-Adding Users:
-</h3>
-<p>
-The easiest way to add users is to use an interactive program which asks you for the required information and updates all of the system files automatically. The name of this program is <code>useradd</code> or <code>adduser</code>, depending on what software was installed. The man pages for these commands should be fairly self-explanatory.
- 
-</p>
-<p>
-The <code>useradd</code> command enables creation of a new user or updating the default new user information. Use <code>useradd</code> with no arguments to see the set of options available.
-</p>
-<pre class="code"> 
-johnodoe@johndoe-laptop:~/$ useradd
-Usage: useradd [options] LOGIN
- 
-Options:
-  -b, --base-dir BASE_DIR       base directory for the home directory of the
-                                new account
-  -c, --comment COMMENT         GECOS field of the new account
-  -d, --home-dir HOME_DIR       home directory of the new account
-  -D, --defaults                print or change default useradd configuration
-  -e, --expiredate EXPIRE_DATE  expiration date of the new account
-  -f, --inactive INACTIVE       password inactivity period of the new account
-  -g, --gid GROUP               name or ID of the primary group of the new
-                                account
-  -G, --groups GROUPS           list of supplementary groups of the new
-                                account
-  -h, --help                    display this help message and exit
-  -k, --skel SKEL_DIR           use this alternative skeleton directory
-  -K, --key KEY=VALUE           override /etc/login.defs defaults
-  -l, --no-log-init             do not add the user to the lastlog and
-                                faillog databases
-  -m, --create-home             create the user's home directory
-  -M, --no-create-home          do not create the user's home directory
-  -N, --no-user-group           do not create a group with the same name as
-                                the user
-  -o, --non-unique              allow to create users with duplicate
-                                (non-unique) UID
-  -p, --password PASSWORD       encrypted password of the new account
-  -r, --system                  create a system account
-  -s, --shell SHELL             login shell of the new account
-  -u, --uid UID                 user ID of the new account
-  -U, --user-group              create a group with the same name as the user
-  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
-</pre> 
- 
-<p>
-Few examples:
- 
-http://www.linfo.org/useradd.html
-</p><p>
-1. Let's explore the usage of <code>"useradd"</code> command. When you execute the command - <code>"useradd jim"</code>, a user account with username jim is created. Then examine the /etc/passwd file to notice the entry of jim in the last line. The entry says that jim is the username, x represents that password is stored in the /etc/shadow file, 1000 is the UID of the user, 1130 is the UID of the new group created with the same name as the user, an empty "" field that indicates that user creation didn't involve any comment, /home/jim is the home directory for jim, /bin/sh is the default login shell. 
- 
-</p>
-<pre class="code"> 
-root@johndoe-laptop:~/$ useradd jim
-root@johndoe-laptop:~/$ tail -1 /etc/passwd
-jim:x:1000:1130::/home/jim:/bin/sh
-</pre> 
- 
-<p>
-	 If you notice the contents of /home directory, the user's home directory (/home/jim) is not found. If you want the useradd command to create it for you, you should use the <code>-m</code> flag.
- 
-</p>
-<pre class="code"> 
- 
-root@johndoe-laptop:~/$ useradd -m shawn
-root@johndoe-laptop:~/$ tail -1 /etc/passwd
-shawn:x:1001:1001::/home/shawn:/bin/sh
- 
-</pre> 
- 
-<p>
-	In case, you want to specify the home directory by yourself, you should do it using the <code>-d</code> flag. The <code>-m</code> flag will create will see that the useradd commands creates it for you.
- </p>
-<pre class="code"> 
- 
-root@johndoe-laptop:~/$ useradd -m -d /home/craig123 craig
-root@johndoe-laptop:~/$ tail -1 /etc/passwd
-craig:x:1001:1001::/home/craig123:/bin/sh
- 
-</pre> 
-<p> 
-	Let us examine the contents of the home folder created previously. We see that a few files are already present. These are the files copied onto the user's home directory when created using useradd command. These files are the contents of /etc/skel. The /etc/skel directory contains files and directories that are automatically copied over to a new user's home directory when such user is created by the useradd program.
- </p>
-<pre class="code"> 
- 
-root@johndoe-laptop:~/$ ls /home/craig123
-. .. .bash_logout .bashrc .profile
-root@johndoe-laptop:~/$ ls -a /etc/skel
-. .. .bash_logout .bashrc .profile
- 
-</pre> 
-<p>	
-	By default, no password is set for the users created above. The password for a user can be set by using the <code>passwd</code> command. If you are logged in as root, the password of a user can be set/changed by using the <code>passwd</code> command followed by the username. If you are logged in as a user, the password of that user can be set/changed by using the <code>passwd</code> command without any arguments.
-</p>
-<p>
-	The password can also be set by using the <code>-p</code> flag. Here, the encryted form of the password should be followed by the -p flag.
- </p>
- 
-<pre class="code"> 
-root@johndoe-laptop:~/$ passwd craig
-Enter new UNIX password: 
-Retype new UNIX password:
-passwd: password updated successfully
- 
-root@johndoe-laptop:~/$ su craig
-craig@johndoe-laptop:~/$ whoami
-craig
- 
-craig@johndoe-laptop:~/$ passwd
-Changing password for craig
-(current) UNIX password:
-Enter new UNIX password: 
-Retype new UNIX password:
-passwd: password updated successfully
-</pre> 
-<p> 
- 
-	The other parameters like login shell, expiry date of the account can be set by using corresponding flags which are shown in the usage options.
- 
-</p>
-<h3> 
-Deleting Users 
-</h3>
-<p> 
-Similarly, deleting users can be accomplished with the commands <code>userdel</code> or <code>deluser</code> depending on
-what software was installed on the system.
-</p><p> 
-If you'd like to temporarily "disable" a user from logging into the system (without deleting the user's
-account), you can simply prepend an asterisk ("*") to the password field in /etc/passwd. For example,
-changing kiwi's /etc/passwd entry to
-</p><p> 
-	kiwi:*Xv8Q981g71oKK:102:100:Laura Poole:/home/kiwi:/bin/bash
-</p><p> 
-will restrict kiwi from logging in.
-</p>
-<h3> 
- 
-Changing User Attributes</h3><p>
- 
-After you have created a user, you may need to change attributes for that user, such as home directory or
-password. The easiest way to do this is to change the values directly in /etc/passwd. However, you can use the usermod command and change the a set of attributes to desired values. The usage is very straight forward and the options can be viewed by entering the usermod command without any arguments.
- </p>
-<pre class="code"> 
-root@johndoe-laptop:~/$ usermod
-Usage: usermod [options] LOGIN
- 
-Options:
-  -c, --comment COMMENT         new value of the GECOS field
-  -d, --home HOME_DIR           new home directory for the user account
-  -e, --expiredate EXPIRE_DATE  set account expiration date to EXPIRE_DATE
-  -f, --inactive INACTIVE       set password inactive after expiration
-                                to INACTIVE
-  -g, --gid GROUP               force use GROUP as new primary group
-  -G, --groups GROUPS           new list of supplementary GROUPS
-  -a, --append                  append the user to the supplemental GROUPS
-                                mentioned by the -G option without removing
-                                him/her from other groups
-  -h, --help                    display this help message and exit
-  -l, --login NEW_LOGIN         new value of the login name
-  -L, --lock                    lock the user account
-  -m, --move-home               move contents of the home directory to the
-                                new location (use only with -d)
-  -o, --non-unique              allow using duplicate (non-unique) UID
-  -p, --password PASSWORD       use encrypted password for the new password
-  -s, --shell SHELL             new login shell for the user account
-  -u, --uid UID                 new UID for the user account
-  -U, --unlock                  unlock the user account
-</pre>
-<h3> 
-Groups </h3>
-<p> 
-Each user belongs to one or more groups. The only real importance of group relationships pertains to file permissions. Each file has a "group ownership" and a set of group permissions which defines how users in that group may access the file.
-</p><p> 
-There are several system-defined groups such as bin, mail, and sys. Users should not belong to any
-of these groups; they are used for system file permissions. Instead, users should belong to an individual
-group such as users. If you want to be cute, you can maintain several groups of users such as student,
-staff, and faculty.</p><p> 
- 
-The file /etc/group contains information about groups. The format of each line is
-</p><p> 
-group name:password:GID:other members
-</p><pre>
-Some example groups might be:
-root:*:0:
-users:*:100:mdw,larry
-guest:*:200:
-other:*:250:kiwi</pre> 
-<p> 
-The first group, root, is a special system group reserved for the root account. The next group, users, is
-for regular users. It has a GID of 100. The users mdw and larry are given access to this group. Remember
-that in /etc/passwd each user was given a default GID. However, users may belong to more than one
-group, by adding their usernames to other group lines in /etc/group. The <code>'groups'</code> command lists what
-groups you are given access to.
-</p><p> 
-The third group, guest, is for guest users, and other is for "other" users. The user kiwi is given
-access to this group as well.
-As you can see, the "password" field of /etc/group is rarely used. It is sometimes used to set a
-password on group access. This is seldom necessary. To protect users from changing into privileged groups
-(with the newgroup command), set the password field to "*". The <code>'gpasswd'</code> command is used to alter /etc/group and /etc/shadow.
-Its usage is pretty staightforward. Just type <code>'gpasswd'</code> without any arguments to have a look at the options.
-<pre class="code">
-root@johndoe-laptop:~/$ gpasswd
-Usage: gpasswd [option] GROUP
+<p align="justify">
+Zip and Unzip are the most widely used archiving commands. They work
+across all operating systems, hence, making them the most obvious
+choices.
 
-Options:
--a, --add USER                add USER to GROUP
--d, --delete USER             remove USER from GROUP
--h, --help                    display this help message and exit
--r, --remove-password         remove the GROUP's password
--R, --restrict                restrict access to GROUP to its members
--M, --members USER,...        set the list of members of GROUP
--A, --administrators ADMIN,...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set the list of administrators for GROUP
-Except for the -A and -M options, the options cannot be combined.
-</pre>
-</p><p> 
-The commands <code>'addgroup'</code> or <code>'groupadd'</code> may be used to add groups to your system. Usually, it's easier
-just to add entries in /etc/group yourself, as no other configuration needs to be done to add a group. To
-delete a group, simply delete its entry in /etc/group.
-</p> 
-<p> 
-Like <code>'useradd'</code>, a command called <code>'groupadd'</code> is available to create groups. An example is shown below. <code>'groupmod'
-</code> and <code>'groupdel'</code> can be used to modify and delete groups respectively.
-</p>
-<pre class="code"> 
-root@johndoe-laptop:~/$ groupadd
-Usage: groupadd [options] GROUP
- 
-Options:
-  -f, --force                   force exit with success status if the
-                                specified group already exists
-  -g, --gid GID                 use GID for the new group
-  -h, --help                    display this help message and exit
-  -K, --key KEY=VALUE           overrides /etc/login.defs defaults
-  -o, --non-unique              allow create group with duplicate
-                                (non-unique) GID
-  -p, --password PASSWORD       use encrypted password for the new group
-  -r, --system                  create a system account
- 
-root@johndoe-laptop:~/$ groupadd developers
-root@johndoe-laptop:~/$ tail -1 /etc/group
-developers:x:1133:
- 
-root@johndoe-laptop:~/$ groupadd organisors
- 
-root@johndoe-laptop:~/$ id kim
-uid=1001(kim) gid=1001(kim) groups=1001(kim)
- 
-root@johndoe-laptop:~/$ usermod -G developers kim
-root@johndoe-laptop:~/$ grep developers /etc/group
-developers:x:1133:kim
- 
-root@johndoe-laptop:~/$ usermod -G developers,organisors kim
-root@johndoe-laptop:~/$ id kim
-uid=1001(kim) gid=1001(kim) groups=1001(kim),1133(developers),1134(organisors)
- 
-root@johndoe-laptop:~/$ gpasswd -a craig developers
-root@johndoe-laptop:~/$ id craig
-uid=1004(craig) gid=1004(craig) groups=1004(craig),1133(developers)
-</pre> 
-<h3>File Permissions and Ownership</h3>
-<p>
-Every linux file has an owner and group associated with it. Also, file permissions are set in order to control the actions different users of the
-system can perform on a file.</p>
-<p>
-Linux files have three kinds of permissions associated with them - read (r), write (w) and execute (search for directories) (e). Type the <code>ls -l</code> command to view the owner, group and permissions of every file.
-</p>
-<pre class="code">
-johndoe@laptop:~/Documents$ ls -l
-total 4
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 example.txt
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
-drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
-</pre>
-<p>
-Here,</p>
-<ul>
-<li>The first field indicates the the file mode bits.
-    <ul>
-    <li>The 'd' refers to directory.</li>
-    <li>The next sets of three fields are the permissions for the owner, group and other, respectively.</li>
-    </ul>
-    </li>
-<li>The third field refers to the username of the owner.</li>
-<li>The fourth field is the group name.</li>
-</ul>
-<p>
-In this example, 'my_project' is a directory. The owner is 'johndoe' and the group is 'johndoe'. The owner has read, write and execute
-permissions (rwx). The group has read and execute permissions, but cannot write (r-x). Others can read and execute the file (r-x).
-</p>
-<h3>Changing file ownership</h3>
-<p>
-The <code>'chown'</code> command is used to change the owner and group of a file. The syntax is: 
-<code>chown [OWNER]/[:GROUP] &ltfilenames..&gt</code></p>
-<pre class="code">
-root@johndoe-laptop:~/Documents$ chown root example.txt
-root@johndoe-laptop:~/Documents$ ls -l
-total 4
--rw-r--r--  1 root    johndoe 0 2010-08-20 22:22 example.txt
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
-drwxr-xr-x  2 johndoe johndoe 4096 2010-08-02 14:03 my_project
+<br />
+<br />
 
-root@johndoe-laptop:~/Documents$ chown :root example.txt
-root@johndoe-laptop:~/Documents$ ls -l
-total 4
--rw-r--r--  1 root    root    0 2010-08-20 22:22 example.txt
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
-drwxr-xr-x  2 johndoe johndoe 4096 2010-08-02 14:03 my_project
-</pre>
+<b> Zip </b>
 
-<h3>Changing file permissions</h3>
-<p>
-The <code>'chmod'</code> command is used to change the file mode bits. The syntax is: <code>chmod [OPTION] [MODE] &ltFilename&gt</code></p>
-<p>
-There are 2 ways of representing the mode. One is a symbolic representation, which is of the form [ugoa...][[+-=][perms...]...], where perms is 
-either zero or more letters from the set 'rwxXst', or a single letter from the set 'ugo'. Multiple symbolic modes can be given, separated by 
-commas.
-</p>
+<br />
+<br />
+
+Zip does both archiving and compression functions on the files. To
+archive using zip command:
+
 <pre class="code">
-root@johndoe-laptop:~/Documents$ chmod u+x,g=rw example.txt
-root@johndoe-laptop:~/Documents$ ls -l
-total 4
--rwxrw-r--  1 root    johndoe 0 2010-08-20 22:22 example.txt
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
-drwxr-xr-x  2 johndoe johndoe 4096 2010-08-02 14:03 my_project
+$ ls
+abc.org image1.jpg image2.jpg 
+
+$ zip abc abc.org
+  adding: abc.org (deflated 39%)
+
+$ ls -l
+total 268
+-rw-rw-r-- 1 admin admin    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 admin admin    437 2012-12-27 15:41 abc.zip
+-rw-rw-r-- 1 admin admin 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 admin admin 124945 2012-12-16 12:34 image2.jpg
 </pre>
-<p>
-Here, 'u' represents user, 'g' represents group, 'o' represents other and 'a' represents all. The '+' operator causes the mode bit to be added,
-'-' operator causes the mode bit to be removed and '=' sets the mode bit to the specified value, while removing the bits that are not specified.
-The letters 'r', 'w' and 'x' mean the same things as mentioned above, 'X' gives execute/search only if the file is a directory or if the file 
-already has execute permissions, 's' sets the user or group ID on execution and 't' is the restricted deletion flag or sticky bit.
 </p>
-<p>
-The second method is the octal representation. Three digits in the range 0-7 are used to represent the permissions for user, group and other 
-respectively.
-</p>
-<ul>
-<li>1 represents execute.</li>
-<li>2 represents write.</li>
-<li>4 represents read.</li>
-</ul>
-<p>
-A combination of the above permissions can be set by adding the values of the individual permissions. For example, 3 represents execute+write. 7
-represents read+write+execute and so on.
-</p>
+
+<p align="justify">
+
+The syntax of the command is: 
+<br />
+<code> zip [options] [archive name] [file name/path name] </code>
+<br />
+where archive is the name of a new or existing archive and file name or
+path name is name of the file or directory to be archived or its path.
+
+<br />
+<br />
+
+In the example above, the fifth column shows the file size of the files.
+<code>abc.org</code> is 451 bytes and the compressed
+file <code>abc.zip</code> is 437 bytes.  The amount of compression of a
+file depends on the contents of the file and file size.  The compression
+amount can range anywhere between 1%-100% of the original file size.
+
+<br />
+<br />
+
+To archive more than one file in the same zipped file:
+
 <pre class="code">
-root@johndoe-laptop:~/Documents$ chmod 752 example.txt
-root@johndoe-laptop:~/Documents$ ls -l
-total 4
--rwxr-x-w-  1 root    johndoe 0 2010-08-20 22:22 example.txt
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
-drwxr-xr-x  2 johndoe johndoe 4096 2010-08-02 14:03 my_project
+$ ls
+abc.org abc.zip image1.jpg image2.jpg
+
+$ zip abc image1.jpg image2.jpg
+  adding: image1.jpg (deflated 2%)
+  adding: image2.jpg (deflated 6%)
+
+$ ls -l
+total 508
+-rw-rw-r-- 1 admin admin    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 admin admin 250422 2012-12-27 16:30 abc.zip
+-rw-rw-r-- 1 admin admin 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 admin admin 124945 2012-12-16 12:34 image2.jpg
 </pre>
-       </div>
-      </section>
+</p>
+
+
+
+
+
+	  </div>
+	  </section>
 
       <section id="experiment-article-section-4">
 
@@ -720,7 +342,7 @@ try: start,next,prev,clear,logout.
 
       </section>
 
-<!--        <section id="experiment-article-section-6">
+        <section id="experiment-article-section-6">
       
           <div id="experiment-article-section-6-icon" 
           class="icon">
@@ -734,16 +356,22 @@ try: start,next,prev,clear,logout.
 
           <div id="experiment-article-section-6-content" 
           class="content">
+<p align="justify">
 <ol>
-<li>What is the command to add an user 'john' to a group 'new-group'
-  and remove from 'old-group' using one command?</li>
-<li>What is the command that you use to delete an user's account but
-  still keep his/her home directory?</li>
+<li> How to run Bunzip2 on directories to decompress them? </li>
+<li> What is the option used to run any of the archival or compression
+commands, if allowed, on the directories?</li>
+<li> What is the compression percentage of a tar file? </li>
+<li> Which compression utility has better performance - Bzip2 or Gzip?
+And, which has a better rate of compression? </li>
+<li> Which of the commands discussed in the Experiment come by default
+with the Linux system. </li>
 </ol>
+</p>
           </div>
 
         </section>
--->
+
 
         <section id="experiment-article-section-8">
    
@@ -761,11 +389,7 @@ try: start,next,prev,clear,logout.
           <div id="experiment-article-section-8-content" 
           class="content">
 
-	<ul>
-	<li><a href="http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html#USERS">http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html#USERS,</a> </li>
-	<li><a href="http://www.comptechdoc.org/os/linux/commands/linux_cruserman.html">http://www.comptechdoc.org/os/linux/commands/linux_cruserman.html</a></li>
-	<li><a href="http://en.kioskea.net/contents/linux/linusr.php3">http://en.kioskea.net/contents/linux/linusr.php3</a></li>
-</ul>
+
           </div>
 
         </section>
@@ -786,7 +410,11 @@ try: start,next,prev,clear,logout.
 
           <div id="experiment-article-section-9-content" 
           class="content">
-        Please provide us feedback <a href="http://virtual-labs.ac.in/feedback/">here</a>
+
+<p align="justify">
+Please send your feedback on the lab using <a href="http://virtual-labs.ac.in/feedback/">this feedback form</a>. 
+</p>
+
           </div>
 
         </section>

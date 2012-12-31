@@ -1,9 +1,11 @@
 * Getting Help 
+
   This should not be first experiment. What man page is user
   supposed to look for when they do not know any single
   command? Man page wont make sense unless arguments,
   files, directories, pwd, ls, etc. are explained to some
   extent. 
+
 ** Theory 
 *** man
     Show simple man page like of clear command and not of
