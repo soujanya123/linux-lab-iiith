@@ -1,754 +1,794 @@
 <!-- This file needs to be edited by the lab developer to suit
-the requirements of their lab in particular.-->
+     the requirements of their lab in particular.-->
 
 <!-- Add class="default" to include any element as it is
-specified in default.html. 
-Do not include class="default" to the elements that you want to
-edit -->
+     specified in default.html. 
+     Do not include class="default" to the elements that you want to
+     edit -->
 
 <!DOCTYPE html>
 <html>
-<head></head>
-<body>
+  <head></head>
+  <body>
 
-<div id="experiment"> <!-- The Experiment Document Container-->
+    <div id="experiment"> <!-- The Experiment Document Container-->
 
-  <!-- The lab Header contains the logo and the name of the lab,
-  usually displayed on the top of the page-->
+      <!-- The lab Header contains the logo and the name of the lab,
+	   usually displayed on the top of the page-->
 
-  <header id="experiment-header">
-  
-    <div id="experiment-header-logo" class="logo">
-      <!-- Enclose the logo image of your lab or write it in 
-      text-->
-      <img src="../images/logo.jpg" />
-    </div>
+      <header id="experiment-header">
+	
+	<div id="experiment-header-logo" class="logo">
+	  <!-- Enclose the logo image of your lab or write it in 
+	       text-->
+	  <img src="../images/logo.jpg" />
+	</div>
 
-    <div id="experiment-header-heading" class="heading">
-      <!-- Write the name of your lab and link it to the home 
-      page of your lab (h1 tag is preferred while writing your 
-      lab name)-->
-      <a href="../index.html">Systems and Software Virtual Lab</a>	
-    </div>
+	<div id="experiment-header-heading" class="heading">
+	  <!-- Write the name of your lab and link it to the home 
+	       page of your lab (h1 tag is preferred while writing your 
+	       lab name)-->
+	  <a href="../index.html">Systems and Software Virtual Lab</a>	
+	</div>
 
-    <!-- Add any additional element you want to add to the lab 
-    header, For example : Help (Enclosing them with suitable 
-    div is recommended)-->
+	<!-- Add any additional element you want to add to the lab 
+	     header, For example : Help (Enclosing them with suitable 
+	     div is recommended)-->
 
-  </header>
-
-
-  <!-- The lab article is the main content area where all the 
-  experiment content sits-->
-  <article id="experiment-article">
-  
-    <!-- The lab article has an header, optional navigational 
-    menu, number of sections, an optional sidebar and a closing 
-    footer-->
-    
-      <header id="experiment-article-heading" class="heading">
-        <!-- You can add a welcome message or title of the 
-        experiment here -->
-Experiment 2: Text Editor
-        <!-- Add any additional element if required with proper 
-        enclosing-->
       </header>
 
-      <!-- Navigation menu is useful to organize the view of 
-      multiple sections inside the article-->
-      <nav id="experiment-article-navigation" class="default">
-        <ul id="experiment-article-navigation-menu">
-          <!-- The menu can be dynamically generated to contain 
-          the headings of your sections or instead write the 
-          menu items of your choice individually enclosedu in 
-          <li> tag as shown below-->
-        </ul>
-      </nav>
 
-      <!-- All the sections of your lab or experiment can be 
-      enclosed together with a div element as shown below-->
-      <div id="experiment-article-sections">
+      <!-- The lab article is the main content area where all the 
+	   experiment content sits-->
+      <article id="experiment-article">
+	
+	<!-- The lab article has an header, optional navigational 
+	     menu, number of sections, an optional sidebar and a closing 
+	     footer-->
+	
+	<header id="experiment-article-heading" class="heading">
+          <!-- You can add a welcome message or title of the 
+               experiment here -->
+	  Experiment 2: Text Editor
+          <!-- Add any additional element if required with proper 
+               enclosing-->
+	</header>
 
-        <!-- First section of the article-->
-        <section id="experiment-article-section-1">
-          
-          <div id="experiment-article-section-1-icon" 
-          class="icon">
-	    <!-- Enclose the icon image of your lab -->
-	    <img src="../images/introduction.jpg" />
-	  </div>	
-          
-          <!-- The heading for the section can be enclosed in a 
-          div tag. -->
-          <div id="experiment-article-section-1-heading" 
-          class="heading">
-            Introduction
-          </div>
+	<!-- Navigation menu is useful to organize the view of 
+	     multiple sections inside the article-->
+	<nav id="experiment-article-navigation" class="default">
+          <ul id="experiment-article-navigation-menu">
+            <!-- The menu can be dynamically generated to contain 
+		 the headings of your sections or instead write the 
+		 menu items of your choice individually enclosedu in 
+		 <li> tag as shown below-->
+          </ul>
+	</nav>
 
-          <!-- Write the section content inside a paragraph 
-          element, You can also include images with <img> tag -->
-          <div id="experiment-article-section-1-content" 
-          class="content">	
-		<p>
-This experiment introduces a console based text editor
-called vim.  It is an improved version of the vi editor 
-available on most UNIX systems (vim = vi improved).
-</p>
+	<!-- All the sections of your lab or experiment can be 
+	     enclosed together with a div element as shown below-->
+	<div id="experiment-article-sections">
 
-<p>
-Vim is a popular tool for writing computer programs as it
-is very lightweight and has a lot of features such as syntax
-highlighting, block operations and multi-level undo.  To
-know more about vim, visit www.vim.org.
-</p>
-
-<p>
-vimtutor is a very effective tutorial for learning vim.
-After this experiment, learners are expected to go through
-vimtutor and complete the lessons there.
-</p>
-
-<p>
-The experimental platform for this experiment is a command line interface which mimics the terminal of a linux machine. The command line interface supports few basic set of commands to enable the user learn process control basics. There are a series of tasks which need to be performed in each experiment. </p>
-</p>
-
-<p>
-Proceed to the theory section to get an overview of the commands and then move to the experiment section to get some hands-on experience and finish the experiment tasks. After you are done with the experiment go to the quiz section to test your understanding.
-
-            </p>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-        </div>
-
-
-      </section>
-
-      <section id="experiment-article-section-2">
-        
-        <div id="experiment-article-section-2-icon" 
-        class="icon">
-	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/objective.jpg" />
-	</div>
-				
-        <!-- The heading for the section can be enclosed in a 
-        div tag. -->
-        <div id="experiment-article-section-2-heading" 
-        class="heading">
-	Objective
-        </div>
-
-
-        <!-- Write the section content inside a paragraph 
-        element, we can also include images with <img> tag -->
-        <div id="experiment-article-section-2-content" 
-        class="content">
-      <!-- Second section of the article-->
-      <p>This experiment aims to make the learners comfortable with
-editing text files (such as C programs, other source code,
-notes, etc.) using vim text editor.
-</p>
-      </div>
-      </section>
-
-
-      <section id="experiment-article-section-3">
-        
-        <div id="experiment-article-section-3-icon" 
-        class="icon">
-	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/theory.jpg" />
-	</div>
-				
-        <!-- The heading for the section can be enclosed in a 
-        div tag. -->
-        <div id="experiment-article-section-3-heading" 
-        class="heading">
-          Theory
-        </div>
-
-
-        <!-- Write the section content inside a paragraph 
-        element, we can also include images with <img> tag -->
-        <div id="experiment-article-section-3-content" 
-        class="content">
-	  <h3>Starting and Exiting vim</h3>
-	  <p>To start vim, type "vim filename" on the
- command prompt, e.g.</p>
-	  <pre class="code">
-$ vim helloworld.txt
-	  </pre>
-	  <p>
-If helloworld.txt is an existing file, vim will open it.  If
-it doesn't exist, vim will create the file.
-	  </p>
-	  <p>
-To exit vim, go to the Escape mode (press the 'Esc' key),
-press the : key (Shift + ;) and type one of the following
-q (if you haven't made any change)
-q! (if you have made changes, but don't want to save it)
-wq (if you have made changes and want to save it)
-	  </p>
-	  <pre class="code">
-:wq
-	  </pre>
-	  <h3>Modes in vim</h3>
-	  <p>
-INSERT Mode: This mode is where you will spend most of your
-time in vim, as it allows you to write text in the current file.
-	  </p>
-	  <p>
-Press 'i' in Escape Mode to enter Insert Mode.  When in
-insert mode, you will see the word "INSERT" near the bottom
-of the editor window, as below.
-	  </p>
-<pre class="code">
--- INSERT --
-</pre>
-	  <p>
-Escape Mode or Normal Mode: This is the default mode that
-you get after you start vim.  You can press 'i' to enter the Insert
-mode and start typing.  Press 'Esc' key to go back to escape mode.
-	  </p>
-	  <p>
-VISUAL Mode: This is a less-used mode.  It allows selecting
-a section of text and applying vim commands on the
-selection such as cut, copy.  Press 'Esc' key to go back to
-escape mode.
-	  </p>
-	  <p>
-When in visual mode, you will see the word "VISUAL" near the bottom
-of the editor window, as below.
-	  </p>
-<pre class="code">
--- VISUAL --
-</pre>
-	  <p>
-REPLACE Mode:  This is also a less-used mode.  It allows you
-to replace current text in the file with anythin you type.
-Press 'R' (Shift + r) to enter the REPLACE mode. Press 'Esc'
-key to go back to escape mode.
-	  </p>
-	  <p>
-When in replace mode, you will see the word "REPLACE" near the bottom
-of the editor window, as below.
-	  </p>
-<pre class="code">
--- REPLACE --
-</pre>
-	  <h3>Cut, Copy, Paste</h3>
-	  <p>
-All these commands are run in Escape mode.  Press 'Esc' key
-to go to Escape mode.  None of the commands you type here
-will be visible.  You will see only their effects (i.e. text
-being cut or copied and pasted).
-	  </p>
-	  <table>
-	    <tr>
-	      <th>
-		command
-	      </th>
-	      <th>
-		description
-	      </th>
-	    </tr>
-	    <tr>
-	      <td>
-		dw
-	      </td>
-	      <td>
-		this cuts the word at the current cursor position
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		d2w, 2dw
-	      </td>
-	      <td>
-		each of this cuts two words.  You can use any
-		number e.g. d5w cuts 5 words
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		d$
-	      </td>
-	      <td>
-		cuts all text from the cursor position to the end of the current line
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		dd
-	      </td>
-	      <td>
-		cuts the current line (the line where the cursor is
-		placed)
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		d5d, 5dd
-	      </td>
-	      <td>
-		cuts five lines (current line + 4 lines below it)
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		yy
-	      </td>
-	      <td>
-		copies current line so that it can be pasted
-		somewhere else
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		2yy, y2y
-	      </td>
-	      <td>
-		copies two lines
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		p
-	      </td>
-	      <td>
-		pastes copied or cut content at the cursor position
-	      </td>
-	    </tr>
-	  </table>
-	  <br />
-	  <p>
-When you cut more than 2 lines, e.g. 5dd, you get a message
-	  at the bottom of the vim screen, as below. 
-	  </p>
-	  <pre class="code">
-	    5 fewer lines
-	  </pre>
-	  <p>
-Similarly, when you copy more than 2 lines, e.g. 10yy, you
-get this message near the bottom of the vim screen:
-	  </p>
-	  <pre class="code">
-	    10 lines yanked
-	  </pre>
-	  <p>
-If you run the paste command (type p in escape mode), you
-get this message:
-	  </p>
-	  <pre class="code">
-	    10 more lines
-	  </pre>
-	  <h3>Undo, Redo</h3>
-	  <p>
-All these commands are run in Escape mode.  Press 'Esc' key
-to go to Escape mode.
-	  </p>
-	  <table>
-	    <tr>
-	      <th>
-		command
-	      </th>
-	      <th>
-		description
-	      </th>
-	    </tr>
-	    <tr>
-	      <td>
-		u
-	      </td>
-	      <td>
-		Undo
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		Ctrl-R
-	      </td>
-	      <td>
-		Redo a change that was undone using undo command
-	      </td>
-	    </tr>
-	  </table>
-	  <br />
-	  <p>
-You can undo subsequent changes using pressing 'u' again.
-If there are no more changes to undo, you will get the below
-message near the bottom of the vim window.
-	  </p>
-	  <pre class="code">
-	    Already at oldest change
-	  </pre>
-	  <p>
-Similarly, you can redo multiple times by repeatedly
-pressing Ctrl-R.  When there are no more changes to redo,
-you will get this message:
-	  </p>
-	  <pre class="code">
-	    Already at newest change
-	  </pre>
-	  <h3>Search</h3>
-	  <p>
-All these commands are run in Escape mode.  Press 'Esc' key
-to go to Escape mode.
-	  </p>
-	  <table>
-	    <tr>
-	      <th>
-		command
-	      </th>
-	      <th>
-		description
-	      </th>
-	    </tr>
-	    <tr>
-	      <td>
-		/hello
-	      </td>
-	      <td>
-		This will search for the first occurence of the
-word "hello" after the cursor position in the current
-text file.
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		/hello\c
-	      </td>
-	      <td>
-		This will search for the word hello ignoring the
-		case i.e. Hello, HELLO, hElLo, hello all four will match this
-		search
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		n
-	      </td>
-	      <td>
-		Takes you to the next occurence of the
-		search term
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		N
-	      </td>
-	      <td>
-		Takes you to the previous occurence of the
-		search term
-	      </td>
-	    </tr>
-	  </table>
-	  <br />
-	  <p>
-	  You can keep searching for the next occurrence of the search
-	  term by repeatedly pressing n after starting the
-	  search.  When the search hits the bottom of the
-	  file, it will start searching from the
-	  beginning of the file.  You will see the below
-	  message when that happens.
-	  </p>
-	  <pre class="code">
-	    search hit BOTTOM, continuing at TOP
-	  </pre>
-	  <h3>Substitution</h3>
-	  <table>
-	    <tr>
-	      <th>
-		command
-	      </th>
-	      <th>
-		description
-	      </th>
-	    </tr>
-	    <tr>
-	      <td>
-		:s/oldtext/newtext
-	      </td>
-	      <td>
-		substitutes oldtext with newtext in the current line
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		:%s/oldtext/newtext/g 
-	      </td>
-	      <td>
-		substitutes oldtext with newtext in the
-		whole document ('g' stands for global)
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		:%s/oldtext/newtext/gc
-	      </td>
-	      <td>
-		substitutes oldtext with newtext asking for confirmation for each occurence
-	      </td>
-	    </tr>
-	  </table>
-	  <br />
-	  <p>
-	    The global substitution gives a count of
-	    substitutions after it is done.
-	  </p>
-	  <pre class="code">
-60 substitutions on 60 lines
-	  </pre>
-	  <p>
-	    The global substitution with confirmation (gc)
-	    asks for confirmation for each occurence of the
-	    substution term.  You can respond with y if you
-	    want to substitute that occurence, n if you
-	    don't want to, a to substitute all subsequent
-	    occurences, q to quit substituting.
-	  </p>
-	  <pre class="code">
-replace with enter (y/n/a/q/l/^E/^Y)?
-	  </pre>
-	  <p>
-	    This concludes the theory section of the text
-	    editor experiment.  To learn more vim commands,
-	    go through the built-in vim tutorial by running
-	    the command "vimtutor"
-	  </p>
-	  <pre class="code">
-	    $ vimtutor
-	  </pre>
-	  <p>
-	    vimtutor provides a reasonably detailed overview
-	    of vim commands and helps you learn by doing.
-	    We strongly encourage you to use vimtutor for
-	    getting more familiar with vim text editor.
-	  </p>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-        </div>
-      </section>
-
-
-
-      <section id="experiment-article-section-4">
-
-        <div id="experiment-article-section-4-icon" 
-        class="icon">
-	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/simulation.jpg" />
-	  </div>
-
-	  <div id="experiment-article-section-4-heading" 
-	  class="heading">
-	  Experiment
-	  </div>
-
-	  <div id="experiment-article-section-4-content" 
-	  class="content">
-	  <p>
-	  <div id="login">
- <br />If you already have Virtual Labs login
-	  credentials, please click 
-<A HREF="javascript:void(0)"
-onclick="window.open('../php/login-form.php?expid=2',
-'welcome',width=screen.availWidth,height=screen.availHeight,status='yes')">
-here</A>.<br />
-In case you do not have login credentials, please click here.	  </div>
-
-	  <div id="signup">
-
-	  <div id="signup-warning"></div>
-
-	  <form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
-
-	  <table><tr>
-
-	  <td>Your name</td><td> <input type="text" name="yourname" value="" id="yourname"/></td></tr>
-
-	  <td>Preferred username</td><td> <input type="text" name="preferredusername" value="" id="preferredusername"/></td></tr>
-
-	  <tr><td>Password</td> <td><input type="password" name="preferredpassword" id="preferredpassword"/></td></tr>
-
-	  <tr><td>Re-enter Password</td> <td><input type="password" name="repreferredpassword" id="repreferredpassword"/></td></tr>
-
-	  <tr><td>Email</td> <td><input type="text" name="email" id="email"/></td></tr>
-
-	  <tr><td>Re-enter Email</td> <td><input type="text" name="reemail" id="reemail"/></td></tr>
-
-	  <tr></tr>
-
-	  <tr><td colspan=2>Enter the black characters present in the below image</td></tr>
-
-	  <tr><td><img src="php/captcha.php" id="captchaimg"/></td><td><input type="text" name="captcha" id="captcha"/></td></tr>
-
-	  <tr><td></td><td><input type="submit" value="Sign up" /></td></tr>
-
-	  </table>
-
-	  </form>
-
-	  </div>
-
-	  <div id="logout">
-
-	  <a href="#" onclick="logout();">Logout</a>
-
-	  </div>
-
-	  <pre id="terminal" class="code"><div id="input" class="inpcls"><form name='f' class='cmdform' action='' onsubmit="return false;" id="cmdformid"><table class="inputtable" id="inputtableid"><tr><td><div id='prompt' class='less'>user@pascal:~/$</div></td><td class="inputtd"><input id='inputfield' name='q' type='text' class='cmdline' autocomplete="off" value="" onkeypress="showHint(event,this.value)" /></td></tr></table></form><div id="output" class="outcls"></div></div></pre>
-
-	  <pre class="instr" id="instr">
-
-	  <div id="instruction" title="0">
-
-	  The shell above supports a few basic shell commands. Play along to get some hands-on experience of the interface.
-
-	  Now that we have learnt shell commands to do basic process control, try them here. We have an exercise for you.
-
-	  When you are ready to perform the exercise, which is a set of 5 tasks, enter the command "start".
-	</div>
-
-	  try: start,next,prev,clear,logout.
-
-	  </pre>
-
-
-<p>
-	Note: The current implementation doesn't support creating processes and changing process priorities.</p>
-
-          </p>
-        </div>
-
-      </section>
-
-
-        <section id="experiment-article-section-6">
-      
-          <div id="experiment-article-section-6-icon" 
-          class="icon">
-	    <!-- Enclose the icon image of your lab.-->
-	    <img src="../images/quizzes.jpg" />
-	  </div>
-
-          <div id="experiment-article-section-6-heading" 
-          class="heading">
-            Quiz
-          </div>
-
-          <div id="experiment-article-section-6-content" 
-          class="content">
+          <!-- First section of the article-->
+          <section id="experiment-article-section-1">
             
-            <p><ul>
-<li>A low nice value indicates a lower priority for a process - true/false ?</li>
-<li>Find out for yourself the difference between ps -ef and ps -aux</li>
-<li>When a linux system boots, which is the first process to start and who is the process' owner ?</li>
-<li>'Renice' is used to change the priority of the process - t/f ?</li>
-<li>What happens when ctrl+z is used when a process is running?</li>
+            <div id="experiment-article-section-1-icon" 
+		 class="icon">
+	      <!-- Enclose the icon image of your lab -->
+	      <img src="../images/introduction.jpg" />
+	    </div>	
+            
+            <!-- The heading for the section can be enclosed in a 
+		 div tag. -->
+            <div id="experiment-article-section-1-heading" 
+		 class="heading">
+              Introduction
+            </div>
 
-            </p>
+            <!-- Write the section content inside a paragraph 
+		 element, You can also include images with <img> tag -->
+            <div id="experiment-article-section-1-content" 
+		 class="content">	
+	      <p>
+		This experiment introduces a console-based text editor
+		called vim.
+	      </p>
+	      
+	      <p>
+		Vim is a popular editor for editing text files such as
+		computer programs as it has a lot of features such as syntax
+		highlighting, line numbering, block operations and
+		multi-level undo.  To know more about vim, visit
+		www.vim.org.
+	      </p>
+	      
+	      <p>
+		To learn vim, most linux systems come with a tutorial called
+		vimtutor.  Just type vimtutor at the shell prompt to start
+		the tutorial.  After this experiment, learners are expected
+		to  go through vimtutor and complete the lessons there.
+	      </p>
+	      
+	      <p>
+		The experimental platform for this experiment is a command
+		line interface which mimics the terminal of a linux
+		machine. The command line interface supports few basic set
+		of commands to enable the user learn process control
+		basics. There are a series of tasks which need to be
+		performed in each experiment. 
+	      </p>
+	      
+	      <p>
+		Proceed to the theory section to get an overview of the
+		commands and then move to the experiment section to get some
+		hands-on experience and finish the experiment tasks. After
+		you are done with the experiment go to the quiz section to
+		test your understanding.
+	      </p>
+	      <br />
+	      <br />
+	      <br />
+	      <br />
+	      <br />
+            </div>
+	    
+	    
+	  </section>
+	  
+	  <section id="experiment-article-section-2">
+            
+            <div id="experiment-article-section-2-icon" 
+		 class="icon">
+	      <!-- Enclose the icon image of your lab. -->
+	      <img src="../images/objective.jpg" />
+	    </div>
+	    
+            <!-- The heading for the section can be enclosed in a 
+		 div tag. -->
+            <div id="experiment-article-section-2-heading" 
+		 class="heading">
+	      Objective
+            </div>
+	    
+	    
+            <!-- Write the section content inside a paragraph 
+		 element, we can also include images with <img> tag -->
+            <div id="experiment-article-section-2-content" 
+		 class="content">
+	      <!-- Second section of the article-->
+	      <p>This experiment aims to make you comfortable with
+		editing text files (such as C programs, other source code,
+		notes, etc.) using vim text editor.
+	      </p>
+	      <p>
+		After this experiment, you will be able
+		to create text files, search in text files,
+		cut, copy and paste text and replace text using
+		substitution command.
+	      </p>
+	    </div>
+	  </section>
+	  
+	  
+	  <section id="experiment-article-section-3">
+            
+            <div id="experiment-article-section-3-icon" 
+		 class="icon">
+	      <!-- Enclose the icon image of your lab. -->
+	      <img src="../images/theory.jpg" />
+	    </div>
+	    
+            <!-- The heading for the section can be enclosed in a 
+		 div tag. -->
+            <div id="experiment-article-section-3-heading" 
+		 class="heading">
+              Theory
+            </div>
+	    
+	    
+            <!-- Write the section content inside a paragraph 
+		 element, we can also include images with <img> tag -->
+            <div id="experiment-article-section-3-content" 
+		 class="content">
+	      <h3>Starting and Exiting vim</h3>
+	      <p>To start vim, type "vim filename" on the
+		command prompt, e.g.</p>
+	      <pre class="code">
+		$ vim helloworld.txt
+	      </pre>
+	      <p>
+		If helloworld.txt is an existing file, vim will open it.  If
+		it doesn't exist, vim will create the file.
+	      </p>
+	      <p>
+		To exit vim, go to the Normal mode (press the 'Esc' key),
+		press the : key (Shift + ;) and type one of the following:
+		<br />q (if you haven't made any change)
+		<br />q! (if you have made changes, but don't want to save it)
+		<br />wq (if you have made changes and want to save it)
+	      </p>
+	      <p>
+		Please note that the vim commands are case-sensitive, hence 'w' has different meaning than 'W'.
+	      </p>
+	      <pre class="code">
+		:wq
+	      </pre>
+	      <h3>Modes in vim</h3>
+	      <p>
+		NORMAL Mode: This is the default mode that
+		you get after you start vim.  This mode is
+		not for typing text.  This is for running
+		commands such as find, save, replace,
+		etc. You can press 'i' to enter the Insert
+		mode and start typing.  Press 'Esc' key to
+		go back to normal mode.
+	      </p>
+	      <br />
+	      <p>
+		INSERT Mode: This mode is where you will spend most of your
+		time in vim, as it allows you to write text in the current file.
+	      </p>
+	      <p>
+		Press 'i' in Normal Mode to enter Insert Mode.  When in
+		insert mode, you will see the word "INSERT" near the bottom
+		of the editor window, as below.
+	      </p>
+	      <pre class="code">
+		-- INSERT --
+	      </pre>
+	      <p>
+		VISUAL Mode: This is a less-used mode.  It allows selecting
+		a section of text and applying vim commands on the
+		selection such as cut, copy.  Press 'Esc' key to go back to
+		normal mode.
+	      </p>
+	      <p>
+		When in visual mode, you will see the word "VISUAL" near the bottom
+		of the editor window, as below.
+	      </p>
+	      <pre class="code">
+		-- VISUAL --
+	      </pre>
+	      <p>
+		REPLACE Mode:  This is also a less-used mode.  It allows you
+		to replace current text in the file with anythin you type.
+		Press 'R' (Shift + r) to enter the REPLACE mode. Press 'Esc'
+		key to go back to normal mode.
+	      </p>
+	      <p>
+		When in replace mode, you will see the word "REPLACE" near the bottom
+		of the editor window, as below.
+	      </p>
+	      <pre class="code">
+		-- REPLACE --
+	      </pre>
+	      <h3>Typing Text</h3>
+	      <p>
+		To start typing text into the file, go to
+		insert mode by pressing 'i'.  You should be
+		able to see "-- INSERT --" near the bottom
+		of the vim screen.  Everything you type now
+		will be visible in the window.  To correct
+		an already typed word, you can use backspace
+		to delete and retype it correctly.  You can
+		use arrow keys, Page Up, Page Down, Home,
+		End to navigate the file.  
+	      </p>
+	      <p>
+		Go back to normal mode by pressing 'Esc' key
+		once you are done typing.
+	      </p>
+	      <h3>Cut, Copy, Paste</h3>
+	      <p>
+		All these commands are run in Normal mode.  Press 'Esc' key
+		to go to Normal mode.  
+	      </p>
+	      <table>
+		<tr>
+		  <th>
+		    command
+		  </th>
+		  <th>
+		    description
+		  </th>
+		</tr>
+		<tr>
+		  <td>
+		    dw
+		  </td>
+		  <td>
+		    this cuts the word at the current cursor position
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    d2w, 2dw
+		  </td>
+		  <td>
+		    each of this cuts two words.  You can use any
+		    number e.g. d5w cuts 5 words
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    d$
+		  </td>
+		  <td>
+		    cuts all text from the cursor position to the end of the current line
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    dd
+		  </td>
+		  <td>
+		    cuts the current line (the line where the cursor is
+		    placed)
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    d5d, 5dd
+		  </td>
+		  <td>
+		    cuts five lines (current line + 4 lines below it)
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    yy
+		  </td>
+		  <td>
+		    copies current line so that it can be pasted
+		    somewhere else (y stands for yanking)
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    2yy, y2y
+		  </td>
+		  <td>
+		    copies two lines
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    p
+		  </td>
+		  <td>
+		    pastes content at the cursor position
+		  </td>
+		</tr>
+	      </table>
+	      <br />
+	      <p>
+		When you cut more than 2 lines, e.g. 5dd, you get a message
+		at the bottom of the vim screen, as below. 
+	      </p>
+	      <pre class="code">
+		5 fewer lines
+	      </pre>
+	      <p>
+		Similarly, when you copy more than 2 lines, e.g. 10yy, you
+		get this message near the bottom of the vim screen:
+	      </p>
+	      <pre class="code">
+		10 lines yanked
+	      </pre>
+	      <p>
+		If you run the paste command (type p in normal mode), you
+		get this message:
+	      </p>
+	      <pre class="code">
+		10 more lines
+	      </pre>
+	      <h3>Undo, Redo</h3>
+	      <p>
+		All these commands are run in Normal mode.  Press 'Esc' key
+		to go to Normal mode.
+	      </p>
+	      <table>
+		<tr>
+		  <th>
+		    command
+		  </th>
+		  <th>
+		    description
+		  </th>
+		</tr>
+		<tr>
+		  <td>
+		    u
+		  </td>
+		  <td>
+		    Undo
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    CTRL-R
+		  </td>
+		  <td>
+		    Press the Ctrl key and 'r' key to redo a change that was undone using undo command
+		  </td>
+		</tr>
+	      </table>
+	      <br />
+	      <p>
+		You can undo subsequent changes using pressing 'u' again.
+		If there are no more changes to undo, you will get the below
+		message near the bottom of the vim window.
+	      </p>
+	      <pre class="code">
+		Already at oldest change
+	      </pre>
+	      <p>
+		Similarly, you can redo multiple times by repeatedly
+		pressing CTRL-R.  When there are no more changes to redo,
+		you will get this message:
+	      </p>
+	      <pre class="code">
+		Already at newest change
+	      </pre>
+	      <h3>Search</h3>
+	      <p>
+		All these commands are run in Normal mode.  Press 'Esc' key
+		to go to Normal mode.
+	      </p>
+	      <table>
+		<tr>
+		  <th>
+		    command
+		  </th>
+		  <th>
+		    description
+		  </th>
+		</tr>
+		<tr>
+		  <td>
+		    /hello
+		  </td>
+		  <td>
+		    This will search for the first occurence of the
+		    word "hello" after the cursor position in the current
+		    text file.  Note that the search command
+		    accepts regular expressions.  To learn
+		    regular expressions, go through the
+		    <a href="../exp8/index.html">Searching</a>
+		    experiment.
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    /hello\c
+		  </td>
+		  <td>
+		    This will search for the word hello ignoring the
+		    case i.e. Hello, HELLO, hElLo, hello all four will match this
+		    search
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    n
+		  </td>
+		  <td>
+		    Takes you to the next occurence of the
+		    search term
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    N
+		  </td>
+		  <td>
+		    Takes you to the previous occurence of the
+		    search term
+		  </td>
+		</tr>
+	      </table>
+	      <br />
+	      <p>
+		You can keep searching for the next occurrence of the search
+		term by repeatedly pressing n after starting the
+		search.  When the search hits the bottom of the
+		file, it will start searching from the
+		beginning of the file.  You will see the below
+		message when that happens.
+	      </p>
+	      <pre class="code">
+		search hit BOTTOM, continuing at TOP
+	      </pre>
+	      <h3>Substitution</h3>
+	      <table>
+		<tr>
+		  <th>
+		    command
+		  </th>
+		  <th>
+		    description
+		  </th>
+		</tr>
+		<tr>
+		  <td>
+		    :s/oldtext/newtext
+		  </td>
+		  <td>
+		    substitutes oldtext with newtext in the
+		    current line.  Note that the
+		    substitution command accepts regular
+		    expressions.  To learn regular
+		    expressions, go through
+		    the <a href="../exp8/index.html">Searching</a>
+		    experiment.
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    :%s/oldtext/newtext/g 
+		  </td>
+		  <td>
+		    substitutes oldtext with newtext in the
+		    whole document ('g' stands for global)
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    :%s/oldtext/newtext/gc
+		  </td>
+		  <td>
+		    substitutes oldtext with newtext asking for confirmation for each occurence
+		  </td>
+		</tr>
+	      </table>
+	      <br />
+	      <p>
+		The global substitution gives a count of
+		substitutions after it is done.
+	      </p>
+	      <pre class="code">
+		60 substitutions on 60 lines
+	      </pre>
+	      <p>
+		The global substitution with confirmation (gc)
+		asks for confirmation for each occurence of the
+		substution term.  You can respond with y if you
+		want to substitute that occurence, n if you
+		don't want to, a to substitute all subsequent
+		occurences, q to quit substituting.
+	      </p>
+	      <pre class="code">
+		replace with enter (y/n/a/q/l/^E/^Y)?
+	      </pre>
+	      <p>
+		This concludes the theory section of the text
+		editor experiment.  To learn more vim commands,
+		go through the built-in vim tutorial by running
+		the command "vimtutor"
+	      </p>
+	      <pre class="code">
+		$ vimtutor
+	      </pre>
+	      <p>
+		vimtutor provides a reasonably detailed overview
+		of vim commands and helps you learn by doing.
+		We strongly encourage you to use vimtutor for
+		getting more familiar with vim text editor
+		and learning more vim commands.
+	      </p>
+	      <br />
+	      <br />
+	      <br />
+	      <br />
+	      <br />
 
-          </div>
-
-        </section>
-
-		
-        <section id="experiment-article-section-8">
-   
-          <div id="experiment-article-section-8-icon" 
-          class="icon">
-	    <!-- Enclose the icon image of your lab.-->
-	    <img src="../images/readings.jpg" />
-	  </div>
-
-          <div id="experiment-article-section-8-heading" 
-          class="heading">
-            Further Readings
-          </div>
-
-          <div id="experiment-article-section-8-content" 
-          class="content">
-	
-<ul>
-	<li> 
-<a href="http://linux.about.com/od/nwb_guide/a/gdenwb01t66.htm" >http://linux.about.com/od/nwb_guide/a/gdenwb01t66.htm</a>
-	</li>
-	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section13.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section13.html</a></li>
-	<li><a href="http://www.devdaily.com/unix/edu/IntroToUnix/node9.shtml">http://www.devdaily.com/unix/edu/IntroToUnix/node9.shtml</a></li>
-	<li><a href="http://linuxfrombeginning.wordpress.com/2008/09/29/linux-command-13-jobs-bg-fg-top/">http://linuxfrombeginning.wordpress.com/2008/09/29/linux-command-13-jobs-bg-fg-top/</a></li>
-	<li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?ps">ps Man Page</a></li>
-</ul>
-          </div>
-
-        </section>
-
-   <section id="experiment-article-section-9">
-
-          <div id="experiment-article-section-9-icon" 
-          class="icon">
-            <!-- Enclose the icon image of your lab.-->
-            <img src="../images/readings.jpg" />
-          </div>
-
-          <div id="experiment-article-section-9-heading" 
-          class="heading">
-
-        Feedback
-          </div>
-
-          <div id="experiment-article-section-9-content" 
-          class="content">
-        Please provide us feedback <a href="http://virtual-labs.ac.in/feedback/">here</a>
-          </div>
-
-        </section>
+            </div>
+	  </section>
 
 
-	
 
-      </div>
+	  <section id="experiment-article-section-4">
+
+            <div id="experiment-article-section-4-icon" 
+		 class="icon">
+	      <!-- Enclose the icon image of your lab.-->
+	      <img src="../images/simulation.jpg" />
+	    </div>
+
+	    <div id="experiment-article-section-4-heading" 
+		 class="heading">
+	      Experiment
+	    </div>
+
+	    <div id="experiment-article-section-4-content" 
+		 class="content">
+	      <p>
+		<div id="login">
+		  <br />If you already have Virtual Labs login
+		  credentials, please click 
+		  <A HREF="javascript:void(0)"
+		     onclick="window.open('../php/login-form.php?expid=2',
+			      'welcome',width=screen.availWidth,height=screen.availHeight,status='yes')">
+		    here</A>.<br />
+		  In case you do not have login credentials, please click here.	  </div>
+
+		<div id="signup">
+
+		  <div id="signup-warning"></div>
+
+		  <form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
+
+		    <table><tr>
+
+			<td>Your name</td><td> <input type="text" name="yourname" value="" id="yourname"/></td></tr>
+
+		      <td>Preferred username</td><td> <input type="text" name="preferredusername" value="" id="preferredusername"/></td></tr>
+
+<tr><td>Password</td> <td><input type="password" name="preferredpassword" id="preferredpassword"/></td></tr>
+
+<tr><td>Re-enter Password</td> <td><input type="password" name="repreferredpassword" id="repreferredpassword"/></td></tr>
+
+<tr><td>Email</td> <td><input type="text" name="email" id="email"/></td></tr>
+
+<tr><td>Re-enter Email</td> <td><input type="text" name="reemail" id="reemail"/></td></tr>
+
+<tr></tr>
+
+<tr><td colspan=2>Enter the black characters present in the below image</td></tr>
+
+<tr><td><img src="php/captcha.php" id="captchaimg"/></td><td><input type="text" name="captcha" id="captcha"/></td></tr>
+
+<tr><td></td><td><input type="submit" value="Sign up" /></td></tr>
+
+</table>
+
+</form>
+
+</div>
+
+<div id="logout">
+
+  <a href="#" onclick="logout();">Logout</a>
+
+</div>
+
+<pre id="terminal" class="code"><div id="input" class="inpcls"><form name='f' class='cmdform' action='' onsubmit="return false;" id="cmdformid"><table class="inputtable" id="inputtableid"><tr><td><div id='prompt' class='less'>user@pascal:~/$</div></td><td class="inputtd"><input id='inputfield' name='q' type='text' class='cmdline' autocomplete="off" value="" onkeypress="showHint(event,this.value)" /></td></tr></table></form><div id="output" class="outcls"></div></div></pre>
+
+<pre class="instr" id="instr">
+
+  <div id="instruction" title="0">
+
+    The shell above supports a few basic shell commands. Play along to get some hands-on experience of the interface.
+
+    Now that we have learnt shell commands to do basic process control, try them here. We have an exercise for you.
+
+    When you are ready to perform the exercise, which is a set of 5 tasks, enter the command "start".
+  </div>
+
+  try: start,next,prev,clear,logout.
+
+</pre>
 
 
-    <!-- An article can have a sidebar that contain related 
-    links and additional material (however it is kept optional 
-    at this moment) -->
-    <aside id="lab-article-sidebar" class="default">
-      <!-- put the content that you want to appear in the 
-      sidebar -->	
-    </aside>
+<p>
+  Note: The current implementation doesn't support creating processes and changing process priorities.</p>
+
+</p>
+</div>
+
+</section>
 
 
-    <!-- Article footer can display related content and 
-    additional links -->						
-    <footer id="lab-article-footer" class="default">
-      <!-- Put the content that you want to appear here -->
-    </footer>
+<section id="experiment-article-section-6">
+  
+  <div id="experiment-article-section-6-icon" 
+       class="icon">
+    <!-- Enclose the icon image of your lab.-->
+    <img src="../images/quizzes.jpg" />
+  </div>
 
-  </article>
+  <div id="experiment-article-section-6-heading" 
+       class="heading">
+    Quiz
+  </div>
+
+  <div id="experiment-article-section-6-content" 
+       class="content">
+    
+    <p><ul>
+	<li>A low nice value indicates a lower priority for a process - true/false ?</li>
+	<li>Find out for yourself the difference between ps -ef and ps -aux</li>
+	<li>When a linux system boots, which is the first process to start and who is the process' owner ?</li>
+	<li>'Renice' is used to change the priority of the process - t/f ?</li>
+	<li>What happens when ctrl+z is used when a process is running?</li>
+
+    </p>
+
+  </div>
+
+</section>
 
 
-  <!-- Links to other labs, about us page can be kept the lab 
-  footer-->
-  <footer id="lab-footer" class="footer">
-    <!-- Put the content here-->
-	<a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
-  </footer>
+<section id="experiment-article-section-8">
+  
+  <div id="experiment-article-section-8-icon" 
+       class="icon">
+    <!-- Enclose the icon image of your lab.-->
+    <img src="../images/readings.jpg" />
+  </div>
+
+  <div id="experiment-article-section-8-heading" 
+       class="heading">
+    Further Readings
+  </div>
+
+  <div id="experiment-article-section-8-content" 
+       class="content">
+    
+    <ul>
+      <li> 
+	<a href="http://linux.about.com/od/nwb_guide/a/gdenwb01t66.htm" >http://linux.about.com/od/nwb_guide/a/gdenwb01t66.htm</a>
+      </li>
+      <li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section13.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section13.html</a></li>
+      <li><a href="http://www.devdaily.com/unix/edu/IntroToUnix/node9.shtml">http://www.devdaily.com/unix/edu/IntroToUnix/node9.shtml</a></li>
+      <li><a href="http://linuxfrombeginning.wordpress.com/2008/09/29/linux-command-13-jobs-bg-fg-top/">http://linuxfrombeginning.wordpress.com/2008/09/29/linux-command-13-jobs-bg-fg-top/</a></li>
+      <li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?ps">ps Man Page</a></li>
+    </ul>
+  </div>
+
+</section>
+
+<section id="experiment-article-section-9">
+
+  <div id="experiment-article-section-9-icon" 
+       class="icon">
+    <!-- Enclose the icon image of your lab.-->
+    <img src="../images/readings.jpg" />
+  </div>
+
+  <div id="experiment-article-section-9-heading" 
+       class="heading">
+
+    Feedback
+  </div>
+
+  <div id="experiment-article-section-9-content" 
+       class="content">
+    Please provide us feedback <a href="http://virtual-labs.ac.in/feedback/">here</a>
+  </div>
+
+</section>
+
+
+
+
+</div>
+
+
+<!-- An article can have a sidebar that contain related 
+     links and additional material (however it is kept optional 
+     at this moment) -->
+<aside id="lab-article-sidebar" class="default">
+  <!-- put the content that you want to appear in the 
+       sidebar -->	
+</aside>
+
+
+<!-- Article footer can display related content and 
+     additional links -->						
+<footer id="lab-article-footer" class="default">
+  <!-- Put the content that you want to appear here -->
+</footer>
+
+</article>
+
+
+<!-- Links to other labs, about us page can be kept the lab 
+     footer-->
+<footer id="lab-footer" class="footer">
+  <!-- Put the content here-->
+  <a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+</footer>
 
 </div>		
 

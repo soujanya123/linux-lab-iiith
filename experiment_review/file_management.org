@@ -1,4 +1,10 @@
-* File management
+* Experiment 1: File management
+** Introduction
+Rewrite this section
+
+** Objective
+This seems fine.
+
 ** Theory 
 *** Relative path or absolute path
     Explanation has to be improved. What is a file or a
@@ -6,7 +12,11 @@
     folder? There are no drives in Linux. / is used for
     separating parent and child entries. Unnecessary
     information about processes and links at this stage.
+    Chandan: Also a picture of the "tree" to visualize
+    the file system should be added.
 *** pwd
+    Chandan: "johndoe" is a complex name for Indian
+    audience.  Use just "john" or better "ram" or "shyam".
 *** ls (-l, -a, -s, -R, -t, -h)
      + sRt options are not required
      + h requires understanding of units bytes, etc
