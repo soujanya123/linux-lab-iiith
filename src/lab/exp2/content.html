@@ -197,8 +197,10 @@
 		$ vim helloworld.txt
 	      </pre>
 	      <p>
-		If helloworld.txt is an existing file, vim will open it.  If
-		it doesn't exist, vim will create the file.
+		If helloworld.txt exists at the present
+		working directory, vim will open it.  If
+		it doesn't exist, vim will create the file
+		once you save it using the save command below.
 	      </p>
 	      <p>
 		To exit vim, go to the Normal mode (press the 'Esc' key),
@@ -219,9 +221,10 @@
 		you get after you start vim.  This mode is
 		not for typing text.  This is for running
 		commands such as find, save, replace,
-		etc. You can press 'i' to enter the Insert
-		mode and start typing.  Press 'Esc' key to
-		go back to normal mode.
+		etc.  You will learn these commands later in
+		this experiment.  You can press 'i' to enter
+		the Insert mode and start typing.  Press
+		'Esc' key to go back to normal mode.
 	      </p>
 	      <br />
 	      <p>
@@ -239,7 +242,8 @@
 	      <p>
 		VISUAL Mode: This is a less-used mode.  It allows selecting
 		a section of text and applying vim commands on the
-		selection such as cut, copy.  Press 'Esc' key to go back to
+		selection such as cut, copy.  Press 'v' to go
+		to visual mode.  Press 'Esc' key to go back to
 		normal mode.
 	      </p>
 	      <p>
@@ -262,7 +266,7 @@
 	      <pre class="code">
 		-- REPLACE --
 	      </pre>
-	      <h3>Typing Text</h3>
+	      <h3>Typing Text and Saving</h3>
 	      <p>
 		To start typing text into the file, go to
 		insert mode by pressing 'i'.  You should be
@@ -272,8 +276,18 @@
 		an already typed word, you can use backspace
 		to delete and retype it correctly.  You can
 		use arrow keys, Page Up, Page Down, Home,
-		End to navigate the file.  
+		End to navigate the file.  To save your
+		changes, type :w in normal mode.  
 	      </p>
+	      <p>
+		Below is a message you might see if you save a
+		new file "helloworld.txt".  The message says
+		that this file is a "New" file with 1 line
+		(1L) containing 15 characters (15C) in it.
+	      </p>
+	      <pre class="code">
+		"helloworld.txt" [New] 1L, 15C written
+	      </pre>
 	      <p>
 		Go back to normal mode by pressing 'Esc' key
 		once you are done typing.
@@ -297,7 +311,10 @@
 		    dw
 		  </td>
 		  <td>
-		    this cuts the word at the current cursor position
+		    this cuts a single word at the current
+		    cursor position.  Place cursor at the
+		    start of the word, else it will cut only
+		    part of the word.
 		  </td>
 		</tr>
 		<tr>
@@ -328,7 +345,7 @@
 		</tr>
 		<tr>
 		  <td>
-		    d5d, 5dd
+		    5dd or d5d
 		  </td>
 		  <td>
 		    cuts five lines (current line + 4 lines below it)
@@ -345,7 +362,7 @@
 		</tr>
 		<tr>
 		  <td>
-		    2yy, y2y
+		    2yy or y2y
 		  </td>
 		  <td>
 		    copies two lines
@@ -357,6 +374,14 @@
 		  </td>
 		  <td>
 		    pastes content at the cursor position
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    12p
+		  </td>
+		  <td>
+		    pastes content twelve times at the cursor position
 		  </td>
 		</tr>
 	      </table>
@@ -511,7 +536,7 @@
 		</tr>
 		<tr>
 		  <td>
-		    :s/oldtext/newtext
+		    :%s/oldtext/newtext
 		  </td>
 		  <td>
 		    substitutes oldtext with newtext in the
