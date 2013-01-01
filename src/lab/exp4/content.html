@@ -202,32 +202,33 @@ edit -->
 	  ownership any file can be owned by any Linux user.
 	</p>
 
-	<h3>Group owner</h3>
+	<h3>Groups</h3>
 	<p>
-	  In order to have considerable control over file
-	  permissions many Linux users are grouped together
-	  in a Linux group. There is no limit on number of
-	  users that can be part of a group. Thus, it is
-	  possible to have a Linux group with no users and
-	  at the same time, it is also possible to have a
-	  Linux group with thousands of users.
+	  Multiple users can be grouped together in a
+	  user-group.  There is no limit on the number of
+	  users that can be part of a group.  It is even
+	  possible to have a Linux group with zero
+	  users. 
 	</p>
 
 	<p>
-	  In order to allow multiple users to have access to
-	  a file they are made part of a same group. Then
-	  the group owner of the file is changed to the
-	  appropriate group. This way only the user owner
-	  and members of the group of the file have
-	  permissions to the file and not others.
+	  To grant access to a file to more than one user
+	  groups are necessary.  To allow more than one user
+	  to access to a file, all the required users are
+	  made part of a same user-group.  Then the group
+	  owner of the file is changed to the newly created
+	  group.  This allows all the members belonging to
+	  the group which owns the file to access the file
+	  while restricting others from doing so.
 	</p>
 
 	<p>
-	  Note that it is possible for same user to belong
-	  to different groups. A user always belongs to at
-	  least one special group called 'primary group'. It
-	  can also belong to any number of additional groups
-	  called secondary groups.
+	  Note that it is possible for a user to belong to
+	  many different groups.  A user always belongs to
+	  at least one special group called 'primary group'.
+	  Apart for this primary group, the user can also
+	  belong to any number of additional groups, called
+	  secondary groups.
 	</p>
 
 	<h3>Example 1</h3>
