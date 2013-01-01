@@ -203,35 +203,51 @@ edit -->
 	  permissions to the file and not others.
 	</p>
 
+	<p>
+	  Note that it is possible for same user to belong
+	  to different groups. A user always belongs to at
+	  least one special group called 'primary group'. It
+	  can also belong to any number of additional groups
+	  called secondary groups.
+	</p>
+
 	<h3>Example 1</h3>
 	<p>
-	  Consider the following example to understand afore
-	  mentioned points properly.  Suppose there is a
-	  Linux system with following files: english.txt,
-	  maths.txt, physics.txt, marks.txt and
-	  students.txt. Also assume that the system under
-	  consideration has following users:
-	  english_teacher, maths_teacher, physics_teacher
-	  and principal. Also assume that few students such
-	  as student_a, student_b and student_c are also
-	  added to the given system as users. Scenario so
-	  far is shown in figure 1 below.
+	  The following example can be used to understand
+	  afore mentioned points properly.  Consider a Linux
+	  system with following files: english.txt,
+	  maths.txt, physics.txt, marks.txt and students.txt
+	  as shown in figure 1.
 	</p>
 
-	<div style="text-align:center"> 
-	  <img src="media/figure1.svg" width="100%" />
-	</div> 
-
-	<p>
+	<p style="text-align:center">
+	  <img src="media/all_files.svg" width="743px"/><br/>
 	  <span style="font-weight:bold">Figure
-	  1: </span>Various files and users used in example
-	  1 for explaining permissions.
+	  1: </span> Files used in Example 1.
 	</p>
 
 
 	<p>
-	  Now 
+	  Also assume that the system under consideration
+	  has following teachers as users: english_teacher,
+	  maths_teacher, physics_teacher and principal as
+	  shown it figure 2. The system also has student
+	  users such as student_a, student_b and student_c 
+	  as shown in figure 3. 
 	</p>
+
+-	<p style="text-align:center">
+	  <img src="media/all_teachers.svg" width="720px"/><br/>
+	  <span style="font-weight:bold">Figure
+	  2: </span> Teacher users for Example 1.
+	</p>
+
+	<p style="text-align:center">
+	  <img src="media/all_students.svg" style="width:418px"/><br/>
+	  <span style="font-weight:bold">Figure
+	  3: </span> Student users for Example 1.
+	</p>
+
 
         </div>
       </section>

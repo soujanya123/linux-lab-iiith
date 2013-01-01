@@ -1,10 +1,11 @@
-all: figure1.svg 
+svg_files=all_files.svg all_students.svg all_teachers.svg
+.PHONY : all clean
 
-figure1.svg: figure1.dot
-	dot -Tsvg figure1.dot > figure1.svg
+all: $(svg_files)
 
-figure1.png: figure1.dot
-	dot -Tpng figure1.dot > figure1.png
+%.svg : %.dot ; dot -Tsvg $< > $@
+
+%.png : %.dot ; dot -Tpng $< > $@
 
 clean:
-	rm -f figure1.svg
+	rm -f $(svg_files)

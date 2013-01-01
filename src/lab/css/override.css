@@ -4,3 +4,10 @@ span.term {
    font-weight: bold;
    color: #556B2F;
 }
+
+
+content img, .content embed
+{
+	width: auto ;
+	height: auto ;
+}
