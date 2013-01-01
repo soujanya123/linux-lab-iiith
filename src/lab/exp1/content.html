@@ -87,12 +87,29 @@ edit -->
 	element, You can also include images with <img> tag -->
 	<div id="experiment-article-section-1-content" class="content">	
 	<p>
-	This experiment provides a brief overview on the basic tasks
-	of managing files and directories.  Everything in Linux is a
-	file, so start on the right path with a solid grounding in
-	file and directory management which includes listing, moving,
-	copying, deleting and finding.
-	
+	  Welcome to the File Management experiment! This experiment
+	  is intended to provide understanding the tasks of managing
+	  files and directories.  Everything in Linux is a file, so
+	  start on the right path with a solid grounding in file
+	  management which includes various commands for listing,
+	  moving, copying and deleting the files and directories.
+	</p>
+
+	<p>
+	  The experimental platform for this experiment is a command
+	  line interface which mimics the terminal of a linux
+	  machine. The command line interface can help in learning the
+	  basics of file management. A series of tasks which can be
+	  performed on available command-line interface is also
+	  provided.
+	</p>
+
+	<p>
+	  Please proceed to the theory section to get an overview of
+	  the commands. Then move to the experiment section to get
+	  some hands-on experience. After you are done with the
+	  experiment, go to the quiz section to test your
+	  understanding.
 	</p>
 	</div>
 
@@ -138,17 +155,12 @@ edit -->
 	<div id="experiment-article-section-4-content"
 	class="content">
         <p> The commands that will be described are meant to be
-         executed from a command line terminal.  In order to open a
-         terminal, access from the menu: Applications → Accessories →
-         Terminal.  You will see a window opening, with a command line
-         prompt where you can type commands. </p>
+         executed from a command line interface.</p>
 
 	<h3>1. The Command Line Prompt</h3>
 	<p>The command line prompt that shows up in the terminal
         window contains useful information.  It has the form:</p>
-        <pre class='code'>
-        johndoe@laptop:~/Documents$
-        </pre>
+        <pre class='code'>user1@host1:~/Documents$</pre>
         <p>
         There are three parts in the command line prompt, separated by
         @ : and $
@@ -172,9 +184,8 @@ edit -->
         <p><font size="3"><b>pwd command</b></font></p>
         <p>At any time, in order to see the current directory you can
         type <b>pwd</b>(<b>P</b>resent <b>W</b>orking <b>D</b>irectory).</p>
-	<pre class="code">
-	  johndoe@laptop:~/Documents$ pwd /home/johndoe/Documents
-	</pre>
+	<pre class="code">johndoe@laptop:~/Documents$ pwd
+ /home/johndoe/Documents</pre>
 	<p> <font size="3"><b>ls command</b></font></p>
 	<p>
 	To list the contents of a directory, the <b>ls</b> command is
@@ -182,10 +193,8 @@ edit -->
 	contents of the current working directory. <b>ls</b> followed by
 	directory path prints the contents of the specified
 	directory.</p>
-	<pre class="code">
-	  johndoe@laptop:~/Documents$ ls
-	  example.txt  all_about_console.txt my_project
-        </pre> 
+	<pre class="code">johndoe@laptop:~/Documents$ ls
+ example.txt  all_about_console.txt my_project</pre> 
 	<p>The path of a file is the location of a file in the
 	filesystem. There are two ways of specifying the path of a
 	file: <i>relative path</i> and <i>absolute
@@ -194,16 +203,12 @@ edit -->
 	<i>Absolute path</i> is the location of the file with respect to
 	the root directory. It is independent of the current working
 	directory.<p>
-        <pre class='code'>
-	  johndoe@laptop:~/Documents$ ls my_project
-	  vlabs_ui
-	</pre>
+        <pre class='code'>johndoe@laptop:~/Documents$ ls my_project
+vlabs_ui</pre>
 	<p>Here, the <i>relative path</i> of the directory has been
 	used.</p>
-	<pre class="code">
-	  johndoe@laptop:~/Documents$ ls /home/johndoe/Documents/my_project/
-	  vlabs_ui
-	</pre>
+	<pre class="code">johndoe@laptop:~/Documents$ ls /home/johndoe/Documents/my_project/
+ vlabs_ui</pre>
 	<p>Here, the <i>absolute path</i> of the directory has been
 	used. As you can see, the two paths are equivalent.</p>
 	<p> The most used flags for the <b>ls</b> command are l,
@@ -217,13 +222,11 @@ edit -->
 		</tbody>
 	</table>
 
-	<pre class="code">
-	  johndoe@laptop:~/Documents$ ls -l
-	  total 4
-	  -rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 example.txt
-	  -rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
-	  drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
-	</pre>
+	<pre class="code">johndoe@laptop:~/Documents$ ls -l
+total 4
+-rw-r--r--  1 johndoe johndoe 0    2010-08-20 22:22 example.txt
+-rw-r--r--  1 johndoe johndoe 0    2010-08-20 22:22 all_about_console.txt
+drwxr-xr-x  2 johndoe johndoe 4096 2010-08-02 14:03 my_project</pre>
 	<p>Here, in addition to the name of each file, the file type,
 	  file mode bits, number of hard links, owner name, group name, size,
 	  and timestamp, normally the modification time are printed. </p>
@@ -244,10 +247,8 @@ edit -->
 	read and execute (<b>r-x</b>) permissions and others have read
 	and execute (<b>r-x</b>) permissions.</p>
        
-	<pre class="code">
-	  johndoe@laptop:~/Documents$ ls -a
-	  .  ..  all_about_console.txt  example.txt  my_project virtual-lab.txt
-	</pre>
+	<pre class="code">johndoe@laptop:~/Documents$ ls -a
+.  ..  all_about_console.txt  example.txt  my_project virtual-lab.txt</pre>
         <p> In the above example virtual-lab.txt was the hidden file,
         which was displayed when ls was used with -a option</p>
 	<p>
