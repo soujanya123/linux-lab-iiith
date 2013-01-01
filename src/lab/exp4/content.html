@@ -633,8 +633,9 @@ testuser1@sshd1:~/test$
 	      -l</tt>' output is explained in Table 3.
 	    </p>
 
+
 	    <div style="text-align:center">
-	      <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+	      <table border="1" style="margin-left:auto;margin-right:auto;width:80%">
 		<caption>
 		  <span style="font-weight:bold">Table 3:</span>
 		  Significance of various characters in
@@ -651,14 +652,102 @@ testuser1@sshd1:~/test$
 		  <tr>
 		    <td>1</td>
 		    <td>'-' or 'd'</td>
-		    <td>Character at this position
-		      indicates the type of file. Regular
-		      files are indicated by '-' and
-		      directories are indicated by value
-		      'd'. There are also other types of
-		      files apart from regular files and
-		      directories, explanation of which is
-		      outside the scope of this experiment.
+		    <td style="text-align:justify">
+		      Character at this position indicates
+		      the type of file. Regular files are
+		      indicated by '-' and directories are
+		      indicated by value 'd'.  There are
+		      also other types of files apart from
+		      regular files and directories,
+		      explanation of which is outside the
+		      scope of this experiment.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>2</td>
+		    <td>'r' or '-'</td>
+		    <td style="text-align:justify">
+		      A hypen at this position indicates
+		      that user owner of this file does not
+		      has read permissions on the file,
+		      whereas a 'r' at this position
+		      indicates that user has read
+		      permissions on the file.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>3</td>
+		    <td>'w' or '-'</td>
+		    <td style="text-align:justify">
+		      A hypen at this position indicates
+		      that user owner of this file does not
+		      has write permissions on the file,
+		      whereas a 'w' at this position
+		      indicates that user has write
+		      permissions on the file.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>4</td>
+		    <td>'x' or '-'</td>
+		    <td style="text-align:justify">
+		      x and '-' indicate presence and absence of execute
+		      permission for user owner on the given
+		      file, respectively.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>5</td>
+		    <td>'r' or '-'</td>
+		    <td style="text-align:justify">
+		      r and '-' indicate presence and
+		      absence of read permission for group
+		      owner on the given file, respectively.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>6</td>
+		    <td>'w' or '-'</td>
+		    <td style="text-align:justify">
+		      w and '-' indicate presence and
+		      absence of write permission for group
+		      owner on the given file, respectively.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>7</td>
+		    <td>'x' or '-'</td>
+		    <td style="text-align:justify">
+		      x and '-' indicate presence and
+		      absence of execute permission for group
+		      owner on the given file, respectively.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>8</td>
+		    <td>'r' or '-'</td>
+		    <td style="text-align:justify">
+		      r and '-' indicate presence and
+		      absence of read permission for others
+		      on the given file, respectively.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>9</td>
+		    <td>'w' or '-'</td>
+		    <td style="text-align:justify">
+		      w and '-' indicate presence and
+		      absence of write permission for others
+		      on the given file, respectively.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>10</td>
+		    <td>'x' or '-'</td>
+		    <td style="text-align:justify">
+		      x and '-' indicate presence and
+		      absence of execute permission for others
+		      on the given file, respectively.
 		    </td>
 		  </tr>
 		</tbody>
@@ -666,7 +755,21 @@ testuser1@sshd1:~/test$
 	    </div>
 
 
+	    <p>
+	      The values in second column of '<tt>ls
+	      -l</tt>' output can be ignored. The values in
+	      third and fourth column in '<tt>ls -l</tt>'
+	      output indicate user owner and group owner for
+	      the file, respectively.  The values in fifth
+	      column indicate size of the file. For folders
+	      the size can be misleading and can be
+	      ignored. The values in sixth column indicate
+	      last modification time of the file and values
+	      in seventh column indicate name of the file.
+	    </p>
 
+
+	    <h3>Changing file permissions</h3>
 
 
           </div>
