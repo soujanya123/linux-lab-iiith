@@ -188,6 +188,18 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-3-content" 
 	class="content">
+	  <p>
+	    Note that throughout this experiment word 'file'
+	    has been used to indicate all types of files
+	    including regular files and directories. Linux
+	    also has other types of files, description of
+	    which is outside the scope of this lab. If a
+	    particular statement is true only for regular
+	    file or directory but not for both then this
+	    would be mentioned specifically.
+	  </p>
+
+
 	<h3>Ownership: User owner, Group owner and
 	Others</h3>
 	<h3>User owner</h3>
@@ -235,9 +247,9 @@ edit -->
 	<p>
 	  The following example can be used to understand
 	  afore mentioned points properly.  Consider a Linux
-	  system with following files: english.txt,
-	  maths.txt, physics.txt, marks.txt and students.txt
-	  as shown in figure 1.
+	  system with files: english.txt, maths.txt,
+	  physics.txt, marks.txt and students.txt as shown
+	  in Figure 1.
 	</p>
 
 	<p style="text-align:center">
@@ -251,9 +263,9 @@ edit -->
 	  Also assume that the system under consideration
 	  has following teachers as users: english_teacher,
 	  maths_teacher, physics_teacher and principal as
-	  shown it figure 2. The system also has student
-	  users such as student_a, student_b and student_c 
-	  as shown in figure 3. 
+	  shown it Figure 2.  The system also has student
+	  users such as student_a, student_b and student_c
+	  as shown in Figure 3.
 	</p>
 
 -	<p style="text-align:center">
@@ -268,9 +280,290 @@ edit -->
 	  3: </span> Student users for Example 1.
 	</p>
 
+	<h3>Example 1 - Requirement 1</h3>
+	<p>
+	  As part of this example let us consider a
+	  requirement where subject teachers' need access to
+	  files of their subjects.  Thus english_teacher
+	  needs access to english.txt, maths_teacher needs
+	  access to maths.txt and physics_teacher needs
+	  access to physics.txt.  This requirement is shown
+	  with the help of Figure 4 below.
+	</p>
+
+	<p style="text-align:center">
+	  <img src="media/teacher_subject.svg"
+	  style="width:583px"/><br/>
+	  <span style="font-weight:bold">Figure
+	  4: </span> Teachers needs access to files of their
+	  subject.
+	</p>
+
+	<p>
+	  This requirement is easy to satisfy by making
+	  respective teachers the user owners of the files
+	  of their subjects.  Thus, if user owners for the
+	  files are set as shown in Table 1 below, then the
+	  above mentioned requirement would get satisfied.
+	</p>
+
+	<div style="text-align:center">
+	  <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+	    <caption>
+	      <span style="font-weight:bold">Table 1:</span>
+	      Ownership of subject files
+	    </caption>
+	    <thead>
+	      <tr>
+		<th>File name</th>
+		<th>User owner</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+		<td>english.txt</td>
+		<td>english_teacher</td>
+	      </tr>
+	      <tr>
+		<td>maths.txt</td>
+		<td>maths_teacher</td>
+	      </tr>
+	      <tr>
+		<td>physics.txt</td>
+		<td>physics_teacher</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+
+
+	<h3>Example 1: Requirement 2</h3>
+        <p>
+	  Another requirement can be that all teachers need
+	  access to marks.txt file.  This requirement can be
+	  satisfied by keeping all teachers in a group, say
+	  teachers, and then by making group owner of file
+	  marks.txt to be group 'teacher'.  This particular
+	  requirement and its solution are explained with
+	  the help of Figures 5, 6 and Table 2.
+	</p>
+
+	<p style="text-align:center">
+	  <img src="media/teacher_marks.svg"
+	  style="width:583px"/><br/>
+	  <span style="font-weight:bold">Figure
+	  5: </span> All teachers need to access marks.txt
+	  file 
+	</p>
+	
+	<p style="text-align:center">
+	  <img src="media/teacher_group.svg"
+	  style="width:583px"/><br/>
+	  <span style="font-weight:bold">Figure
+	  6: </span> All teachers are made part of teacher group 
+	</p>
+
+
+	<div style="text-align:center">
+	  <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+	    <caption>
+	      <span style="font-weight:bold">Table 2:</span>
+	      Group owner for marks.txt file
+	    </caption>
+	    <thead>
+	      <tr>
+		<th>File name</th>
+		<th>Group owner</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+		<td>marks.txt</td>
+		<td>teacher group</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+
+	<p>
+	  Thus basic access requirements where only one user
+	  needs access to a file or where a set of users
+	  need access to a file, can be satisfied by using
+	  users and groups, and by changing user owner and
+	  group owner of the file as per the requirement. 
+	</p>
+	
+
+
+	<h3>Access types or modes</h3>
+	<p>
+	  Just specifying which user and which group should
+	  have access to particular file may not be enough.
+	  It may also be required to specify what type of
+	  access (read, write or execute) should a
+	  particular user have on a given file. 
+	</p>
+
+	<h3>Regular file permissions</h3>
+	<p>
+	  Three different types of permissions can be
+	  applied to regular files: read, write and execute
+	  which are described below.
+	</p>
+
+	<dl>
+	  <dt>read</dt>
+	  <dd>
+	    <p>
+	      Read permissions on a regular file (not a
+	      directory) indicate that particular user or
+	      members of the group are allowed to read the
+	      file.  For example, if a user or a group has
+	      read permissions on a text file then the user
+	      or members of the group would be allowed to
+	      see the contents of the text file using cat
+	      command.  Read permissions are denoted by
+	      alphabet 'r' and number '4' at various
+	      occasions, hence Linux users should be
+	      comfortable with using 'r' or '4' for
+	      specifying read permissions as and when
+	      required.
+	    </p>
+	  </dd>
+
+	  <dt>write</dt>
+	  <dd>
+	    <p>
+	      Write permissions on a regular file (not a
+	      directory) indicate that particular user or
+	      members of the group are allowed to write to
+	      the file.  For example, if a user or a group
+	      has write permissions on a text file then the
+	      user or members of the group would be able to
+	      modify the contents of the text file using vim
+	      text editor.  Write permissions are denoted by
+	      alphabet 'w' and number '2'.
+	    </p>
+	  </dd>
+
+
+	  <dt>execute</dt>
+	  <dd>
+	    <p>
+	      Execute permissions on a regular file (not a
+	      directory) indicate that particular user or
+	      members of the group are allowed to execute
+	      (run) the file as a program.  Note that
+	      execute permission may not make any sense on a
+	      generic text file as execution of normal
+	      language text is not defined. Thus, execute
+	      permissions make sense only for scripts and
+	      programs and not for every file.
+	    </p>
+	    <p>
+	      But Linux will not object if execute
+	      permissions are assigned to some file which is
+	      not a program such as an image file, and thus
+	      cannot be executed.  Error message or
+	      unexpected side-effects would be obtained
+	      while attempting to run the image file but not
+	      while assigning execute permissions to it.
+	    </p>
+	    <p>
+	      Thorough understanding of execute permissions
+	      is not expected from beginner users right
+	      away.  Hence do not worry if meaning of
+	      execute permissions is not very clear.  It
+	      requires some time to really understand what
+	      execute permissions really mean. Execute
+	      permissions are denoted by alphabet 'x' or
+	      number '1' where ever required.
+	    </p>
+	  </dd>
+
+	</dl>
+
+
+	<p>
+	  Note that as part of this experiment words
+	  'folder' and 'directory' are used interchangeably
+	  and they both mean the same thing.
+	</p>
+
+
+	<h3>Directory or folder permissions</h3>
+
+	<p>
+	  Similar to a regular file three different types of
+	  permissions can be applied to a folder or
+	  directory: read, write and execute.  But
+	  the interpretation or significance of these
+	  permissions for a directory is quite different
+	  from that of a regular file. The explanation of
+	  these different types of permissions for a folder
+	  is described below:
+	</p>
+
+	<dl>
+	  <dt>read</dt>
+	  <dd>
+	    <p>
+	      Read permissions on a directory (not a regular
+	      file) indicate that particular user or members
+	      of the group are allowed to list the contents
+	      of the directory (read the directory).  For
+	      example, if a user or a group has read
+	      permissions on a directory then the user or
+	      members of the group would be allowed to see
+	      the contents of the directory using ls
+	      command.  Same as in case of regular files,
+	      read permissions for directories also are
+	      denoted by alphabet 'r' or number '4'.
+	    </p>
+	  </dd>
+
+	  <dt>write</dt>
+	  <dd>
+	    <p>
+	      Write permissions on a directory (not a
+	      regular file) indicate that particular user or
+	      members of the group are allowed to create new
+	      files inside the given directory.  For
+	      example, if a user or a group has write
+	      permissions on a directory then the user or
+	      members of the group would be able to create
+	      new files inside the directory using mkdir or
+	      touch commands.  Moreover write permissions on
+	      a directory also allow users to rename or
+	      delete the files present inside the directory
+	      using rmdir or rm command.  
+	    </p>
+	  </dd>
+
+
+	  <dt>execute</dt>
+	  <dd>
+	    <p>
+	      Execute permissions on a directory (not a
+	      regular file) indicate that particular user or
+	      members of the group are allowed to change
+	      directory (cd) to given folder and also access
+	      files inside the given folder.  If a user does
+	      not has execute permissions on a folder, then
+	      the user cannot access any file present inside
+	      the folder.
+	    </p>
+	  </dd>
+
+	</dl>
+
+
+
+
 
         </div>
       </section>
+
 
       <section id="experiment-article-section-4">
 
