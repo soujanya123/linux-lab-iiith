@@ -81,51 +81,51 @@ edit -->
 	<!-- The heading for the section can be enclosed in a 
 	div tag. -->
 	<div id="experiment-article-section-1-heading" 
-	class="heading">
+	     class="heading">
 	  Introduction
 	</div>
 	<!-- Write the section content inside a paragraph 
 	element, You can also include images with <img> tag -->
 	<div id="experiment-article-section-1-content" 
 	class="content">	
+	  
+	  <p>
+	    Welcome to the permissions experiment!  This
+	    experiment is intended to provide an
+	    understanding of Linux file permissions.  This
+	    experiment involves explanation of various
+	    command(s) which can be used to modify file
+	    permissions in Linux Operating System.
+	  </p>
 
-	<p>
-	  Welcome to the permissions experiment!  This
-	  experiment is intended to provide an understanding
-	  of Linux file permissions.  This experiment
-	  involves explanation of various command(s) which
-	  can be used to modify file permissions in Linux
-	  Operating System.
-	</p>
+	  <p>
+	    The experimental platform for this experiment is
+	    a command line interface which mimics the
+	    terminal of a Linux machine.  This interface is
+	    intended to help in learning the basics of file
+	    permissions.  A set of tasks which can be
+	    performed on the available command-line
+	    interface have also been provided.
+	  </p>
 
-	<p>
-	  The experimental platform for this experiment is a
-	  command line interface which mimics the terminal
-	  of a Linux machine.  This interface is intended to
-	  help in learning the basics of file permissions.
-	  A set of tasks which can be performed on the
-	  available command-line interface have also been
-	  provided.
-	</p>
+	  <p>
+	    This experiment is divided into various sections
+	    for ease of use.  An objective section describes
+	    the objective of this experiment.  A theory
+	    section provides necessary background and theory
+	    details for the experiment. An experiment
+	    section provides link to command-line interface
+	    along with a set of tasks to be performed.  Quiz
+	    section contains questions to test the
+	    understanding of concepts covered as part of
+	    this experiment.  Finally more reading material
+	    is suggested in further reading section.
+	  </p>
 
-	<p>
-	  This experiment is divided into various sections
-	  for ease of use.  An objective section describes
-	  the objective of this experiment.  A theory
-	  section provides necessary background and theory
-	  details for the experiment. An experiment section
-	  provides link to command-line interface along with
-	  a set of tasks to be performed.  Quiz section
-	  contains questions to test the understanding of
-	  concepts covered as part of this experiment.
-	  Finally more reading material is suggested
-	  in further reading section.
-	</p>
-
-	<p>
-	  Users are welcome to submit any feed-back related
-	  to this experiment using the feed-back section. 
-	</p>
+	  <p>
+	    Users are welcome to submit any feed-back related
+	    to this experiment using the feed-back section. 
+	  </p>
 
 	</div>
 
@@ -135,15 +135,15 @@ edit -->
 	<section id="experiment-article-section-2">
 
 	<div id="experiment-article-section-2-icon" 
-	class="icon">
-	<!-- Enclose the icon image of your lab. -->
-	<img src="../images/objective.jpg" />
+	     class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
 	</div>
 
 	<!-- The heading for the section can be enclosed in a 
-	div tag. -->
+	     div tag. -->
 	<div id="experiment-article-section-2-heading" 
-	class="heading">
+	     class="heading">
 	  Objective
 	</div>
 
@@ -151,525 +151,672 @@ edit -->
 	<!-- Write the section content inside a paragraph 
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-2-content" 
-	class="content">
-	<p>
-	  The objective of this experiment is to explain
-	  various types of Linux file permissions and their
-	  significance.  By the end of this experiment the
-	  user should become comfortable with Linux file
-	  permissions in order to understand their
-	  implications.  The experiment also aims at
-	  enabling the user in interpreting alphabetic
-	  permissions such as u+x and numeric permissions
-	  such as 755.
-	</p>
+	     class="content">
+	  <p>
+	    The objective of this experiment is to explain
+	    various types of Linux file permissions and
+	    their significance.  By the end of this
+	    experiment the user should become comfortable
+	    with Linux file permissions in order to
+	    understand their implications.  The experiment
+	    also aims at enabling the user in interpreting
+	    alphabetic permissions such as u+x and numeric
+	    permissions such as 755.
+	  </p>
 	</div>
 	</section>
 
 
 	<!-- Second section of the article-->
 	<section id="experiment-article-section-3">
+	  
+	  <div id="experiment-article-section-3-icon" 
+	       class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/theory.jpg" />
+	  </div>
 
-	<div id="experiment-article-section-3-icon" 
-	class="icon">
-	<!-- Enclose the icon image of your lab. -->
-	<img src="../images/theory.jpg" />
-	</div>
+	  <!-- The heading for the section can be enclosed in a 
+	       div tag. -->
+	  <div id="experiment-article-section-3-heading" 
+	       class="heading">
+	    Theory
+	  </div>
 
-	<!-- The heading for the section can be enclosed in a 
-	div tag. -->
-	<div id="experiment-article-section-3-heading" 
-	class="heading">
-	  Theory
-	</div>
-
-
-	<!-- Write the section content inside a paragraph 
-	element, we can also include images with <img> tag -->
-	<div id="experiment-article-section-3-content" 
-	class="content">
-	  <p>
-	    Note that throughout this experiment word 'file'
-	    has been used to indicate all types of files
-	    including regular files and directories. Linux
-	    also has other types of files, description of
-	    which is outside the scope of this lab. If a
-	    particular statement is true only for regular
-	    file or directory but not for both then this
-	    would be mentioned specifically.
-	  </p>
-
-
-	<h3>Ownership: User owner, Group owner and
-	Others</h3>
-	<h3>User owner</h3>
-	<p>
-	  The understanding of Linux file permissions
-	  requires an understanding of various types of file
-	  ownership.  In Linux all files have a user owner
-	  and a group owner.  The user who creates a
-	  particular file becomes its owner automatically.
-	  Later another user can be made the owner of a file
-	  by changing file's ownership.  Thus, by modifying
-	  ownership any file can be owned by any Linux user.
-	</p>
-
-	<h3>Groups</h3>
-	<p>
-	  Multiple users can be grouped together in a
-	  user-group.  There is no limit on the number of
-	  users that can be part of a group.  It is even
-	  possible to have a Linux group with zero
-	  users. 
-	</p>
-
-	<p>
-	  To grant access to a file to more than one user
-	  groups are necessary.  To allow more than one user
-	  to access to a file, all the required users are
-	  made part of a same user-group.  Then the group
-	  owner of the file is changed to the newly created
-	  group.  This allows all the members belonging to
-	  the group which owns the file to access the file
-	  while restricting others from doing so.
-	</p>
-
-	<p>
-	  Note that it is possible for a user to belong to
-	  many different groups.  A user always belongs to
-	  at least one special group called 'primary group'.
-	  Apart for this primary group, the user can also
-	  belong to any number of additional groups, called
-	  secondary groups.
-	</p>
-
-	<h3>Example 1</h3>
-	<p>
-	  The following example can be used to understand
-	  afore mentioned points properly.  Consider a Linux
-	  system with files: english.txt, maths.txt,
-	  physics.txt, marks.txt and students.txt as shown
-	  in Figure 1.
-	</p>
-
-	<p style="text-align:center">
-	  <img src="media/all_files.svg" width="743px"/><br/>
-	  <span style="font-weight:bold">Figure
-	  1: </span> Files used in Example 1.
-	</p>
-
-
-	<p>
-	  Also assume that the system under consideration
-	  has following teachers as users: english_teacher,
-	  maths_teacher, physics_teacher and principal as
-	  shown it Figure 2.  The system also has student
-	  users such as student_a, student_b and student_c
-	  as shown in Figure 3.
-	</p>
-
--	<p style="text-align:center">
-	  <img src="media/all_teachers.svg" width="720px"/><br/>
-	  <span style="font-weight:bold">Figure
-	  2: </span> Teacher users for Example 1.
-	</p>
-
-	<p style="text-align:center">
-	  <img src="media/all_students.svg" style="width:418px"/><br/>
-	  <span style="font-weight:bold">Figure
-	  3: </span> Student users for Example 1.
-	</p>
-
-	<h3>Example 1 - Requirement 1</h3>
-	<p>
-	  As part of this example let us consider a
-	  requirement where subject teachers' need access to
-	  files of their subjects.  Thus english_teacher
-	  needs access to english.txt, maths_teacher needs
-	  access to maths.txt and physics_teacher needs
-	  access to physics.txt.  This requirement is shown
-	  with the help of Figure 4 below.
-	</p>
-
-	<p style="text-align:center">
-	  <img src="media/teacher_subject.svg"
-	  style="width:583px"/><br/>
-	  <span style="font-weight:bold">Figure
-	  4: </span> Teachers needs access to files of their
-	  subject.
-	</p>
-
-	<p>
-	  This requirement is easy to satisfy by making
-	  respective teachers the user owners of the files
-	  of their subjects.  Thus, if user owners for the
-	  files are set as shown in Table 1 below, then the
-	  above mentioned requirement would get satisfied.
-	</p>
-
-	<div style="text-align:center">
-	  <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
-	    <caption>
-	      <span style="font-weight:bold">Table 1:</span>
-	      Ownership of subject files
-	    </caption>
-	    <thead>
-	      <tr>
-		<th>File name</th>
-		<th>User owner</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-		<td>english.txt</td>
-		<td>english_teacher</td>
-	      </tr>
-	      <tr>
-		<td>maths.txt</td>
-		<td>maths_teacher</td>
-	      </tr>
-	      <tr>
-		<td>physics.txt</td>
-		<td>physics_teacher</td>
-	      </tr>
-	    </tbody>
-	  </table>
-	</div>
-
-
-	<h3>Example 1: Requirement 2</h3>
-        <p>
-	  Another requirement can be that all teachers need
-	  access to marks.txt file.  This requirement can be
-	  satisfied by keeping all teachers in a group, say
-	  teachers, and then by making group owner of file
-	  marks.txt to be group 'teacher'.  This particular
-	  requirement and its solution are explained with
-	  the help of Figures 5, 6 and Table 2.
-	</p>
-
-	<p style="text-align:center">
-	  <img src="media/teacher_marks.svg"
-	  style="width:583px"/><br/>
-	  <span style="font-weight:bold">Figure
-	  5: </span> All teachers need to access marks.txt
-	  file 
-	</p>
-	
-	<p style="text-align:center">
-	  <img src="media/teacher_group.svg"
-	  style="width:583px"/><br/>
-	  <span style="font-weight:bold">Figure
-	  6: </span> All teachers are made part of teacher group 
-	</p>
-
-
-	<div style="text-align:center">
-	  <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
-	    <caption>
-	      <span style="font-weight:bold">Table 2:</span>
-	      Group owner for marks.txt file
-	    </caption>
-	    <thead>
-	      <tr>
-		<th>File name</th>
-		<th>Group owner</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-		<td>marks.txt</td>
-		<td>teacher group</td>
-	      </tr>
-	    </tbody>
-	  </table>
-	</div>
-
-	<p>
-	  Thus basic access requirements where only one user
-	  needs access to a file or where a set of users
-	  need access to a file, can be satisfied by using
-	  users and groups, and by changing user owner and
-	  group owner of the file as per the requirement. 
-	</p>
-	
-
-
-	<h3>Access types or modes</h3>
-	<p>
-	  Just specifying which user and which group should
-	  have access to particular file may not be enough.
-	  It may also be required to specify what type of
-	  access (read, write or execute) should a
-	  particular user have on a given file. 
-	</p>
-
-	<h3>Regular file permissions</h3>
-	<p>
-	  Three different types of permissions can be
-	  applied to regular files: read, write and execute
-	  which are described below.
-	</p>
-
-	<dl>
-	  <dt>read</dt>
-	  <dd>
+	  
+	  <!-- Write the section content inside a paragraph 
+	  element, we can also include images with <img> tag -->
+	  <div id="experiment-article-section-3-content" 
+	       class="content">
 	    <p>
-	      Read permissions on a regular file (not a
-	      directory) indicate that particular user or
-	      members of the group are allowed to read the
-	      file.  For example, if a user or a group has
-	      read permissions on a text file then the user
-	      or members of the group would be allowed to
-	      see the contents of the text file using cat
-	      command.  Read permissions are denoted by
-	      alphabet 'r' and number '4' at various
-	      occasions, hence Linux users should be
-	      comfortable with using 'r' or '4' for
-	      specifying read permissions as and when
-	      required.
+	      Note that throughout this experiment word
+	      'file' has been used to indicate all types of
+	      files including regular files and
+	      directories. Linux also has other types of
+	      files, description of which is outside the
+	      scope of this lab. If a particular statement
+	      is true only for regular file or directory but
+	      not for both then this would be mentioned
+	      specifically.
 	    </p>
-	  </dd>
 
-	  <dt>write</dt>
-	  <dd>
+	    
+	    <h3>Ownership: User owner, Group owner and
+	      Others</h3>
+	    <h3>User owner</h3>
 	    <p>
-	      Write permissions on a regular file (not a
-	      directory) indicate that particular user or
-	      members of the group are allowed to write to
-	      the file.  For example, if a user or a group
-	      has write permissions on a text file then the
-	      user or members of the group would be able to
-	      modify the contents of the text file using vim
-	      text editor.  Write permissions are denoted by
-	      alphabet 'w' and number '2'.
+	      The understanding of Linux file permissions
+	      requires an understanding of various types of file
+	      ownership.  In Linux all files have a user owner
+	      and a group owner.  The user who creates a
+	      particular file becomes its owner automatically.
+	      Later another user can be made the owner of a file
+	      by changing file's ownership.  Thus, by modifying
+	      ownership any file can be owned by any Linux user.
 	    </p>
-	  </dd>
 
-
-	  <dt>execute</dt>
-	  <dd>
+	    <h3>Groups</h3>
 	    <p>
-	      Execute permissions on a regular file (not a
-	      directory) indicate that particular user or
-	      members of the group are allowed to execute
-	      (run) the file as a program.  Note that
-	      execute permission may not make any sense on a
-	      generic text file as execution of normal
-	      language text is not defined. Thus, execute
-	      permissions make sense only for scripts and
-	      programs and not for every file.
+	      Multiple users can be grouped together in a
+	      user-group.  There is no limit on the number of
+	      users that can be part of a group.  It is even
+	      possible to have a Linux group with zero
+	      users. 
 	    </p>
+
 	    <p>
-	      But Linux will not object if execute
-	      permissions are assigned to some file which is
-	      not a program such as an image file, and thus
-	      cannot be executed.  Error message or
-	      unexpected side-effects would be obtained
-	      while attempting to run the image file but not
-	      while assigning execute permissions to it.
+	      To grant access to a file to more than one user
+	      groups are necessary.  To allow more than one user
+	      to access to a file, all the required users are
+	      made part of a same user-group.  Then the group
+	      owner of the file is changed to the newly created
+	      group.  This allows all the members belonging to
+	      the group which owns the file to access the file
+	      while restricting others from doing so.
 	    </p>
+
 	    <p>
-	      Thorough understanding of execute permissions
-	      is not expected from beginner users right
-	      away.  Hence do not worry if meaning of
-	      execute permissions is not very clear.  It
-	      requires some time to really understand what
-	      execute permissions really mean. Execute
-	      permissions are denoted by alphabet 'x' or
-	      number '1' where ever required.
+	      Note that it is possible for a user to belong to
+	      many different groups.  A user always belongs to
+	      at least one special group called 'primary group'.
+	      Apart for this primary group, the user can also
+	      belong to any number of additional groups, called
+	      secondary groups.
 	    </p>
-	  </dd>
 
-	</dl>
-
-
-	<p>
-	  Note that as part of this experiment words
-	  'folder' and 'directory' are used interchangeably
-	  and they both mean the same thing.
-	</p>
-
-
-	<h3>Directory or folder permissions</h3>
-
-	<p>
-	  Similar to a regular file three different types of
-	  permissions can be applied to a folder or
-	  directory: read, write and execute.  But
-	  the interpretation or significance of these
-	  permissions for a directory is quite different
-	  from that of a regular file. The explanation of
-	  these different types of permissions for a folder
-	  is described below:
-	</p>
-
-	<dl>
-	  <dt>read</dt>
-	  <dd>
+	    <h3>Example 1</h3>
 	    <p>
-	      Read permissions on a directory (not a regular
-	      file) indicate that particular user or members
-	      of the group are allowed to list the contents
-	      of the directory (read the directory).  For
-	      example, if a user or a group has read
-	      permissions on a directory then the user or
-	      members of the group would be allowed to see
-	      the contents of the directory using ls
-	      command.  Same as in case of regular files,
-	      read permissions for directories also are
-	      denoted by alphabet 'r' or number '4'.
+	      The following example can be used to understand
+	      afore mentioned points properly.  Consider a Linux
+	      system with files: english.txt, maths.txt,
+	      physics.txt, marks.txt and students.txt as shown
+	      in Figure 1.
 	    </p>
-	  </dd>
 
-	  <dt>write</dt>
-	  <dd>
+	    <p style="text-align:center">
+	      <img src="media/all_files.svg" width="743px"/><br/>
+	      <span style="font-weight:bold">Figure
+		1: </span> Files used in Example 1.
+	    </p>
+
+
 	    <p>
-	      Write permissions on a directory (not a
-	      regular file) indicate that particular user or
-	      members of the group are allowed to create new
-	      files inside the given directory.  For
-	      example, if a user or a group has write
-	      permissions on a directory then the user or
-	      members of the group would be able to create
-	      new files inside the directory using mkdir or
-	      touch commands.  Moreover write permissions on
-	      a directory also allow users to rename or
-	      delete the files present inside the directory
-	      using rmdir or rm command.  
+	      Also assume that the system under consideration
+	      has following teachers as users: english_teacher,
+	      maths_teacher, physics_teacher and principal as
+	      shown it Figure 2.  The system also has student
+	      users such as student_a, student_b and student_c
+	      as shown in Figure 3.
 	    </p>
-	  </dd>
 
+	    -	<p style="text-align:center">
+	      <img src="media/all_teachers.svg" width="720px"/><br/>
+	      <span style="font-weight:bold">Figure
+		2: </span> Teacher users for Example 1.
+	    </p>
 
-	  <dt>execute</dt>
-	  <dd>
+	    <p style="text-align:center">
+	      <img src="media/all_students.svg" style="width:418px"/><br/>
+	      <span style="font-weight:bold">Figure
+		3: </span> Student users for Example 1.
+	    </p>
+
+	    <h3>Example 1 - Requirement 1</h3>
 	    <p>
-	      Execute permissions on a directory (not a
-	      regular file) indicate that particular user or
-	      members of the group are allowed to change
-	      directory (cd) to given folder and also access
-	      files inside the given folder.  If a user does
-	      not has execute permissions on a folder, then
-	      the user cannot access any file present inside
-	      the folder.
+	      As part of this example let us consider a
+	      requirement where subject teachers' need access to
+	      files of their subjects.  Thus english_teacher
+	      needs access to english.txt, maths_teacher needs
+	      access to maths.txt and physics_teacher needs
+	      access to physics.txt.  This requirement is shown
+	      with the help of Figure 4 below.
 	    </p>
-	  </dd>
 
-	</dl>
+	    <p style="text-align:center">
+	      <img src="media/teacher_subject.svg"
+		   style="width:583px"/><br/>
+	      <span style="font-weight:bold">Figure
+		4: </span> Teachers needs access to files of their
+	      subject.
+	    </p>
+
+	    <p>
+	      This requirement is easy to satisfy by making
+	      respective teachers the user owners of the files
+	      of their subjects.  Thus, if user owners for the
+	      files are set as shown in Table 1 below, then the
+	      above mentioned requirement would get satisfied.
+	    </p>
+
+	    <div style="text-align:center">
+	      <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+		<caption>
+		  <span style="font-weight:bold">Table 1:</span>
+		  Ownership of subject files
+		</caption>
+		<thead>
+		  <tr>
+		    <th>File name</th>
+		    <th>User owner</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <td>english.txt</td>
+		    <td>english_teacher</td>
+		  </tr>
+		  <tr>
+		    <td>maths.txt</td>
+		    <td>maths_teacher</td>
+		  </tr>
+		  <tr>
+		    <td>physics.txt</td>
+		    <td>physics_teacher</td>
+		  </tr>
+		</tbody>
+	      </table>
+	    </div>
+
+
+	    <h3>Example 1: Requirement 2</h3>
+            <p>
+	      Another requirement can be that all teachers need
+	      access to marks.txt file.  This requirement can be
+	      satisfied by keeping all teachers in a group, say
+	      teachers, and then by making group owner of file
+	      marks.txt to be group 'teacher'.  This particular
+	      requirement and its solution are explained with
+	      the help of Figures 5, 6 and Table 2.
+	    </p>
+
+	    <p style="text-align:center">
+	      <img src="media/teacher_marks.svg"
+		   style="width:583px"/><br/>
+	      <span style="font-weight:bold">Figure
+		5: </span> All teachers need to access marks.txt
+	      file 
+	    </p>
+	    
+	    <p style="text-align:center">
+	      <img src="media/teacher_group.svg"
+		   style="width:583px"/><br/>
+	      <span style="font-weight:bold">Figure
+		6: </span> All teachers are made part of teacher group 
+	    </p>
+
+
+	    <div style="text-align:center">
+	      <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+		<caption>
+		  <span style="font-weight:bold">Table 2:</span>
+		  Group owner for marks.txt file
+		</caption>
+		<thead>
+		  <tr>
+		    <th>File name</th>
+		    <th>Group owner</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <td>marks.txt</td>
+		    <td>teacher group</td>
+		  </tr>
+		</tbody>
+	      </table>
+	    </div>
+
+	    <p>
+	      Thus basic access requirements where only one user
+	      needs access to a file or where a set of users
+	      need access to a file, can be satisfied by using
+	      users and groups, and by changing user owner and
+	      group owner of the file as per the requirement. 
+	    </p>
+	    
+
+
+	    <h3>Access types or modes</h3>
+	    <p>
+	      Just specifying which user and which group should
+	      have access to particular file may not be enough.
+	      It may also be required to specify what type of
+	      access (read, write or execute) should a
+	      particular user have on a given file. 
+	    </p>
+
+	    <h3>Regular file permissions</h3>
+	    <p>
+	      Three different types of permissions can be
+	      applied to regular files: read, write and execute
+	      which are described below.
+	    </p>
+
+	    <dl>
+	      <dt>read</dt>
+	      <dd>
+		<p>
+		  Read permissions on a regular file (not a
+		  directory) indicate that particular user or
+		  members of the group are allowed to read the
+		  file.  For example, if a user or a group has
+		  read permissions on a text file then the user
+		  or members of the group would be allowed to
+		  see the contents of the text file using cat
+		  command.  Read permissions are denoted by
+		  alphabet 'r' and number '4' at various
+		  occasions, hence Linux users should be
+		  comfortable with using 'r' or '4' for
+		  specifying read permissions as and when
+		  required.
+		</p>
+	      </dd>
+
+	      <dt>write</dt>
+	      <dd>
+		<p>
+		  Write permissions on a regular file (not a
+		  directory) indicate that particular user or
+		  members of the group are allowed to write to
+		  the file.  For example, if a user or a group
+		  has write permissions on a text file then the
+		  user or members of the group would be able to
+		  modify the contents of the text file using vim
+		  text editor.  Write permissions are denoted by
+		  alphabet 'w' and number '2'.
+		</p>
+	      </dd>
+
+
+	      <dt>execute</dt>
+	      <dd>
+		<p>
+		  Execute permissions on a regular file (not a
+		  directory) indicate that particular user or
+		  members of the group are allowed to execute
+		  (run) the file as a program.  Note that
+		  execute permission may not make any sense on a
+		  generic text file as execution of normal
+		  language text is not defined. Thus, execute
+		  permissions make sense only for scripts and
+		  programs and not for every file.
+		</p>
+		<p>
+		  But Linux will not object if execute
+		  permissions are assigned to some file which is
+		  not a program such as an image file, and thus
+		  cannot be executed.  Error message or
+		  unexpected side-effects would be obtained
+		  while attempting to run the image file but not
+		  while assigning execute permissions to it.
+		</p>
+		<p>
+		  Thorough understanding of execute permissions
+		  is not expected from beginner users right
+		  away.  Hence do not worry if meaning of
+		  execute permissions is not very clear.  It
+		  requires some time to really understand what
+		  execute permissions really mean. Execute
+		  permissions are denoted by alphabet 'x' or
+		  number '1' where ever required.
+		</p>
+	      </dd>
+
+	    </dl>
+
+
+	    <p>
+	      Note that as part of this experiment words
+	      'folder' and 'directory' are used interchangeably
+	      and they both mean the same thing.
+	    </p>
+
+
+	    <h3>Directory or folder permissions</h3>
+
+	    <p>
+	      Similar to a regular file three different types
+	      of permissions can be applied to a folder or
+	      directory: read, write and execute.  But the
+	      interpretation or significance of these
+	      permissions for a directory is quite different
+	      from that of a regular file. The explanation of
+	      these different types of permissions for a
+	      folder is described below:
+	    </p>
+
+	    <dl>
+	      <dt>read</dt>
+	      <dd>
+		<p>
+		  Read permissions on a directory (not a regular
+		  file) indicate that particular user or members
+		  of the group are allowed to list the contents
+		  of the directory (read the directory).  For
+		  example, if a user or a group has read
+		  permissions on a directory then the user or
+		  members of the group would be allowed to see
+		  the contents of the directory using ls
+		  command.  Same as in case of regular files,
+		  read permissions for directories also are
+		  denoted by alphabet 'r' or number '4'.
+		</p>
+	      </dd>
+
+	      <dt>write</dt>
+	      <dd>
+		<p>
+		  Write permissions on a directory (not a
+		  regular file) indicate that particular user or
+		  members of the group are allowed to create new
+		  files inside the given directory.  For
+		  example, if a user or a group has write
+		  permissions on a directory then the user or
+		  members of the group would be able to create
+		  new files inside the directory using mkdir or
+		  touch commands.  Moreover write permissions on
+		  a directory also allow users to rename or
+		  delete the files present inside the directory
+		  using rmdir or rm command.  
+		</p>
+	      </dd>
+
+
+	      <dt>execute</dt>
+	      <dd>
+		<p>
+		  Execute permissions on a directory (not a
+		  regular file) indicate that particular user or
+		  members of the group are allowed to change
+		  directory (cd) to given folder and also access
+		  files inside the given folder.  If a user does
+		  not has execute permissions on a folder, then
+		  the user cannot access any file present inside
+		  the folder.
+		</p>
+	      </dd>
+	    </dl>
+
+	    
+	    <h3>Others</h3>
+	    <p>
+	      Sometimes it is desired for a file to have
+	      specific (read, write or execute or their
+	      combination) access by every user.  To satisfy
+	      this type of requirement there is a special
+	      category of user called others for each file.  
+	      For every file everyone who is neither user
+	      owner and nor a member of group owner for the
+	      file belongs to other category for the file.  
+	      This other category is very helpful in setting
+	      the permissions on the file for everyone else
+	      or the world or others.
+	    </p>
+
+	    
+	    <h3>Checking existing permissions and owner</h3>
+	    <p>
+	      To check existing permissions or owner on a
+	      file one can use '<tt>ls -l</tt>'
+	      command. Sample output of '<tt>ls -l</tt>'
+	      command is shown below in Shell Output 1:
+	    </p>
+
+	    <pre>
+testuser1@sshd1:~/test$ ls -l     
+total 8                                                                                      
+drwxr-xr-x 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
+drwxr-xr-x 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
+-rw-r--r-- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
+-rw-r--r-- 1 testuser1 vlusers    0 Jan  1 09:15 file2    
+testuser1@sshd1:~/test$
+	    </pre>
+	    <p style="text-align:center">
+	      <span style="font-weight:bold">Shell Output
+		1:</span> Sample ls -l output
+	    </p>
+	      
+	    
+	    <p>
+	      In Shell Output 1, ignoring the first line
+	      (total 8) all other lines have seven
+	      columns.  The first column in the output
+	      indicates type of file and its
+	      permissions.  For a regular file the first
+	      character of first column is hypen('-')
+	      whereas for a directory first character of
+	      first column is alphabet 'd'.  
+	    </p>
+
+	    <p>
+	      The next three characters after initial '-' or
+	      'd' indicate read, write and execute
+	      permissions for user owner for the given
+	      file.  If a particular permission or type of
+	      access is present then it is represented by
+	      corresponding character such as 'r', 'w' or
+	      'x'. However if a particular permission or
+	      access is not present then a hypen('-')
+	      character is displayed to indicate its
+	      absence. 
+	    </p>
+
+	    <p>
+	      Similarly, the next three characters
+	      (characters 5 to 7) indicate read, write and
+	      execute permissions for group which owns the
+	      file and the last three characters (characters
+	      8 to 10) indicate read, write and execute
+	      permissions for others. The overall
+	      significance and possible set of values for
+	      each character position for first column of '<tt>ls
+	      -l</tt>' output is explained in Table 3.
+	    </p>
+
+	    <div style="text-align:center">
+	      <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+		<caption>
+		  <span style="font-weight:bold">Table 3:</span>
+		  Significance of various characters in
+		  first column of '<tt>ls -l</tt>' output
+		</caption>
+		<thead>
+		  <tr>
+		    <th>Character position</th>
+		    <th>Possible values</th>
+		    <th>Description</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <td>1</td>
+		    <td>'-' or 'd'</td>
+		    <td>Character at this position
+		      indicates the type of file. Regular
+		      files are indicated by '-' and
+		      directories are indicated by value
+		      'd'. There are also other types of
+		      files apart from regular files and
+		      directories, explanation of which is
+		      outside the scope of this experiment.
+		    </td>
+		  </tr>
+		</tbody>
+	      </table>
+	    </div>
 
 
 
 
 
-        </div>
-      </section>
+          </div>
+	</section>
 
 
-      <section id="experiment-article-section-4">
-
-        <div id="experiment-article-section-4-icon" 
-        class="icon">
-	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/simulation.jpg" />
+	<section id="experiment-article-section-4">
+	  
+          <div id="experiment-article-section-4-icon" 
+               class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/simulation.jpg" />
 	  </div>
 
 	  <div id="experiment-article-section-4-heading" 
-	  class="heading">
-	  Experiment
+	       class="heading">
+	    Experiment
 	  </div>
 
 	  <div id="experiment-article-section-4-content" 
-	  class="content">
-	  <p>
-	  <div id="login">
- <br />If you already have Virtual Labs login
-	  credentials, please click 
-<A HREF="javascript:void(0)"
-onclick="window.open('../php/login-form.php?expid=4',
-'welcome',width=screen.availWidth,height=screen.availHeight,status='yes')">
-here</A>.<br />
-In case you do not have login credentials, please click here.
+	       class="content">
+	    <p>
+	      <div id="login">
+		<br />If you already have Virtual Labs login
+		credentials, please click 
+		<A HREF="javascript:void(0)"
+		   onclick="window.open('../php/login-form.php?expid=4',
+			    'welcome',width=screen.availWidth,height=screen.availHeight,status='yes')">
+		  here</A>.<br />  In case you do not have
+		  login credentials, please click here.
+	      </div>
+
+	      <div id="signup">
+
+		<div id="signup-warning"></div>
+
+		<form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
+		  
+		  <table>
+		    <tr>
+		      <td>Your name</td>
+		      <td>
+			<input type="text" name="yourname"
+			value="" id="yourname"/>
+		      </td>
+		    </tr>
+		    
+		    <tr>
+		      <td>Preferred username</td>
+		      <td>
+			<input type="text"
+			       name="preferredusername"
+			       value=""
+			       id="preferredusername"/>
+		      </td>
+		    </tr>
+		    
+		    <tr>
+		      <td>Password</td> 
+		      <td><input type="password"
+				 name="preferredpassword"
+				 id="preferredpassword"/>
+		      </td>
+		    </tr>
+
+		    <tr><td>Re-enter Password</td> <td><input type="password"
+							      name="repreferredpassword"
+							      id="repreferredpassword"/></td></tr>
+		    
+		    <tr><td>Email</td> <td><input type="text" name="email"
+						  id="email"/></td></tr>
+		    
+		    <tr><td>Re-enter Email</td> <td><input type="text"
+							   name="reemail" id="reemail"/></td></tr>
+		    
+		    <tr></tr>
+		    
+		    <tr><td colspan=2>Enter the black characters present in the
+			below image</td></tr>
+		    
+		    <tr><td><img src="php/captcha.php"
+				 id="captchaimg"/></td><td><input type="text" name="captcha"
+								  id="captcha"/></td></tr>
+		    
+		    <tr><td></td><td><input type="submit" value="Sign up"
+					    /></td></tr>
+		    
+		  </table>
+		  
+		</form>
+		
+	      </div>
+	      
+	      <div id="logout">
+		
+		<a href="#" onclick="logout();">Logout</a>
+	      </div>
+	      
+	      <pre id="terminal" class="code"><div id="input"
+						   class="inpcls"><form name='f' class='cmdform' action=''
+									onsubmit="return false;"
+									id="cmdformid"><table class="inputtable"
+											      id="inputtableid"><tr><td><div id='prompt'
+															     class='less'>user@pascal:~/$</div></td><td class="inputtd"><input id='inputfield'
+																							       name='q' type='text' class='cmdline' autocomplete="off"
+																							       value="" onkeypress="showHint(event,this.value)"
+																							       /></td></tr></table></form><div id="output"
+																											       class="outcls"></div></div></pre>
+	      
+	      <pre class="instr" id="instr">
+		
+		<div id="instruction" title="0">
+		  
+		  Now that we have learnt about file permissions, we have
+		  an exercise for you.
+
+		  The shell above supports few basic shell commands. Play
+		  along to get some hands-on experience of the interface.
+		  
+		  When you are ready to perform the exercise, which is a
+		  set of 5 tasks, enter the command "start".
+
+		</div>
+
+		try: start,next,prev,clear,logout.
+
+	      </pre>
+
+
+
+
+	    </p>
 	  </div>
 
-	  <div id="signup">
-
-	  <div id="signup-warning"></div>
-
-	  <form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
-
-	  <table><tr>
-
-	  <td>Your name</td><td> <input type="text" name="yourname" value="" id="yourname"/></td></tr>
-
-	  <td>Preferred username</td><td> <input type="text" name="preferredusername" value="" id="preferredusername"/></td></tr>
-
-	  <tr><td>Password</td> <td><input type="password" name="preferredpassword" id="preferredpassword"/></td></tr>
-
-	  <tr><td>Re-enter Password</td> <td><input type="password" name="repreferredpassword" id="repreferredpassword"/></td></tr>
-
-	  <tr><td>Email</td> <td><input type="text" name="email" id="email"/></td></tr>
-
-	  <tr><td>Re-enter Email</td> <td><input type="text" name="reemail" id="reemail"/></td></tr>
-
-	  <tr></tr>
-
-	  <tr><td colspan=2>Enter the black characters present in the below image</td></tr>
-
-	  <tr><td><img src="php/captcha.php" id="captchaimg"/></td><td><input type="text" name="captcha" id="captcha"/></td></tr>
-
-	  <tr><td></td><td><input type="submit" value="Sign up" /></td></tr>
-
-	  </table>
-
-	  </form>
-
-	  </div>
-
-	  <div id="logout">
-
-	  <a href="#" onclick="logout();">Logout</a>
-	  </div>
-
-	  <pre id="terminal" class="code"><div id="input" class="inpcls"><form name='f' class='cmdform' action='' onsubmit="return false;" id="cmdformid"><table class="inputtable" id="inputtableid"><tr><td><div id='prompt' class='less'>user@pascal:~/$</div></td><td class="inputtd"><input id='inputfield' name='q' type='text' class='cmdline' autocomplete="off" value="" onkeypress="showHint(event,this.value)" /></td></tr></table></form><div id="output" class="outcls"></div></div></pre>
-
-<pre class="instr" id="instr">
-
-<div id="instruction" title="0">
-
-Now that we have learnt about file permissions, we have an exercise for you.
-
-The shell above supports few basic shell commands. Play along to get some hands-on experience of the interface.
-
-When you are ready to perform the exercise, which is a set of 5 tasks, enter the command "start".
-
-</div>
-
-try: start,next,prev,clear,logout.
-
-</pre>
-
-
-
-
-          </p>
-        </div>
-
-      </section>
+	</section>
 
         <section id="experiment-article-section-6">
-      
+	  
           <div id="experiment-article-section-6-icon" 
-          class="icon">
+               class="icon">
 	    <img src="../images/quizzes.jpg" />
 	  </div>
 
           <div id="experiment-article-section-6-heading" 
-          class="heading">
+               class="heading">
             Quiz
           </div>
 
           <div id="experiment-article-section-6-content" 
-          class="content">
+               class="content">
 	    <p>
 	      <ol>
 		<li></li>
@@ -680,84 +827,82 @@ try: start,next,prev,clear,logout.
 
 
         <section id="experiment-article-section-8">
-   
+	  
           <div id="experiment-article-section-8-icon" 
-          class="icon">
+               class="icon">
 	    <!-- Enclose the icon image of your lab.-->
 	    <img src="../images/readings.jpg" />
 	  </div>
-
+	  
           <div id="experiment-article-section-8-heading" 
-          class="heading">
+               class="heading">
             Further Readings
           </div>
-
+	  
           <div id="experiment-article-section-8-content" 
-          class="content">
-
+               class="content">
+	    
 	    <p>
 	      <ul>
 		<li></li>
 	      </ul>
 	    </p>
           </div>
-
+	  
         </section>
 
-   <section id="experiment-article-section-9">
-
+	<section id="experiment-article-section-9">
+	  
           <div id="experiment-article-section-9-icon" 
-          class="icon">
+               class="icon">
             <!-- Enclose the icon image of your lab.-->
             <img src="../images/readings.jpg" />
           </div>
-
+	  
           <div id="experiment-article-section-9-heading" 
-          class="heading">
+               class="heading">
             Feedback
           </div>
-
+	  
           <div id="experiment-article-section-9-content" 
-          class="content">
+               class="content">
 	    <p>
 	      Please provide us
 	      feedback <a href="http://virtual-labs.ac.in/feedback/">here</a>
 	    </p>
           </div>
-
+	  
         </section>
 
+	
+	
+	
+	<!-- An article can have a sidebar that contain related 
+	     links and additional material (however it is kept optional 
+	     at this moment) -->
+	<aside id="lab-article-sidebar" class="default">
+	  <!-- put the content that you want to appear in the 
+	       sidebar -->	
+	</aside>
 
 
-      </div>
+	<!-- Article footer can display related content and 
+	     additional links -->						
+	<footer id="lab-article-footer" class="default">
+	  <!-- Put the content that you want to appear here -->
+	</footer>
+
+	</article>
 
 
-    <!-- An article can have a sidebar that contain related 
-    links and additional material (however it is kept optional 
-    at this moment) -->
-    <aside id="lab-article-sidebar" class="default">
-      <!-- put the content that you want to appear in the 
-      sidebar -->	
-    </aside>
+	<!-- Links to other labs, about us page can be kept the lab 
+	     footer-->
+	<footer id="lab-footer" class="footer">
+	  <!-- Put the content here-->
+	  <a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+	</footer>
 
-
-    <!-- Article footer can display related content and 
-    additional links -->						
-    <footer id="lab-article-footer" class="default">
-      <!-- Put the content that you want to appear here -->
-    </footer>
-
-  </article>
-
-
-  <!-- Links to other labs, about us page can be kept the lab 
-  footer-->
-   <footer id="lab-footer" class="footer">
-    <!-- Put the content here-->
-	<a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
-  </footer>
-
-</div>		
+	</div>		
 
 </body>
 </html>
