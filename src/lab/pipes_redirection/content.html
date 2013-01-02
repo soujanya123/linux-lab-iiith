@@ -163,20 +163,43 @@ example.txt  all_about_console.txt my_project
 	<b>&gt&gt</b> appends the output from the command to the specified file.
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ ls /var/
-backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
-johndoe@laptop:~/Documents$ ls /var/ >> out.txt
+johndoe@laptop:~/Documents$ cat >> out.txt
+text appended at end
 johndoe@laptop:~/Documents$ cat out.txt
 example.txt  all_about_console.txt my_project
-backups  cache  crash  games  lib  local  lock  log  mail  opt  run  spool  tmp
+text appended at end
 	</pre>
+	<p>
+	<b>Ctrl+D</b> marks the end of file when taking input from stdin.
+	</p>
 	<p>
 	<b>&lt</b> reads the command input from the specified file.
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ cat &lt; file1 &gt; file2
-	</pre>
-	<p>The contents of file1 are printed to file2. Equivalent to <b>cp file1 file2</b>.</p>
+johndoe@laptop:~/Documents$ cat > f1.txt
+d
+a
+c
+b
+e
+johndoe@laptop:~/Documents$ sort &lt; f1.txt
+a
+b
+c
+d
+e
+</pre>
+<p><b>sort</b> command is run on the contents of 'f1.txt' and the sorted output is printed to stdout.</p>
+<pre class="code">
+johndoe@laptop:~/Documents$ sort &lt; f1.txt &gt; f1_sort.txt
+johndoe@laptop:~/Documents$ cat f1_sort.txt
+a
+b
+c
+d
+e
+</pre>
+	<p>Here the sorted output of 'f1.txt' is printed in 'f1_sort.txt'.</p>
 	
 	
 	<p><b>2></b> passes the error output from the command to the specified file. Here, 2 is a reference to the <i>file descriptor</i> of the error stream (1 is assumed by default, so there is no need to specify the type number for stdout). </p>
@@ -184,24 +207,49 @@ johndoe@laptop:~/Documents$ cat &lt; file1 &gt; file2
 johndoe@laptop:~/Documents$ mkdir /x 2> err.txt
 johndoe@laptop:~/Documents$ cat err.txt
 mkdir: cannot create directory `/x': Permission denied
+johndoe@laptop:~/Documents$ cat f1.txt 2> out.txt
+d
+a
+c
+b
+e
+johndoe@laptop:~/Documents$ cat out.txt
+johndoe@laptop:~/Documents$ 
 	</pre>
 	<p>
 	<b>|</b> passes the output from the command on the left side of the pipe as input to the command on the right side of the pipe.
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ ls -l | sort -r -k 5
-total 4
-drwxr-xr-x  2 johndoe johndoe  4096 2010-08-02 14:03 my_project
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 example.txt
--rw-r--r--  1 johndoe johndoe 0 2010-08-20 22:22 all_about_console.txt
+johndoe@laptop:~/Documents$ cat | wc
+Pipes can be
+used to combine
+multiple commands
+to form a single
+complex command.
+      5      14      81
 	</pre>
 	<p>
-	Prints the files, sorted by size in the current working directory.
+	The number of lines, words and characters in the input taken from stdin is printed.
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ ps aux | more
+johndoe@laptop:~/Documents$ cat f1.txt
+d
+a
+c
+b
+e
+johndoe@laptop:~/Documents$ cat f1.txt | sort
+a
+b
+c
+d
+e
+</pre>
+	<p>Prints the sorted contents of 'f1.txt'.</p>
+	<pre class="code">
+johndoe@laptop:~/Documents$ du | more
 	</pre>
-	<p>Prints all the processes on the system, one screen at a time.</p>
+	<p>Prints the output of the <b>du</b> command, one screen at a time.</p>
 
 	</pre>	
 	<p>
@@ -214,7 +262,7 @@ johndoe@laptop:~/Documents$ touch $(ls -1 *.c)
 	<pre class="code">
 johndoe@laptop:~/Documents$ wc $(ls *.txt)
 	</pre>
-	<p>Displays number of characters, words and lines in all text files in current system.</p>
+	<p>Displays number of characters, words and lines in all text files in current folder.</p>
 	<pre class="code">
 johndoe@laptop:~/Documents$ chmod 755 $(ls -1 *.org)
 	</pre>
@@ -228,7 +276,7 @@ johndoe@laptop:~/Documents$ tar cf "$(date +'%Y-%m-%d %H%M').tar" imp
 johndoe@laptop:~/Documents$ ls
 example.txt  all_about_console.txt my_project imp 2012-12-31 1142.tar
 	</pre>
-	<p>Take backup of imp folder in a tar file, where name of tar file reflects current date and time.</p>
+	<p>Take backup of 'imp' folder in a tar file, where name of tar file reflects current date and time.</p>
 	
         </div>
       </section>
