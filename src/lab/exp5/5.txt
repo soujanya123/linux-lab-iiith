@@ -1,5 +1,0 @@
-
-<A HREF="javascript:void(0)"
-onclick="window.open('interaction-frame.html',
-'welcome','width=screen.availWidth,height=screen.availHeight,status=yes')">
-here</A>.<br />
