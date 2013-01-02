@@ -86,34 +86,16 @@ edit -->
 	<!-- Write the section content inside a paragraph 
 	element, You can also include images with <img> tag -->
 	<div id="experiment-article-section-1-content" class="content">	
-	<p>
-	  Welcome to the File Management experiment! This experiment
-	  is intended to provide understanding the tasks of managing
-	  files and directories.  Everything in Linux is a file, so
-	  start on the right path with a solid grounding in file
-	  management which includes various commands for listing,
-	  moving, copying and deleting the files and directories.
+	<p align="justify">
+	  File Management includes manipulation of data and files
+	  contained in a system. One may create, delete, move, copy,
+	  rename and perform many such operations on the files and
+	  directories. This experiment provides a brief overview of
+	  some of those commands which can be used in a Linux-based
+	  environment.
 	</p>
 
-	<p>
-	  The experimental platform for this experiment is a command
-	  line interface which mimics the terminal of a linux
-	  machine. The command line interface can help in learning the
-	  basics of file management. A series of tasks which can be
-	  performed on available command-line interface is also
-	  provided.
-	</p>
-
-	<p>
-	  Please proceed to the theory section to get an overview of
-	  the commands. Then move to the experiment section to get
-	  some hands-on experience. After you are done with the
-	  experiment, go to the quiz section to test your
-	  understanding.
-	</p>
-	</div>
-
-
+	</div> 
 	</section>
 
 	<section id="experiment-article-section-2">
@@ -127,9 +109,9 @@ edit -->
 	</div>
 
 	<div id="experiment-article-section-2-content" class="content">
-	<p>The goal of this experiment is to provide a brief overview on
-	how to create and manipulate files and directories using the Linux
-	command-line interface.</p>
+	<p align="justify">The objective of this experiment is to provide a brief
+	overview on how to create and manipulate files and directories
+	using the Linux command-line interface.</p>
 	</div>
 	
 	</section>
@@ -154,27 +136,43 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-4-content"
 	class="content">
-        <p> The commands that will be described are meant to be
-         executed from a command line interface.</p>
+        <h3>1. The Linux File System</h3>
+        <p align="justify">The file system is a method of consistently
+        naming objects and organizing them in an orderly manner.  The
+        Linux file system is a directory tree that is consistent with
+        each Linux distribution.  This directory tree begins with the
+        / (root) and then expands under that position like an upside
+        down tree. Each directory under / has a specific purpose
+        whether it is to store system files, constantly changing log
+        files, device drivers or files created by users on the system.
+	<p align="justify"> The file system also contains a method of
+        securing files, directories and objects in the file
+        system. This is represented by the file permissions that are
+        explained in detail in <a href="../exp4/index.html">File
+        Permissions</a> </p>
+
+        <p align="justify"> The commands that will be described are
+         meant to be executed from a command line interface.</p>
 
 	<h3>1. The Command Line Prompt</h3>
 	<p>The command line prompt that shows up in the terminal
         window contains useful information.  It has the form:</p>
-        <pre class='code'>user1@host1:~/Documents$</pre>
-        <p>
+        <pre class='code'>johndoe@laptop:~/Documents$</pre>
+        <p align="justify">
         There are three parts in the command line prompt, separated by
         @ : and $
         </p>
-	<p>The first part before the @ shows the user which is logged
-	  in at the moment. In our example it is the user johndoe. The
-	  second part between the @ and the : shows the name of the
-	  computer you are working on. In our example it is
-	  laptop. The third part, between the : and the $ shows the
-	  current directory you are working in. In our example it is
-	  ~/Documents (~ is a shortcut for the user’s home directory;
-	  ~/Documents is equivalent to /home/johndoe/Documents). When
-	  you will change the current directory, you will see the
-	  third part of the command line prompt changing.</p>
+	<p align="justify">The first part before the @ shows the user
+	  which is logged in at the moment. In our example it is the
+	  user johndoe. The second part between the @ and the : shows
+	  the name of the computer you are working on. In our example
+	  it is laptop. The third part, between the : and the $ shows
+	  the current directory you are working in. In our example it
+	  is ~/Documents (~ is a shortcut for the user’s home
+	  directory; ~/Documents is equivalent to
+	  /home/johndoe/Documents). When you will change the current
+	  directory, you will see the third part of the command line
+	  prompt changing.</p>
 
 
 	<h3>2. Viewing the contents of files and directories </h3>
