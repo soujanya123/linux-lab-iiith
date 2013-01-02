@@ -1087,7 +1087,7 @@ testuser1@sshd1:~/test$
 	    <p>
 	      Various types of octal permissions and their
 	      usage is explained with help of Table 5 and
-	      Shell Output 3 below.
+	      Shell Output 4 below.
 	    </p>
 
 	    <div style="text-align:center">
@@ -1106,7 +1106,7 @@ testuser1@sshd1:~/test$
 		<tbody>
 		  <tr>
 		    <td>0</td>
-		    <td>
+		    <td style="text-align:justify">
 		      This indicate no permissions, i.e.,
 		      all three read, write and execute
 		      should not be there
@@ -1114,35 +1114,35 @@ testuser1@sshd1:~/test$
 		  </tr>
 		  <tr>
 		    <td>1</td>
-		    <td>
+		    <td style="text-align:justify">
 		      Indicates execute (x) permissions, but
 		      no read or write permissions
 		    </td>
 		  </tr>
 		  <tr>
 		    <td>2</td>
-		    <td>
+		    <td style="text-align:justify">
 		      Indicates write (w) permissions, but
 		      no read or execute permissions
 		    </td>
 		  </tr>
 		  <tr>
 		    <td>3</td>
-		    <td>
+		    <td style="text-align:justify">
 		      Indicates write (w) and execute(x)
 		      permissions, but no read(r) permissions
 		    </td>
 		  </tr>
 		  <tr>
 		    <td>4</td>
-		    <td>
+		    <td style="text-align:justify">
 		      Indicates read (r) permissions, but no
 		      write(w) and execute(x) permissions
 		    </td>
 		  </tr>
 		  <tr>
 		    <td>5</td>
-		    <td>
+		    <td style="text-align:justify">
 		      Indicates read (r) and execute(x)
 		      permissions, but no write(w)
 		      permissions
@@ -1150,7 +1150,7 @@ testuser1@sshd1:~/test$
 		  </tr>
 		  <tr>
 		    <td>6</td>
-		    <td>
+		    <td style="text-align:justify">
 		      Indicates read (r) and write(w)
 		      permissions, but no execute(x)
 		      permissions
@@ -1158,7 +1158,7 @@ testuser1@sshd1:~/test$
 		  </tr>
 		  <tr>
 		    <td>7</td>
-		    <td>
+		    <td style="text-align:justify">
 		      Indicates all three read (r), write(w)
 		      and execute(x) permissions should be
 		      present. 
@@ -1169,6 +1169,100 @@ testuser1@sshd1:~/test$
 	    </div>
 
 
+	    <pre>
+testuser1@sshd1:~/test$ chmod 000 dir1                                                       
+testuser1@sshd1:~/test$ chmod 777 dir2                                                       
+testuser1@sshd1:~/test$ chmod 750 file1                                                      
+testuser1@sshd1:~/test$ chmod 456 file2                                                      
+testuser1@sshd1:~/test$ ls -l                                                                
+total 8                                                                                      
+d--------- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
+drwxrwxrwx 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
+-rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
+-r--r-xrw- 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
+testuser1@sshd1:~/test$ chmod 666 dir1                                                       
+testuser1@sshd1:~/test$ chmod 553 dir2                                                       
+testuser1@sshd1:~/test$ chmod 701 file1                                                      
+testuser1@sshd1:~/test$ chmod 751 file2                                                      
+testuser1@sshd1:~/test$ ls -l                                                                
+total 8                                                                                      
+drw-rw-rw- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
+dr-xr-x-wx 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
+-rwx-----x 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
+-rwxr-x--x 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
+testuser1@sshd1:~/test$
+	    </pre>
+	    <p style="text-align:center">
+	      <span style="font-weight:bold">Shell Output
+		4:</span> Various invocations of '<tt>chmod</tt>'
+	      using numeric permissions.
+	    </p>
+
+
+	    <h3>Example 1: Requirement 3</h3>
+	    <p>
+	      Consider requirement of Example 1 where file
+	      students.txt should be editable (read, write)
+	      by principal, should be readable by teachers
+	      and should not be readable, writable or
+	      executable by students. 
+	    </p>
+
+	    <p>
+	      To satisfy this requirement principal can be
+	      made user owner for file students.txt.  Then
+	      group owner of the file students.txt can be
+	      set to teachers user-group.  Then finally 640
+	      permissions can be set on students.txt using
+	      '<tt>chmod 640 students.txt</tt>' command.
+	      This would ensure that all the constraints
+	      specified in requirement 3 are satisfied.
+	    </p>
+
+
+	    <h3>Example 1: Requirement 4</h3>
+	    <p>
+	      Consider another requirement of Example 1
+	      where all the teachers should have read, write
+	      permissions on marks.txt and all students
+	      should have read permissions on
+	      marks.txt. Also in this case the principal
+	      should not have any permission read or write
+	      on marks.txt. 
+	    </p>
+
+	    <p>
+	      Now this complex
+	      requirement <span style="font-weight:bold">
+	      cannot </span> be satisfied using user, groups
+	      and permissions supported by Linux in any
+	      reasonably good way.  This is because we have
+	      separate set of permissions are required for
+	      two different groups students and teachers
+	      which the current permission system cannot
+	      account for.  We cannot assign permissions to
+	      others in this case as that would end up
+	      applying to principal too, which is against
+	      the mentioned requirements. Hence, this
+	      specific example has been put intentionally to
+	      explain that not all types of requirements can
+	      be satisfied with Linux file permissions.
+	    </p>
+
+
+
+	    <h3>Conclusion</h3>
+	    <p>
+	      This section concludes the theory part of the
+	      experiment.  Few details related to chmod such
+	      as fourth octal digit for permissions, setuid,
+	      setgid, sticky-bit etc. are intentionally
+	      omitted to avoid unnecessary complexities.
+	      Interested users can refer to '<tt>man
+	      chmod</tt>' and other reading material
+	      suggested in Further Reading section for
+	      further information.
+	    </p>
 
 
 

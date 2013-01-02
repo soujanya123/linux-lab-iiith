@@ -1,24 +1,45 @@
 <html>
-	<head>
-		<title>Tasks</title>
-	</head>
-	<body>
-		<ol>
-			<li>Create a repository by name 'lab-activity' in a directory called 'svn' in your home directory.</li>
-			<li>
-			Assume that you have all your activity/work in the home directory. Create a working copy of the repository in the home 
-			directory and add two folders 'lab1' and 'lab2' to it. Create README files in both the directories. Now write the 
-			following content to README of the lab1 directory: "This is the usermanual document for lab1". Commit your work.
-			</li>
-			<li>
-			Create a folder by name test in your home directory. Now checkout a working copy of the repository in the test folder and
-			check the content of the working copy. Check the commands you used earlier if you find any content missing.
-			</li>
-			<li>
-			Now write the following content to the README file of the lab2 directory in the working copy you just checked out to 
-			'test' directory: "This is the usermanual document for lab1". Commit your work.
-			</li>
-		</ol>
-	</body>
+  <head>
+    <title>Tasks</title>
+  </head>
+  <body>
+    <ol>
+      <li>Create a test folder with few sub-folders and
+	files inside it for practising chmod command.
+      </li>
+      <li>Change permissions on folder such that while using
+	'ls' command on folder error 'Permission denied' is
+	obtained instead of contents of the folder.
+      </li>
+      <li>Change permissions on the folder such that while
+	using 'cd' command to change present working directory
+	to given folder error 'Permission denied' is obtained.
+      </li>
+      <li>Change permissions on folder such that command
+	'touch &lt;file_name&gt;' with folder as present
+	working directory results into 'Permission denied'
+	message.
+      </li>
+      <li>Change permissions on file such that command 'cat
+	&lt;file_name&gt;' results into 'Permission denied'
+	message.
+      </li>
+      <li>Change permission on file such that its contents
+	can be read with vim but modifying contents leads to
+	'Permission denied' error message.
+      </li>
+      <li>Change permission on folder such that cd to it
+	succeeds, but ls fails.
+      </li>
+      <li>
+	Change permissons on folder such that cd to it
+	succeeds and also 'touch &lt;file_name&gt;' inside
+	folder succeeds but 'ls' on folder results into
+	'Permission denied' message.
+      </li>
+      
+	
+    </ol>
+  </body>
 </html>
 
