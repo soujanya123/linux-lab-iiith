@@ -808,7 +808,7 @@ testuser1@sshd1:~/test$
 	    </p>
 	    
 	    <pre>
-Syntax: chmod {[ugoa]}[+-=][rwx] <file_name>
+Syntax: chmod {[ugoa]}[+-=][rwx] [&lt;file_name&gt; ...]
 	    </pre>
 
 
@@ -929,33 +929,248 @@ Syntax: chmod {[ugoa]}[+-=][rwx] <file_name>
 	    <dl>
 	      <dt>
 		<span style="font-weight:bold">chmod Example
-		1:</span> <tt>chmod a+x a.txt</tt>
+		1:</span> <tt>chmod a+x &lt;file&gt;</tt>
 	      </dt>
 	      <dd>
 		This command will cause all other
 		permissions (write, execute) to remain same
 		but add execute permissions for all (user
-		owner, group owner and others).  Note that
-		if some or all of these categories already
-		have execute permissions then it will not
-		cause an error and it will not remove that
-		permission.  It will only add execute
-		permissions for all if they are not already
-		present.  This is demonstrated in Shell
-		Output 2 below.
+		owner, group owner and others) for given
+		file.  Note that if some or all of these
+		categories already have execute permissions
+		then it will not cause an error and it will
+		not remove that permission.  It will only
+		add execute permissions for all if they are
+		not already present.  This is demonstrated
+		in Shell Output 2 below.
 
-	    <pre>
+		<pre>
+testuser1@sshd1:~/test$ ls -l                                                                
+total 8                                                                                      
+d--------- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
+d--x--x--x 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
+-rwx------ 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
+-rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
+testuser1@sshd1:~/test$ chmod a+x dir1 dir2 file1 file2                                      
+testuser1@sshd1:~/test$ ls -l                                                                
+total 8                                                                                      
+d--x--x--x 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
+d--x--x--x 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
+-rwx--x--x 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
+-rwxr-x--x 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
+testuser1@sshd1:~/test$  
+		</pre>
+		<p style="text-align:center">
+		  <span style="font-weight:bold">Shell Output
+		    2:</span> Effect of '<tt>chmod a+x
+		    command</tt>' in various situations
+		</p>
+	      </dd>
+
+	      <dt>
+		<span style="font-weight:bold">chmod Example
+		2:</span> <tt>chmod +x &lt;file&gt;</tt>
+	      </dt>
+	      <dd>
+		This command
+		is <span style="font-weight:bold">exactly</span>
+		same as '<tt>chmod a+x &lt;file&gt;</tt>'
+		command.  That is, if none of the categories
+		user, group, other or all is specified then
+		all is taken as default.
+	      </dd>
+
+
+	      <dt>
+		<span style="font-weight:bold">chmod Example
+		3:</span> <tt>chmod u-x &lt;file&gt;</tt>
+	      </dt>
+	      <dd>
+		This command will remove execute permissions
+		for user (4th character in first column of
+		ls -l) if it is present.  Otherwise it will
+		not have any effect.
+	      </dd>
+
+
+	      <dt>
+		<span style="font-weight:bold">chmod Example
+		4:</span> <tt>chmod o=rw &lt;file&gt;</tt>
+	      </dt>
+	      <dd>
+		This command will set read and write
+		permissions for others on given file and
+		remove execute permission if it is already
+		set.  Thus use of '=' operator ensures that
+		by this command the permissions for given
+		category (in this case others) are set to
+		exactly same as those specified on command
+		line. This and other relevant invocations of
+		chmod command are shown in Shell Output 3
+		below.
+
+		<pre>
+testuser1@sshd1:~/test$ chmod a= dir1                                                        
+testuser1@sshd1:~/test$ chmod a=rwx dir2                                                     
+testuser1@sshd1:~/test$ chmod u=rwx file1                                                    
+testuser1@sshd1:~/test$ chmod g=rx file1                                                     
+testuser1@sshd1:~/test$ chmod o= file1                                                       
+testuser1@sshd1:~/test$ chmod ugo=rx file2                                                   
+testuser1@sshd1:~/test$ ls -l                                                                
+total 8                                                                                      
+d--------- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
+drwxrwxrwx 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
+-rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
+-r-xr-xr-x 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
+testuser1@sshd1:~/test$ chmod u-rx dir2                                                      
+testuser1@sshd1:~/test$ chmod go-w dir2                                                      
+testuser1@sshd1:~/test$ chmod o=r file2                                                      
+testuser1@sshd1:~/test$ ls -l                                                                
+total 8                                                                                      
+d--------- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
+d-w-r-xr-x 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
+-rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
+-r-xr-xr-- 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
+testuser1@sshd1:~/test$ chmod +rx dir1                                                       
+testuser1@sshd1:~/test$ chmod -x dir2                                                        
+testuser1@sshd1:~/test$ ls -l                                                                
+total 8                                                                                      
+dr-xr-xr-x 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
+d-w-r--r-- 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
+-rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
+-r-xr-xr-- 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
 testuser1@sshd1:~/test$
-	    </pre>
-	    <p style="text-align:center">
-	      <span style="font-weight:bold">Shell Output
-		2:</span> Effect of '<tt>chmod +x
-		command</tt>' in various situations
+		</pre>
+		<p style="text-align:center">
+		  <span style="font-weight:bold">Shell Output
+		    3:</span> Various '<tt>chmod</tt>'
+		    invocations using alphabetic notation.
+		</p>
+	      </dd>
+
+	    </dl>
+
+
+	    <h3>Using numeric permissions (ex 755, 700, 555
+	    etc.)</h3>
+	    <p>
+	      Very often the need is to assign exact
+	      permissions to a file ignoring its current
+	      permissions.  In such cases instead of using
+	      alphabets as shown before often numbers are
+	      used to specify the permissions for a
+	      file.
 	    </p>
 
+	    <p>
+	      Numeric permissions are specified using three
+	      digit octal numbers.  The first octal digit
+	      represents exact permissions for user owner,
+	      the second octal digit represents exact
+	      permissions for group owner and last octal
+	      digit represents exact permissions for
+	      others. 
+	    </p>
 
-	      </dd>
-	    </dl>
+	    <p>
+	      Octal digit for a particular category is
+	      obtained by adding numeric representations of
+	      desired permissions.  For example if both
+	      read(4) and write(2) permissions are desired
+	      for a given category, but not execute(1) then
+	      octal permission for the category would be
+	      4+2=6. Similarly if only execute permissions
+	      are desired and not read or write then octal
+	      permission would be 1.
+	    </p>
+
+	    <p>
+	      Various types of octal permissions and their
+	      usage is explained with help of Table 5 and
+	      Shell Output 3 below.
+	    </p>
+
+	    <div style="text-align:center">
+	      <table border="1" style="margin-left:auto;margin-right:auto;width:80%">
+		<caption>
+		  <span style="font-weight:bold">Table 5:</span>
+		  Significance of various digits while using
+		  numeric permissions
+		</caption>
+		<thead>
+		  <tr>
+		    <th>Digit</th>
+		    <th>Significance</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <td>0</td>
+		    <td>
+		      This indicate no permissions, i.e.,
+		      all three read, write and execute
+		      should not be there
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>1</td>
+		    <td>
+		      Indicates execute (x) permissions, but
+		      no read or write permissions
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>2</td>
+		    <td>
+		      Indicates write (w) permissions, but
+		      no read or execute permissions
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>3</td>
+		    <td>
+		      Indicates write (w) and execute(x)
+		      permissions, but no read(r) permissions
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>4</td>
+		    <td>
+		      Indicates read (r) permissions, but no
+		      write(w) and execute(x) permissions
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>5</td>
+		    <td>
+		      Indicates read (r) and execute(x)
+		      permissions, but no write(w)
+		      permissions
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>6</td>
+		    <td>
+		      Indicates read (r) and write(w)
+		      permissions, but no execute(x)
+		      permissions
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>7</td>
+		    <td>
+		      Indicates all three read (r), write(w)
+		      and execute(x) permissions should be
+		      present. 
+		    </td>
+		  </tr>
+		</tbody>
+	      </table>
+	    </div>
+
+
+
+
 
           </div>
 	</section>
