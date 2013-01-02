@@ -770,7 +770,192 @@ testuser1@sshd1:~/test$
 
 
 	    <h3>Changing file permissions</h3>
+	    <p>
+	      To change permissions of a file it is
+	      necessary for user to be user owner of the
+	      file.  Hence regular users cannot change
+	      permissions of files which they do not own,
+	      such as important operating system files or
+	      files created by other users.  However, a
+	      special user called superuser, often
+	      recognized by username 'root', can change
+	      ownership or permissions of any file on the
+	      system.  This special user allows
+	      administrators to manage the system
+	      effectively, while ensuring security among
+	      regular users.
+	    </p>
 
+	    <p>
+	      To change the permissions of file owned by
+	      same user, one can use '<tt>chmod</tt>'
+	      command.  Many different methods of invocation
+	      supported by chmod are explained in next few
+	      sections.
+	    </p>
+
+	    <h3>Using alphabets u,g,o,a and r,w,x for
+	    changing permissions</h3>
+	    <p>
+	      One of the ways of using chmod is to use
+	      alphabets such as u,g,o,a or r,w,x for
+	      representing user, group, others, all or read,
+	      write, execute and then change the appropriate
+	      permissions.  Syntax for using chmod in this
+	      manner, significance of each alphabet or
+	      symbols and related examples are mentioned
+	      below.
+	    </p>
+	    
+	    <pre>
+Syntax: chmod {[ugoa]}[+-=][rwx] <file_name>
+	    </pre>
+
+
+	    <div style="text-align:center">
+	      <table border="1" style="margin-left:auto;margin-right:auto;width:80%">
+		<caption>
+		  <span style="font-weight:bold">Table 4:</span>
+		  Significance of various alphabets or symbols
+		  recognized by chmod command
+		</caption>
+		<thead>
+		  <tr>
+		    <th>Alphabet</th>
+		    <th>Meaning</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <td>a</td>
+		    <td style="text-align:justify">
+		      This represents all users including
+		      user owner, group owner and others.
+		      Hence this can be used to modify
+		      permission for everyone.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>u</td>
+		    <td style="text-align:justify">
+		      This represents user owner of the
+		      file.  Hence this can be used to
+		      change permissions (such as read,
+		      write or execute) for user owner for a
+		      particular file or set of files.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>g</td>
+		    <td style="text-align:justify">
+		      This represents group owner of the
+		      file.
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>o</td>
+		    <td style="text-align:justify">
+		      This represents others (neither user
+		      owner nor group owner) for the
+		      file.
+		    </td>
+		  </tr>
+  		  <tr>
+		    <td>=</td>
+		    <td style="text-align:justify">
+		      This operator can be used to assign a
+		      set of permissions.  When this operator
+		      is used the previous permissions for
+		      the group (all, user owner, group
+		      owner or others) are ignored and
+		      specified set of permissions become
+		      the final permissions.
+		    </td>
+		  </tr>
+  		  <tr>
+		    <td>+</td>
+		    <td style="text-align:justify">
+		      This operator is used to add specified
+		      set of permissions (read, write or
+		      execute) to specified category (user
+		      owner, group owner or others).  The
+		      previous permissions are kept and the
+		      mentioned permissions are added, if
+		      they are not already present.
+		    </td>
+		  </tr>
+  		  <tr>
+		    <td>-</td>
+		    <td style="text-align:justify">
+		      This operator is used to remove
+		      specified set of permissions (read,
+		      write or execute) to specified
+		      category (user, group owner or
+		      others).  This operator insures that
+		      specified permissions, if they exist
+		      for a given file for given category
+		      get removed.
+		    </td>
+		  </tr>
+  		  <tr>
+		    <td>r</td>
+		    <td style="text-align:justify">
+		      This represents read permission for
+		      given category (user owner, group
+		      owner, others or all). 
+		    </td>
+		  </tr>
+  		  <tr>
+		    <td>w</td>
+		    <td style="text-align:justify">
+		      This represents write permission for
+		      given category (user owner, group
+		      owner, others or all). 
+		    </td>
+		  </tr>
+  		  <tr>
+		    <td>x</td>
+		    <td style="text-align:justify">
+		      This represents execute permission for
+		      given category (user owner, group
+		      owner, others or all). 
+		    </td>
+		  </tr>
+		</tbody>
+	      </table>
+	    </div>
+
+
+	    <dl>
+	      <dt>
+		<span style="font-weight:bold">chmod Example
+		1:</span> <tt>chmod a+x a.txt</tt>
+	      </dt>
+	      <dd>
+		This command will cause all other
+		permissions (write, execute) to remain same
+		but add execute permissions for all (user
+		owner, group owner and others).  Note that
+		if some or all of these categories already
+		have execute permissions then it will not
+		cause an error and it will not remove that
+		permission.  It will only add execute
+		permissions for all if they are not already
+		present.  This is demonstrated in Shell
+		Output 2 below.
+
+	    <pre>
+testuser1@sshd1:~/test$
+	    </pre>
+	    <p style="text-align:center">
+	      <span style="font-weight:bold">Shell Output
+		2:</span> Effect of '<tt>chmod +x
+		command</tt>' in various situations
+	    </p>
+
+
+	      </dd>
+	    </dl>
 
           </div>
 	</section>
