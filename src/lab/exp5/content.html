@@ -49,7 +49,7 @@ edit -->
 	<header id="experiment-article-heading" class="heading">
 	<!-- You can add a welcome message or title of the 
 	experiment here -->
-	Experiment 5 - Archival and Compression Commands
+	Experiment 5 - Archival and Compression
 	<!-- Add any additional element if required with proper 
 	enclosing-->
 	</header>
@@ -189,10 +189,10 @@ $ zip abc abc.org
 
 $ ls -l
 total 268
--rw-rw-r-- 1 admin admin    451 2012-12-20 17:02 abc.org
--rw-rw-r-- 1 admin admin    437 2012-12-27 15:41 abc.zip
--rw-rw-r-- 1 admin admin 134964 2012-12-19 20:56 image1.jpg
--rw-rw-r-- 1 admin admin 124945 2012-12-16 12:34 image2.jpg
+-rw-rw-r-- 1 johndoe johndoe    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 johndoe johndoe    437 2012-12-27 15:41 abc.zip
+-rw-rw-r-- 1 johndoe johndoe 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 johndoe johndoe 124945 2012-12-16 12:34 image2.jpg
 </pre>
 </p>
 
@@ -229,51 +229,10 @@ $ zip abc image1.jpg image2.jpg
 
 $ ls -l
 total 508
--rw-rw-r-- 1 admin admin    451 2012-12-20 17:02 abc.org
--rw-rw-r-- 1 admin admin 250422 2012-12-27 16:30 abc.zip
--rw-rw-r-- 1 admin admin 134964 2012-12-19 20:56 image1.jpg
--rw-rw-r-- 1 admin admin 124945 2012-12-16 12:34 image2.jpg
-</pre>
-</p>
-
-<p align="justify">
-Observe the total directory size in Example 1 and Example 2.  The
-directory size is 268K in Example 1 where as the size of the archived
-file =abc.zip= in Example 2 is 250K.  There is a 18K of compression.
-Since, zipping all the files separately is not a convenient solution,
-there exists a way to zip the entire directory at one go.
-
-<pre class="code">
-$ ls
-abc.org image1.jpg image2.jpg
-
-$ zip -r abc * 
-  adding: abc.org (deflated 39%)
-  adding: image1.jpg (deflated 2%)
-  adding: image2.jpg (deflated 6%)
-
-$ ls -l
-total 508
--rw-rw-r-- 1 admin admin    451 2012-12-20 17:02 abc.org
--rw-rw-r-- 1 admin admin 250422 2012-12-27 16:30 abc.zip
--rw-rw-r-- 1 admin admin 134964 2012-12-19 20:56 image1.jpg
--rw-rw-r-- 1 admin admin 124945 2012-12-16 12:34 image2.jpg
-</pre>
-</p>
-
-<p align="justify">
-To archive an entire directory, <code>-r</code> attribute is used with the command <code>zip</code>.
-
-<pre class="code">
-$ zip -r test.zip test/ 
-  adding: test/ (stored 0%)
-  adding: test/dir/ (stored 0%)
-  adding: test/dir/abc.org (deflated 39%)
-  adding: test/image2.jpg (deflated 6%)
-  adding: test/image1.jpg (deflated 2%)
-  adding: test/abc.zip (stored 0%)
-  adding: test/abd (deflated 39%)
-  adding: test/abc.org (deflated 39%)
+-rw-rw-r-- 1 johndoe johndoe    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 johndoe johndoe 250422 2012-12-27 16:30 abc.zip
+-rw-rw-r-- 1 johndoe johndoe 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 johndoe johndoe 124945 2012-12-16 12:34 image2.jpg
 </pre>
 </p>
 
@@ -283,10 +242,10 @@ $ zip -r test.zip test/
 <br />
 <br />
 
-Unzip is used to extract the files from the archive.  The syntax =unzip
-[archive name]= is the regular syntax to unzip the files in the current
+Unzip is used to extract the files from the archive.  The syntax <code>unzip
+[archive name]</code> is the regular syntax to unzip the files in the current
 directory.  If you would like to extract the files at a specified file
-location =-d= option should be used followed by the directory path. 
+location <code>-d</code> option should be used followed by the directory path. 
 
 <pre class="code">
 $ ls
@@ -317,13 +276,9 @@ Archive:  test.zip
 $ cd dir/
 $ ls -l
 total 8
--rw-rw-r-- 1 swathy swathy  451 2012-12-28 10:30 abc.org
-drwxrwxr-x 3 swathy swathy 4096 2012-12-28 11:31 test
+-rw-rw-r-- 1 johndoe johndoe  451 2012-12-28 10:30 abc.org
+drwxrwxr-x 3 johndoe johndoe 4096 2012-12-28 11:31 test
 </pre>
-</p>
-
-<p align="justify">
-The archived files have been extracted in the specified directory.
 </p>
 
 <h3>Tar</h3>
@@ -335,9 +290,13 @@ Tar is used to convert the files into an archive.  The syntax is:
 <br />
 <br />
 Tar provides a lot of options. Some of the most common used ones are:
+<br />
 c - used when creating the tar files
+<br />
 v - verbose mode which shows the list of files being archived on the command line
+<br />
 f - indicates that next argument will be the name of new/existing archive file
+<br />
 x - extracts the files from the archive
 
 <pre class="code">
@@ -355,6 +314,7 @@ test/abc.zip
 test/abd
 test/abc.org
 
+$ ls
 test test.tar
 
 $ rm -rf test
@@ -379,14 +339,19 @@ test  test.tar
 By default, tar doesn't provide any compression and decompression
 capabilities.  But, it can use external compression utilities like bzip2
 and gzip.  The options for these utilities are:
+<br />
 j - for compressing and decompressing using bzip2
+<br />
 z - for compressing and decompressing using gzip
+<br />
+<br />
+<b>Note: .tgz is same as .tar.gz</b>
 
 <pre class="code">
 $ ls
 test
 
-$ tar -cjvf test.tar.bz2 *
+$ tar -cjvf test.tar.bz2 test/
 test/
 test/dir/
 test/dir/abc.org
@@ -399,10 +364,10 @@ test/abc.org
 
 $ ls -l
 total 728
-drwxrwxr-x 3 swathy swathy   4096 2012-12-28 14:56 test
--rw-rw-r-- 1 swathy swathy 737525 2012-12-28 15:18 test.tar.bz2
+drwxrwxr-x 3 johndoe johndoe 2012-12-28 14:56 test
+-rw-rw-r-- 1 johndoe johndoe 737525 2012-12-28 15:18 test.tar.bz2
 
-$ tar -czvf test.tar.gz *
+$ tar -czvf test.tar.gz test/
 test/
 test/dir/
 test/dir/abc.org
@@ -415,48 +380,20 @@ test/abc.org
 
 $ ls -l
 total 984
-drwxrwxr-x 3 swathy swathy    4096 2012-12-28 14:56 test
--rw-rw-r-- 1 swathy swathy 737525 2012-12-28 15:18 test.tar.bz2
--rw-rw-r-- 1 swathy swathy 1003263 2012-12-28 15:26 test.tar.gz
+drwxrwxr-x 3 johndoe johndoe    4096 2012-12-28 14:56 test
+-rw-rw-r-- 1 johndoe johndoe 737525 2012-12-28 15:18 test.tar.bz2
+-rw-rw-r-- 1 johndoe johndoe 1003263 2012-12-28 15:26 test.tar.gz
 
 $ cd test/
 $ ls -l
 total 1028
--rw-rw-r-- 1 swathy swathy    451 2012-12-20 17:02 abc.org
--rw-rw-r-- 1 swathy swathy 522240 2012-12-28 14:46 abc.tar
--rw-rw-r-- 1 swathy swathy 250981 2012-12-28 10:31 abc.zip
--rw-rw-r-- 1 swathy swathy    451 2012-12-28 10:30 abd
-drwxrwxr-x 2 swathy swathy   4096 2012-12-28 10:30 dir
--rw-rw-r-- 1 swathy swathy 134964 2012-12-19 20:56 image1.jpg
--rw-rw-r-- 1 swathy swathy 124945 2012-12-16 12:34 image2.jpg
-</pre>
-</p>
-
-<p align="justify">
-<b>Note: .tgz is same as .tar.g</b>
-
-<br />
-<br />
-
-Files can be added to the existing tar archive by using the =-r= option.
-But, this option is not available for the compressed archives. 
-
-<pre class="code">
-$ ls
-test test.tar
-
-$ touch abcd.txt
-$ tar -rvf test.tar abcd.txt
-abcd.txt
-</pre>
-</p>
-
-<p align="justify">
-Similarly, certain files can be deleted from the archives using
-=--delete= option.
-
-<pre class="code">
-$ tar -vf test.tar --delete abcd.org
+-rw-rw-r-- 1 johndoe johndoe    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 johndoe johndoe 522240 2012-12-28 14:46 abc.tar
+-rw-rw-r-- 1 johndoe johndoe 250981 2012-12-28 10:31 abc.zip
+-rw-rw-r-- 1 johndoe johndoe    451 2012-12-28 10:30 abd
+drwxrwxr-x 2 johndoe johndoe   4096 2012-12-28 10:30 dir
+-rw-rw-r-- 1 johndoe johndoe 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 johndoe johndoe 124945 2012-12-16 12:34 image2.jpg
 </pre>
 </p>
 
@@ -464,18 +401,14 @@ $ tar -vf test.tar --delete abcd.org
 
 <p align="justify">
 Gzip is a compression utility which compresses only the files.  To
-decompress using gzip, =-d= option is used.  It replaces the original
-file, compresses it and appends the file name with the extension .gz.
-Gzip utility can also be reiterated over a directory using =-r= option.
-It compresses all the files inside the directory. 
+decompress using gzip, <code>-d</code> option is used.  The command
+deletes the original file and creates a compressed file appending the
+file name with the extension .gz.
 
-<br/>
+<br />
 <br />
 
 <b>This compression can be used along with tar command using the option z.</b>
-
-<br />
-<br />
 
 <pre class="code">
 $ ls
@@ -488,11 +421,6 @@ abcd.org.gz test/
 $ gzip -d abcd.org.gz
 $ls
 abcd.org test/
-
-$ gzip -r test/
-$ cd test
-$ ls
-abc.org.gz  abc.tar.gz  abc.zip.gz  abd.gz  dir/  image1.jpg.gz  image2.jpg.gz
 </pre>
 </p>
 
@@ -500,8 +428,9 @@ abc.org.gz  abc.tar.gz  abc.zip.gz  abd.gz  dir/  image1.jpg.gz  image2.jpg.gz
 
 <p align="justify">
 Gunzip is a decompression utility which can decompress files created by
-gzip, zip and compress.  The =-r= option is used to decompress all the
-files in a directory.  
+gzip, zip and compress. The command decompresses the file, checks for
+the integrity of the uncompressed file and, then, deletes the compressed
+file and stores the original file.
 
 <pre class="code">
 $ ls
@@ -510,11 +439,6 @@ abcd.org.gz  test/
 $ gunzip abcd.org.gz
 $ ls
 abcd.org  test/
-
-$ gunzip -r test/
-$ cd test
-$ ls
-abc.org  abc.tar  abc.zip  abd  dir/  image1.jpg  image2.jpg
 </pre>
 </p>
 
@@ -522,19 +446,22 @@ abc.org  abc.tar  abc.zip  abd  dir/  image1.jpg  image2.jpg
 
 <p align="justify">
 Bzip2 provides a high rate of lossless compression when compared to Gzip
-and Zip.  But, it is slower than either.  It replaces the original file
-with the compressed file by appending the file name with .bz2 file
-extension.  The original files can be retained using =-k= option.  The
-file can be decompressed using the =-d= option.  Since bzip2 doesn't
-archive the files, the command does not work on the directories.
+and Zip.  But, it is slower than either.  The command, like Gzip,
+deletes the original file and creates a compressed file by appending the
+file name with .bz2 file extension.  
+
+<br />
+<br />
+
+The original files can be retained using <code>-k</code> option.  The
+file can be decompressed using the <code>-d</code> option.  Since bzip2
+doesn't archive the files, the command does not work on the
+directories.  <code>-v</code> provides the verbose option.
 
 <br />
 <br />
 
 <b>This compression can be used along with tar command using the option j.</b>
-
-<br />
-<br />
 
 <pre class="code">
 $ ls
@@ -560,13 +487,16 @@ abcd.org abcd.org.bz2 test/
 <p align="justify">
 Bunzip2 is a decompression utility which decompresses only the files
 with extensions .bz2, .bz, .tbz2, .tbz.  In case of any other file name,
-it throws an error. 
+it throws an error.  Like Gunzip, it also decompresses the file, checks
+for the integrity of the decompressed file, deletes the compressed file
+and restores the original file.
 
 <pre class="code">
 $ ls
 abcd.org.bz2  test/
 
 $ bunzip2 abcd.org.bz2
+$ ls
 abcd.org  test/
 </pre>
 </p>
