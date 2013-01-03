@@ -8,33 +8,29 @@
 
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+  </head>
   <body>
-
     <div id="experiment"> <!-- The Experiment Document Container-->
 
       <!-- The lab Header contains the logo and the name of the lab,
 	   usually displayed on the top of the page-->
 
-      <header id="experiment-header">
-	
+      <header id="experiment-header">	
 	<div id="experiment-header-logo" class="logo">
 	  <!-- Enclose the logo image of your lab or write it in 
 	       text-->
 	  <img src="../images/logo.jpg" />
 	</div>
-
 	<div id="experiment-header-heading" class="heading">
 	  <!-- Write the name of your lab and link it to the home 
 	       page of your lab (h1 tag is preferred while writing your 
 	       lab name)-->
 	  <a href="../index.html">Systems and Software Virtual Lab</a>	
 	</div>
-
 	<!-- Add any additional element you want to add to the lab 
 	     header, For example : Help (Enclosing them with suitable 
 	     div is recommended)-->
-
       </header>
 
 
@@ -59,9 +55,9 @@
 	<nav id="experiment-article-navigation" class="default">
           <ul id="experiment-article-navigation-menu">
             <!-- The menu can be dynamically generated to contain 
-		 the headings of your sections or instead write the 
-		 menu items of your choice individually enclosedu in 
-		 <li> tag as shown below-->
+	    the headings of your sections or instead write the 
+	    menu items of your choice individually enclosedu in 
+	    <li> tag as shown below-->
           </ul>
 	</nav>
 
@@ -86,7 +82,7 @@
             </div>
 
             <!-- Write the section content inside a paragraph 
-		 element, You can also include images with <img> tag -->
+	    element, You can also include images with <img> tag -->
             <div id="experiment-article-section-1-content" 
 		 class="content">	
 	      <p>
@@ -152,7 +148,7 @@
 	    
 	    
             <!-- Write the section content inside a paragraph 
-		 element, we can also include images with <img> tag -->
+	    element, we can also include images with <img> tag -->
             <div id="experiment-article-section-2-content" 
 		 class="content">
 	      <!-- Second section of the article-->
@@ -187,7 +183,7 @@
 	    
 	    
             <!-- Write the section content inside a paragraph 
-		 element, we can also include images with <img> tag -->
+	    element, we can also include images with <img> tag -->
             <div id="experiment-article-section-3-content" 
 		 class="content">
 	      <h3>Starting and Exiting vim</h3>
@@ -198,17 +194,51 @@
 		If helloworld.txt exists at the present
 		working directory, vim will open it.  If
 		it doesn't exist, vim will create the file
-		once you save it using the save command below.
+		once you use the save command below.
 	      </p>
 	      <p>
 		To exit vim, go to the Normal mode (press the 'Esc' key),
-		press the : key (Shift + ;) and type one of the following:
-		<br />q (if you haven't made any change)
-		<br />q! (if you have made changes, but don't want to save it)
-		<br />wq (if you have made changes and want to save it)
+		press the : key (Shift + ;) and type one of
+		the following:
+		<table>
+		  <tr>
+		    <th>
+		      command
+		    </th>
+		    <th>
+		      description
+		    </th>
+		  </tr>
+		  <tr>
+		    <td>
+		      q
+		    </td>
+		    <td>
+		      if you haven't made any change
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      q!
+		    </td>
+		    <td>
+		      if you have made changes, but don't want to save it
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      wq
+		    </td>
+		    <td>
+		      if you have made changes and want to save it
+		    </td>
+		  </tr>
+		</table>
+		<br />
 	      </p>
 	      <p>
-		Please note that the vim commands are case-sensitive, hence 'w' has different meaning than 'W'.
+		Please note that the vim commands are
+		case-sensitive, hence 'q' and 'Q' have different meanings.
 	      </p>
 	      <pre class="code">:wq</pre>
 	      <h3>Modes in vim</h3>
@@ -234,7 +264,7 @@
 	      </p>
 	      <pre class="code">-- INSERT --</pre>
 	      <p>
-		VISUAL Mode: This is a less-used mode.  It allows selecting
+		VISUAL Mode: This mode allows selecting
 		a section of text and applying vim commands on the
 		selection such as cut, copy.  Press 'v' to go
 		to visual mode.  Press 'Esc' key to go back to
@@ -246,14 +276,15 @@
 	      </p>
 	      <pre class="code">-- VISUAL --</pre>
 	      <p>
-		REPLACE Mode:  This is also a less-used mode.  It allows you
+		REPLACE Mode:  This mode allows you
 		to replace current text in the file with anythin you type.
 		Press 'R' (Shift + r) to enter the REPLACE mode. Press 'Esc'
 		key to go back to normal mode.
 	      </p>
 	      <p>
-		When in replace mode, you will see the word "REPLACE" near the bottom
-		of the editor window, as below.
+		When in replace mode, you will see the word
+		"REPLACE" near the bottom of the editor
+		window, as below.
 	      </p>
 	      <pre class="code">-- REPLACE --</pre>
 	      <h3>Typing Text and Saving</h3>
@@ -270,7 +301,7 @@
 		changes, type :w in normal mode.  
 	      </p>
 	      <p>
-		Below is a message you might see if you save a
+		Below is a message you will see if you save a
 		new file "helloworld.txt".  The message says
 		that this file is a "New" file with 1 line
 		(1L) containing 15 characters (15C) in it.
@@ -559,8 +590,8 @@
 	      <pre class="code">replace with enter (y/n/a/q/l/^E/^Y)?</pre>
 	      <h3>Set Commands</h3>
 	      <p>You might find these commands helpful in
-	      some scenarios.  Go to Normal mode by
-	      pressing 'Esc' and try these commands.</p>
+		some scenarios.  Go to Normal mode by
+		pressing 'Esc' and try these commands.</p>
 	      <table>
 		<tr>
 		  <th>
@@ -611,7 +642,7 @@
 		.vimrc file in your home directory.  To
 		learn more about files, go
 		through <a href="../exp1/index.html">File
-		Management</a> experiment.
+		  Management</a> experiment.
 	      </p>
 	      <br />
 	      <p>
@@ -670,179 +701,247 @@
 
 		  <form action="javascript:signupattempt(document.getElementById('signupform'));" id="signupform">
 
-		    <table><tr>
+		    <table>
+		      <tr>
+			<td>Your name</td>
+			<td> <input type="text"
+				    name="yourname" value=""
+				    id="yourname"/></td>
+		      </tr>
+		      <tr>
+			<td>Preferred username</td>
+			<td> <input type="text"
+				    name="preferredusername" value=""
+				    id="preferredusername"/></td>
+		      </tr>
+		      <tr>
+			<td>Password</td> <td><input type="password"
+						     name="preferredpassword"
+						     id="preferredpassword"/></td>
+		      </tr>
+		      <tr>
+			<td>Re-enter Password</td> 
+			<td><input type="password"
+				   name="repreferredpassword"
+				   id="repreferredpassword"/></td>
+		      </tr>
+		      <tr>
+			<td>Email</td> 
+			<td><input type="text" name="email"
+				   id="email"/></td>
+		      </tr>
+		      <tr>
+			<td>Re-enter Email</td> 
+			<td><input type="text"
+				   name="reemail" id="reemail"/></td>
+		      </tr>
+		      <tr>
+		      </tr>
+		      <tr>
+			<td colspan=2>Enter the black
+			  characters present in the below
+			  image</td>
+		      </tr>
+		      <tr>
+			<td><img src="php/captcha.php"
+				 id="captchaimg"/></td><td><input type="text"
+								  name="captcha" id="captcha"/></td>
+		      </tr>
+		      <tr>
+			<td></td>
+			<td><input type="submit" value="Sign
+							up" /></td>
+		      </tr>
+		    </table>
+		  </form>
+		</div>
 
-			<td>Your name</td><td> <input type="text" name="yourname" value="" id="yourname"/></td></tr>
+		<div id="logout">
+		  <a href="#" onclick="logout();">Logout</a>
+		</div>
 
-		      <td>Preferred username</td><td> <input type="text" name="preferredusername" value="" id="preferredusername"/></td></tr>
+		<pre id="terminal" class="code"><div id="input" class="inpcls"><form name='f' class='cmdform' action='' onsubmit="return false;" id="cmdformid"><table class="inputtable" id="inputtableid"><tr><td><div id='prompt' class='less'>user@pascal:~/$</div></td><td class="inputtd"><input id='inputfield' name='q' type='text' class='cmdline' autocomplete="off" value="" onkeypress="showHint(event,this.value)" /></td></tr></table></form><div id="output" class="outcls"></div></div></pre>
 
-<tr><td>Password</td> <td><input type="password" name="preferredpassword" id="preferredpassword"/></td></tr>
+		<pre class="instr" id="instr">
+		  <div id="instruction" title="0">
+		    The shell above supports a few basic shell commands. Play along to get some hands-on experience of the interface.
 
-<tr><td>Re-enter Password</td> <td><input type="password" name="repreferredpassword" id="repreferredpassword"/></td></tr>
+		    Now that we have learnt shell commands to do basic process control, try them here. We have an exercise for you.
 
-<tr><td>Email</td> <td><input type="text" name="email" id="email"/></td></tr>
-
-<tr><td>Re-enter Email</td> <td><input type="text" name="reemail" id="reemail"/></td></tr>
-
-<tr></tr>
-
-<tr><td colspan=2>Enter the black characters present in the below image</td></tr>
-
-<tr><td><img src="php/captcha.php" id="captchaimg"/></td><td><input type="text" name="captcha" id="captcha"/></td></tr>
-
-<tr><td></td><td><input type="submit" value="Sign up" /></td></tr>
-
-</table>
-
-</form>
-
-</div>
-
-<div id="logout">
-
-  <a href="#" onclick="logout();">Logout</a>
-
-</div>
-
-<pre id="terminal" class="code"><div id="input" class="inpcls"><form name='f' class='cmdform' action='' onsubmit="return false;" id="cmdformid"><table class="inputtable" id="inputtableid"><tr><td><div id='prompt' class='less'>user@pascal:~/$</div></td><td class="inputtd"><input id='inputfield' name='q' type='text' class='cmdline' autocomplete="off" value="" onkeypress="showHint(event,this.value)" /></td></tr></table></form><div id="output" class="outcls"></div></div></pre>
-
-<pre class="instr" id="instr">
-
-  <div id="instruction" title="0">
-
-    The shell above supports a few basic shell commands. Play along to get some hands-on experience of the interface.
-
-    Now that we have learnt shell commands to do basic process control, try them here. We have an exercise for you.
-
-    When you are ready to perform the exercise, which is a set of 5 tasks, enter the command "start".
-  </div>
-
-  try: start,next,prev,clear,logout.
-
-</pre>
-
-
-<p>
-  Note: The current implementation doesn't support creating processes and changing process priorities.</p>
-
-</p>
-</div>
-
-</section>
-
-
-<section id="experiment-article-section-6">
-  
-  <div id="experiment-article-section-6-icon" 
-       class="icon">
-    <!-- Enclose the icon image of your lab.-->
-    <img src="../images/quizzes.jpg" />
-  </div>
-
-  <div id="experiment-article-section-6-heading" 
-       class="heading">
-    Quiz
-  </div>
-
-  <div id="experiment-article-section-6-content" 
-       class="content">
-    
-    <p><ul>
-	<li>A low nice value indicates a lower priority for a process - true/false ?</li>
-	<li>Find out for yourself the difference between ps -ef and ps -aux</li>
-	<li>When a linux system boots, which is the first process to start and who is the process' owner ?</li>
-	<li>'Renice' is used to change the priority of the process - t/f ?</li>
-	<li>What happens when ctrl+z is used when a process is running?</li>
-
-    </p>
-
-  </div>
-
-</section>
+		    When you are ready to perform the exercise, which is a set of 5 tasks, enter the command "start".
+		  </div>
+		  try: start,next,prev,clear,logout.
+		</pre>
 
 
-<section id="experiment-article-section-8">
-  
-  <div id="experiment-article-section-8-icon" 
-       class="icon">
-    <!-- Enclose the icon image of your lab.-->
-    <img src="../images/readings.jpg" />
-  </div>
+	      <p>
+		Note: The current implementation doesn't support creating processes and changing process priorities.</p>
+	      </p>
+	    </div>
 
-  <div id="experiment-article-section-8-heading" 
-       class="heading">
-    Further Readings
-  </div>
-
-  <div id="experiment-article-section-8-content" 
-       class="content">
-    
-    <ul>
-      <li> 
-	<a href="http://linux.about.com/od/nwb_guide/a/gdenwb01t66.htm" >http://linux.about.com/od/nwb_guide/a/gdenwb01t66.htm</a>
-      </li>
-      <li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section13.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section13.html</a></li>
-      <li><a href="http://www.devdaily.com/unix/edu/IntroToUnix/node9.shtml">http://www.devdaily.com/unix/edu/IntroToUnix/node9.shtml</a></li>
-      <li><a href="http://linuxfrombeginning.wordpress.com/2008/09/29/linux-command-13-jobs-bg-fg-top/">http://linuxfrombeginning.wordpress.com/2008/09/29/linux-command-13-jobs-bg-fg-top/</a></li>
-      <li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?ps">ps Man Page</a></li>
-    </ul>
-  </div>
-
-</section>
-
-<section id="experiment-article-section-9">
-
-  <div id="experiment-article-section-9-icon" 
-       class="icon">
-    <!-- Enclose the icon image of your lab.-->
-    <img src="../images/readings.jpg" />
-  </div>
-
-  <div id="experiment-article-section-9-heading" 
-       class="heading">
-
-    Feedback
-  </div>
-
-  <div id="experiment-article-section-9-content" 
-       class="content">
-    Please provide us feedback <a href="http://virtual-labs.ac.in/feedback/">here</a>
-  </div>
-
-</section>
+	  </section>
 
 
+	  <section id="experiment-article-section-6">
+	    
+	    <div id="experiment-article-section-6-icon" 
+		 class="icon">
+	      <!-- Enclose the icon image of your lab.-->
+	      <img src="../images/quizzes.jpg" />
+	    </div>
+
+	    <div id="experiment-article-section-6-heading" 
+		 class="heading">
+	      Quiz
+	    </div>
+	    
+	    <div id="experiment-article-section-6-content" 
+		 class="content">
+	      <p>
+		<ol>
+		  <li>Which of the following is not a mode
+		  in vim?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>Normal</li>
+		      <li style="diplay:inline">Escape</li>
+		      <li>Visual</li>
+		      <li>Replace</li>
+		    </ol>
+		  </li>
+		  <li>How would you search for "today" in
+		  the current file using vim?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>:today</li>
+		      <li style="diplay:inline">/today</li>
+		      <li>;today</li>
+		      <li>?today</li>
+		    </ol>
+		  </li>
+		  <li>How would you replace "old" with "new"
+		  in the whole document?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>:%s/old/new/g</li>
+		      <li style="diplay:inline">:%s/new/old/g</li>
+		      <li>:%s/old/new/</li>
+		      <li>:%s/new/old</li>
+		    </ol>
+		  </li>
+		  <li>How do you quit vim without saving the
+		  changes you have made to the file?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>:q</li>
+		      <li>:wq</li>
+		      <li>:q!</li>
+		      <li>:qa</li>
+		    </ol>
+		  </li>
+		  <li>Which of these is not a right way to
+		  delete 10 lines?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>10dd</li>
+		      <li>d10d</li>
+		      <li>dd10</li>
+		    </ol>
+		  </li>
+		  <li>Which of these is not a right way to
+		  set line numbering?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>:set nu</li>
+		      <li>:set number</li>
+		      <li>:set nonu</li>
+		      <li>write "set nu" in the ".vimrc" file</li>
+		    </ol>
+		  </li>
+		</ol>
+	      </p>
+	    </div>
+	  </section>
 
 
-</div>
+	  <section id="experiment-article-section-8">
+	    <div id="experiment-article-section-8-icon" 
+		 class="icon">
+	      <!-- Enclose the icon image of your lab.-->
+	      <img src="../images/readings.jpg" />
+	    </div>
+
+	    <div id="experiment-article-section-8-heading" 
+		 class="heading">
+	      Further Readings
+	    </div>
+
+	    <div id="experiment-article-section-8-content" 
+		 class="content">
+	      <ul>
+		<li>
+		  <a href="http://www.moolenaar.net/habits.html">Seven
+		  habits of effective text editing</a>
+		</li>
+		<li>
+		  To learn more about vim,
+		  visit <a href="http://www.vim.org">
+		  http://www.vim.org </a> 
+		</li>
+		<li>
+		  <a href="http://en.wikipedia.org/wiki/Vim_%28text_editor%29">
+		    Wikipedia article on vim
+		  </a>
+		</li>
+		<li>
+		  A very detailed Vim user manual is
+		  available at 
+		  <a href="http://vimdoc.sourceforge.net/">
+		    http://vimdoc.sourceforge.net/
+		  </a>.  You might want to use it for reference.
+		</li>
+	      </ul>
+	    </div>
+	  </section>
+
+	  <section id="experiment-article-section-9">
+	    <div id="experiment-article-section-9-icon" 
+		 class="icon">
+	      <!-- Enclose the icon image of your lab.-->
+	      <img src="../images/readings.jpg" />
+	    </div>
+	    <div id="experiment-article-section-9-heading" 
+		 class="heading">
+	      Feedback
+	    </div>
+	    <div id="experiment-article-section-9-content" 
+		 class="content">
+	      Please provide your feedback <a href="http://virtual-labs.ac.in/feedback/">here</a>
+	    </div>
+	  </section>
+
+	</div>
 
 
-<!-- An article can have a sidebar that contain related 
-     links and additional material (however it is kept optional 
-     at this moment) -->
-<aside id="lab-article-sidebar" class="default">
-  <!-- put the content that you want to appear in the 
-       sidebar -->	
-</aside>
+	<!-- An article can have a sidebar that contain related 
+	     links and additional material (however it is kept optional 
+	     at this moment) -->
+	<aside id="lab-article-sidebar" class="default">
+	  <!-- put the content that you want to appear in the 
+	       sidebar -->	
+	</aside>
 
 
-<!-- Article footer can display related content and 
-     additional links -->						
-<footer id="lab-article-footer" class="default">
-  <!-- Put the content that you want to appear here -->
-</footer>
+	<!-- Article footer can display related content and 
+	     additional links -->						
+	<footer id="lab-article-footer" class="default">
+	  <!-- Put the content that you want to appear here -->
+	</footer>
 
-</article>
+      </article>
 
 
-<!-- Links to other labs, about us page can be kept the lab 
-     footer-->
-<footer id="lab-footer" class="footer">
-  <!-- Put the content here-->
-  <a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
-</footer>
+      <!-- Links to other labs, about us page can be kept the lab 
+	   footer-->
+      <footer id="lab-footer" class="footer">
+	<!-- Put the content here-->
+	<a href="http://virtual-labs.ac.in/nmeict/" >Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a>
+      </footer>
 
-</div>		
-
-</body>
+    </div>		
+  </body>
 </html>
