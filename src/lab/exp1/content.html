@@ -138,19 +138,25 @@ edit -->
 	class="content">
         <h3>1. The Linux File System</h3>
         <p align="justify">The file system is a method of consistently
-        naming objects and organizing them in an orderly manner.  The
-        Linux file system is a directory tree that is consistent with
-        each Linux distribution.  This directory tree begins with the
-        "/" (root) and then expands under that position like an upside
-        down tree. Each directory under "/" has a specific purpose
-        whether it is to store system files, constantly changing log
-        files, device drivers or files created by users on the
-        system.</p>
+        naming objects and organizing them in an orderly manner. Some
+        of the operating system like windows organize the file system
+        in drives.  The Linux file system is a directory tree that is
+        consistent with each Linux distribution.  This directory tree
+        begins with the "/" (root) and then expands under that
+        position like an upside down tree. Each directory under "/"
+        has a specific purpose whether it is to store system files,
+        constantly changing log files, device drivers or files created
+        by users on the system.</p>
+
         <p align="justify"> A home directory is a file system
-        directory on a multi-user operating system containing files
-        for a given user of the system.  A user's home directory is
-        intended to contain that user's files; including text
-        documents, music, pictures or videos, etc.  </p>
+        sub-directory on a multi-user operating system containing
+        files for a given user of the system.  A user's home directory
+        is intended to contain that user's files; including text
+        documents, music, pictures or videos, etc. /home/johndoe
+        refers to the home directory of the user johndoe, ~ is
+        equivalent to the /home/johndoe which is the current users
+        home directory </p>
+
 	<p align="justify"> The file system also contains a method of
         securing files, directories and objects in the file
         system. This is represented by the file permissions that are
@@ -204,13 +210,14 @@ edit -->
 	directory.</p>
         <pre class='code'>johndoe@laptop:~/Documents$ ls my_project
 vlabs_ui</pre>
-	<p>Here in the above example, the <i>relative path</i> of the
-	directory has been used.</p>
+	<p align="justify">Here in the above example, the <i>relative
+	path</i> of the directory has been used.</p>
 
 	<pre class="code">johndoe@laptop:~/Documents$ ls /home/johndoe/Documents/my_project/
  vlabs_ui</pre>
-	<p>Here in the above example, the <i>absolute path</i> of the directory has been
-	used. As you can see, the two paths are equivalent.</p>
+	<p align="justify">Here in the above example, the <i>absolute
+	path</i> of the directory has been used. As you can see, the
+	two paths are equivalent.</p>
 
 	<p> The most used flags for the <b>ls</b> command are l,
 	a. </p>
@@ -228,19 +235,19 @@ total 4
 -rw-r--r--  1 johndoe johndoe 0    2010-08-20 22:22 example.txt
 -rw-r--r--  1 johndoe johndoe 0    2010-08-20 22:22 all_about_console.txt
 drwxr-xr-x  2 johndoe johndoe 4096 2010-08-02 14:03 my_project</pre>
-	<p>Here, in addition to the name of each file, the file type,
+	<p align="justify">Here, in addition to the name of each file, the file type,
 	  file mode bits, number of hard links, owner name, group name, size,
 	  and timestamp, normally the modification time are printed. </p>
-	<p>The file mode bits contains details regarding the
-	  properties of the file. It has 10 fields. The first field
-	  refers to the file type. 'd' means the file is a directory,
-	  'l' means it is a link, '-' means it is a regular file. The
-	  next nine fields are the permissions of the owner, group and
-	  other, respectively. 'r', 'w' and 'x' in a field means
-	  'read', 'write' and 'execute' permissions, respectively. If
-	  a '-' is printed in a field, it means that particular
-	  permission is not present for the corresponding user, group
-	  or other.  For detailed explanation go
+	<p align="justify">The file mode bits contains details
+	  regarding the properties of the file. It has 10 fields. The
+	  first field refers to the file type. 'd' means the file is a
+	  directory, 'l' means it is a link, '-' means it is a regular
+	  file. The next nine fields are the permissions of the owner,
+	  group and other, respectively. 'r', 'w' and 'x' in a field
+	  means 'read', 'write' and 'execute' permissions,
+	  respectively. If a '-' is printed in a field, it means that
+	  particular permission is not present for the corresponding
+	  user, group or other.  For detailed explanation go
 	  through <a href="../exp4/index.html">File
 	  Permissions</a> </p> </p?>
 	
@@ -284,12 +291,10 @@ q.</p>
 	<p><b>cat</b> command displays the contents of the file passed as
 	argument. If multiple files are passed, it prints the
 	concatenated content of all the files.</p>
-       <pre class="code">
-       johndoe@laptop:~/Documents$ cat virtual-lab.txt
-       Welcome to System and Software Lab!
-       </pre> 
+       <pre class="code">johndoe@laptop:~/Documents$ cat virtual-lab.txt
+Welcome to System and Software Lab!</pre> 
        <p>In the above example cat displays content of the file
-       virtual-lab.txt. </p>
+       virtual-lab.txt.</p>
 
        <p>Type the <b>clear</b> command to clear your screen.</p>
 
@@ -302,28 +307,22 @@ q.</p>
 	  it will navigate to the previous working directory. If the
 	  paramter '~' is given it will navigate to the home
 	  directory.</p>
-	<pre class="code">
-	  johndoe@laptop:~/Documents$ cd my_project
+	<pre class="code">johndoe@laptop:~/Documents$ cd my_project
+johndoe@laptop:~/Documents/my_project$ pwd
+/home/johndoe/Documents/my_project
 
-          johndoe@laptop:~/Documents/my_project$ pwd
-          /home/johndoe/Documents/my_project
+johndoe@laptop:~/Documents/my_project$ cd ..
+/home/johndoe/Documents
 
-	  johndoe@laptop:~/Documents/my_project$ cd ..
-	  /home/johndoe/Documents
+johndoe@laptop:~Documents/my_project$ cd ~
 
-	  johndoe@laptop:~/Documents$ cd -
+johndoe@laptop:~$ pwd
+/home/johndoe
 
-	  johndoe@laptop:~Documents/my_project$ cd ~
+johndoe@laptop:~$ cd ~james
 
-	  johndoe@laptop:~$ pwd
-	  /home/johndoe
-
-	  johndoe@laptop:~$ cd ~james
-
-	  johndoe@laptop:/home/james$ pwd
-	  /home/james
-
-	</pre>
+johndoe@laptop:/home/james$ pwd
+/home/james</pre>
 
 	<h3>5. Creating files and folders:</h3>
 
@@ -336,8 +335,7 @@ q.</p>
 	  johndoe@laptop:~/Documents$ touch newfile.txt
 
 	  johndoe@laptop:~/Documents$ ls 
-	  all_about_console.txt  example.txt my_project newfile.txt
-	</pre>
+	  all_about_console.txt  example.txt my_project newfile.txt</pre>
 	<p>An empty file with the specified name will be created.  If
 	  a file with that name already exists on disk, it will remain
 	  there and moment of last update is changed in the properties
@@ -347,11 +345,9 @@ q.</p>
         <p>The <b>mkdir</b> command takes one or more parameters and
         creates the folders corresponding to the parameters.
 	</p>
-	<pre class="code">
-	  johndoe@laptop:~/Documents$ mkdir new_folder
-	  johndoe@laptop:~/Documents$ ls 
-	  all_about_console.txt  example.txt  my_project newfile.txt new_folder
-	</pre>
+	<pre class="code">johndoe@laptop:~/Documents$ mkdir new_folder
+johndoe@laptop:~/Documents$ ls 
+all_about_console.txt  example.txt  my_project newfile.txt new_folder</pre>
 
 	<h3>5. Copying, Moving and removing files and folders:</h3>
 
@@ -391,23 +387,20 @@ q.</p>
       <p><font size="3"><b>rm command</b></font></p>
       <p><b>rm</b> command removes files. It can be used with
       the <b>-r</b> option to remove directories.</p>
-      <pre class="code">
-	johndoe@laptop:~/Documents$ ls 
-	all_about_console.txt  example.txt  my_project  newfile.txt  new_folder 
+      <pre class="code">johndoe@laptop:~/Documents$ ls 
+all_about_console.txt  example.txt  my_project  newfile.txt  new_folder 
 
-	johndoe@laptop:~/Documents$ rm example.txt
+johndoe@laptop:~/Documents$ rm example.txt
 
-	johndoe@laptop:~/Documents$ ls
-	all_about_console.txt  my_project  newfile.txt new_folder
-      </pre>
+johndoe@laptop:~/Documents$ ls
+all_about_console.txt  my_project  newfile.txt new_folder</pre>
 
      <p><font size="3"><b>rmdir command</b></font></p>
      <p><b>rmdir</b> command removes empty directories.</p>
-     <pre class="code">
-      johndoe@laptop:~/Documents$ rmdir new_folder
+     <pre class="code">johndoe@laptop:~/Documents$ rmdir new_folder
 
-      johndoe@laptop:~/Documents$ ls
-      all_about_console.txt  my_project  newfile.txt
+johndoe@laptop:~/Documents$ ls
+all_about_console.txt  my_project  newfile.txt
      </pre>
 
 <p>The commands <b>cp</b>, <b>mv</b>, and <b>rm</b> have the following commonly used parameters:</p>
