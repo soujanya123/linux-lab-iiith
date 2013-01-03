@@ -269,7 +269,7 @@ edit -->
 	      as shown in Figure 3.
 	    </p>
 
-	    -	<p style="text-align:center">
+    	    <p style="text-align:center">
 	      <img src="media/all_teachers.svg" width="720px"/><br/>
 	      <span style="font-weight:bold">Figure
 		2: </span> Teacher users for Example 1.
@@ -413,7 +413,7 @@ edit -->
 	    </p>
 
 	    <dl>
-	      <dt>read</dt>
+	      <dt>read (r)</dt>
 	      <dd>
 		<p>
 		  Read permissions on a regular file (not a
@@ -432,7 +432,7 @@ edit -->
 		</p>
 	      </dd>
 
-	      <dt>write</dt>
+	      <dt>write (w)</dt>
 	      <dd>
 		<p>
 		  Write permissions on a regular file (not a
@@ -448,7 +448,7 @@ edit -->
 	      </dd>
 
 
-	      <dt>execute</dt>
+	      <dt>execute (x)</dt>
 	      <dd>
 		<p>
 		  Execute permissions on a regular file (not a
@@ -475,8 +475,8 @@ edit -->
 		  is not expected from beginner users right
 		  away.  Hence do not worry if meaning of
 		  execute permissions is not very clear.  It
-		  requires some time to really understand what
-		  execute permissions really mean. Execute
+		  requires some time to understand what
+		  execute permissions mean. Execute
 		  permissions are denoted by alphabet 'x' or
 		  number '1' where ever required.
 		</p>
@@ -506,7 +506,7 @@ edit -->
 	    </p>
 
 	    <dl>
-	      <dt>read</dt>
+	      <dt>read (r)</dt>
 	      <dd>
 		<p>
 		  Read permissions on a directory (not a regular
@@ -523,7 +523,7 @@ edit -->
 		</p>
 	      </dd>
 
-	      <dt>write</dt>
+	      <dt>write (w)</dt>
 	      <dd>
 		<p>
 		  Write permissions on a directory (not a
@@ -542,7 +542,7 @@ edit -->
 	      </dd>
 
 
-	      <dt>execute</dt>
+	      <dt>execute (x)</dt>
 	      <dd>
 		<p>
 		  Execute permissions on a directory (not a
@@ -582,14 +582,14 @@ edit -->
 	      command is shown below in Shell Output 1:
 	    </p>
 
-	    <pre>
-testuser1@sshd1:~/test$ ls -l     
+	    <pre class="code">
+aditi@mylaptop:~/test$ ls -l     
 total 8                                                                                      
-drwxr-xr-x 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
-drwxr-xr-x 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
--rw-r--r-- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
--rw-r--r-- 1 testuser1 vlusers    0 Jan  1 09:15 file2    
-testuser1@sshd1:~/test$
+drwxr-xr-x 2 aditi students 4096 Jan  1 09:15 dir1                                        
+drwxr-xr-x 2 aditi students 4096 Jan  1 09:15 dir2                                        
+-rw-r--r-- 1 aditi students    0 Jan  1 09:15 file1                                       
+-rw-r--r-- 1 aditi students    0 Jan  1 09:15 file2    
+aditi@mylaptop:~/test$
 	    </pre>
 	    <p style="text-align:center">
 	      <span style="font-weight:bold">Shell Output
@@ -944,21 +944,21 @@ Syntax: chmod {[ugoa]}[+-=][rwx] [&lt;file_name&gt; ...]
 		not already present.  This is demonstrated
 		in Shell Output 2 below.
 
-		<pre>
-testuser1@sshd1:~/test$ ls -l                                                                
+		<pre class="code">
+aditi@mylaptop:~/test$ ls -l                                                                
 total 8                                                                                      
-d--------- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
-d--x--x--x 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
--rwx------ 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
--rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
-testuser1@sshd1:~/test$ chmod a+x dir1 dir2 file1 file2                                      
-testuser1@sshd1:~/test$ ls -l                                                                
+d--------- 2 aditi students 4096 Jan  1 09:15 dir1                                        
+d--x--x--x 2 aditi students 4096 Jan  1 09:15 dir2                                        
+-rwx------ 1 aditi students    0 Jan  1 09:15 file1                                       
+-rwxr-x--- 1 aditi students    0 Jan  1 09:15 file2                                       
+aditi@mylaptop:~/test$ chmod a+x dir1 dir2 file1 file2                                      
+aditi@mylaptop:~/test$ ls -l                                                                
 total 8                                                                                      
-d--x--x--x 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
-d--x--x--x 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
--rwx--x--x 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
--rwxr-x--x 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
-testuser1@sshd1:~/test$  
+d--x--x--x 2 aditi students 4096 Jan  1 09:15 dir1                                        
+d--x--x--x 2 aditi students 4096 Jan  1 09:15 dir2                                        
+-rwx--x--x 1 aditi students    0 Jan  1 09:15 file1                                       
+-rwxr-x--x 1 aditi students    0 Jan  1 09:15 file2                                       
+aditi@mylaptop:~/test$  
 		</pre>
 		<p style="text-align:center">
 		  <span style="font-weight:bold">Shell Output
@@ -1009,37 +1009,37 @@ testuser1@sshd1:~/test$
 		chmod command are shown in Shell Output 3
 		below.
 
-		<pre>
-testuser1@sshd1:~/test$ chmod a= dir1                                                        
-testuser1@sshd1:~/test$ chmod a=rwx dir2                                                     
-testuser1@sshd1:~/test$ chmod u=rwx file1                                                    
-testuser1@sshd1:~/test$ chmod g=rx file1                                                     
-testuser1@sshd1:~/test$ chmod o= file1                                                       
-testuser1@sshd1:~/test$ chmod ugo=rx file2                                                   
-testuser1@sshd1:~/test$ ls -l                                                                
+		<pre class="code">
+aditi@mylaptop:~/test$ chmod a= dir1                                                        
+aditi@mylaptop:~/test$ chmod a=rwx dir2                                                     
+aditi@mylaptop:~/test$ chmod u=rwx file1                                                    
+aditi@mylaptop:~/test$ chmod g=rx file1                                                     
+aditi@mylaptop:~/test$ chmod o= file1                                                       
+aditi@mylaptop:~/test$ chmod ugo=rx file2                                                   
+aditi@mylaptop:~/test$ ls -l                                                                
 total 8                                                                                      
-d--------- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
-drwxrwxrwx 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
--rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
--r-xr-xr-x 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
-testuser1@sshd1:~/test$ chmod u-rx dir2                                                      
-testuser1@sshd1:~/test$ chmod go-w dir2                                                      
-testuser1@sshd1:~/test$ chmod o=r file2                                                      
-testuser1@sshd1:~/test$ ls -l                                                                
+d--------- 2 aditi students 4096 Jan  1 09:15 dir1                                        
+drwxrwxrwx 2 aditi students 4096 Jan  1 09:15 dir2                                        
+-rwxr-x--- 1 aditi students    0 Jan  1 09:15 file1                                       
+-r-xr-xr-x 1 aditi students    0 Jan  1 09:15 file2                                       
+aditi@mylaptop:~/test$ chmod u-rx dir2                                                      
+aditi@mylaptop:~/test$ chmod go-w dir2                                                      
+aditi@mylaptop:~/test$ chmod o=r file2                                                      
+aditi@mylaptop:~/test$ ls -l                                                                
 total 8                                                                                      
-d--------- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
-d-w-r-xr-x 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
--rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
--r-xr-xr-- 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
-testuser1@sshd1:~/test$ chmod +rx dir1                                                       
-testuser1@sshd1:~/test$ chmod -x dir2                                                        
-testuser1@sshd1:~/test$ ls -l                                                                
+d--------- 2 aditi students 4096 Jan  1 09:15 dir1                                        
+d-w-r-xr-x 2 aditi students 4096 Jan  1 09:15 dir2                                        
+-rwxr-x--- 1 aditi students    0 Jan  1 09:15 file1                                       
+-r-xr-xr-- 1 aditi students    0 Jan  1 09:15 file2                                       
+aditi@mylaptop:~/test$ chmod +rx dir1                                                       
+aditi@mylaptop:~/test$ chmod -x dir2                                                        
+aditi@mylaptop:~/test$ ls -l                                                                
 total 8                                                                                      
-dr-xr-xr-x 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
-d-w-r--r-- 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
--rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
--r-xr-xr-- 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
-testuser1@sshd1:~/test$
+dr-xr-xr-x 2 aditi students 4096 Jan  1 09:15 dir1                                        
+d-w-r--r-- 2 aditi students 4096 Jan  1 09:15 dir2                                        
+-rwxr-x--- 1 aditi students    0 Jan  1 09:15 file1                                       
+-r-xr-xr-- 1 aditi students    0 Jan  1 09:15 file2                                       
+aditi@mylaptop:~/test$
 		</pre>
 		<p style="text-align:center">
 		  <span style="font-weight:bold">Shell Output
@@ -1169,28 +1169,28 @@ testuser1@sshd1:~/test$
 	    </div>
 
 
-	    <pre>
-testuser1@sshd1:~/test$ chmod 000 dir1                                                       
-testuser1@sshd1:~/test$ chmod 777 dir2                                                       
-testuser1@sshd1:~/test$ chmod 750 file1                                                      
-testuser1@sshd1:~/test$ chmod 456 file2                                                      
-testuser1@sshd1:~/test$ ls -l                                                                
+	    <pre class="code">
+aditi@mylaptop:~/test$ chmod 000 dir1                                                       
+aditi@mylaptop:~/test$ chmod 777 dir2                                                       
+aditi@mylaptop:~/test$ chmod 750 file1                                                      
+aditi@mylaptop:~/test$ chmod 456 file2                                                      
+aditi@mylaptop:~/test$ ls -l                                                                
 total 8                                                                                      
-d--------- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
-drwxrwxrwx 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
--rwxr-x--- 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
--r--r-xrw- 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
-testuser1@sshd1:~/test$ chmod 666 dir1                                                       
-testuser1@sshd1:~/test$ chmod 553 dir2                                                       
-testuser1@sshd1:~/test$ chmod 701 file1                                                      
-testuser1@sshd1:~/test$ chmod 751 file2                                                      
-testuser1@sshd1:~/test$ ls -l                                                                
+d--------- 2 aditi students 4096 Jan  1 09:15 dir1                                        
+drwxrwxrwx 2 aditi students 4096 Jan  1 09:15 dir2                                        
+-rwxr-x--- 1 aditi students    0 Jan  1 09:15 file1                                       
+-r--r-xrw- 1 aditi students    0 Jan  1 09:15 file2                                       
+aditi@mylaptop:~/test$ chmod 666 dir1                                                       
+aditi@mylaptop:~/test$ chmod 553 dir2                                                       
+aditi@mylaptop:~/test$ chmod 701 file1                                                      
+aditi@mylaptop:~/test$ chmod 751 file2                                                      
+aditi@mylaptop:~/test$ ls -l                                                                
 total 8                                                                                      
-drw-rw-rw- 2 testuser1 vlusers 4096 Jan  1 09:15 dir1                                        
-dr-xr-x-wx 2 testuser1 vlusers 4096 Jan  1 09:15 dir2                                        
--rwx-----x 1 testuser1 vlusers    0 Jan  1 09:15 file1                                       
--rwxr-x--x 1 testuser1 vlusers    0 Jan  1 09:15 file2                                       
-testuser1@sshd1:~/test$
+drw-rw-rw- 2 aditi students 4096 Jan  1 09:15 dir1                                        
+dr-xr-x-wx 2 aditi students 4096 Jan  1 09:15 dir2                                        
+-rwx-----x 1 aditi students    0 Jan  1 09:15 file1                                       
+-rwxr-x--x 1 aditi students    0 Jan  1 09:15 file2                                       
+aditi@mylaptop:~/test$
 	    </pre>
 	    <p style="text-align:center">
 	      <span style="font-weight:bold">Shell Output
