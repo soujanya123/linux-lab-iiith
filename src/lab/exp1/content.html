@@ -49,7 +49,7 @@ edit -->
 	<header id="experiment-article-heading" class="heading">
 	<!-- You can add a welcome message or title of the 
 	experiment here -->
-	Exp1: File Management
+	Experiment 1: File Management
 	<!-- Add any additional element if required with proper 
 	enclosing-->
 	</header>
@@ -213,19 +213,28 @@ edit -->
 	directory.</p>
         <pre class='code'>aditi@mylaptop:~/Documents$ ls my_project
 vlabs_ui</pre>
-	<p align="justify">Here in the above example, the <i>relative
+	<p align="justify">In the above example, the <i>relative
 	path</i> of the directory has been used.</p>
 
 	<pre class="code">aditi@mylaptop:~/Documents$ ls /home/johndoe/Documents/my_project/
  vlabs_ui</pre>
-	<p align="justify">Here in the above example, the <i>absolute
+	<p align="justify">In the above example, the <i>absolute
 	path</i> of the directory has been used. As you can see, the
 	two paths are equivalent.</p>
 
 	<p> The most used options for the <b>ls</b> command are l,
 	a. </p>
-	<table border="1">
-		<thead><tr><td><u>Option</u></tr></td><tr><td align="center"><u>Purpose</u></td></tr> </thead>
+	<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+        <caption>
+		  <span style="font-weight:bold">Table 1:</span>
+		  Common parameters for "ls" command 
+		</caption>
+    		<thead>
+		  <tr>
+		    <th>Option</th>
+		    <th>Purpose</th>
+		</tr>
+		</thead>
 		<tbody>
 			<tr><td>l</td><td>Displays the detailed view
 			of the contents of the folder</td></tr>
@@ -283,7 +292,7 @@ drwxr-xr-x  2 aditi students 4096 2010-08-02 14:03 my_project</pre>
 can read the man pages, which contain detailed information about
 commands and their options. To know more about the ls command, see the
 man page, type:
-<pre class"code">aditi@mylaptop:~/Documents$ man ls</pre>
+<pre class="code">aditi@mylaptop:~/Documents$ man ls</pre>
 <p align="justify">Information about the command will appear on the
 screen. You can move up and down using the arrow keys. In order to
 exit from the man page type key "q".</p>
@@ -344,7 +353,7 @@ aditi@mylaptop:~/Documents$ mkdir new_folder
 aditi@mylaptop:~/Documents$ ls 
 all_about_console.txt  example.txt  my_project newfile.txt new_folder</pre>
 
-	<h3>5. Copying, Moving and removing files and folders:</h3>
+	<h3>6. Copying, Moving and removing files and folders:</h3>
 
 	<p><font size="3"><b>cp command</b></font></p>
         <p><b>cp</b> command is used to create a copy of files. It can
@@ -363,7 +372,7 @@ vlabs_ui  example_copy.txt</pre>
               
        <p>For copying directories, the <b>-r</b> (recursive) option is
        used.</p>
-<pre>aditi@mylaptop:~Documents$ ls my_project
+<pre class="code">aditi@mylaptop:~Documents$ ls my_project
 vlabs_ui example_copy.txt
 aditi@mylaptop:~/Documents$ cp -r new_folder my_project/new_folder_copy 
 aditi@mylaptop:~/Documents$ cd my_project
@@ -404,12 +413,17 @@ aditi@mylaptop:~/Documents$ ls
 all_about_console.txt  my_project  newfile.txt</pre>
 
 <p>The commands <b>cp</b>, <b>mv</b>, and <b>rm</b> have the following commonly used parameters:</p>
-<table border="1">
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<caption>
+		  <span style="font-weight:bold">Table 1:</span>
+		 Common parameters for "cp", "mv" and "rm"
+		</caption>
 <thead>
 <tr>
-<td><u>Option</u></td>
-<td><u>Purpose</u></td>
-</tr></thead>
+<th>Option</td>
+<th>Purpose</td>
+</tr>
+</thead>
 <tbody>
 <tr><td>-f</td><td>forces removing a file, even if user has no rights to write the file.</td></tr>
 <tr><td>-i</td><td>user will be asked to confirm the operation for each file.</td></tr>
