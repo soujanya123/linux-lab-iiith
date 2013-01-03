@@ -188,8 +188,8 @@ edit -->
 	       class="content">
 	    <p>
 	      Before going to the actual commands to know the system
-	      information, lets know some terminologies used in those
-	      commands.</p>
+	      information, lets know the terminologies used in this
+	      experiment.</p>
 	    <p>
 	      <ul>
 		<li>
@@ -227,7 +227,7 @@ edit -->
 		the buffers used by the kernel.
 	      </p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ free
+user@linux:~$ free
              total       used       free     shared    buffers     cached
 Mem:       1918584    1549980     368604          0     180488     704172
 -/+ buffers/cache:     665320    1253264
@@ -240,7 +240,7 @@ Swap:      9577468          0    9577468
 		mentioned above.
 	      </p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ free -h
+user@linux:~$ free -h
              total       used       free     shared    buffers     cached
 Mem:          1.8G       1.5G       361M         0B       176M       687M
 -/+ buffers/cache:       648M       1.2G
@@ -267,7 +267,7 @@ Swap:         9.1G         0B       9.1G
 		    the actual load is of 648MB only.
 		  </li>
 		  <li>
-		    You can ignore the other options for now. If you
+		    You can <b>ignore</b> the other options for now. If you
 		    want more information, run the manual "man free"
 		    in shell.
 		  </li>
@@ -287,7 +287,7 @@ Swap:         9.1G         0B       9.1G
 	      Every process is assigned a unique PID by the system.
 	      </p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ ps
+user@linux:~$ ps
  PID TTY          TIME CMD
 5957 pts/2    00:00:00 bash
 6147 pts/2    00:00:00 ps
@@ -322,16 +322,16 @@ vlabs@vlabs-laptop:~$ ps
 		</ul>
 	      </p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ ps aux
+user@linux:~$ ps aux
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         1  0.0  0.0  10636   828 ?        Ss   22:02   0:00 init [2]  
 root         2  0.0  0.0      0     0 ?        S    22:02   0:00 [kthreadd]
 root      3942  0.0  0.0   8040   812 tty4     Ss+  22:04   0:00 /sbin/getty 38400 tty4
 root      3943  0.0  0.0   8040   812 tty5     Ss+  22:04   0:00 /sbin/getty 38400 tty5		
-vlabs     6123  0.1  1.5 211404 30320 pts/1    S+   22:53   0:02 emacs overall_commands.org
+user      6123  0.1  1.5 211404 30320 pts/1    S+   22:53   0:02 emacs overall_commands.org
 www-data  6150  0.0  0.5 243240  9980 ?        S    22:54   0:00 /usr/sbin/apache2 -k start
 root      6242  0.0  0.0      0     0 ?        S    22:56   0:00 [kworker/0:0]
-vlabs     6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux
+user      6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux
 	      </pre>
 	      <p>
 		As the list of processes can be quite long and occupy
@@ -340,12 +340,12 @@ vlabs     6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux
 		which lets it be viewed one screenful at a time.
 	      </p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ ps aux |less
+user@linux:~$ ps aux |less
 	      </pre>
 	      
 	      <p> We can find more output columns when we use
 	      "aux". Some of the output columns are explained
-	      below. You can ignore the remaining for now.
+	      below. You can <b>ignore</b> the remaining for now.
 		<ul>
 		  <li><h4>USER</h4>User who is owning/running the
 		    process</li>
@@ -380,7 +380,7 @@ vlabs@vlabs-laptop:~$ ps aux |less
 		encompassing every aspect of its operation. 
 	      </p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ top
+user@linux:~$ top
 top - 23:14:54 up  1:40,  3 users,  load average: 1.03, 1.03, 0.87
 Tasks: 179 total,   2 running, 177 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  0.7 us,  0.2 sy,  0.0 ni, 98.6 id,  0.6 wa,  0.0 hi,  0.0 si,  0.0 st
@@ -388,14 +388,14 @@ KiB Mem:   1918584 total,  1821848 used,    96736 free,   195076 buffers
 KiB Swap:  9577468 total,        0 used,  9577468 free,   795388 cached
 
  PID USER   PR  NI  VIRT  RES  SHR S  %CPU %MEM    TIME+  COMMAND
-4506 vlabs  20   0  998m 108m  29m S   1.7  5.8   3:39.68 gnome-shell
+4506 user   20   0  998m 108m  29m S   1.7  5.8   3:39.68 gnome-shell
 2838 root   20   0  158m  24m 8144 S   1.0  1.3   5:23.14 Xorg
-4611 vlabs  20   0 1176m 261m  40m S   0.7 13.9  11:59.15 firefox-bin
-4782 vlabs  20   0  404m  55m  19m S   0.7  3.0   0:27.00 plugin-containe
-6602 vlabs  20   0  422m  36m  17m S   0.3  2.0   0:20.09 /usr/bin/termin
-6729 vlabs  20   0  207m  30m  13m S   0.3  1.6   0:08.01 emacs
+4611 user   20   0 1176m 261m  40m S   0.7 13.9  11:59.15 firefox-bin
+4782 user   20   0  404m  55m  19m S   0.7  3.0   0:27.00 plugin-containe
+6602 user   20   0  422m  36m  17m S   0.3  2.0   0:20.09 /usr/bin/termin
+6729 user   20   0  207m  30m  13m S   0.3  1.6   0:08.01 emacs
 8909 root   20   0     0    0    0 S   0.3  0.0   0:02.10 kworker/0:1
-9586 vlabs  20   0 15072 1544 1084 R   0.3  0.1   0:00.09 top
+9586 user   20   0 15072 1544 1084 R   0.3  0.1   0:00.09 top
    1 root   20   0 10636  832  696 S   0.0  0.0   0:01.03 init
    2 root   20   0     0    0    0 S   0.0  0.0   0:00.00 kthreadd
    3 root   20   0     0    0    0 S   0.0  0.0   0:00.48 ksoftirqd/0
@@ -416,7 +416,7 @@ KiB Swap:  9577468 total,        0 used,  9577468 free,   795388 cached
 		  <li>Press "q" to quit the "top".</li>
 		  <li>By default, sorting of the process is done based
 		    on the CPU time usage by the processes.</li>
-		  <li>Columns are same as in <b>ps</b>. You can ignore
+		  <li>Columns are same as in <b>ps</b>. You can <b>ignore</b>
 		    the remaining ones.</li>
 		</ul>
               </li>
@@ -432,15 +432,15 @@ KiB Swap:  9577468 total,        0 used,  9577468 free,   795388 cached
 		currently on the machine, and their processes.</p>
 	     
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ w
+user@linux:~$ w
 13:45:49 up  5:10,  6 users,  load average: 0.30, 0.51, 0.51
 USER    TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 root    tty2                      13:44    1:04   0.09s  0.07s -bash
-vlabs   tty7     :0               08:37    5:10m  7:24   0.08s gdm-session-worker [pam/gdm3]
-vlabs   pts/0    :0               10:19    3:25m  1:05   1:05  emacs content.html
-vlabs   pts/1    :0               10:19    3:26m 13.13s 13.02s emacs overall_commands.org
-vlabs   pts/2    :0               12:34    0.00s  0.23s  0.00s w
-vlabs   pts/3    14.139.82.11     13:50    4.00s  0.15s  0.15s -bash
+user    tty7     :0               08:37    5:10m  7:24   0.08s gdm-session-worker [pam/gdm3]
+user    pts/0    :0               10:19    3:25m  1:05   1:05  emacs content.html
+user    pts/1    :0               10:19    3:26m 13.13s 13.02s emacs overall_commands.org
+user    pts/2    :0               12:34    0.00s  0.23s  0.00s w
+user    pts/3    14.139.82.11     13:50    4.00s  0.15s  0.15s -bash
 	      </pre>
 	      <p>
 		<ul>
@@ -465,8 +465,8 @@ vlabs   pts/3    14.139.82.11     13:50    4.00s  0.15s  0.15s -bash
               <p>Print the user name currently using. i.e., as which
               user the "whoami" command is running.</p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ whoami
-vlabs
+user@linux:~$ whoami
+user
 	      </pre>
               </li>
               <h3>
@@ -475,8 +475,8 @@ vlabs
               <p>Print the user names of users currently logged in to
               the system.</p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ users
-vlabs vlabs vlabs root
+user@linux:~$ users
+user user user root
 	      </pre>
               </li>
             </ol>
@@ -504,7 +504,7 @@ vlabs vlabs vlabs root
 		</ul>
 	      </p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ uname -a
+user@linux:~$ uname -a
 Linux debian 3.2.0-3-amd64 #1 SMP Mon Jul 23 02:45:17 UTC 2012 x86_64 GNU/Linux
 	      </pre>
              </li>
@@ -520,7 +520,7 @@ Linux debian 3.2.0-3-amd64 #1 SMP Mon Jul 23 02:45:17 UTC 2012 x86_64 GNU/Linux
 	       option to look at the complete set of options and their
 	       actions.</p>
 	     <pre class="code">
-vlabs@vlabs-laptop:~/$ lsb_release -a
+user@linux:~/$ lsb_release -a
 Distributor ID:	Debian
 Description:	Debian GNU/Linux testing (wheezy)
 Release:	testing
@@ -542,7 +542,7 @@ Codename:	wheezy
               cpu. We must look at the siblings, cpu cores and core id
               to tell the difference.</p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ more /proc/cpuinfo
+user@linux:~$ more /proc/cpuinfo
 processor	: 0
 vendor_id	: GenuineIntel
 cpu family	: 6
@@ -592,7 +592,7 @@ power management:
 		  /proc/cpuinfo (end of 3rd line of flags), then the
 		  processor is of 64bit. If not, its a 32bit
 		  processor. </li>
-		<li>You can ignore the remaining for now.</li>
+		<li>You can <b>ignore</b> the remaining for now.</li>
 	      </ul>
              </li>
            </ol>
@@ -616,7 +616,7 @@ power management:
 		format (e.g., 1K 234M 2G)</p>
 	      
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ df -h
+user@linux:~$ df -h
 Filesystem        Size  Used Avail Use% Mounted on
 rootfs            187G  108G   70G  61% /
 udev               10M     0   10M   0% /dev
@@ -635,7 +635,7 @@ tmpfs             2.2G  496K  2.2G   1% /run/shm
 		  <li>how much of the disk space is <b>Available</b> and</li>
 		  <li>how much percentage of disk is used.</li>  
 		</ul></p>
-	      <p>Ignore the <b>"Mounted on"</b> for now.
+	      <p><B>Ignore</B> the <b>"Mounted on"</b> for now.
 	      </p>
              </li>
            </ol>
@@ -652,7 +652,7 @@ tmpfs             2.2G  496K  2.2G   1% /run/shm
 		If no argument is given, date command prints the
 		current date and time.</p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$ date
+user@linux:~$ date
 Sat Dec 29 17:04:07 IST 2012
 	      </pre>
 
@@ -672,7 +672,7 @@ Sat Dec 29 17:04:07 IST 2012
 		current month is displayed, highlighting the current
 		day.</p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$cal
+user@linux:~$cal
    December 2012      
 Su Mo Tu We Th Fr Sa  
                    1  
@@ -709,7 +709,7 @@ Su Mo Tu We Th Fr Sa
               <p>This is the same information contained in the header
 		line displayed by 'w' command. </p>
 	      <pre class="code">
-vlabs@vlabs-laptop:~$uptime
+user@linux:~$uptime
 13:45:49 up  5:10,  6 users,  load average: 0.30, 0.51, 0.51
 	      </pre>
 	      <br/>
