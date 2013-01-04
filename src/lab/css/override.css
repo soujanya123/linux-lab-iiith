@@ -39,3 +39,9 @@ nav#lab-article-navigation ul li a:visited, nav#experiment-article-navigation ul
 {
 	padding:5px 0px 5px 30px;
 }
+
+.content p
+{
+	text-align: justify;
+}
+
