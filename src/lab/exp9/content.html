@@ -181,7 +181,63 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-3-content" 
 	class="content">
-	<>What is rsync?</font></p>
+	<h3>What is an IP address?</h3>
+	<p>
+	  An IP address is a way to identify a network
+	  device, e.g. a computer, on a network.  In order
+	  to connect to a computer, you need to know
+	  its IP address.
+	</p>
+	<p>
+	  A computer can have multiple IP addresses, one for
+	  each interface it has.  An interface can be wired
+	  or wireless.  So, if a machine is connected to the
+	  network through both cable and wirelessly, it will
+	  have two IP addresses.
+	</p>
+	<h3>How to find this machine's IP address?</h3>\
+	<p>
+	  
+	</p>
+	<pre class="code">
+aditi@mylaptop:~$ ifconfig 
+eth0      Link encap:Ethernet  HWaddr 60:eb:69:5e:a9:22  
+          inet addr:10.9.24.110  Bcast:10.9.24.255  Mask:255.255.255.0
+          inet6 addr: fe80::62eb:69ff:fe5d:a1f2/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1797096 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1167412 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:951537984 (951.5 MB)  TX bytes:99185523 (99.1 MB)
+          Interrupt:40 Base address:0x2000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:42427 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:42427 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:26128666 (26.1 MB)  TX bytes:26128666 (26.1 MB)
+
+wlan0     Link encap:Ethernet  HWaddr 60:eb:69:5e:a9:23  
+          inet addr:10.9.24.231  Bcast:10.9.24.255  Mask:255.255.255.0
+          inet6 addr: fe80::f27b:cbff:fea1:1581/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:440021 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:98766 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:86138146 (86.1 MB)  TX bytes:13110795 (13.1 MB)
+	</pre>
+
+	<h3>How to check if this machine is connected to
+	other machines, to the Internet?</h3>
+	<h3>How to login to another remote machine</h3>
+	<h3>How to copy files from one machine to another
+	machine?</h3>
+	<h3>How to synchronize two files or directories on
+	one machine to another machine</h3>
+
 	<p>rsync is a utility tool that is used to synchronize files
 and folders across different directories in the same computer, or even
 across different computers connected directly or via a network.
