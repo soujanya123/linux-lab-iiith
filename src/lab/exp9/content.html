@@ -195,12 +195,41 @@ edit -->
 	  network through both cable and wirelessly, it will
 	  have two IP addresses.
 	</p>
-	<h3>How to find this machine's IP address?</h3>\
 	<p>
-	  
 	</p>
+	<h3>How to find this machine's IP address?</h3>
+	<p>
+	  Running the command "/sbin/ifconfig" will display
+	  the IP addresses of each interface on the
+	  machine.  
+	</p>
+	<p>
+	  The example below shows that the machine
+	  has three interfaces: eth0, lo and wlan0.  
+	</p>
+	<ul>
+	  <li>
+	  "eth0" is the wired interface (eth
+	  stands for ethernet).  The machine's IP address
+	  for this interface is 10.9.24.110.
+	  </li>
+	  <li>
+	  "lo" interface is a local interface
+	  i.e. it cannot be used for communicating across
+	  the network.  This interface is present on all
+	  computers.  It's IP address is always 127.0.0.1.
+	  </li>
+	  <li>
+	  "wlan0" is the wireless interface.  It's IP
+	  address is 10.9.24.231.
+	  </li>
+	  <li>
+	    This machine can be contacted via either of the
+	    two IP addresses 10.9.24.110 and 10.9.24.231.
+	  </li>
+	</ul>
 	<pre class="code">
-aditi@mylaptop:~$ ifconfig 
+aditi@mylaptop:~$ /sbin/ifconfig 
 eth0      Link encap:Ethernet  HWaddr 60:eb:69:5e:a9:22  
           inet addr:10.9.24.110  Bcast:10.9.24.255  Mask:255.255.255.0
           inet6 addr: fe80::62eb:69ff:fe5d:a1f2/64 Scope:Link
@@ -227,16 +256,69 @@ wlan0     Link encap:Ethernet  HWaddr 60:eb:69:5e:a9:23
           RX packets:440021 errors:0 dropped:0 overruns:0 frame:0
           TX packets:98766 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000 
-          RX bytes:86138146 (86.1 MB)  TX bytes:13110795 (13.1 MB)
-	</pre>
-
+          RX bytes:86138146 (86.1 MB)  TX bytes:13110795 (13.1 MB)</pre>
+	<p>
+	</p>
 	<h3>How to check if this machine is connected to
 	other machines, to the Internet?</h3>
+	<p>
+	  Run the "ping" command with an IP address you want
+	  to test e.g. 10.9.24.1.  Press CTRL-C when you
+	  want to stop pinging.  The ping command's response
+	  below shows that out of 3 packets transmitted to
+	  the remote machine, all 3 were acknowledged
+	  (received) with none of the packets being lost and
+	  it took a total of about 2 seconds.
+	</p>
+	<pre class="code">
+aditi@mylaptop:~$ ping 10.9.24.1
+PING 10.9.24.1 (10.9.24.1) 56(84) bytes of data.                                                                
+64 bytes from 10.9.24.1: icmp_req=1 ttl=255 time=0.787 ms                                                       
+64 bytes from 10.9.24.1: icmp_req=2 ttl=255 time=1.20 ms                                                        
+64 bytes from 10.9.24.1: icmp_req=3 ttl=255 time=0.782 ms                                                       
+^C                                                                                                              
+--- 10.9.24.1 ping statistics ---                                                                               
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms                                                  
+rtt min/avg/max/mdev = 0.782/0.924/1.203/0.197 ms                                                               
+aditi@mylaptop:~$</pre>
+	<p>
+	  To check Internet access, run the "ping" command
+	  with a web service name e.g. www.google.com
+	</p>
+	<pre class="code">
+aditi@mylaptop:~$ ping www.google.com                                                                          
+PING www.google.com (173.194.36.17) 56(84) bytes of data.                                                       
+64 bytes from bom04s01-in-f17.1e100.net (173.194.36.17): icmp_req=1 ttl=52 time=33.1 ms                         
+64 bytes from bom04s01-in-f17.1e100.net (173.194.36.17): icmp_req=2 ttl=52 time=33.1 ms                         
+64 bytes from bom04s01-in-f17.1e100.net (173.194.36.17): icmp_req=3 ttl=52 time=33.1 ms                         
+64 bytes from bom04s01-in-f17.1e100.net (173.194.36.17): icmp_req=4 ttl=52 time=32.9 ms                         
+64 bytes from bom04s01-in-f17.1e100.net (173.194.36.17): icmp_req=5 ttl=52 time=32.7 ms                         
+64 bytes from bom04s01-in-f17.1e100.net (173.194.36.17): icmp_req=6 ttl=52 time=33.2 ms                         
+64 bytes from bom04s01-in-f17.1e100.net (173.194.36.17): icmp_req=7 ttl=52 time=32.7 ms                         
+^C                                                                                                              
+--- www.google.com ping statistics ---                                                                          
+7 packets transmitted, 7 received, 0% packet loss, time 6008ms                                                  
+rtt min/avg/max/mdev = 32.746/33.031/33.288/0.310 ms                                                            
+aditi@mylaptop:~$</pre>
 	<h3>How to login to another remote machine</h3>
+	<p>
+	  Use ssh (secure shell) to remotely connect to
+	  another machine.  
+	  ssh
+	  passwd
+	</p>
+	
 	<h3>How to copy files from one machine to another
 	machine?</h3>
+	<p>
+	  scp
+	</p>
+
 	<h3>How to synchronize two files or directories on
 	one machine to another machine</h3>
+	<p>
+	  rsync -vtrpaz
+	</p>
 
 	<p>rsync is a utility tool that is used to synchronize files
 and folders across different directories in the same computer, or even
