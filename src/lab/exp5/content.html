@@ -90,11 +90,11 @@ edit -->
 	class="content">	
 	<p align="justify">
 
-File Compression and Archiving are two different functions.  Archiving
-is useful when a number of files need to be combined into a single file.
-This is useful when the files need to be transferred or sent across
-e-mails.  Compressions involves reducing the file size so as to save the
-disk space or to create backups of the data. 
+File Compression and File Archiving are two different functions.  File
+Archiving is useful when a number of files need to be combined into a
+single file.  This is useful when the files need to be transferred or
+sent across e-mails.  Compressions involves reducing the file size so as
+to save the disk space or to create backups of the data.
 
 	</p>
 
@@ -130,6 +130,9 @@ The objective of this experiment is to familiarize the users with some
 of the widely used commands for archiving the files and folders on Linux
 system.
 
+After finishing the Experiment, the user would be able to work with
+compressed files and archived documents. 
+
 	</p>
 	</div>
 	</section>
@@ -155,17 +158,10 @@ system.
 	<div id="experiment-article-section-3-content" 
 	class="content">
 
-<p align="justify">
-There are many commands available in Linux which help with archiving or
-compressing the files and folders.  Zip and Tar are the most widely
-used, in general.  But, in this section, a few more commands would be
-explained. 
-</p>
-
 <h3> Zip and Unzip </h3>
 
 <p align="justify">
-Zip and Unzip are the most widely used archiving commands. They work
+Zip and Unzip are the most widely used archiving commands.  They work
 across all operating systems, hence, making them the most obvious
 choices.
 
@@ -189,10 +185,10 @@ $ zip abc abc.org
 
 $ ls -l
 total 268
--rw-rw-r-- 1 johndoe johndoe    451 2012-12-20 17:02 abc.org
--rw-rw-r-- 1 johndoe johndoe    437 2012-12-27 15:41 abc.zip
--rw-rw-r-- 1 johndoe johndoe 134964 2012-12-19 20:56 image1.jpg
--rw-rw-r-- 1 johndoe johndoe 124945 2012-12-16 12:34 image2.jpg
+-rw-rw-r-- 1 aditi students    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 aditi students    437 2012-12-27 15:41 abc.zip
+-rw-rw-r-- 1 aditi students 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 aditi students 124945 2012-12-16 12:34 image2.jpg
 </pre>
 </p>
 
@@ -204,15 +200,6 @@ The syntax of the command is:
 <br />
 where archive is the name of a new or existing archive and file name or
 path name is name of the file or directory to be archived or its path.
-
-<br />
-<br />
-
-In the example above, the fifth column shows the file size of the files.
-<code>abc.org</code> is 451 bytes and the compressed
-file <code>abc.zip</code> is 437 bytes.  The amount of compression of a
-file depends on the contents of the file and file size.  The compression
-amount can range anywhere between 1%-100% of the original file size.
 
 <br />
 <br />
@@ -229,10 +216,10 @@ $ zip abc image1.jpg image2.jpg
 
 $ ls -l
 total 508
--rw-rw-r-- 1 johndoe johndoe    451 2012-12-20 17:02 abc.org
--rw-rw-r-- 1 johndoe johndoe 250422 2012-12-27 16:30 abc.zip
--rw-rw-r-- 1 johndoe johndoe 134964 2012-12-19 20:56 image1.jpg
--rw-rw-r-- 1 johndoe johndoe 124945 2012-12-16 12:34 image2.jpg
+-rw-rw-r-- 1 aditi students    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 aditi students 250422 2012-12-27 16:30 abc.zip
+-rw-rw-r-- 1 aditi students 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 aditi students 124945 2012-12-16 12:34 image2.jpg
 </pre>
 </p>
 
@@ -242,10 +229,12 @@ total 508
 <br />
 <br />
 
-Unzip is used to extract the files from the archive.  The syntax <code>unzip
-[archive name]</code> is the regular syntax to unzip the files in the current
-directory.  If you would like to extract the files at a specified file
-location <code>-d</code> option should be used followed by the directory path. 
+Unzip is used to extract the files from the archive.  The syntax is:
+<br />
+<code>unzip [archive name]</code> 
+<br /> 
+To extract the files at a specified file location <code>-d</code> option
+should be used followed by the directory path.
 
 <pre class="code">
 $ ls
@@ -276,8 +265,8 @@ Archive:  test.zip
 $ cd dir/
 $ ls -l
 total 8
--rw-rw-r-- 1 johndoe johndoe  451 2012-12-28 10:30 abc.org
-drwxrwxr-x 3 johndoe johndoe 4096 2012-12-28 11:31 test
+-rw-rw-r-- 1 aditi students  451 2012-12-28 10:30 abc.org
+drwxrwxr-x 3 aditi students 4096 2012-12-28 11:31 test
 </pre>
 </p>
 
@@ -319,7 +308,6 @@ test test.tar
 
 $ rm -rf test
 $ tar -xvf test.tar
-$ ls
 test/
 test/dir/
 test/dir/abc.org
@@ -364,8 +352,8 @@ test/abc.org
 
 $ ls -l
 total 728
-drwxrwxr-x 3 johndoe johndoe 2012-12-28 14:56 test
--rw-rw-r-- 1 johndoe johndoe 737525 2012-12-28 15:18 test.tar.bz2
+drwxrwxr-x 3 aditi students 2012-12-28 14:56 test
+-rw-rw-r-- 1 aditi students 737525 2012-12-28 15:18 test.tar.bz2
 
 $ tar -czvf test.tar.gz test/
 test/
@@ -380,20 +368,20 @@ test/abc.org
 
 $ ls -l
 total 984
-drwxrwxr-x 3 johndoe johndoe    4096 2012-12-28 14:56 test
--rw-rw-r-- 1 johndoe johndoe 737525 2012-12-28 15:18 test.tar.bz2
--rw-rw-r-- 1 johndoe johndoe 1003263 2012-12-28 15:26 test.tar.gz
+drwxrwxr-x 3 aditi students    4096 2012-12-28 14:56 test
+-rw-rw-r-- 1 aditi students 737525 2012-12-28 15:18 test.tar.bz2
+-rw-rw-r-- 1 aditi students 1003263 2012-12-28 15:26 test.tar.gz
 
 $ cd test/
 $ ls -l
 total 1028
--rw-rw-r-- 1 johndoe johndoe    451 2012-12-20 17:02 abc.org
--rw-rw-r-- 1 johndoe johndoe 522240 2012-12-28 14:46 abc.tar
--rw-rw-r-- 1 johndoe johndoe 250981 2012-12-28 10:31 abc.zip
--rw-rw-r-- 1 johndoe johndoe    451 2012-12-28 10:30 abd
-drwxrwxr-x 2 johndoe johndoe   4096 2012-12-28 10:30 dir
--rw-rw-r-- 1 johndoe johndoe 134964 2012-12-19 20:56 image1.jpg
--rw-rw-r-- 1 johndoe johndoe 124945 2012-12-16 12:34 image2.jpg
+-rw-rw-r-- 1 aditi students    451 2012-12-20 17:02 abc.org
+-rw-rw-r-- 1 aditi students 522240 2012-12-28 14:46 abc.tar
+-rw-rw-r-- 1 aditi students 250981 2012-12-28 10:31 abc.zip
+-rw-rw-r-- 1 aditi students    451 2012-12-28 10:30 abd
+drwxrwxr-x 2 aditi students   4096 2012-12-28 10:30 dir
+-rw-rw-r-- 1 aditi students 134964 2012-12-19 20:56 image1.jpg
+-rw-rw-r-- 1 aditi students 124945 2012-12-16 12:34 image2.jpg
 </pre>
 </p>
 
@@ -557,13 +545,45 @@ abcd.org  test/
 <p align="justify">
 <ol>
 <li> How to run Bunzip2 on directories to decompress them? </li>
-<li> What is the option used to run any of the archival or compression
-commands, if allowed, on the directories?</li>
+<ul>
+<li> By using -d option </li>
+<li> Bunzip does not work on directories </li>
+<li> Bunzip decompresses directories only </li>
+</ul>
+<br />
+
 <li> What is the compression percentage of a tar file? </li>
-<li> Which compression utility has better performance - Bzip2 or Gzip?
-And, which has a better rate of compression? </li>
+<ul>
+<li> Tar does not compress </li>
+<li> anywhere between 1-100% depending on the file </li>
+</ul>
+<br />
+
+<li> Which compression utility has better performance in most
+cases? </li>
+<ul>
+<li> Bzip2 </li>
+<li> Gzip </li>
+<li> Bunzip </li>
+</ul>
+<br />
+
+<li> Which compression utility has better compression rate in most
+cases? </li>
+<ul>
+<li> Bzip2 </li>
+<li> Gzip </li>
+</ul>
+<br />
+
 <li> Which of the commands discussed in the Experiment come by default
 with the Linux system. </li>
+<ul>
+<li> Tar </li>
+<li> Zip </li>
+<li> Bunzip </li>
+</ul>
+
 </ol>
 </p>
           </div>
