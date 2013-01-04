@@ -91,7 +91,7 @@ edit -->
 	  contained in a system. One may create, delete, move, copy,
 	  rename and perform many such operations on the files and
 	  directories. This experiment provides a brief overview of
-	  some of those commands which can be used in a Linux-based
+	  these basic commands which can be used in a Linux-based
 	  environment.
 	</p>
 
@@ -158,7 +158,7 @@ edit -->
         documents, music, pictures or videos, etc. /home/aditi
         refers to the home directory of the user aditi, ~ is
         equivalent to the /home/aditi which is the current users
-        home directory </p>
+        home directory.  </p>
 
 	<p align="justify"> The file system also contains a method of
         securing files, directories and objects in the file
@@ -191,13 +191,13 @@ edit -->
 	<p align="justify">We shall see how to view the contents of files and
 	directories using three commands, namely <b>pwd</b>, <b>ls</b>
 	and <b>cat</b>.</p>
-        <p><font size="3"><b>pwd command</b></font></p>
+        <p><font size="3"><b>a. pwd command</b></font></p>
         <p align="justify">At any time, in order to see the current directory you can
         type <b>pwd</b>(<b>P</b>resent <b>W</b>orking <b>D</b>irectory).</p>
 	<pre class="code">aditi@mylaptop:~/Documents$ pwd
  /home/aditi/Documents</pre>
 
-	<p> <font size="3"><b>ls command</b></font></p>
+	<p> <font size="3"><b>b. ls command</b></font></p>
 	<p align="justify">To list the contents of a directory,
 	the <b>ls</b> command is used. When it is executed with no
 	arguments, it lists the contents of the current working
@@ -212,7 +212,8 @@ edit -->
 	the root directory. It is independent of the current working
 	directory.</p>
 
-        <img src="media/directory-path-example.svg"
+        <p align="center"><b>Figure: 1</b></p>
+	<img src="media/directory-path-example.svg"
 		   style="width:900px"/>
         <p align="justify"> For example, Consider the above directory
         tree from which we want to list the contents of the folder
@@ -235,6 +236,20 @@ vlabs_ui</pre>
 	<p align="justify">In the above example, the <i>absolute
 	path</i> of the directory has been used. As you can see, the
 	two paths are equivalent.</p>
+
+	<p align="justify"> Referring to the above figure:1  and assuming
+	 our present working directory is /home/aditi/Documents. "."
+	 refers to the current directory i.e. Documents and ".."
+	 refers to the parent directory( of the current directory) in
+	 our example it is aditi.</p>
+	<p> If you do an ls ., it will display all the contents
+	 of the current directory</p>
+        <pre class="code">aditi@mylaptop:~/Documents$ ls .
+all_about_console.txt  example.txt  my_project</pre>
+	<p align="justify"> If you do an ls .., it will display all
+	the contents of the parent directory</p> 
+        <pre class="code">aditi@mylaptop:~/Documents$ ls ..
+Desktop Documents Downloads Music Pictures</pre>
 
 	<p> The most used options for the <b>ls</b> command are l,
 	a. </p>
@@ -310,7 +325,7 @@ man page, type:
 <p align="justify">Information about the command will appear on the
 screen. You can move up and down using the arrow keys. In order to
 exit from the man page type key "q".</p>
-        <p><font size="3"><b>cat command</b></font></p>
+        <p><font size="3"><b>c. cat command</b></font></p>
 	<p><b>cat</b> command displays the contents of the file passed as
 	argument. If multiple files are passed, it prints the
 	concatenated content of all the files.</p>
@@ -323,7 +338,7 @@ Welcome to System and Software Lab!</pre>
 
        <h3>4. Moving through directories:</h3>
 
-	<p><font size="3"><b>cd command</b></font></p>
+	<p><font size="3"><b>a. cd command</b></font></p>
         <p>The command <b>cd</b> (<b>c</b>hange <b>d</b>irectory)
 	  allows us to move through directory trees. It has one
 	  parameter: target directory path. If no parameter is
@@ -344,7 +359,7 @@ aditi@mylaptop:~$ pwd
 
 	<h3>5. Creating files and folders:</h3>
 
-	<p><font size="3"><b>touch command</b></font></p>
+	<p><font size="3"><b>b. touch command</b></font></p>
 	<p>It creates an empty file directly from the command line. In
 	  order to do it, type:</p>
 	<pre class="code">aditi@mylaptop:~/Documents$ ls
@@ -357,7 +372,7 @@ all_about_console.txt  example.txt my_project newfile.txt</pre>
 	  there and moment of last update is changed in the properties
 	  of the file.</p>
 
-	<p><font size="3"><b>mkdir command</b></font></p>
+	<p><font size="3"><b>c. mkdir command</b></font></p>
         <p>The <b>mkdir</b> command takes one or more parameters and
         creates the folders corresponding to the parameters.
 	</p>
@@ -369,7 +384,7 @@ all_about_console.txt  example.txt  my_project newfile.txt new_folder</pre>
 
 	<h3>6. Copying, Moving and removing files and folders:</h3>
 
-	<p><font size="3"><b>cp command</b></font></p>
+	<p><font size="3"><b>a. cp command</b></font></p>
         <p><b>cp</b> command is used to create a copy of files. It can
 	  be invoked with two arguments, <i>SOURCE</i> and <i>DEST</i>
 	  in which case it copies <i>SOURCE</i> to <i>DEST</i>.</p>
@@ -392,7 +407,7 @@ aditi@mylaptop:~/Documents$ cp -r new_folder my_project/new_folder_copy
 aditi@mylaptop:~/Documents$ cd my_project
 aditi@mylaptop:~/Documents$ ls
 vlabs_ui example_copy.txt new_folder_copy</pre>
-       <p><font size="3"><b>mv command</b></font></p>
+       <p><font size="3"><b>b. mv command</b></font></p>
        <p>The <b>mv</b> command is used to change the location of
        directories and files or renaming them. Parameters are taken in
        a similar way as the <b>cp</b> command.</p>
@@ -404,7 +419,7 @@ vlabs_ui example_copy.txt new_folder_copy
  aditi@mylaptop:~/Documents$ ls my_project
  vlabs_ui  example_copy.txt new_folder_copy example_move.txt </pre>
 
-      <p><font size="3"><b>rm command</b></font></p>
+      <p><font size="3"><b>c. rm command</b></font></p>
       <p><b>rm</b> command removes files. It can be used with
       the <b>-r</b> option to remove directories.</p>
 <pre class="code">aditi@mylaptop:~/Documents$ ls 
@@ -417,7 +432,7 @@ aditi@mylaptop:~/Documents$ rm -r new_folder
 aditi@mylaptop:~/Documents$ ls
 all_about_console.txt  my_project  newfile.txt</pre>
 
-     <p><font size="3"><b>rmdir command</b></font></p>
+     <p><font size="3"><b>d. rmdir command</b></font></p>
      <p><b>rmdir</b> command removes empty directories.</p>
 <pre class="code">aditi@mylaptop:~/Documents$ mkdir new_folder
 aditi@mylaptop:~/Documents$ ls
