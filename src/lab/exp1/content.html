@@ -202,8 +202,7 @@ edit -->
 	the <b>ls</b> command is used. When it is executed with no
 	arguments, it lists the contents of the current working
 	directory.</p>
-        <img src="media/directory-path-example.svg"
-		   style="width:583px"/>
+        
 	<p align="justify">The path of a file is the location of a file in the
 	filesystem. There are two ways of specifying the path of a
 	file: <i>relative path</i> and <i>absolute
@@ -212,12 +211,26 @@ edit -->
 	<i>Absolute path</i> is the location of the file with respect to
 	the root directory. It is independent of the current working
 	directory.</p>
+
+        <img src="media/directory-path-example.svg"
+		   style="width:900px"/>
+        <p align="justify"> For example, Consider the above directory
+        tree from which we want to list the contents of the folder
+        my_project. Consider our present working directory is
+        /home/aditi/Documents. Doing "ls my_project" would list the
+        contents of folder my_project, we are using the relative path
+        here as we are listing from the current working directory. If
+        we use "ls /home/aditi/Documents/my_project"  from the current
+        working directory, this is considered as the absolute path as
+        we are specifying from "/".</p>
+        
+
         <pre class='code'>aditi@mylaptop:~/Documents$ ls my_project
 vlabs_ui</pre>
 	<p align="justify">In the above example, the <i>relative
 	path</i> of the directory has been used.</p>
 
-	<pre class="code">aditi@mylaptop:~/Documents$ ls /home/aditi/Documents/my_project/
+	<pre class="code">aditi@mylaptop:~/Documents$ ls /home/aditi/Documents/my_project
  vlabs_ui</pre>
 	<p align="justify">In the above example, the <i>absolute
 	path</i> of the directory has been used. As you can see, the

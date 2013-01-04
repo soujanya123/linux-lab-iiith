@@ -5,7 +5,7 @@ graph files {
 	aditi -- "Music";
 	aditi -- "Pictures";
         Documents -- "example.txt"
-        Documents -- "allaboutconsole.txt"
+        Documents -- "all_about_console.txt"
         Documents -- "my_project"
         my_project-- "vlabs_ui"
 }; 
