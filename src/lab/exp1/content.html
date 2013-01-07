@@ -112,7 +112,7 @@ edit -->
 	<p align="justify">The objective of this experiment is to
 	provide a brief overview on how to create and manipulate files
 	and directories using the Linux command-line interface.  At
-	the end of this experiment you would learn how to create,
+	the end of this experiment the user would learn how to create,
 	delete, move, copy, rename and many such operations on files
 	and directories.</p>
 	</div>
@@ -163,7 +163,7 @@ edit -->
 	<p align="justify"> The file system also contains a method of
         securing files, directories and objects in the file
         system. This is represented by the file permissions that are
-        explained in <a href="../exp4/index.html">File
+        explained in the experiment<a href="../exp4/index.html">File
         Permissions</a> </p>
 
         <h3>2. The Command Line Prompt</h3>
@@ -174,25 +174,25 @@ edit -->
         <pre class='code'>aditi@mylaptop:~/Documents$</pre>
         <p align="justify"> There are three parts in the command line
         prompt, separated by @ : and $ </p>
-	<p align="justify">The first part before the @ shows the user
-	  which is logged in at the moment. In our example it is the
-	  user aditi. The second part between the @ and the : shows
-	  the name of the computer you are working on. In our example
-	  it is mylaptop. The third part, between the : and the $ shows
-	  the current directory you are working in. In our example it
-	  is ~/Documents (~ is a shortcut for the user’s home
-	  directory; ~/Documents is equivalent to
-	  /home/aditi/Documents). When you will change the current
-	  directory, you will see the third part of the command line
-	  prompt changing.</p>
+	<p align="justify">The first part before the '@' shows the
+	  user who is logged in at that moment. In the above example it
+	  is the user aditi. The second part between the @ and the :
+	  shows the name of the computer that one is working on. In
+	  the above example it is mylaptop. The third part, between
+	  the : and the $ shows the current directory that one is
+	  working on. In the above example it is ~/Documents (~ is a
+	  shortcut for the user’s home directory; ~/Documents is
+	  equivalent to /home/aditi/Documents). When one would change
+	  the current directory, then they can find the third part of
+	  the command line prompt changing.</p>
 
 
 	<h3>3. Viewing the contents of files and directories </h3>
-	<p align="justify">We shall see how to view the contents of files and
+	<p align="justify">Viewing the contents of files and
 	directories using three commands, namely <b>pwd</b>, <b>ls</b>
 	and <b>cat</b>.</p>
         <p><font size="3"><b>a. pwd command</b></font></p>
-        <p align="justify">At any time, in order to see the current directory you can
+        <p align="justify">At any time, in order to see the current directory one can
         type <b>pwd</b>(<b>P</b>resent <b>W</b>orking <b>D</b>irectory).</p>
 	<pre class="code">aditi@mylaptop:~/Documents$ pwd
  /home/aditi/Documents</pre>
@@ -214,17 +214,17 @@ edit -->
 
         
 	<p style="text-align:center">
-	      <img src="media/directory-path-example.svg" width="700px"/><br/>
+	      <img src="./media/directory-path-example.svg" width="600px"/><br/>
 	      <span style="font-weight:bold">Figure
 		1 </span> 
 	    </p>
-        <p align="justify"> For example, Consider the above directory
-        tree from which we want to list the contents of the folder
-        my_project. Consider our present working directory is
+        <p align="justify"> Example1 : Consider the above directory
+        tree (Figure 1)from which we want to list the contents of the
+        folder my_project. Consider our present working directory is
         /home/aditi/Documents. Doing "ls my_project" would list the
         contents of folder my_project, we are using the relative path
         here as we are listing from the current working directory. If
-        we use "ls /home/aditi/Documents/my_project"  from the current
+        we use "ls /home/aditi/Documents/my_project" from the current
         working directory, this is considered as the absolute path as
         we are specifying from "/".</p>
         
@@ -237,19 +237,19 @@ vlabs_ui</pre>
 	<pre class="code">aditi@mylaptop:~/Documents$ ls /home/aditi/Documents/my_project
  vlabs_ui</pre>
 	<p align="justify">In the above example, the <i>absolute
-	path</i> of the directory has been used. As you can see, the
+	path</i> of the directory has been used. As we can see, the
 	two paths are equivalent.</p>
 
-	<p align="justify"> Referring to the above figure:1  and assuming
+	<p align="justify"> Referring to the above Figure:1  and assuming
 	 our present working directory is /home/aditi/Documents. "."
 	 refers to the current directory i.e. Documents and ".."
-	 refers to the parent directory( of the current directory) in
-	 our example it is aditi.</p>
-	<p> If you do an ls ., it will display all the contents
+	 refers to the parent directory(of the current directory) in
+	 our example it is aditi(home directory).</p>
+	<p> "ls ."  will display all the contents
 	 of the current directory</p>
         <pre class="code">aditi@mylaptop:~/Documents$ ls .
 all_about_console.txt  example.txt  my_project</pre>
-	<p align="justify"> If you do an ls .., it will display all
+	<p align="justify"> "ls .." will display all
 	the contents of the parent directory</p> 
         <pre class="code">aditi@mylaptop:~/Documents$ ls ..
 Desktop Documents Downloads Music Pictures</pre>
@@ -507,25 +507,26 @@ all_about_console.txt  my_project  newfile.txt</pre>
 
           <div id="experiment-article-section-6-content" 
           class="content">
-<li>1. The command  to delete the directory xyz containing
-    subdirectories.
-a) rm   b) rm -f xyz  c) rm -r xyz d) rm xyz
- </li>
-
-<li> </li>
-<li>The pwd gives:
-a) relative path of current directory
-b) absolute path of current directory
-c) contents of current directory
-d) absolute path of previous directory 
-</li>
-<li>
-<li> 5. In the output of ls -l, the second column for directories denotes which one of the following:
-a) No of subdirectories 
-b) Nof subdirectories + No. of files in the directory
-c) No of subdirectories including hidden directories
-d) No. of the files in the directory </li>
-
+<p>1. The command  to delete the directory xyz containing
+subdirectories. <br>
+a) rm <br>
+b) rm -f xyz  <br>
+c) rm -r xyz  <br>
+d) rm xyz <br>
+<br><br>
+2.The pwd gives: <br>
+a) relative path of current directory <br>
+b) absolute path of current directory <br>
+c) contents of current directory <br>
+d) absolute path of previous directory <br>
+<br><br>
+5. In the output of ls -l, the second column for directories denotes
+which one of the following: <br>
+ a) No of subdirectories <br>
+ b) No. of subdirectories + No. of files in the directory <br>
+ c) No of subdirectories including hidden directories <br>
+ d) No. of the files in the directory <br>
+</p>
           </div>
 
         </section>
