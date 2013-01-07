@@ -212,9 +212,12 @@ edit -->
 	the root directory. It is independent of the current working
 	directory.</p>
 
-        <p align="center"><b>Figure: 1</b></p>
-	<img src="media/directory-path-example.svg"
-		   style="width:900px"/>
+        
+	<p style="text-align:center">
+	      <img src="media/directory-path-example.svg" width="850px"/><br/>
+	      <span style="font-weight:bold">Figure
+		1 </span> 
+	    </p>
         <p align="justify"> For example, Consider the above directory
         tree from which we want to list the contents of the folder
         my_project. Consider our present working directory is
@@ -299,14 +302,7 @@ drwxr-xr-x  2 aditi students 4096 2010-08-02 14:03 my_project</pre>
         which was displayed when ls was used with -a option.</p>
 	<p align="justify"> . and .. refer to current folder and
 	parent folder, respectively.</p>
-	<p align="justify"> For Example if you do an ls ., it will
-	 display all the contents of the current directory</p>
-        <pre class="code">aditi@mylaptop:~/Documents$ ls .
-all_about_console.txt  example.txt  my_project</pre>
-	<p align="justify"> If you do an ls .., it will display all
-	the contents of the parent directory</p> 
-        <pre class="code">aditi@mylaptop:~/Documents$ ls ..
-Desktop Documents Downloads Music Pictures</pre>
+	
 	<p align="justify"> ls can be used with an option "al" to list
 	  the detail view of the contents of the folder along with the
 	  hidden contents.</p>
@@ -444,7 +440,7 @@ all_about_console.txt  my_project  newfile.txt</pre>
 <p>The commands <b>cp</b>, <b>mv</b>, and <b>rm</b> have the following commonly used parameters:</p>
 <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
 <caption>
-		  <span style="font-weight:bold">Table 1:</span>
+		  <span style="font-weight:bold">Table 2</span>
 		 Common parameters for "cp", "mv" and "rm"
 		</caption>
 <thead>
@@ -511,16 +507,24 @@ all_about_console.txt  my_project  newfile.txt</pre>
 
           <div id="experiment-article-section-6-content" 
           class="content">
-<ul><li>The command "rm xyz" is enough to delete the directory xyz containing subdirectories. True or false?</li>
-<li>Permission for a file "-rw-r--r--" means it can be executed by
-anyone in the group. True or false?</li>
-<li>The pwd command gives the absolute path of the current
-directory. True or false?</li>
-<li>The latest edited file/folder comes last in the output of ls -t. True or false?</li>
-<li> In the output of ls -l, the second column for directories denotes which one of the following:<ul>
-<li>No of subdirectories </li>
-<li>No of subdirectories + No. of files int the directory</li>
-<li>No of subdirectories including hidden directories</li></ul></li></ul>
+<li>1. The command  to delete the directory xyz containing
+    subdirectories.
+a) rm   b) rm -f xyz  c) rm -r xyz d) rm xyz
+ </li>
+
+<li> </li>
+<li>The pwd gives:
+a) relative path of current directory
+b) absolute path of current directory
+c) contents of current directory
+d) absolute path of previous directory 
+</li>
+<li>
+<li> 5. In the output of ls -l, the second column for directories denotes which one of the following:
+a) No of subdirectories 
+b) Nof subdirectories + No. of files in the directory
+c) No of subdirectories including hidden directories
+d) No. of the files in the directory </li>
 
           </div>
 
