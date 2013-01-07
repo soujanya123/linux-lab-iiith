@@ -153,19 +153,19 @@ Some commonly used pipes and redirects are: &gt;, &gt;&gt;, &lt;, |, 2> and $().
 	<b>&gt</b> prints the output from the command to the specified file. If the file already exists, it is overwritten.
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ ls
+aditi@mylab.org:~/Documents$ ls
 example.txt  all_about_console.txt my_project
-johndoe@laptop:~/Documents$ ls > out.txt
-johndoe@laptop:~/Documents$ cat out.txt
+aditi@mylab.org:~/Documents$ ls > out.txt
+aditi@mylab.org:~/Documents$ cat out.txt
 example.txt  all_about_console.txt my_project
 	</pre>
 	<p>
 	<b>&gt&gt</b> appends the output from the command to the specified file.
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ cat >> out.txt
+aditi@mylab.org:~/Documents$ cat >> out.txt
 text appended at end
-johndoe@laptop:~/Documents$ cat out.txt
+aditi@mylab.org:~/Documents$ cat out.txt
 example.txt  all_about_console.txt my_project
 text appended at end
 	</pre>
@@ -176,13 +176,13 @@ text appended at end
 	<b>&lt</b> reads the command input from the specified file.
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ cat > f1.txt
+aditi@mylab.org:~/Documents$ cat > f1.txt
 d
 a
 c
 b
 e
-johndoe@laptop:~/Documents$ sort &lt; f1.txt
+aditi@mylab.org:~/Documents$ sort &lt; f1.txt
 a
 b
 c
@@ -191,8 +191,8 @@ e
 </pre>
 <p><b>sort</b> command is run on the contents of 'f1.txt' and the sorted output is printed to stdout.</p>
 <pre class="code">
-johndoe@laptop:~/Documents$ sort &lt; f1.txt &gt; f1_sort.txt
-johndoe@laptop:~/Documents$ cat f1_sort.txt
+aditi@mylab.org:~/Documents$ sort &lt; f1.txt &gt; f1_sort.txt
+aditi@mylab.org:~/Documents$ cat f1_sort.txt
 a
 b
 c
@@ -204,23 +204,23 @@ e
 	
 	<p><b>2></b> passes the error output from the command to the specified file. Here, 2 is a reference to the <i>file descriptor</i> of the error stream (1 is assumed by default, so there is no need to specify the type number for stdout). </p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ mkdir /x 2> err.txt
-johndoe@laptop:~/Documents$ cat err.txt
+aditi@mylab.org:~/Documents$ mkdir /x 2> err.txt
+aditi@mylab.org:~/Documents$ cat err.txt
 mkdir: cannot create directory `/x': Permission denied
-johndoe@laptop:~/Documents$ cat f1.txt 2> out.txt
+aditi@mylab.org:~/Documents$ cat f1.txt 2> out.txt
 d
 a
 c
 b
 e
-johndoe@laptop:~/Documents$ cat out.txt
-johndoe@laptop:~/Documents$ 
+aditi@mylab.org:~/Documents$ cat out.txt
+aditi@mylab.org:~/Documents$ 
 	</pre>
 	<p>
 	<b>|</b> passes the output from the command on the left side of the pipe as input to the command on the right side of the pipe.
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ cat | wc
+aditi@mylab.org:~/Documents$ cat | wc
 Pipes can be
 used to combine
 multiple commands
@@ -232,13 +232,13 @@ complex command.
 	The number of lines, words and characters in the input taken from stdin is printed.
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ cat f1.txt
+aditi@mylab.org:~/Documents$ cat f1.txt
 d
 a
 c
 b
 e
-johndoe@laptop:~/Documents$ cat f1.txt | sort
+aditi@mylab.org:~/Documents$ cat f1.txt | sort
 a
 b
 c
@@ -247,7 +247,7 @@ e
 </pre>
 	<p>Prints the sorted contents of 'f1.txt'.</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ du | more
+aditi@mylab.org:~/Documents$ du | more
 	</pre>
 	<p>Prints the output of the <b>du</b> command, one screen at a time.</p>
 
@@ -256,24 +256,24 @@ johndoe@laptop:~/Documents$ du | more
 	<b>$()</b> returns the output of the command, instead of writing it to stdout. Useful for passing it as the parameter of another command. 
 	</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ touch $(ls -1 *.c)
+aditi@mylab.org:~/Documents$ touch $(ls -1 *.c)
 	</pre>
 	<p>Updates timestamp on all .c files in current folder</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ wc $(ls *.txt)
+aditi@mylab.org:~/Documents$ wc $(ls *.txt)
 	</pre>
 	<p>Displays number of characters, words and lines in all text files in current folder.</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ chmod 755 $(ls -1 *.org)
+aditi@mylab.org:~/Documents$ chmod 755 $(ls -1 *.org)
 	</pre>
 	<p>Changes permissions of all .org files in current folder to 755.</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ head -n 5 $(ls -1 *.c)
+aditi@mylab.org:~/Documents$ head -n 5 $(ls -1 *.c)
 	</pre>
 	<p>Displays the first five lines (typically include statements) of all C files in current folder.</p>
 	<pre class="code">
-johndoe@laptop:~/Documents$ tar cf "$(date +'%Y-%m-%d %H%M').tar" imp
-johndoe@laptop:~/Documents$ ls
+aditi@mylab.org:~/Documents$ tar cf "$(date +'%Y-%m-%d %H%M').tar" imp
+aditi@mylab.org:~/Documents$ ls
 example.txt  all_about_console.txt my_project imp 2012-12-31 1142.tar
 	</pre>
 	<p>Take backup of 'imp' folder in a tar file, where name of tar file reflects current date and time.</p>
@@ -303,7 +303,7 @@ example.txt  all_about_console.txt my_project imp 2012-12-31 1142.tar
 	  <p style="margin-left:0px">
 	    Students who already have a Virtual-Labs login should click
 	    <a href="javascript:void(0)"
-	       onclick="window.open('../php/login-form.php?expid=7',
+	       onclick="window.open('interaction-frame.html',
 			'welcome', width=screen.availWidth, height=screen.availHeight,status='yes')">
 	      here</a> 
 	    to see the list of tasks for this experiment. <br /> 
