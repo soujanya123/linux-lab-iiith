@@ -59,9 +59,9 @@ edit -->
 	<nav id="experiment-article-navigation" class="default">
 	  <ul id="experiment-article-navigation-menu">
 	    <!-- The menu can be dynamically generated to contain 
-	    the headings of your sections or instead write the 
-	    menu items of your choice individually enclosedu in 
-	    <li> tag as shown below-->
+		 the headings of your sections or instead write the 
+		 menu items of your choice individually enclosedu in 
+		 <li> tag as shown below-->
 	  </ul>
 	</nav>
 	
@@ -84,221 +84,208 @@ edit -->
 	      Introduction
 	    </div>
 	    <!-- Write the section content inside a paragraph 
-	    element, You can also include images with <img> tag -->
+		 element, You can also include images with <img> tag -->
 	    <div id="experiment-article-section-1-content" class="content">	
-	      <!--<p> 
-		Status commands give you all the information regarding
-		the linux system you are working on. The goal of this
-		experiment is to give you an understanding of how to get
-		information about your computer system, including the users of
-		the system, the file system space available and so on. The
-		theory section gives a brief overview of the linux commands
-		required to perform these tasks.
+	      <p>
+		Welcome to "Obtaining System Information" experiment
+		of Systems and Software Virtual Lab. This experiment
+		explains how to obtain the information related to
+		system, processes and user's status. This also
+		explains how to check that how much hardware resource
+		has been utilized by the GNU/Linux Operating system
+		which is currently used in the experiment.
 	      </p>
 	      <p>
-		The experimental platform for this experiment is a command line
-		interface which mimics the terminal of a linux machine. The command
-		line interface supports a few basic commands to enable the user to
-		learn the basics of status commands. There are a series of tasks
-		which need to be performed in each experiment. </p>
-	      <p>
-		Proceed to the theory section to get an overview of the
-		commands. Then move to the experiment section to get some
-		hands-on experience and finish the experiment tasks. After you
-		are done with the experiment, go to the quiz section to test
-		your understanding.
-		
-	      </p>-->
-	<p>
-	  Welcome to "Getting System Information" experiment of
-	  Systems and Software Virtual Lab. Here we are going to learn
-	  how to monitor the system, processes and user's status. We
-	  will also learn how much hardware resource has been utilized
-	  by the GNU/Linux Operating system which we are running.
-	</p>
-	<p>
-	  The experimental platform for this experiment is a command
-	  line interface which mimics the terminal of a GNU/Linux
-	  machine. The command line interface can help in learning the
-	  basics of how to get systems information. A series of tasks
-	  which can be performed on available command-line interface
-	  is also provided.
-	</p>
-	<p>
-	  Proceed to the theory section to get an overview of the
-	  commands. Then move to the experiment section to get some
-	  hands-on experience and finish the experiment tasks. After
-	  you are done with the experiment, go to the quiz section to
-	  test your understanding.
-	</p>
-	</div>
-
-
-	</section>
-
-
-	<section id="experiment-article-section-2">
-
-	<div id="experiment-article-section-2-icon" class="icon">
-	<!-- Enclose the icon image of your lab. -->
-	<img src="../images/objective.jpg" />
-	</div>
-
-	<!-- The heading for the section can be enclosed in a 
-	div tag. -->
-	<div id="experiment-article-section-2-heading" class="heading">
-	Objective
-	</div>
-
-
-	<!-- Write the section content inside a paragraph 
-	element, we can also include images with <img> tag -->
-	<div id="experiment-article-section-2-content" class="content">
-	<p>
-	  The objective of this experiment is to learn various methods
-	  of extracting information about the system and its status,
-	  including the current version of Operating System,
-	  utilization of hardware resources by the Operating System,
-	  processes status information and logged in users
-	  information.
-	</p>
-	</div>
-	</section>
-
-
-
-	<!-- Second section of the article-->
-	<section id="experiment-article-section-3">
-
-	  <div id="experiment-article-section-3-icon" class="icon">
-	    <!-- Enclose the icon image of your lab. -->
-	    <img src="../images/theory.jpg" />
-	  </div>
-
-	  <!-- The heading for the section can be enclosed in a 
-	       div tag. -->
-	  <div id="experiment-article-section-3-heading" class="heading">
-	    Theory
-	  </div>
-
-
-	  <!-- Write the section content inside a paragraph 
-	  element, we can also include images with <img> tag -->
-	  <div id="experiment-article-section-3-content"
-	       class="content">
-	    <p>
-	      Before going to the actual commands to know the system
-	      information, lets know the terminologies used in this
-	      experiment.</p>
-	    <p>
-	      <ul>
-		<li>
-		  <h4>Process:</h4> 
-		  <p>
-		    A process is a running instance of a program.
-		    Sometimes it can be referred as a task.
-		  </p>
-		  <p> A <b>program</b> is a set of instructions that are
-		    meant to perform a specific task.
-		  </p>
-		</li>
-		<li>
-		  <h4>Memory units:</h4>
-		  <p>1 Kilo Byte (KB) = 1024 Bytes </p>
-		  <p>1 Mega Byte (MB) = 1024 Kilo Bytes </p>
-		  <p>1 Giga Byte (GB) = 1024 Mega Bytes </p>
-		  <p>1 Tera Byte (TB) = 1024 Giga Bytes </p>
-		</li>
-	      </ul>
-	      <br/><br/>
-	    <p>
-	      The following are the list of Linux commands which are
-	      used to get the system information. The commands are
-	      divided according to their area of usage.
-	    </p>
-	    <u><h2>Main Memory Usage</h2></u>
-	    <ol>
-	      <h3>
-		<li>free
-	      </h3> 
-	      <p>
-		The 'free' command prints the total amount of free and
-		used RAM (and swap) memory in the system, as well as
-		the buffers used by the kernel.
+		The experimental platform for this experiment is a
+		command line interface which mimics the terminal of a
+		GNU/Linux machine. The command line interface can help
+		in learning the basics of how to get systems
+		information. A series of tasks which can be performed
+		on available command-line interface is also provided.
 	      </p>
-	      <pre class="code">
-user@linux:~$ free
+	      <p>
+		Proceed to the theory section to get an overview of
+		the commands. Then move to the experiment section to
+		get some hands-on experience and finish the experiment
+		tasks. After you are done with the experiment, go to
+		the quiz section to test your understanding.
+	      </p>
+	    </div>
+	  </section>
+	  
+
+	  <!-- Second section of the article-->	  
+	  <section id="experiment-article-section-2">
+	    
+	    <div id="experiment-article-section-2-icon" class="icon">
+	      <!-- Enclose the icon image of your lab. -->
+	      <img src="../images/objective.jpg" />
+	    </div>
+
+	    <!-- The heading for the section can be enclosed in a 
+		 div tag. -->
+	    <div id="experiment-article-section-2-heading" class="heading">
+	      Objective
+	    </div>
+	    
+	    
+	    <!-- Write the section content inside a paragraph 
+		 element, we can also include images with <img> tag -->
+	    <div id="experiment-article-section-2-content" class="content">
+	      <p>
+		The objective of this experiment is to learn various
+		methods of extracting information about the system and
+		its status, including the current version of Operating
+		System, utilization of hardware resources by the
+		Operating System, processes status information and
+		logged in users information.
+	      </p>
+	      <p>
+		After this experiment, one should be able to get the
+		basic information of Operating system (and kernel),
+		the utilization of hardware resources by the processes
+		and Operating System and the information about the
+		logged in users, of which the web-interfaced shell is
+		running.
+	      </p>
+	    </div>
+	  </section>
+	  
+
+
+	  <!-- Third section of the article-->
+	  <section id="experiment-article-section-3">
+
+	    <div id="experiment-article-section-3-icon" class="icon">
+	      <!-- Enclose the icon image of your lab. -->
+	      <img src="../images/theory.jpg" />
+	    </div>
+	    
+	    <!-- The heading for the section can be enclosed in a div
+		 tag. -->
+	    <div id="experiment-article-section-3-heading" class="heading">
+	      Theory
+	    </div>
+	    
+	    
+	    <!-- Write the section content inside a paragraph element,
+	    we can also include images with <img> tag -->
+	    <div id="experiment-article-section-3-content"
+		 class="content">
+	      <p>
+		In order to understand the output of the commands used
+		in this experiment, one should know the terminologies
+		used. Some of them are given below.</p>
+	      <p>
+		<ul>
+		  <li>
+		    <h4>Process:</h4> 
+		    <p>
+		      A process is a running instance of a program.
+		      Sometimes it can be referred as a task.
+		    </p>
+		    <p> A <b>program</b> is a set of instructions that are
+		      meant to perform a specific task.
+		    </p>
+		  </li>
+		  <li>
+		    <h4>Memory units:</h4>
+		    <p>1 Kilo Byte (KB) = 1024 Bytes </p>
+		    <p>1 Mega Byte (MB) = 1024 Kilo Bytes </p>
+		    <p>1 Giga Byte (GB) = 1024 Mega Bytes </p>
+		    <p>1 Tera Byte (TB) = 1024 Giga Bytes </p>
+		  </li>
+		</ul>
+		<br/><br/>
+	      <p>
+		The following are the list of Linux commands which are
+		used to get the system information. The commands are
+		divided according to their area of usage.
+	      </p>
+	      <u><h2>Main Memory Usage</h2></u>
+	      <ol>
+		<h3>
+		  <li>free
+		</h3> 
+		<p>
+		  The 'free' command prints the amount of total, free
+		  and used RAM (and swap) memory in the system, as
+		  well as the buffers used by the kernel.
+		</p>
+		<pre class="code">
+aditi@mylaptop:~$ free
              total       used       free     shared    buffers     cached
 Mem:       1918584    1549980     368604          0     180488     704172
 -/+ buffers/cache:     665320    1253264
 Swap:      9577468          0    9577468
-	      </pre>
-	      <p>
-		"-h" option is used to get the numbers in human readable
-		format, scaled to shortest three digit unit and
-		display the units of print out. The units are
-		mentioned above.
-	      </p>
-	      <pre class="code">
-user@linux:~$ free -h
+		</pre>
+		<p>
+		  "-h" option is used to get the numbers in human
+		  readable format, scaled to shortest three digit unit
+		  and display the units of print out. The units are
+		  mentioned above.
+		</p>
+		<pre class="code">
+aditi@mylaptop:~$ free -h
              total       used       free     shared    buffers     cached
 Mem:          1.8G       1.5G       361M         0B       176M       687M
 -/+ buffers/cache:       648M       1.2G
 Swap:         9.1G         0B       9.1G
-	      </pre>	
+		</pre>	
 
-	      <p>
-		<ul>
-		  <li>
-		    The "total" column of "Mem:" row indicates the
-		    memory size of the RAM. Here we can see that the
-		    RAM is of 1.8GB, of which 1.5GB is currently in
-		    use and 361MB is free. 
-		  </li>
-		  <li>
-		    Since the memory used for buffers and cache can
-		    easily be reclaimed for use by applications, the
-		    second row (-/+ buffers/cache) provides an
-		    indication of the memory actually used by
-		    applications (the "used" column) or available to
-		    applications (the "free" column). Here we can see
-		    that the actual RAM used by the applications is
-		    648MB and the available RAM is 1.2GB. That means,
-		    the actual load is of 648MB only.
-		  </li>
-		  <li>
-		    You can <b>ignore</b> the other options for now. If you
-		    want more information, run the manual "man free"
-		    in shell.
-		  </li>
-		</ul>
-	      </p>
+		<p>
+		  <ul>
+		    <li>
+		      The "total" column of "Mem:" row indicates the
+		      memory size of the RAM. Here we can see that the
+		      RAM is of 1.8GB, of which 1.5GB is currently in
+		      use and 361MB is free.
+		    </li>
+		    <li>
+		      Since the memory used for buffers and cache can
+		      easily be reclaimed for use by applications, the
+		      second row (-/+ buffers/cache) provides an
+		      indication of the memory actually used by
+		      applications (the "used" column) or available to
+		      applications (the "free" column). Here we can
+		      see that the actual RAM used by the applications
+		      is 648MB and the available RAM is 1.2GB. That
+		      means, the actual load is of 648MB only.
+		    </li>
+		    <li>
+		      The other options cane be <b>ignored</b> for
+		      now. Run "man free" to see more information
+		      about "free" command.
+		    </li>
+		  </ul>
+		</p>
               </li>
-	    </ol>
+            </ol>
 <br/><br/>
 	    <u><h2>Process related commands</h2></u>
 	    <ol>
 	      <h3>
 		<li>ps
 	      </h3>
-	      <p>The ps (process status) command is used to provide
-	      information about the currently running processes,
-	      including their process identification numbers (PIDs).
-	      Every process is assigned a unique PID by the system.
+	      <p>
+		The ps (process status) command is used to provide
+		information about the currently running processes,
+		including their process identification numbers (PIDs).
+		Every process is assigned a unique PID by the system.
 	      </p>
 	      <pre class="code">
-user@linux:~$ ps
+aditi@mylaptop:~$ ps
  PID TTY          TIME CMD
 5957 pts/2    00:00:00 bash
 6147 pts/2    00:00:00 ps
 	      </pre>
 	      
 	      <p>
-		When "ps" is used without any options, it gives an
-		output of running processes in the current shell, with
-		four items of information. At least two processes will
-		be displayed because those must be currently running
-		on that shell: the shell and ps.
+		When <b>ps</b> is used without any option, it gives
+		an output of running processes in the current shell,
+		with four items of information. At least two processes
+		will be displayed because those must be currently
+		running on that shell: the shell and ps.
 	      </p>
 
 	      <p>
@@ -308,44 +295,42 @@ user@linux:~$ ps
 		option, where:
 		<ul>
 		  <li><h4>a</h4> option is to list the processes of
-		  all users on the system rather than just those of
-		  the current user with the exception of processes not
-		  associated with a terminal.</li>
+		    all users on the system rather than just those of
+		    the current user with the exception of processes
+		    not associated with a terminal.</li>
 		  <li><h4>u</h4> option tells ps to provide detailed
-		  information about each process. This option doesn't
-		  give the processes which do not have a controlling
-		  terminal/shell.</li>
+		    information about each process. This option
+		    doesn't give the processes which do not have a
+		    controlling terminal/shell.</li>
 		  <li><h4>x</h4> option adds to the list processes
-		  that have no controlling terminal, such as daemons,
-		  which are programs that are launched during
-		  booting.</li>
+		    that have no controlling terminal, such as
+		    daemons, which are programs that are launched
+		    during booting.</li>
 		</ul>
 	      </p>
 	      <pre class="code">
-user@linux:~$ ps aux
+aditi@mylaptop:~$ ps aux
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         1  0.0  0.0  10636   828 ?        Ss   22:02   0:00 init [2]  
 root         2  0.0  0.0      0     0 ?        S    22:02   0:00 [kthreadd]
 root      3942  0.0  0.0   8040   812 tty4     Ss+  22:04   0:00 /sbin/getty 38400 tty4
 root      3943  0.0  0.0   8040   812 tty5     Ss+  22:04   0:00 /sbin/getty 38400 tty5		
-user      6123  0.1  1.5 211404 30320 pts/1    S+   22:53   0:02 emacs overall_commands.org
+aditi     6123  0.1  1.5 211404 30320 pts/1    S+   22:53   0:02 emacs overall_commands.org
 www-data  6150  0.0  0.5 243240  9980 ?        S    22:54   0:00 /usr/sbin/apache2 -k start
 root      6242  0.0  0.0      0     0 ?        S    22:56   0:00 [kworker/0:0]
-user      6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux
+aditi     6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux
 	      </pre>
 	      <p>
 		As the list of processes can be quite long and occupy
-		more than a single screen, the output of "ps aux" can
-		be piped (i.e., transferred) to the "less" command,
-		which lets it be viewed one screenful at a time.
+		more than a single screen, the output of "ps aux" cant
+		be seen in a single screen. The output of "ps aux" can
+		be piped (transfer) to "less" or "more" commands, which can be
+		explained in the later experiments of this lab.
 	      </p>
-	      <pre class="code">
-user@linux:~$ ps aux |less
-	      </pre>
 	      
-	      <p> We can find more output columns when we use
-	      "aux". Some of the output columns are explained
-	      below. You can <b>ignore</b> the remaining for now.
+	      <p> The output gives more columns when "aux" is
+		used. Some of the output columns are explained
+		below. The remaining can be <b>ignored</b> for now.
 		<ul>
 		  <li><h4>USER</h4>User who is owning/running the
 		    process</li>
@@ -374,13 +359,12 @@ user@linux:~$ ps aux |less
 		currently being managed by the Linux kernel.
 	      </p>
               <p>
-		The program provides a limited interactive interface
-		for process manipulation as well as a much more
-		extensive interface for personal configuration --
-		encompassing every aspect of its operation. 
+		The program provides an interactive interface for
+		process manipulation as well as for personal
+		configuration.
 	      </p>
 	      <pre class="code">
-user@linux:~$ top
+aditi@mylaptop:~$ top
 top - 23:14:54 up  1:40,  3 users,  load average: 1.03, 1.03, 0.87
 Tasks: 179 total,   2 running, 177 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  0.7 us,  0.2 sy,  0.0 ni, 98.6 id,  0.6 wa,  0.0 hi,  0.0 si,  0.0 st
@@ -388,14 +372,14 @@ KiB Mem:   1918584 total,  1821848 used,    96736 free,   195076 buffers
 KiB Swap:  9577468 total,        0 used,  9577468 free,   795388 cached
 
  PID USER   PR  NI  VIRT  RES  SHR S  %CPU %MEM    TIME+  COMMAND
-4506 user   20   0  998m 108m  29m S   1.7  5.8   3:39.68 gnome-shell
+4506 aditi  20   0  998m 108m  29m S   1.7  5.8   3:39.68 gnome-shell
 2838 root   20   0  158m  24m 8144 S   1.0  1.3   5:23.14 Xorg
-4611 user   20   0 1176m 261m  40m S   0.7 13.9  11:59.15 firefox-bin
-4782 user   20   0  404m  55m  19m S   0.7  3.0   0:27.00 plugin-containe
-6602 user   20   0  422m  36m  17m S   0.3  2.0   0:20.09 /usr/bin/termin
-6729 user   20   0  207m  30m  13m S   0.3  1.6   0:08.01 emacs
-8909 root   20   0     0    0    0 S   0.3  0.0   0:02.10 kworker/0:1
-9586 user   20   0 15072 1544 1084 R   0.3  0.1   0:00.09 top
+4611 aditi  20   0 1176m 261m  40m S   0.7 13.9  11:59.15 firefox-bin
+4782 aditi  20   0  404m  55m  19m S   0.7  3.0   0:27.00 plugin-containe
+6602 aditi  20   0  422m  36m  17m S   0.3  2.0   0:20.09 /usr/bin/termin
+6729 aditi  20   0  207m  30m  13m S   0.3  1.6   0:08.01 emacs
+8909 aditi  20   0     0    0    0 S   0.3  0.0   0:02.10 kworker/0:1
+9586 aditi  20   0 15072 1544 1084 R   0.3  0.1   0:00.09 top
    1 root   20   0 10636  832  696 S   0.0  0.0   0:01.03 init
    2 root   20   0     0    0    0 S   0.0  0.0   0:00.00 kthreadd
    3 root   20   0     0    0    0 S   0.0  0.0   0:00.48 ksoftirqd/0
@@ -403,21 +387,24 @@ KiB Swap:  9577468 total,        0 used,  9577468 free,   795388 cached
 	      </pre>
 	      <p>
 		<ul>
-		  <li>In the above output, first five lines are called
+		  <li>
+		    In the above output, first five lines are called
 		    summary output, which gives the summary of the
 		    system load and processes. In third line, if the
 		    CPUs id (idle percentage) is very less (here, it
-		    is 98.6), then the processor is too busy. You need
-		    to check that which process is using more CPU time
-		    by looking at the above sorted table of
-		    processes. </li>
-		  <li>Press "h" to see the help for the interactive
+		    is 98.6), then the processor is too busy. One can
+		    check that which process is using more CPU time by
+		    looking at the above sorted table of
+		    processes.</li>
+		  <li>
+		    Press "h" to see the help for the interactive
 		    commands.</li>
 		  <li>Press "q" to quit the "top".</li>
 		  <li>By default, sorting of the process is done based
 		    on the CPU time usage by the processes.</li>
-		  <li>Columns are same as in <b>ps</b>. You can <b>ignore</b>
-		    the remaining ones.</li>
+		  <li>Most of the columns are identical to <b>ps</b>
+		    command output. The other columns can
+		    be <b>ignored</b> for now.</li>
 		</ul>
               </li>
             </ol>
@@ -429,32 +416,35 @@ KiB Swap:  9577468 total,        0 used,  9577468 free,   795388 cached
 	      </h3>
 	      <p>
 		<b>w</b> displays information about the users
-		currently on the machine, and their processes.</p>
+		currently on the machine, and their current
+		process. </p>
 	     
 	      <pre class="code">
-user@linux:~$ w
+aditi@mylaptop:~$ w
 13:45:49 up  5:10,  6 users,  load average: 0.30, 0.51, 0.51
 USER    TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 root    tty2                      13:44    1:04   0.09s  0.07s -bash
-user    tty7     :0               08:37    5:10m  7:24   0.08s gdm-session-worker [pam/gdm3]
-user    pts/0    :0               10:19    3:25m  1:05   1:05  emacs content.html
-user    pts/1    :0               10:19    3:26m 13.13s 13.02s emacs overall_commands.org
-user    pts/2    :0               12:34    0.00s  0.23s  0.00s w
-user    pts/3    14.139.82.11     13:50    4.00s  0.15s  0.15s -bash
+aditi   tty7     :0               08:37    5:10m  7:24   0.08s gdm-session-worker [pam/gdm3]
+aditi   pts/0    :0               10:19    3:25m  1:05   1:05  emacs content.html
+aditi   pts/1    :0               10:19    3:26m 13.13s 13.02s emacs overall_commands.org
+aditi   pts/2    :0               12:34    0.00s  0.23s  0.00s w
+aditi   pts/3    14.139.82.11     13:50    4.00s  0.15s  0.15s -bash
 	      </pre>
 	      <p>
 		<ul>
-		  <li><h4>The header</h4> The header shows, in this
-		    order, the current time, how long the system has
-		    been running, how many users are currently logged
-		    on, and the system load averages for the past 1,
-		    5, and 15 minutes.</li>
+		  <li><h4>The header</h4> The header (first line of
+		    output) shows in the order, the current time,
+		    how long the system has been running, how many
+		    users are currently logged in, and the system load
+		    averages for the past 1, 5, and 15 minutes.</li>
 		  <li><b>USER</b> is the username of the logged in
 		    user.</li>
 		  <li><b>LOGIN@</b> is the time when the user is
 		    logged in.</li>
 		  <li><b>WHAT</b> is the command running currently by
 		    that respective user.</li>
+		  <li><b>Ignore</b> the remaining columns for
+		    now.</li>
 		</ul>
 	      </p>
 
@@ -462,21 +452,21 @@ user    pts/3    14.139.82.11     13:50    4.00s  0.15s  0.15s -bash
               <h3>
 		<li>whoami
 	      </h3>
-              <p>Print the user name currently using. i.e., as which
-              user the "whoami" command is running.</p>
+              <p>Prints the user name of the current user. i.e., as
+              which user the "whoami" command is being run.</p>
 	      <pre class="code">
-user@linux:~$ whoami
-user
+aditi@mylaptop:~$ whoami
+aditi
 	      </pre>
               </li>
               <h3>
 		<li>users
 	      </h3>
-              <p>Print the user names of users currently logged in to
-              the system.</p>
+              <p>Prints the user names of all users currently logged
+		in to the system.</p>
 	      <pre class="code">
-user@linux:~$ users
-user user user root
+aditi@mylaptop:~$ users
+aditi aditi aditi root
 	      </pre>
               </li>
             </ol>
@@ -491,8 +481,8 @@ user user user root
 	      <p>
 
 		<ul>
-		  <li><h4>-a</h4>print all information, in the
-		    following order</li>
+		  <li><h4>-a</h4>prints all the information in the
+		    following order:</li>
 		  <ul>
 		    <li>the kernel name</li>
 		    <li>the network node hostname</li>
@@ -504,27 +494,21 @@ user user user root
 		</ul>
 	      </p>
 	      <pre class="code">
-user@linux:~$ uname -a
+aditi@mylaptop:~$ uname -a
 Linux debian 3.2.0-3-amd64 #1 SMP Mon Jul 23 02:45:17 UTC 2012 x86_64 GNU/Linux
 	      </pre>
              </li>
              <h3>
-	       <li>lsb_release -a
+	       <li>more /etc/issue
 	     </h3>
 	     <p>
-	       The 'lsb_release' command prints certain LSB (Linux
-	       Standard Base) and distribution-specific
-	       information. When invoked without any arguments, it
-	       prints the LSB version. When used with the '-a' option,
-	       'lsb_release' prints all the information. Use '-h'
-	       option to look at the complete set of options and their
-	       actions.</p>
+	       The "/etc/issue" file will contain the information
+	       about the GNU/Linux distribution which is currently
+	       running. </p>
 	     <pre class="code">
-user@linux:~/$ lsb_release -a
-Distributor ID:	Debian
-Description:	Debian GNU/Linux testing (wheezy)
-Release:	testing
-Codename:	wheezy
+aditi@mylaptop:~/$ more /etc/issue
+Debian GNU/Linux wheezy/sid \n \l
+
 	     </pre>
 	     </li>
             </ol>
@@ -536,13 +520,13 @@ Codename:	wheezy
 		<li>more /proc/cpuinfo
 	      </h3>
               <p>The kernel data Linux exposes in /proc/cpuinfo will
-              show each logical cpu with a unique processor number. A
-              logical cpu can be a hyperthreading sibling, a shared
+              show each logical CPU with a unique processor number. A
+              logical CPU can be a hyper-threading sibling, a shared
               core in a dual or quad core, or a separate physical
-              cpu. We must look at the siblings, cpu cores and core id
-              to tell the difference.</p>
+              CPU. Most of the time, all the logical CPUs will have
+              identical values.</p>
 	      <pre class="code">
-user@linux:~$ more /proc/cpuinfo
+aditi@mylaptop:~$ more /proc/cpuinfo
 processor	: 0
 vendor_id	: GenuineIntel
 cpu family	: 6
@@ -577,22 +561,25 @@ address sizes	: 36 bits physical, 48 bits virtual
 power management:
 	      </pre>
 	      <ul>
-		<li>The above output is for one core processor. As it
-		  has 4 siblings, the same output will be repeated for
-		  3 more core processors. Each core processor is
-		  identified with a unique id in the first line
-		  (processor) itself.</li>
-		<li>You can see in the above output that it has 2 CPU
-		  cores. That means, its a dual core processor and
-		  each core processor has one sibling, total of 4
-		  siblings.</li>
+		<li>The above output is for one logical processor. As
+		  it has 4 siblings, the same output will be repeated
+		  for 3 more logical processors. Each logical
+		  processor is identified with a unique id in the
+		  first line (processor) itself.</li>
+		<li>As the output shows, it has 2 CPU cores. That
+		  means, its a dual core processor and each core
+		  processor has one sibling, total of 4 siblings.</li>
+		<li> It also shows that who is the vendor of the
+		  processor, what is the model name and the capacity
+		  of processor (in GHz). </li>
 		<li>If someone wants to know whether the processor is
 		  of 32bit or 64bit, one has to check the flags. If
 		  "lm" flag is present in the above output of
 		  /proc/cpuinfo (end of 3rd line of flags), then the
 		  processor is of 64bit. If not, its a 32bit
 		  processor. </li>
-		<li>You can <b>ignore</b> the remaining for now.</li>
+		<li>The other fields can be <b>ignored</b> for
+		  now.</li>
 	      </ul>
              </li>
            </ol>
@@ -607,16 +594,17 @@ power management:
 		currently being used (mounted). </p>
 
 	      <p>If an argument is the absolute file name of a disk
-		device node containing a mounted file system, df shows
-		the space available on that file system rather than on
-		the file system containing the device node (which is
-		always the root file system). </p>
+		device node containing a mounted file
+		system, <b>df</b> shows the space available on that
+		file system rather than on the file system containing
+		the device node (which is always the root file
+		system). </p>
 	      
 	      <p>-h option is used to print sizes in human readable
 		format (e.g., 1K 234M 2G)</p>
 	      
 	      <pre class="code">
-user@linux:~$ df -h
+aditi@mylaptop:~$ df -h
 Filesystem        Size  Used Avail Use% Mounted on
 rootfs            187G  108G   70G  61% /
 udev               10M     0   10M   0% /dev
@@ -633,7 +621,7 @@ tmpfs             2.2G  496K  2.2G   1% /run/shm
 		  <li>the total <b>Size</b> of the disk, </li>
 		  <li>how much of the disk being <b>Used</b>,</li>
 		  <li>how much of the disk space is <b>Available</b> and</li>
-		  <li>how much percentage of disk is used.</li>  
+		  <li>how much <b>percentage</b> of disk is used.</li>
 		</ul></p>
 	      <p><B>Ignore</B> the <b>"Mounted on"</b> for now.
 	      </p>
@@ -646,22 +634,20 @@ tmpfs             2.2G  496K  2.2G   1% /run/shm
 		<li>date
 	      </h3>
 	      <p>
-		Display the current time in the given FORMAT, or set
+		Displays the current time in the given FORMAT, or set
 		the system date.</p>
 	      <p>
 		If no argument is given, date command prints the
 		current date and time.</p>
 	      <pre class="code">
-user@linux:~$ date
+aditi@mylaptop:~$ date
 Sat Dec 29 17:04:07 IST 2012
 	      </pre>
 
-	      <p>Look for manual page of date command <b>(man
-	      date)</b>to see the FORMAT strings. </p>
-	      <p>Where the first command prints the current date and
-	      next command prints the specified date in the mentioned
-	      format. The above format strings are explained below.
-	      </p>
+	      <p>Look for manual page of date command <b> (man
+		  date)</b>to see the FORMAT strings. <b>Ignore</b>
+		  how to set the date and time using <b>date</b>
+		  command for now.</p>
               </li>
 
               <h3>
@@ -672,7 +658,7 @@ Sat Dec 29 17:04:07 IST 2012
 		current month is displayed, highlighting the current
 		day.</p>
 	      <pre class="code">
-user@linux:~$cal
+aditi@mylaptop:~$cal
    December 2012      
 Su Mo Tu We Th Fr Sa  
                    1  
@@ -683,33 +669,33 @@ Su Mo Tu We Th Fr Sa
 30 31 
 	      </pre>
               <p>
-		<h3>Some options:</h3>
+		<h3>Some useful options:</h3>
                 <ul>
-		  <li><h4>-m month</h4>Display the specified
+		  <li><h4>-m month</h4>Displays the specified
 		  month.</li>
-		  <li><h4>-y year</h4>Display a calendar for the
+		  <li><h4>-y year</h4>Displays a calendar for the
 		  specified year. This option is implied when a year
 		  but no month are specified on the command line.</li>
 		  <li><h4>-3</h4>Display the previous, current and
 		  next month surrounding today.</li>
 		</ul></p>
                 <p>Look for the manual page of cal command <b>(man
-		cal</b> for more options.
+		cal)</b> for more options.
 		</p>
               </li>
 
 	      <h3>
 		<li>uptime
 	      </h3>
-	      <p>uptime gives a one line display of the following
-		information.  The current time, how long the system
-		has been running, how many users are currently logged
-		on, and the system load averages for the past 1, 5,
-		and 15 minutes.</p>
+	      <p><b>uptime</b> gives a one line display of the
+		following information.  The current time, how long the
+		system has been running, how many users are currently
+		logged in, and the system load averages for the past
+		1, 5, and 15 minutes.</p>
               <p>This is the same information contained in the header
 		line displayed by 'w' command. </p>
 	      <pre class="code">
-user@linux:~$uptime
+aditi@mylaptop:~$uptime
 13:45:49 up  5:10,  6 users,  load average: 0.30, 0.51, 0.51
 	      </pre>
 	      <br/>
@@ -722,19 +708,19 @@ user@linux:~$uptime
 
 
 
-      <section id="experiment-article-section-5">
-	<div id="experiment-article-section-5-icon" 
+      <section id="experiment-article-section-4">
+	<div id="experiment-article-section-4-icon" 
 	     class="icon">
 	  <!-- Enclose the icon image of your lab.-->
 	  <img src="../images/simulation.jpg" />
 	</div>
 	
-	<div id="experiment-article-section-5-heading" 
+	<div id="experiment-article-section-4-heading" 
 	     class="heading">
 	  Tasks
 	</div>
 	
-	<div id="experiment-article-section-5-content" 
+	<div id="experiment-article-section-4-content" 
 	     class="content">
 	  <p style="margin-left:0px">
 	    Students who already have a Virtual-Labs login should click
@@ -753,75 +739,63 @@ user@linux:~$uptime
 
 
 
-        <section id="experiment-article-section-6">
+        <section id="experiment-article-section-5">
       
-          <div id="experiment-article-section-6-icon" 
+          <div id="experiment-article-section-5-icon" 
           class="icon">
 	    <!-- Enclose the icon image of your lab.-->
 	    <img src="../images/quizzes.jpg" />
 	  </div>
 
-          <div id="experiment-article-section-6-heading" 
+          <div id="experiment-article-section-5-heading" 
           class="heading">
             Quiz
           </div>
 
-          <div id="experiment-article-section-6-content" 
+          <div id="experiment-article-section-5-content" 
           class="content">
-<ul><li>The command "rm xyz" is enough to delete the directory xyz containing subdirectories. True or false?</li>
-<li>Permission for a file "-rw-r--r--" means it can be executed by anyone in the group. True or false?</li>
-<li>The pwd command gives the absolute path of the current directory. True or false?</li>
-<li>The latest edited file/folder comes last in the output of ls -t. True or false?</li>
-<li> In the output of ls -l, the second column for directories denotes which one of the following:<ul>
-<li>No of subdirectories </li>
-<li>No of subdirectories + No. of files int the directory</li>
-<li>c. No of subdirectories including hidden directories</li></ul></li></ul>
-
+	    <p>Quiz questions have to be added.</p>
           </div>
 
         </section>
 
-        <section id="experiment-article-section-8">
+        <section id="experiment-article-section-6">
    
-          <div id="experiment-article-section-8-icon" 
+          <div id="experiment-article-section-6-icon" 
           class="icon">
 	    <!-- Enclose the icon image of your lab.-->
 	    <img src="../images/readings.jpg" />
 	  </div>
 
-          <div id="experiment-article-section-8-heading" 
+          <div id="experiment-article-section-6-heading" 
           class="heading">
-            Readings
+            Further Readings
           </div>
 
-          <div id="experiment-article-section-8-content" 
+          <div id="experiment-article-section-6-content" 
           class="content">
 	<ul>
-	<li><a href="http://polishlinux.org/console/file-management-in-linux/">http://polishlinux.org/console/file-management-in-linux/</a> </li>
-	<li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?ls">ls man page</a></li>
-	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html</a></li>
-	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html</a></li>
-	<li><a href="http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml">http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml</a></li>
-</ul>
+	  <li></li>
+	</ul>
           </div>
 
         </section>
 
-    <section id="experiment-article-section-9">
+    <section id="experiment-article-section-7">
 
-          <div id="experiment-article-section-9-icon" 
+          <div id="experiment-article-section-7-icon" 
           class="icon">
             <!-- Enclose the icon image of your lab.-->
             <img src="../images/readings.jpg" />
           </div>
 
-          <div id="experiment-article-section-9-heading" 
+          <div id="experiment-article-section-7-heading" 
           class="heading">
 	
 	Feedback
           </div>
 
-          <div id="experiment-article-section-9-content" 
+          <div id="experiment-article-section-7-content" 
           class="content">
 	Please provide us feedback <a href="http://virtual-labs.ac.in/feedback/" >here</a>
           </div>
