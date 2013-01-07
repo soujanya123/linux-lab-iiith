@@ -175,14 +175,14 @@ edit -->
 		page( type in terminal $man echo)
 	</p>
 	<p>Syntax of echo command<p>
-	<pre class="code"> username@hostname:~$ echo <string> </pre>
+	<pre class="code"> aditi@mylab:~$ echo <string> </pre>
 	<p>	
 		We shall see how to display sample by
 		using <b>echo command</b>.</p>
 	<p>
 		To display current day date, enter the command <b>echo $(date)</b>
 	<pre class="code">
-swaroop@Kundeti:~$ echo "Hello World"
+aditi@mylab:~$ echo "Hello World"
 Hello World </pre>
 	
 	<h3>2.cat</h3>
@@ -199,7 +199,7 @@ Hello World </pre>
 
 	<p>Syntax of cat command</p>
 	<pre class="code">
-username@hostname:~$ cat [filename] </pre>
+aditi@mylab:~$ cat [filename] </pre>
 
 	<p>
 		We shall see how to use <b>cat command</b> for displaying
@@ -210,7 +210,7 @@ username@hostname:~$ cat [filename] </pre>
 	</p>
 
       	<pre class="code">
-swaroop@Kundeti:~$ cat example.txt 
+aditi@mylab:~$ cat example.txt 
 this a example text file. </pre>
 
 	<h3>3.wc</h3>
@@ -219,7 +219,7 @@ this a example text file. </pre>
 	</p>
 	<p>Syntax of wc command</p>
 	<pre class="code">
-username@hostname:~ wc [options] [file]	</pre>
+aditi@mylab:~ wc [options] [file]	</pre>
 	<p>
 		Below are the available options for wc command
 	</p>
@@ -239,7 +239,7 @@ username@hostname:~ wc [options] [file]	</pre>
 		in a file using <b>wc command</b>
 	</p>
 	<pre class="code">
-swaroop@Kundeti:~$ wc example.txt 
+aditi@mylab:~$ wc example.txt 
 1  5 26 example.txt
  
 Above output is :
@@ -255,7 +255,8 @@ Above output is :
 	<p>
 	
         <p>Syntax of head command</p>
-	<pre class="code"> username@hostname:~head  [file-name] </pre>
+	<pre class="code"> 
+aditi@mylab:~head  [file-name] </pre>
 	<p>
 		Below are the available options for head command
 	</p>
@@ -272,8 +273,8 @@ Above output is :
 		using <b>head command</b>
 	</p>
 	<pre class="code">
-	  swaroop@Kundeti:~$ head example.txt 
-	  this a example text file.</pre>
+aditi@mylab:~$ head example.txt 
+this a example text file.</pre>
 	<p><b>Note:</b> By default head command will display the first
 	10 lines of a file. The autpu can be customized by using
 	options available using head command. More information can be
@@ -287,17 +288,17 @@ Above output is :
 	</p>
 	<p>Syntax of tail command</p>
 	<pre class="code">
-username@hostname:~tail [file-name] </pre>
+aditi@mylab:~tail [file-name] </pre>
 	<p>	
 		We shall see how to display last few lines of a text file
 		content using <b>Tail Command</b>
 	</p>
 	<pre class="code">
-swaroop@kundeti:~$ tail example.txt
+aditi@mylab:~$ tail example.txt
 this a example text file.
 The same content was copied to example2.txt
 	  
-swaroop@Kundeti:~$ tail -n1 example.txt 
+aditi@mylab:~$ tail -n1 example.txt 
 The same content was copied to example2.txt </pre>
 	
 	<h3>6.Diff</h3>
@@ -308,12 +309,12 @@ The same content was copied to example2.txt </pre>
 	</p>
 	<p>Syntax of diff command</p>
 	<pre class="code">
-username@hostname:~$ diff  [file-name1] [file-name2]</pre>
+aditi@mylab:~$ diff  [file-name1] [file-name2]</pre>
 	<p>
 		We shall see how to compare two files using <b>diff command</b>
 	</p>
 	<pre class="code">
-swaroop@Kundeti:~$ diff example.txt example2.txt 
+aditi@mylab:~$ diff example.txt example2.txt 
 2d1
 The same content wass copied to example2.txt</pre>
 	
@@ -329,22 +330,22 @@ The same content wass copied to example2.txt</pre>
 	 <p>
 		Syntax for sort command</p>
 	 <pre class="code">
-username@hostname:~$ sort [file] </pre>
+aditi@mylab:~$ sort [file] </pre>
 	 <p>We shall see how to sort a file which containes phone book</p>
 	 <pre class="code">
-swaroop@Kundeti:~$ cat  phonebook
+aditi@mylab:~$ cat  phonebook
 Mahesh, Kumar   9491787823
-Swaroop, Kumar  9866223311
+aditi, Kumar  9866223311
 Kiran, Kumar    9988998899 </pre>
 	  <p>	
 		Above is the sample phone book file, we shall sort it by
 		alphabetical order using sort
 	  </p>
 	  
-swaroop@Kundeti:~$ sort phonebook
+aditi@mylab:~$ sort phonebook
 Kiran, Kumar    9988998899
 Mahesh, Kumar   9491787823
-Swaroop, Kumar  9866223311 </pre>
+aditi, Kumar  9866223311 </pre>
 
 	  <h3>8.more</h3>
 
@@ -357,13 +358,13 @@ Swaroop, Kumar  9866223311 </pre>
 	  </p>
 	  <p>Syntax for more command</p>
 	  <pre class="code">
-username@hostname:~$ more [file-name] </pre>
+aditi@mylab:~$ more [file-name] </pre>
 	  <p>
 		Below is a an example to view apache.conf whichis huge
 	        text file. using more command
 	  </p>
 	  <pre class="code">
-swaroop@kundeti:~$ more /etc/apache2/apache2.conf </pre>
+aditi@mylab:~$ more /etc/apache2/apache2.conf </pre>
 
 	  <h3>9.less</h3>
 	  <p>
@@ -376,7 +377,7 @@ swaroop@kundeti:~$ more /etc/apache2/apache2.conf </pre>
 		Syntax for less command
 	  </p>
 	  <pre class="code">
-username@hostname:~$less [file-name]</pre>
+aditi@mylab:~$less [file-name]</pre>
      </div>
      </section>
 
