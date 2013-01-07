@@ -9,7 +9,14 @@ if (isset($_REQUEST['Submit'])) {
   } catch (Exception $exception) {
     $register_message = $exception->getMessage();
   }
+
+  if($register_message == "Registration")
+	echo "Congratulations! You have successfully registered.";
+  else
+        echo "Oops! Some error occurred. <br/>" . $register_message;
 }
+else
+{
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -48,7 +55,11 @@ if (isset($_REQUEST['Submit'])) {
     </tr>
   </table>
 
-  <center> To login, <a href="login-form.php"> click here </a> </center>
+
+<!--  <center> To login, <a href="login-form.php"> click here </a> </center>-->
 </form>
 </body>
 </html>
+<?php
+}
+?>
