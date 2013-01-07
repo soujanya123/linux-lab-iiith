@@ -87,7 +87,7 @@ edit -->
 	element, You can also include images with <img> tag -->
 	<div id="experiment-article-section-1-content" class="content">	
 	<p>
-	The Bash Shell provides a number of programs (commands) that are focussed towards a specific and simple task. In practical applications, it is often required to perform complex tasks that involve multiple programs (commands) and the manipulation of the input and output of these programs. For example, you may wish to execute a set of consecutive commands, with the output of one command forming the input of the next; or you may wish to take input for a command from a file. For this purpose, the Bash Shell provides the powerful tool of Pipes and Redirection.
+	Linux provides a number of commands that are focussed towards a specific and simple task. In practical applications, it is often required to perform complex tasks that involve multiple commands, with the output of one command being used to execute another command. In other words, one may need to manipulate of the input and output of these commands. For this purpose, Linux provides the powerful tool of Pipes and Redirection.
 	 
 	</p>
 
@@ -115,7 +115,7 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-2-content" class="content">
 	<p>
-The goal of this experiment is to learn the various ways of executing multiple commands together and manipulating the input and output of these commands.
+The objective of this experiment is to learn how to execute multiple commands together and manipulating the input and output of these commands. At the end of this experiment, one should be comfortable with pipes and redirection and be able to use them to manipulate the input and output of commands.
 </p>
 	</div>
 	</section>
@@ -141,9 +141,9 @@ The goal of this experiment is to learn the various ways of executing multiple c
 	<div id="experiment-article-section-3-content" class="content">
 	<h3>Standard Input, Standard Output, Standard Error</h3>
 	<p>There are three important concepts you should know about: standard input, standard output and standard error.</p>
-	<p><b>Standard input</b> (stdin) is the data taken by the program at runtime. By default, the standard input stream is the keyboard. The standard input is classified as <b>Type 0</b> by the Bash shell.</p>
-	<p><b>Standard Output</b> (stdout) is where data written by the program. By default, this is the terminal where the program is run from. The standard output is classified as <b>Type 1</b> by the Bash shell.</p>
-	<p><b>Standard Error</b> (stderr) is the output stream where the error messages are written. It is independent of standard output. The default standard error stream is the terminal where the program was run from. The standard error is classified as <b>Type 2</b> by the Bash shell.</p>
+	<p><b>Standard input</b> (stdin) is the data taken by the program at runtime. By default, the standard input stream is the keyboard. The standard input is classified as <b>Type 0</b>.</p>
+	<p><b>Standard Output</b> (stdout) is where data is written by the program. By default, it is the terminal from where the program is run. The standard output is classified as <b>Type 1</b>.</p>
+	<p><b>Standard Error</b> (stderr) is the output stream where the error messages are written. It is independent of standard output. The default standard error stream is the terminal where the program was run from. The standard error is classified as <b>Type 2</b>.</p>
 	<p>Here, the type 0, 1 and 2 are <i>file descriptors</i>, which is a low-level Linux abstraction. Details of this are not required with regards to this experiment. You can simply consider type 0, type 1 and type 2 as different classifications of the input, output and error streams by the system.</p>
 	<h3>Pipes and Redirection</h3>
 	<p>By default, shell commands take input from <i>stdin</i>, write output to <i>stdout</i> and write error output to <i>stderr</i>. It is often desirable to take input from other locations, such as a file or the output of another command. Pipes and redirections are special characters or a set of special characters, which are used to redirect the input and output of commands to another location. 
@@ -153,19 +153,19 @@ Some commonly used pipes and redirects are: &gt;, &gt;&gt;, &lt;, |, 2> and $().
 	<b>&gt</b> prints the output from the command to the specified file. If the file already exists, it is overwritten.
 	</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ ls
+aditi@mylaptop$ ls
 example.txt  all_about_console.txt my_project
-aditi@mylab.org:~/Documents$ ls > out.txt
-aditi@mylab.org:~/Documents$ cat out.txt
+aditi@mylaptop$ ls > out.txt
+aditi@mylaptop$ cat out.txt
 example.txt  all_about_console.txt my_project
 	</pre>
 	<p>
 	<b>&gt&gt</b> appends the output from the command to the specified file.
 	</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ cat >> out.txt
+aditi@mylaptop$ cat >> out.txt
 text appended at end
-aditi@mylab.org:~/Documents$ cat out.txt
+aditi@mylaptop$ cat out.txt
 example.txt  all_about_console.txt my_project
 text appended at end
 	</pre>
@@ -176,13 +176,13 @@ text appended at end
 	<b>&lt</b> reads the command input from the specified file.
 	</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ cat > f1.txt
+aditi@mylaptop$ cat > f1.txt
 d
 a
 c
 b
 e
-aditi@mylab.org:~/Documents$ sort &lt; f1.txt
+aditi@mylaptop$ sort &lt; f1.txt
 a
 b
 c
@@ -191,8 +191,8 @@ e
 </pre>
 <p><b>sort</b> command is run on the contents of 'f1.txt' and the sorted output is printed to stdout.</p>
 <pre class="code">
-aditi@mylab.org:~/Documents$ sort &lt; f1.txt &gt; f1_sort.txt
-aditi@mylab.org:~/Documents$ cat f1_sort.txt
+aditi@mylaptop$ sort &lt; f1.txt &gt; f1_sort.txt
+aditi@mylaptop$ cat f1_sort.txt
 a
 b
 c
@@ -204,23 +204,23 @@ e
 	
 	<p><b>2></b> passes the error output from the command to the specified file. Here, 2 is a reference to the <i>file descriptor</i> of the error stream (1 is assumed by default, so there is no need to specify the type number for stdout). </p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ mkdir /x 2> err.txt
-aditi@mylab.org:~/Documents$ cat err.txt
+aditi@mylaptop$ mkdir /x 2> err.txt
+aditi@mylaptop$ cat err.txt
 mkdir: cannot create directory `/x': Permission denied
-aditi@mylab.org:~/Documents$ cat f1.txt 2> out.txt
+aditi@mylaptop$ cat f1.txt 2> out.txt
 d
 a
 c
 b
 e
-aditi@mylab.org:~/Documents$ cat out.txt
-aditi@mylab.org:~/Documents$ 
+aditi@mylaptop$ cat out.txt
+aditi@mylaptop$ 
 	</pre>
 	<p>
 	<b>|</b> passes the output from the command on the left side of the pipe as input to the command on the right side of the pipe.
 	</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ cat | wc
+aditi@mylaptop$ cat | wc
 Pipes can be
 used to combine
 multiple commands
@@ -232,13 +232,13 @@ complex command.
 	The number of lines, words and characters in the input taken from stdin is printed.
 	</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ cat f1.txt
+aditi@mylaptop$ cat f1.txt
 d
 a
 c
 b
 e
-aditi@mylab.org:~/Documents$ cat f1.txt | sort
+aditi@mylaptop$ cat f1.txt | sort
 a
 b
 c
@@ -247,7 +247,7 @@ e
 </pre>
 	<p>Prints the sorted contents of 'f1.txt'.</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ du | more
+aditi@mylaptop$ du | more
 	</pre>
 	<p>Prints the output of the <b>du</b> command, one screen at a time.</p>
 
@@ -256,24 +256,24 @@ aditi@mylab.org:~/Documents$ du | more
 	<b>$()</b> returns the output of the command, instead of writing it to stdout. Useful for passing it as the parameter of another command. 
 	</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ touch $(ls -1 *.c)
+aditi@mylaptop$ touch $(ls -1 *.c)
 	</pre>
 	<p>Updates timestamp on all .c files in current folder</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ wc $(ls *.txt)
+aditi@mylaptop$ wc $(ls *.txt)
 	</pre>
 	<p>Displays number of characters, words and lines in all text files in current folder.</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ chmod 755 $(ls -1 *.org)
+aditi@mylaptop$ chmod 755 $(ls -1 *.org)
 	</pre>
 	<p>Changes permissions of all .org files in current folder to 755.</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ head -n 5 $(ls -1 *.c)
+aditi@mylaptop$ head -n 5 $(ls -1 *.c)
 	</pre>
 	<p>Displays the first five lines (typically include statements) of all C files in current folder.</p>
 	<pre class="code">
-aditi@mylab.org:~/Documents$ tar cf "$(date +'%Y-%m-%d %H%M').tar" imp
-aditi@mylab.org:~/Documents$ ls
+aditi@mylaptop$ tar cf "$(date +'%Y-%m-%d %H%M').tar" imp
+aditi@mylaptop$ ls
 example.txt  all_about_console.txt my_project imp 2012-12-31 1142.tar
 	</pre>
 	<p>Take backup of 'imp' folder in a tar file, where name of tar file reflects current date and time.</p>
@@ -339,7 +339,7 @@ example.txt  all_about_console.txt my_project imp 2012-12-31 1142.tar
 	<li>'ls -l >> output.txt' overwrites 'output.txt'.</li>
 	<li>'sort -r -k 3 | ps aux' prints the processed sorted on CPU time.</li>
 	<li>$(ls) lists the contents of the current working directory.</li>
-	</ul>
+	</ol>
 
           </div>
 
