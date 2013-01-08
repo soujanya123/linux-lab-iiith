@@ -1,4 +1,4 @@
-\<!-- This file needs to be edited by the lab developer to suit
+<!-- This file needs to be edited by the lab developer to suit
 the requirements of their lab in particular.-->
 
 <!-- Add class="default" to include any element as it is
@@ -121,7 +121,11 @@ edit -->
 	    are done with the experiment, go to the quiz section to test
 	    your understanding.
 	  </p>
-	  
+	  <br />
+	  <br />
+	  <br />
+	  <br />
+	  <br />
 	</div>	
 	</section>
 
@@ -303,226 +307,310 @@ aditi@mylaptop:~$</pre>
 	<h3>How to login to another remote machine</h3>
 	<p>
 	  Use ssh (secure shell) to remotely connect to
-	  another machine.  
-	  ssh
-	  passwd
+	  another machine.  Type
+	  "ssh username@&lt;ip address&gt;" or 
+	  "ssh username@&lt;hostname&gt;" at the command prompt.  
 	</p>
-	
+	<pre class="code">aditi@mylaptop:~$ ssh shyam@127.0.0.1                                                                               
+The authenticity of host '127.0.0.1 (127.0.0.1)' can't be established.
+RSA key fingerprint is 28:07:e5:0b:e0:bb:06:65:a6:f3:19:24:bf:22:69:22.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.9.24.22' (RSA) to the list of known hosts.</pre>
+	<p>
+	  You will get the message above if you are
+	  connecting to a machine for the first time.
+	  Answer "yes" to the question above.
+	</p>
+	<pre class="code">shyam@127.0.0.1's password:
+Permission denied, please try again.
+shyam@127.0.0.1's password:</pre>
+	<p>
+	  If you enter incorrect password, you will get the
+	  above message and prompted to re-enter password.
+	</p>
+	<p>
+	  After you enter the correct password, you will get
+	  a message and the shell prompt.  The message
+	  content depends upon the system administrator and
+	  can be modified.  Below you can see the shell
+	  prompt after the default linux message.
+	</p>
+	<pre class="code">Linux shyamslaptop 3.2.0-2-amd64 #1 SMP Mon May 21 17:45:41 UTC 2012 x86_64
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue Jan  8 05:07:49 2013 from 10.9.24.11 
+shyam@shyamslaptop:~$</pre>
+	<p>
+	  At this stage, you can work in the remote machine
+	  as if it was a local machine.  After you are done,
+	  you can type "exit" to log out of the remote
+	  machine.
+	</p>
+	<pre class="code">shyam@shyamslaptop:~$ exit
+logout
+Connection to 127.0.0.1 closed.
+aditi@mylaptop:~$ </pre>
+	<p>
+	  You need to know the password on the remote
+	  machine in order to connect.  Anyone with the
+	  userid and password can connect, hence it is
+	  important to have a good password on your machine.
+	   You can change your password using "passwd"
+	  command, as show below.
+	</p>
+	<pre class="code">aditi@mylaptop:~$ 
+(current) Password: 
+New password:
+Retype new password:
+passwd: password updated successfully
+aditi@mylaptop:~$ </pre>
 	<h3>How to copy files from one machine to another
 	machine?</h3>
 	<p>
-	  scp
+	  Use "scp" (secure copy) to copy files from one
+	  machine to another.
 	</p>
-
+	<pre class="code">aditi@mylaptop:~$ scp marks.txt shyam@127.0.0.1:/home/shyam/guestfiles
+shyam@127.0.0.1's password:
+marks.txt                                          100%     127    10KB/s    00:00
+aditi@mylaptop:~$ </pre> 
 	<h3>How to synchronize two files or directories on
 	one machine to another machine</h3>
 	<p>
-	  rsync -vtrpaz
+	  Synchronizing two locations means having the same
+	  content (files, directories) on both the
+	  locations.  You can use "rsync" to synchronize files
+	  and folders across different directories in the same
+	  computer, or across different computers. 
 	</p>
-
-	<p>rsync is a utility tool that is used to synchronize files
-and folders across different directories in the same computer, or even
-across different computers connected directly or via a network.
-
-The main advantage which rsync has over other synchronization tools is
-that is only transfers parts of a file/folder which have been changed,
-unlike copying each file over and again, irrespective of that fact
-whether that file has been changed or not.
-</p>
-
-
-<font size="4">1. Why is rsync needed?</font>
-<p>For the sake of simplicity, we assume that we have a file in our /home
-directory called *foo*, which is normally known as a *working copy*
-(as we will always work on it), and we maintain a backup of the file
-known as a *mirror*, in a folder */media/bar*, a mounted partition in
-our computer.  This mounted partition can also exist on a separate
-computer, about which we will discuss in some time.</p>
-
-<p>A typical software project consists of several files, many of which
-remain unchanged most of the time. If we maintain a backup of such a
-project in a separate mounted partition every time we make a change ,
-we end up copying many files which have not been altered since the
-last backup. An obvious alternate would be to back up data on a hourly
-or daily basis, but that would mean that if there is a system failure,
-there is a very high probability that a certain user would lose upto a
-day's work.</p>
-
-<p>Thus, the obvious choice to make smart and faster backups is to use an
-utility that would calculate whether a certain directory/file has any
-changes compared to the backup directory. If there are any changes,
-only those changes should be sent to the backup directory, and thus
-save CPU cycles, and if the backup exists on a separate computer,
-valuable network bandwidth.</p>
-
-<p>rysnc does exactly that. It checks for files whose files sizes or
-modification times have changed w.r.t. backups using a "quick-check"
-al gorithm, and then, sends the differences across to the destination,
-where the files/folders are appropriately altered.
-</p>
-
-<p><font size="4">How is rsync used?</font></p>
-A typical use of rsync looks like:
-
-rsync <options> <source> <destination>
-<br />
-
-<u>Create a file/folder which has to be rsynced</u>
-
-<pre class="code">$ touch foo</pre> <br />
-
-<u>Sync the file to the destination</u>
-
-<pre class="code">$ rsync foo /media/bar</pre><br />
-
-<u>Alter the contents of foo</u>
-
-<pre class="code">$ echo "hello world">foo</pre><br />
-
-<u>Rsync the file between two folders</u>
-
-<pre class="code">$ rsync  foo /media/bar</pre><br />
-
-<u>Alter the contents of foo again</u>
-
-<pre class="code">$ echo "Welcome!">foo</pre><br />
-
-<u>Rsync again between two folders</u>
-
-<pre class="code">$ rsync foo /media/bar</pre> <br/>
-
-
-
-<p>Any changes to made to foo and then rsynced to bar will effect in
-rsync calculating the difference between two files and then
-transmitting the difference, every time you run rsync. The same can be
-applied to folders as well. </p>
-
-<u>Create a folder and create a file inside it</u> <br />
-<pre class="code">$ mkdir qux</pre><br />
-<pre class="code">$ touch foo </pre><br /><br />
-
-<u>Rsync qux to the backup directory /media/baz</u>
-
-<pre class="code">$ rsync qux /media/baz</pre><br /><br />
-
-<u>Create a couple of more files inside qux</pre></u>
-<pre class="code"> $ echo "welcome!">foo</pre><br />
-<pre class="code"> $ echo "hello world">bar</pre><br /> <br />
-
-<u>Rsync qux to the backup directory /media/baz</u><br /><br />
-
-<pre class="code">$ rsync -r qux /media/baz</pre><br />
-
-<p>The option r means recursively synchronizing a folder. This is
-particularly useful as rsync will go inside every sub-folder present
-inside the parent directory.</p>
-
+	<p>
+	  If you want to synchronize two
+	  directories with small content (a few kilobytes or
+	  a few megabytes), you can just do an "scp" (as
+	  explained above) and copy
+	  the files from the source to target.  But if you
+	  need to synchronize bigger directories (several
+	  megabytes or even gigabytes), copy will not be
+	  effective as scp copies all the content from
+	  scratch and will take a lot of time.  
+	</p>
+	<p>
+	  rsync only copyies the changes that were
+	  done since last sync.  If both the locations
+	  already have the same content, rsync will
+	  not do anything.  rsync has the
+	  additional benefit that it can retain the file
+	  permissions and other attributes across the
+	  locations. 
+	</p>
+	<p>
+	  Example 1: Synchronize contents of lectures
+	  folder.  The below command syncs all the files
+	  (but not subdirectories) in
+	  /home/aditi/lectures directory with lectures
+	  folder in Shyam's home directory.  Using the "-v"
+	  (verbose) option, you can see the files being
+	  synchronized. 
+	</p>
+	<pre class="code">rsync -v /home/aditi/lectures/ shyam@127.0.0.1:~/lectures/</pre>
+	<p>
+	  Example 2: Synchronize all C programs from present
+	  working directory to /opt/cprograms/ directory,
+	  retaining the last modified timestamps.  Using the
+	  "-t" option enables synchronization of timestamps
+	  as well (date and time when the file was last
+	  modified).
+	</p>
+	<pre class="code">rsync -t *.c shyam@127.0.0.1:/opt/cprograms/</pre>
+	<p>
+	  Example 3: Synchronize all contents of "readings"
+	  directory (including subdirectories) to "readings"
+	  directory in Shyam's home directory.  Adding the
+	  "-r" option synchronizes the directory recursively.
+	</p>
+	<pre class="code">rsync -vtr /home/aditi/readings shyam@127.0.0.1:~/readings</pre>
+	<p>
+	  Example 4: Synchronize all contents of Shyam's "music"
+	  directory to the music directory in present
+	  working directory.
+	</p>
+	<pre class="code">rsync -vtr shyam@127.0.0.1:~/music music</pre>
+	<p>
+	  Example 5: Synchronize all music from Shyam's
+	  "music" directory to Ram's "music" directory.
+	  Using the "-a" option triggers the "archive" mode
+	  i.e. it synchronizes not only the content but also
+	  permissions, attributes, timestamps, ownerships,
+	  etc.  Using the "-z" option uses compression
+	  during transmission, speeding up the transfer.
+	</p>
+	<pre class="code">rsync -az shyam@127.0.0.1:~/music ram@10.9.12.110:~/music</pre>
+	<p>
+	  For more details on any of the commands discussed
+	  here, please refer to the manpage.
+	</p>
+	<pre class="code">man rsync</pre>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	
 	</div>
       </section>
 
 
-
-
-
-
-      <section id="experiment-article-section-5">
-	<div id="experiment-article-section-5-icon" 
-	     class="icon">
-	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/simulation.jpg" />
-	</div>
-	
-	<div id="experiment-article-section-5-heading" 
-	     class="heading">
-	  Tasks
-	</div>
-	
-	<div id="experiment-article-section-5-content" 
-	     class="content">
-	  <p style="margin-left:0px">
-	    Students who already have a Virtual-Labs login should click
-	    <a href="javascript:void(0)"
-	       onclick="window.open('../php/login-form.php?expid=9',
-			'welcome', width=screen.availWidth, height=screen.availHeight,status='yes')">
-	      here</a> 
-	    to see the list of tasks for this experiment. <br /> 
-	    In case the login credentials are not available, then please click 
-	    <a href="../php/register-form.php">here</a> to
-	    register.
-	  </p>
-        </div> 
-      </section>
+	<section id="experiment-article-section-5">
+	  <div id="experiment-article-section-5-icon" 
+	       class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/simulation.jpg" />
+	  </div>
+	  
+	  <div id="experiment-article-section-5-heading" 
+	       class="heading">
+	    Tasks
+	  </div>
+	  
+	  <div id="experiment-article-section-5-content" 
+	       class="content">
+	    <p style="margin-left:0px">
+	      Students who already have a Virtual-Labs login should click
+	      <a href="javascript:void(0)"
+		 onclick="window.open('../php/login-form.php?expid=9',
+			  'welcome', width=screen.availWidth, height=screen.availHeight,status='yes')">
+		here</a> 
+	      to see the list of tasks for this experiment. <br /> 
+	      In case the login credentials are not available, then please click 
+	      <a href="../php/register-form.php">here</a> to
+	      register.
+	    </p>
+          </div> 
+	</section>
 
 
 
 
         <section id="experiment-article-section-6">
-      
+	  
           <div id="experiment-article-section-6-icon" 
-          class="icon">
+               class="icon">
 	    <!-- Enclose the icon image of your lab.-->
 	    <img src="../images/quizzes.jpg" />
 	  </div>
 
           <div id="experiment-article-section-6-heading" 
-          class="heading">
+               class="heading">
             Quiz
           </div>
 
           <div id="experiment-article-section-6-content" 
-          class="content">
-<ol>
-<li>How will you rsync to a remote machine with an existing SSH key?</li>
-<li>Write a rsync script which will rsync across two
-  folders: <i>/home/johndoe/work</i> and <i>/media/backup/work</i>,
-  and if a file doesn't exist at the source but at the
-  destination, the deleted file should be moved to the path <i>/media/backup/work/deleted-data</i>.</li>
-</ol>
+               class="content">
+	      <p>
+		<ol>
+		  <li>What is the right command to synchronize two
+		    directories <i>/home/aditi/work</i>
+		    and <i>/media/backup/work</i>?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>Normal</li>
+		      <li style="diplay:inline">Escape</li>
+		      <li>Visual</li>
+		      <li>Replace</li>
+		    </ol>
+		  </li>
+		  <li>How would you search for "today" in
+		  the current file using vim?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>:today</li>
+		      <li style="diplay:inline">/today</li>
+		      <li>;today</li>
+		      <li>?today</li>
+		    </ol>
+		  </li>
+		  <li>How would you replace "old" with "new"
+		  in the whole document?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>:%s/old/new/g</li>
+		      <li style="diplay:inline">:%s/new/old/g</li>
+		      <li>:%s/old/new/</li>
+		      <li>:%s/new/old</li>
+		    </ol>
+		  </li>
+		  <li>How do you quit vim without saving the
+		  changes you have made to the file?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>:q</li>
+		      <li>:wq</li>
+		      <li>:q!</li>
+		      <li>:qa</li>
+		    </ol>
+		  </li>
+		  <li>Which of these is not a right way to
+		  delete 10 lines?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>10dd</li>
+		      <li>d10d</li>
+		      <li>dd10</li>
+		    </ol>
+		  </li>
+		  <li>Which of these is not a right way to
+		  set line numbering?
+		    <ol style="list-style-type:upper-alpha">
+		      <li>:set nu</li>
+		      <li>:set number</li>
+		      <li>:set nonu</li>
+		      <li>write "set nu" in the ".vimrc" file</li>
+		    </ol>
+		  </li>
+		</ol>
+	      </p>
           </div>
 
         </section>
 
         <section id="experiment-article-section-8">
-   
           <div id="experiment-article-section-8-icon" 
-          class="icon">
+               class="icon">
 	    <!-- Enclose the icon image of your lab.-->
 	    <img src="../images/readings.jpg" />
 	  </div>
 
           <div id="experiment-article-section-8-heading" 
-          class="heading">
+               class="heading">
             Further Readings
           </div>
 
           <div id="experiment-article-section-8-content" 
-          class="content">
-	<ol>
-<li><a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/">http://www.thegeekstuff.com/2010/09/rsync-command-examples/</a></li>
-<li><a href="http://ss64.com/bash/rsync.html">http://ss64.com/bash/rsync.html</a></li>
-</ol>
+               class="content">
+	    <ol>
+	      <li><a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/">http://www.thegeekstuff.com/2010/09/rsync-command-examples/</a></li>
+	      <li><a href="http://ss64.com/bash/rsync.html">http://ss64.com/bash/rsync.html</a></li>
+	    </ol>
           </div>
-
         </section>
 
-    <section id="experiment-article-section-9">
+	<section id="experiment-article-section-9">
 
           <div id="experiment-article-section-9-icon" 
-          class="icon">
+               class="icon">
             <!-- Enclose the icon image of your lab.-->
             <img src="../images/readings.jpg" />
           </div>
 
           <div id="experiment-article-section-9-heading" 
-          class="heading">
-	
-	Feedback
+               class="heading">
+	    Feedback
           </div>
 
           <div id="experiment-article-section-9-content" 
-          class="content">
-	Please provide us feedback <a href="http://virtual-labs.ac.in/feedback/" >here</a>
+               class="content">
+	    <p>
+	      Please provide your
+	      feedback <a href="http://virtual-labs.ac.in/feedback/"> here </a>
+	    </p>
           </div>
 
         </section>
