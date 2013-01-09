@@ -156,23 +156,415 @@ functions available in Linux easily.
 	class="content">
 	<p align="justify">
 	  
-<h3>Grep Command</h3>
+<h3>grep Command</h3>
 
-Grep is an extremely powerful utility.  It can not only search for files
-and folders in the entire file system but also searches for strings
-within the files.  
+grep is an extremely powerful search utility. The name grep comes from the command g/regular-expression/p of the ed editor. grep searches the named files (or its standard input if no filename is given) for lines containing a match to the given pattern specified through a regular expression. By default, for each line that contains a match to the given pattern it prints that line as output, but this behaviour can be changed easily.  
 
+<br />
+<br />
+
+<b>Usage</b> <br />
+The syntax for using grep command is:<br />
+<pre class="code">
+grep [OPTIONS] PATTERN [FILE...]<br />
+grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
+</pre>
+
+<br />
+OPTIONS are the various options available with the grep command.<br />
+PATTERN is the regular expression pattern to search for.<br />
+FILE is the file containing the text which is matched against the pattern. If no filename is given then grep reads from the standard input. <br />
+<br />
+The regular expression pattern should always be enclosed within single-quotes as the grep metacharacters might interfere with the shell's metacharacters.
 <br />
 <br />
 
 <b>Regular Expressions</b>
+<br />
+
+Regular expressions (regex) are used to specify a pattern which matches a sequence of characters. GNU grep understands three different regular expression syntax:<br />
+1) Basic regex: Specified with the options -G or --basic-regex.<br />
+2) Extended regex:  Specified with the options -E or --extended-regex.<br />
+3) Perl regex: Specified with the option -P or --perl-regex.<br />
+
+<br />
+
+If any of the above options is not specified then basic regex is used as default.<br />
+
+<br/>
+
+The rules to construct regular expressions are as follows:
+
+<br />
+<br />
+For the examples below we are using a file named <b>test</b> which contains the following text.
+<pre class="code">Example file for grep.
+123456
+abcdefgh
+aabbaabb
+abababab
+ABCDefgh1234
+ab*23
+End of example file.
+</pre>
+
+A) Each literal character is a pattern that matches itself. In effect, each of literal character is a regular expression.
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>Command</td>
+<td>Output</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>grep 'a' test</td>
+<td>Example file for grep.<br />
+abcdefgh<br />
+aabbaabb<br />
+abababab<br />
+ab*23<br />
+End of example file.
+</td>
+<td>Matches every <i>a</i> in each of the line.
+</tr>
+</table>
+
+<br />
+<br />
+This rule doesn't apply to some meta-characters like '*','.' etc which have special meaning. To match these meta-characters you have to escape them by preceding them with backslash ('\').
 
 <br />
 <br />
 
-Regular Expressions provide a flexible way to match the strings or
-patterns of characters.  
+B) Concatenation: Concatenation is achieved by writing regular expression in sequence. For eg. regular expressions 'a' and 'b' can be concatenated to form a single regular expression 'ab'.
 
+<br />
+<br />
+Whitespace characters like space are also treated as regular expressions and as such 'ab' and 'a b' are two different regular expressions.
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>Command</td>
+<td>Output</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>grep 'ab' test</td>
+<td>abcdefgh
+aabbaabb
+abababab
+ab*23</td>
+<td>Matches only <i>ab</i> in each of the line.</td>
+</tr>
+<tr>
+<td>grep 'a b' test</td>
+<td>No output</td>
+<td>There is no line which contains <i>a</i> followed by <i>space</i> followed by <i>b</i>.
+</table>
+
+<br />
+<br />
+Parentheses '()' can be used to denote a regular expressions. 'abcd' is concatenation of four regular expressions 'a', 'b', 'c'and 'd', but '(ab)cd' is a concatenation of three regular expressions 'ab', 'c' and 'd'.
+
+<br />
+<br />
+Note: In basic regex, parentheses lose their special meaning and instead match '(' and ')'. With basic regex parentheses should be used with backslash.
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>Command</td>
+<td>Output</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>grep '(ab)cd' test</td>
+<td>No output</td>
+<td>Incorrect way. We are using basic regex.<br /> It tries to match <i>(</i> and <i>)</i> but none of the lines contain the parenthesis.</td>
+</tr>
+<tr>
+<td>grep '\(ab\)cd' test</td>
+<td>abcdefgh</td>
+<td>Correct way</td>
+</tr>
+<tr>
+<td>grep -E '(ab)cd' test</td>
+<td>abcdefgh</td>
+<td>Works because we are using extended regex.</td>
+</tr>
+</table>
+
+<br />
+<br />
+
+C) Bracket ([]): A list of characters enclosed within '[' and ']' matches any single character in that list.
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>Command</td>
+<td>Output</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>grep '[abcd]' test</td>
+<td>Example file for grep.
+abcdefgh
+aabbaabb
+abababab
+ab*23
+End of example file.</td>
+<td>All of these lines contain at least one of the characters <i>a</i>,<i>b</i>,<i>c</i> or <i>d</i></td>
+</tr>
+</table>
+
+<br />
+<br />
+If the first character in the list of characters enclosed within '[' and ']' is '^' then this pattern matches any character excluded from this list.
+
+<br />
+<br />
+We can use a dash (-) to specify a range of characters. [a-d] is equivalent to writing [abcd] and [1-6] is equivalent to writing [123456]. [A-Za-z0-9] matches both uppercase and lowercase letters as well as numbers.
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>Command</td>
+<td>Output</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>grep '[0-9]' test</td>
+<td>123456
+ABCDefgh1234
+ab*23
+</td>
+<td>Matches only the lines containg numbers.</td>
+</tr>
+<tr>
+<td>grep '[^a-z]' test</td>
+<td>Example file for grep.
+123456
+ABCDefgh1234
+ab*23
+End of example file.</td>
+<td>Matches everything except lowercase alphabets.</td>
+</tr>
+</table>
+
+<br />
+<br />
+
+D) Matching the empty string: The following operators match the empty strings.<br />
+
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>^</td>
+<td>Matches the empty string at the beginning of a line.</td>
+</tr>
+<tr>
+<td>$</td>
+<td>Matches the empty string at the end of a line.</td>
+</tr>
+<tr>
+<td>\<</td>
+<td>Matches the empty string at the beginning of a word.</td>
+</tr>
+<tr>
+<td>\></td>
+<td>Matches the empty string at the end of a word.</td>
+</tr>
+</table>
+
+<br />
+<br />
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>Command</td>
+<td>Output</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>grep '^ab' test</td>
+<td>abcdefgh
+abababab
+ab*23</td>
+<td>Matches only the strings that start with ab.</td>
+</tr>
+<tr>
+<td>grep 'ab$' test</td>
+<td>abababab</td>
+<td>Matches only the strings that end with ab.</td>
+</tr>
+<tr>
+<td>grep '\&lte' test</td>
+<td>End of example file.</td>
+<td>Matches only the words that begin with e.</td>
+</tr>
+<tr>
+<td>grep 'r\&gt' test</td>
+<td>Example file for grep.</td>
+<td>Matches only the words that end with r.</td>
+</tr>
+</table>
+
+<br />
+<br />
+
+E) Matching any character: The dot character (.) matches any single character.<br />
+
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>Command</td>
+<td>Output</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>grep 'a...3' test</td>
+<td>ab*23</td>
+<td>Matches any 5 character sequence that starts with <i>a</i> and ends with <i>3</i>.</td>
+</tr>
+</table>
+
+<br />
+<br />
+
+F) Repititions: There are several repitition operators which repeat the regular expressions preceding them.<br />
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>*</td>
+<td>Matches the preceding regex zero or more times.</td>
+</tr>
+<tr>
+<td>?</td>
+<td>Matches the preceding regex atmost once.</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Matches the preceding regex at least once.</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>Matches the preceding regex exactly n times.</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>Matches the preceding regex n or more times.</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>Matches the preceding regex at least n and at most n times.</td>
+</tr>
+</table>
+
+
+<br />
+<br />
+Note: Except '*' all of the operators described above lose their special meaning when used with basic regex. Each of these operators have to be preceded by a backslash when used with basic regex or they have to be used extended regex.
+
+<br />
+<br />
+
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>Command</td>
+<td>Output</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>grep 'a*' test</td>
+<td>Example file for grep.
+123456
+abcdefgh
+aabbaabb
+abababab
+ABCDefgh1234
+ab*23
+End of example file.
+</td>
+<td>Since all the lines contain <i>a</i> at least zero times, all the lines are printed as output. Appending <i>*</i> with <i>a</i> makes <i>a</i> optional.</td>
+</tr>
+<tr>
+<td>grep '^ab*' test</td>
+<td>abcdefgh
+aabbaabb
+abababab
+ab*23
+</td>
+<td>Matches all the lines which begin with <i>a</i> followed by zero or more <i>b</i>.</td>
+</tr>
+<tr>
+<td>grep '^\(ab\)\(ab\)*' test</td>
+<td>abcdefgh
+abababab
+ab*23
+</td>
+<td>Matches all the lines that begin with <i>ab</i> followed by zero or more <i>ab</i>.</td>
+</tr>
+<tr>
+<td>grep '^ab/?' test</td>
+<td>abcdefgh
+aabbaabb
+abababab
+ab*23
+</td>
+<td>Matches all the lines which begin with <i>a</i> followed by zero or one <i>b</i>.</td>
+</tr>
+<tr>
+<td>grep '^ab\+' test</td>
+<td>abcdefgh
+abababab
+ab*23
+</td>
+<td>Matches all the lines which begin with <i>a</i> followed by at least one <i>b</i>.</td>
+</tr>
+<tr>
+<td>grep '.\{10\}' test
+</td>
+<td>Example file for grep.
+ABCDefgh1234
+End of example file.
+</td>
+<td>Matches a string exactly 10 characters long.</td>
+</tr>
+<tr>
+<td>grep '.\{6,\}' test</td>
+<td>Example file for grep.
+123456
+abcdefgh
+aabbaabb
+abababab
+ABCDefgh1234
+End of example file.
+</td>
+<td>Matches a string at least 6 characters long.</td>
+</tr>
+<tr>
+<td>grep '.\{6,10\}' test</td>
+<td>Example file for grep.
+123456
+abcdefgh
+aabbaabb
+abababab
+ABCDefgh1234
+End of example file.
+</td>
+<td>Matches a string at least 6 and at most 10 characters long.</td>
+</tr>
+</table>
+
+<br />
+<br />
+
+G) The OR operator (|): The OR operator (|) can be used to join two regular expressions. The resulting pattern matches any string joined by the OR operator.<br />
+Note: To use the OR operator with basic regex precede it with a backslash.<br />
+
+<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
+<tr>
+<td>Command</td>
+<td>Output</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>grep '\(^z+\)\|\(1234\)' test</td>
+<td>123456
+ABCDefgh1234
+</td>
+<td>Matches the lines which start with <i>z</i> or the string <i>1234</i>.</td>
+</tr>
+</table>
 <b>Options</b>
 
 <br />
