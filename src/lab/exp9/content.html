@@ -515,60 +515,78 @@ aditi@mylaptop:~$ </pre>
 		    directories <i>/home/aditi/work</i>
 		    and <i>/media/backup/work</i>?
 		    <ol style="list-style-type:upper-alpha">
-		      <li>Normal</li>
-		      <li style="diplay:inline">Escape</li>
-		      <li>Visual</li>
-		      <li>Replace</li>
+		      <li>rsync -vtr /media/backup/work
+		      /home/aditi/work</li>
+		      <li>rsync -az /media/backup/work
+		      /home/aditi/work</li>
+		      <li>rsync -vtr /home/aditi/work /media/backup/work</li>
+		      <li>rsync -az /home/aditi/work /media/backup/work</li>
 		    </ol>
 		  </li>
-		  <li>How would you search for "today" in
-		  the current file using vim?
+		  <li>Which of the below statements is NOT correct?
 		    <ol style="list-style-type:upper-alpha">
-		      <li>:today</li>
-		      <li style="diplay:inline">/today</li>
-		      <li>;today</li>
-		      <li>?today</li>
+		      <li>rsync is efficient since it
+		      copies only the differences between
+		      the two synced locations</li>
+		      <li>rsync can use timestamps to
+		      identify changed files</li>
+		      <li>rsync can use compression for
+		      reducing size of transmitted data across network</li>
+		      <li>rsync cannot use timestamps to
+		      identify changed files</li>
 		    </ol>
 		  </li>
-		  <li>How would you replace "old" with "new"
-		  in the whole document?
+		  <li>A network device can have multiple IP addresses.
 		    <ol style="list-style-type:upper-alpha">
-		      <li>:%s/old/new/g</li>
-		      <li style="diplay:inline">:%s/new/old/g</li>
-		      <li>:%s/old/new/</li>
-		      <li>:%s/new/old</li>
+		      <li>True</li>
+		      <li>False</li>
 		    </ol>
 		  </li>
-		  <li>How do you quit vim without saving the
-		  changes you have made to the file?
+		  <li>Which of the below is the local
+		  loopback IP address?
 		    <ol style="list-style-type:upper-alpha">
-		      <li>:q</li>
-		      <li>:wq</li>
-		      <li>:q!</li>
-		      <li>:qa</li>
+		      <li>255.0.0.0</li>
+		      <li>255.255.255.0</li>
+		      <li>127.0.0.1</li>
+		      <li>10.0.0.1</li>
 		    </ol>
 		  </li>
-		  <li>Which of these is not a right way to
-		  delete 10 lines?
+		  <li>Which of the below is NOT correct?
 		    <ol style="list-style-type:upper-alpha">
-		      <li>10dd</li>
-		      <li>d10d</li>
-		      <li>dd10</li>
+		      <li>scp can copy files from local
+		      machine to remote machine.</li>
+		      <li>scp can copy files from remote
+		      machine to local machine.</li>
+		      <li>scp can copy files from one remote
+		      machine to another remote machine.</li>
+		      <li>scp cannot copy files from one
+		      remote machine to another remote machine.</li>
 		    </ol>
 		  </li>
-		  <li>Which of these is not a right way to
-		  set line numbering?
+		  <li>Which of the below is NOT correct?
 		    <ol style="list-style-type:upper-alpha">
-		      <li>:set nu</li>
-		      <li>:set number</li>
-		      <li>:set nonu</li>
-		      <li>write "set nu" in the ".vimrc" file</li>
+		      <li>rsync can sync files from local
+		      machine to remote machine.</li>
+		      <li>rsync can sync files from remote
+		      machine to local machine.</li>
+		      <li>rsync can sync files from one remote
+		      machine to another remote machine.</li>
+		      <li>rsync cannot sync files from one
+		      remote machine to another remote machine.</li>
+		    </ol>
+		  </li>
+		  <li>To login to a remote machine, you need
+		  to know
+		    <ol style="list-style-type:upper-alpha">
+		      <li>User ID</li>
+		      <li>Password</li>
+		      <li>IP address</li>
+		      <li>All of the above</li>
 		    </ol>
 		  </li>
 		</ol>
 	      </p>
           </div>
-
         </section>
 
         <section id="experiment-article-section-8">
@@ -586,6 +604,9 @@ aditi@mylaptop:~$ </pre>
           <div id="experiment-article-section-8-content" 
                class="content">
 	    <ol>
+	      <li>Read man pages of every command discussed
+	      in this experiment.</li>
+	      <li><a href="http://www.hypexr.org/linux_scp_help.php">http://www.hypexr.org/linux_scp_help.php</a></li>
 	      <li><a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/">http://www.thegeekstuff.com/2010/09/rsync-command-examples/</a></li>
 	      <li><a href="http://ss64.com/bash/rsync.html">http://ss64.com/bash/rsync.html</a></li>
 	    </ol>
