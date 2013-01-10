@@ -158,25 +158,31 @@ functions available in Linux easily.
 	  
 <h3>grep Command</h3>
 
-grep is an extremely powerful search utility. The name grep comes from the command g/regular-expression/p of the ed editor. grep searches the named files (or its standard input if no filename is given) for lines containing a match to the given pattern specified through a regular expression. By default, for each line that contains a match to the given pattern it prints that line as output, but this behaviour can be changed easily.  
+<code>grep</code> is an extremely powerful search
+utility.  <code>grep</code> searches the specified files for the lines
+containing a match to the given pattern specified through a regular
+expression.  By default, for each line that matches or contains a match to the
+given pattern, it prints that line as output. 
 
 <br />
 <br />
 
-<b>Usage</b> <br />
-The syntax for using grep command is:<br />
-<pre class="code">
-grep [OPTIONS] PATTERN [FILE...]<br />
-grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
-</pre>
+The syntax for using grep command is:
+<br />
+<code>grep [OPTIONS] PATTERN [FILE...]</code>
+<br />
+<code>grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]</code>  
+<br />
+where OPTIONS are the various options available with the grep command,
+PATTERN is the regular expression pattern to search for, FILE is the
+file containing the text which is matched against the pattern. If no
+file name is given then grep reads from the standard input. 
 
-<br />
-OPTIONS are the various options available with the grep command.<br />
-PATTERN is the regular expression pattern to search for.<br />
-FILE is the file containing the text which is matched against the pattern. If no filename is given then grep reads from the standard input. <br />
-<br />
-The regular expression pattern should always be enclosed within single-quotes as the grep metacharacters might interfere with the shell's metacharacters.
-<br />
+<br /> <br />
+<b>The regular expression pattern should always be enclosed within
+single-quotes.</b> 
+
+<br /> 
 <br />
 
 <b>Regular Expressions</b>
@@ -189,23 +195,31 @@ Regular expressions (regex) are used to specify a pattern which matches a sequen
 
 <br />
 
-If any of the above options is not specified then basic regex is used as default.<br />
-
-<br/>
-
-The rules to construct regular expressions are as follows:
+For example, the strings <code>abbde, abde, abbbbde</code> can be
+denoted using a regular expression <code>a[b]+de</code>. The '+' meta
+character signifies that 'b' can be repeated more than 1 time.
+Similarly, a string made of alphabets and digits such as <code>abc09af,
+abbbb987, a9876, abbb5</code> can be written using the regular expression
+<code>[a-z]+[0-9]+[a-z]*</code> where first character should be an
+alphabet and there may be more of alphabets, one numeric character
+should follow and more digits can occur there after and more alphabets
+may or may not occur in the string.
 
 <br />
 <br />
-For the examples below we are using a file named <b>test</b> which contains the following text.
-<pre class="code">Example file for grep.
+
+Thus, while using the <code>grep</code> command, regular expressions are
+very useful in searching for patterns of strings in the file. To
+demonstrate how <code>grep</code> functions, we take a sample text file
+and run the commands on it. The text file is as such:
+
+<pre class="code">
 123456
 abcdefgh
 aabbaabb
 abababab
 ABCDefgh1234
 ab*23
-End of example file.
 </pre>
 
 A) Each literal character is a pattern that matches itself. In effect, each of the literal character is a regular expression.
@@ -232,14 +246,49 @@ End of example file.
 <br />
 This rule doesn't apply to some meta-characters like <b>*</b>,<b>.</b> etc which have special meaning. To match these meta-characters you have to escape them by preceding them with backslash ('\').
 
+<ol>
+
+<li>
+
+Any literal character [a-z] is a pattern that matches itself. Thus, each
+of the literal character is a regular expression in itself.
+
+<pre class="code">
+$ grep 'a' example.txt
+abcdefgh
+aabbaabb
+abababab
+ab*23
+</pre>
+
+The command matches 'a' in every line of the file.  <b>Please note that
+when the command is the terminal / shell, the pattern given in the
+command is highlighted in the output.</b>  Thus, in the above example, every
+occurrence of 'a' is highlighted in red color on the terminal.
+
 <br />
 <br />
 
-B) Concatenation: Concatenation is achieved by writing regular expression in sequence. For eg. regular expressions 'a' and 'b' can be concatenated to form a single regular expression 'ab'.
+This rule doesn't apply to some meta-characters like '*','.' etc. which
+have special meaning.  To match these meta-characters, backslash ('\')
+should precede them to escape the characters.
+
+</li>
+
+<br />
+
+<li>
+
+Concatenation: Concatenation is achieved by writing regular expression
+in sequence. For example, regular expressions 'a' and 'b' can be concatenated
+to form a single regular expression 'ab'.
 
 <br />
 <br />
-Whitespace characters like space are also treated as regular expressions and as such 'ab' and 'a b' are two different regular expressions.
+
+Whitespace characters like space are also treated as regular expressions
+and as such 'ab' and 'a b' are two different regular expressions.
+
 <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
 <tr>
 <td>Command</td>
