@@ -89,16 +89,14 @@ edit -->
 	<div id="experiment-article-section-1-content" 
 	class="content">	
 	<p>
-		File Content is the third experiment of systems and
-		software lab. This experiment consists, description of
-		various unix command programs which helps in viewing
-		content of text files in different dimensions
-		according to requirement.
+		This experiment consists description of various linux
+		command which helps in viewing content of text files
+		in different dimensions according to requirement.
 	</p>
 	<p>
 		The platform of this experiment is command line
-		interface which give terminal of linux machine.
-		Linux terminal will help user to perform basic linux
+		interface which gives terminal of linux machine.
+		Linux terminal will help you to perform basic linux
 		commands for the tasks mentioned in tasks section.
 	</p>
 	<p>
@@ -175,19 +173,20 @@ edit -->
 		page( type in terminal $man echo)
 	</p>
 	<p>Syntax of echo command<p>
-	<pre class="code"> aditi@mylaptop:~$ echo <string> </pre>
+	<pre class="code"> aditi@mylaptop:~$ echo  < string > </pre>
 	<p>	
 		We shall see how to display sample by
 		using <b>echo command</b>.</p>
 	<p>
-		To display current day date, enter the command <b>echo $(date)</b>
+		We shall see how to display a simple "hello world"
+		using <b>echo</b> command.
 	<pre class="code">
 aditi@mylaptop:~$ echo "Hello World"
 Hello World </pre>
 	
 	<h3>2.cat</h3>
 	<p>
-		cat is a unix command which is used to display content of a text file.
+		cat is a linux command which is used to display content of a text file.
 	</p>
 
 	<p>
@@ -220,7 +219,7 @@ this a example text file. </pre>
 	</p>
 	<p>Syntax of wc command</p>
 	<pre class="code">
-aditi@mylaptop:~ wc [options] [file]	</pre>
+aditi@mylaptop:~ wc [options] < file-name >	</pre>
 	<p>
 		Below are the available options for wc command
 	</p>
@@ -228,7 +227,6 @@ aditi@mylaptop:~ wc [options] [file]	</pre>
 	  <thead><tr><td><u>Option</u></td><td align="right"><u>Purpose</u></td></tr> </thead>
 	  <tbody>
 	         <tr><td>c</td><td>Counts and displays number of bytes in a file</td></tr>
-		 <tr><td>m</td><td>Counts and displays number of characters in a file.</td></tr>
 		 <tr><td>l</td><td>Counts and displays the number os lines in a file</td></tr>
 		 <tr><td>w</td><td>Counts and display number of words in a file</td></tr>
 	  </tbody>
@@ -241,17 +239,17 @@ aditi@mylaptop:~ wc [options] [file]	</pre>
 	</p>
 	<pre class="code">
 aditi@mylaptop:~$ wc example.txt 
-1  5 26 example.txt
- 
+1  5 26 example.txt </pre>
+<p>
 Above output is :
 1  = Lines
 5  = Words
-26 = characters  </pre>
+26 = characters</p>
 
 
 	<h3>4.head</h3>
 	<p>
-		head is unix command which is used for print first few
+		head is linux command which is used for print first few
 		lines of a text file to standard output by default.
 	<p>
 	
@@ -264,8 +262,7 @@ aditi@mylaptop:~head  [file-name] </pre>
 	<table boreder="1">
 	  <thead<tr><td><u>Options</u></td><td align="roght"><u>Purpose</u></td></tr> </thead>
 		<tbody> 
-		  <tr><td>c</td><td> the N number of bytes from the initial part of file.</td></tr>
-                  <tr><td>n</td><td> The N number of lines from the initial part of file.</td></tr>
+		   <tr><td>n</td><td> The N number of lines from the initial part of file.</td></tr>
 		</tbody>
 	</thead>
 	</table>
@@ -277,13 +274,13 @@ aditi@mylaptop:~head  [file-name] </pre>
 aditi@mylaptop:~$ head example.txt 
 this a example text file.</pre>
 	<p><b>Note:</b> By default head command will display the first
-	10 lines of a file. The autpu can be customized by using
+	10 lines of a file. The output can be customized by using
 	options available using head command. More information can be
 	found in man page.</P>
 	
 	<h3>5.tail</h3>
 	<p>
-		Tail is a unix command which is used to display last few
+		Tail is a linux command which is used to display last few
 		lines of a text file. More information about its usage with
 		options can be found in man pages.
 	</p>
@@ -304,7 +301,7 @@ The same content was copied to example2.txt </pre>
 	
 	<h3>6.Diff</h3>
 	<p>
-		diff is a unix command which comapares line by line and
+		diff is a linux command which compares line by line and
 		outputs the differences between two files. More information
 		about its usage and its options can be found in man page.
 	</p>
@@ -322,7 +319,7 @@ The same content wass copied to example2.txt</pre>
 
          <h3>7.sort</h3>
 	 <p>
-		Sort is a standard unix command that prints the lines of
+		Sort is a standard linux command that prints the lines of
 		its inputs or concatinated files in its argument list in a
 		sorted order. sorting is done on based on one or more sort
 		keys extracted from each line of input. More information about
@@ -335,7 +332,7 @@ aditi@mylaptop:~$ sort [file] </pre>
 	 <pre class="code">
 aditi@mylaptop:~$ cat  phonebook
 Mahesh, Kumar   9491787823
-aditi, Kumar  9866223311
+aditi, Kumar  9863334334
 Kiran, Kumar    9988998899</pre>
 	  <p>	
 		Above is the sample phone book file, we shall sort it by
@@ -449,7 +446,7 @@ aditi@mylaptop:~$less [file-name]</pre>
           class="content">
 <!--
 	<ol>
-<li><a href="http://www.cyberciti.biz/tips/understanding-unixlinux-symbolic-soft-and-hard-links.html">http://www.cyberciti.biz/tips/understanding-unixlinux-symbolic-soft-and-hard-links.html</a></li>
+<li><a href="http://www.cyberciti.biz/tips/understanding-linuxlinux-symbolic-soft-and-hard-links.html">http://www.cyberciti.biz/tips/understanding-linuxlinux-symbolic-soft-and-hard-links.html</a></li>
 <li><a href="http://linuxgazette.net/105/pitcher.html">http://linuxgazette.net/105/pitcher.html</a></li>	</ol> -->
           </div>
 
