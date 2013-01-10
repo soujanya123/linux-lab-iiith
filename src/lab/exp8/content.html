@@ -188,10 +188,17 @@ single-quotes.</b>
 <b>Regular Expressions</b>
 <br />
 
-Regular expressions (regex) are used to specify a pattern which matches a sequence of characters. GNU <code>grep</code> understands three different regular expression syntax:<br />
-1) Basic regex: Specified with the options -G or --basic-regex.<br />
-2) Extended regex:  Specified with the options -E or --extended-regex.<br />
-3) Perl regex: Specified with the option -P or --perl-regex.<br />
+Regular expressions (regex) are used to specify a pattern which matches
+a sequence of characters given as input.  The characters used for
+constructing regular expressions are as follows:
+<ul>
+<li>[] - anything inside the square brackets would be matched once and only once</li>
+<li>Alphabet Characters - both upper and lower cases - denoted as [a-z] and [A-Z]</li>
+<li>Digits denoted as [0-9]</li>
+<li>? meta character denotes a character may occur 0 or 1 times</li>
+<li>* meta character denotes a character may occur 0 or more times</li>
+<li>+ meta character denotes a character may occur 1 or more than 1 time</li>
+</ul>
 
 <br />
 
@@ -222,29 +229,9 @@ ABCDefgh1234
 ab*23
 </pre>
 
-A) Each literal character is a pattern that matches itself. In effect, each of the literal character is a regular expression.
-<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
-<tr>
-<td>Command</td>
-<td>Explanation</td>
-</tr>
-<tr>
-<td><pre class="code">
-$ grep 'a' test
-Example file for grep.
-abcdefgh
-aabbaabb
-abababab
-ab*23
-End of example file.
-</pre></td>
-<td>Matches every <i>a</i> in each of the line.
-</tr>
-</table>
+The rules of constructing regular expressions have been explained as follows:
 
 <br />
-<br />
-This rule doesn't apply to some meta-characters like <b>*</b>,<b>.</b> etc which have special meaning. To match these meta-characters you have to escape them by preceding them with backslash ('\').
 
 <ol>
 
@@ -286,64 +273,59 @@ to form a single regular expression 'ab'.
 <br />
 <br />
 
-Whitespace characters like space are also treated as regular expressions
-and as such 'ab' and 'a b' are two different regular expressions.
+White space characters like space are also treated as regular
+expressions.  The strings 'ab' and 'a b' are two different regular
+expressions.
 
-<table border="1" style="margin-left:auto;margin-right:auto;width:50%">
-<tr>
-<td>Command</td>
-<td>Explanation</td>
-</tr>
-<tr>
-<td><pre class="code">
-$ grep 'ab' test
+<pre class="code">
+$ grep 'ab' example.txt 
 abcdefgh
 aabbaabb
 abababab
 ab*23
-</pre></td>
-<td>Matches only <i>ab</i> in each of the line.</td>
-</tr>
-<tr>
-<td><pre class="code">
-grep 'a b' test
+
+$ grep 'a b' example.txt
+$
 </pre>
-No output</td>
-<td>There is no line which contains <i>a</i> followed by <i>space</i> followed by <i>b</i>.
-</table>
+
+All the lines with the pattern 'ab' are printed.  But, for the second
+command, there is no output because there is not pattern 'a b' in the
+file.
 
 <br />
 <br />
-Parentheses <b>()</b> can be used to denote a regular expressions. <b>abcd</b> is concatenation of four regular expressions <b>a</b>, <b>b</b>, <b>c</b>and <b>d</b>, but <b>(ab)cd</b> is a concatenation of three regular expressions <b>ab</b>, <b>c</b> and <b>d</b>.
+
+Parentheses '()' can be used to denote a regular expressions. 'abcd' is
+concatenation of four regular expressions 'a', 'b', 'c'and 'd', but
+'(ab)cd' is a concatenation of three regular expressions 'ab', 'c' and
+'d'.
 
 <br />
 <br />
-Note: In basic regex, parentheses lose their special meaning and instead match <b>(</b> and <b>)</b>. With basic regex parentheses should be used with backslash.
+
+Note: In basic regex, parentheses lose their special meaning and instead
+match '(' and ')'. With basic regex parentheses should be used with
+backslash.
+
 <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
 <tr>
 <td>Command</td>
+<td>Output</td>
 <td>Explanation</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '(ab)cd' test
-</pre>
-No output</td>
+<td>grep '(ab)cd' test</td>
+<td>No output</td>
 <td>Incorrect way. We are using basic regex.<br /> It tries to match <i>(</i> and <i>)</i> but none of the lines contain the parenthesis.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '\(ab\)cd' 
-testabcdefgh
-</pre>
-</td>
+<td>grep '\(ab\)cd' test</td>
+<td>abcdefgh</td>
 <td>Correct way</td>
 </tr>
 <tr>
-<td><pre class="code"> 
-$ grep -E '(ab)cd' test
-abcdefgh
-</pre></td>
+<td>grep -E '(ab)cd' test</td>
+<td>abcdefgh</td>
 <td>Works because we are using extended regex.</td>
 </tr>
 </table>
@@ -351,22 +333,21 @@ abcdefgh
 <br />
 <br />
 
-C) Bracket ([]): A list of characters enclosed within <b>[</b> and <b>]</b> matches any single character in that list.
+C) Bracket ([]): A list of characters enclosed within '[' and ']' matches any single character in that list.
 <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
 <tr>
 <td>Command</td>
+<td>Output</td>
 <td>Explanation</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '[abcd]' test
-Example file for grep.
+<td>grep '[abcd]' test</td>
+<td>Example file for grep.
 abcdefgh
 aabbaabb
 abababab
 ab*23
-End of example file.
-</pre></td>
+End of example file.</td>
 <td>All of these lines contain at least one of the characters <i>a</i>,<i>b</i>,<i>c</i> or <i>d</i></td>
 </tr>
 </table>
@@ -377,30 +358,28 @@ If the first character in the list of characters enclosed within '[' and ']' is 
 
 <br />
 <br />
-We can use a dash (<b>-</b>) to specify a range of characters. [a-d] is equivalent to writing [abcd] and [1-6] is equivalent to writing [123456]. [A-Za-z0-9] matches both uppercase and lowercase letters as well as numbers.
+We can use a dash (-) to specify a range of characters. [a-d] is equivalent to writing [abcd] and [1-6] is equivalent to writing [123456]. [A-Za-z0-9] matches both uppercase and lowercase letters as well as numbers.
 <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
 <tr>
 <td>Command</td>
+<td>Output</td>
 <td>Explanation</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '[0-9]' test
-123456
+<td>grep '[0-9]' test</td>
+<td>123456
 ABCDefgh1234
 ab*23
-</pre></td>
+</td>
 <td>Matches only the lines containg numbers.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '[^a-z]' test
-Example file for grep.
+<td>grep '[^a-z]' test</td>
+<td>Example file for grep.
 123456
 ABCDefgh1234
 ab*23
-End of example file.
-</pre></td>
+End of example file.</td>
 <td>Matches everything except lowercase alphabets.</td>
 </tr>
 </table>
@@ -434,36 +413,29 @@ D) Matching the empty string: The following operators match the empty strings.<b
 <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
 <tr>
 <td>Command</td>
+<td>Output</td>
 <td>Explanation</td>
 </tr>
 <tr>
-<td><pre class="code"> 
-$ grep '^ab' test
-abcdefgh
+<td>grep '^ab' test</td>
+<td>abcdefgh
 abababab
-ab*23
-</pre></td>
+ab*23</td>
 <td>Matches only the strings that start with ab.</td>
 </tr>
 <tr>
-<td><pre class="code"> 
-$ grep 'ab$' test
-abababab
-</pre></td>
+<td>grep 'ab$' test</td>
+<td>abababab</td>
 <td>Matches only the strings that end with ab.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '\&lte' test
-End of example file.
-</pre></td>
+<td>grep '\&lte' test</td>
+<td>End of example file.</td>
 <td>Matches only the words that begin with e.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep 'r\&gt' test
-Example file for grep.
-</pre></td>
+<td>grep 'r\&gt' test</td>
+<td>Example file for grep.</td>
 <td>Matches only the words that end with r.</td>
 </tr>
 </table>
@@ -471,18 +443,17 @@ Example file for grep.
 <br />
 <br />
 
-E) Matching any character: The dot character (<b>.</b>) matches any single character.<br />
+E) Matching any character: The dot character (.) matches any single character.<br />
 
 <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
 <tr>
 <td>Command</td>
+<td>Output</td>
 <td>Explanation</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep 'a...3' test
-ab*23
-</pre></td>
+<td>grep 'a...3' test</td>
+<td>ab*23</td>
 <td>Matches any 5 character sequence that starts with <i>a</i> and ends with <i>3</i>.</td>
 </tr>
 </table>
@@ -521,7 +492,7 @@ F) Repititions: There are several repitition operators which repeat the regular 
 
 <br />
 <br />
-Note: Except <b>*</b> all of the operators described above lose their special meaning when used with basic regex. Each of these operators have to be preceded by a backslash when used with basic regex or they have to be used extended regex.
+Note: Except '*' all of the operators described above lose their special meaning when used with basic regex. Each of these operators have to be preceded by a backslash when used with basic regex or they have to be used extended regex.
 
 <br />
 <br />
@@ -529,12 +500,12 @@ Note: Except <b>*</b> all of the operators described above lose their special me
 <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
 <tr>
 <td>Command</td>
+<td>Output</td>
 <td>Explanation</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep 'a*' test
-Example file for grep.
+<td>grep 'a*' test</td>
+<td>Example file for grep.
 123456
 abcdefgh
 aabbaabb
@@ -542,80 +513,74 @@ abababab
 ABCDefgh1234
 ab*23
 End of example file.
-</pre></td>
+</td>
 <td>Since all the lines contain <i>a</i> at least zero times, all the lines are printed as output. Appending <i>*</i> with <i>a</i> makes <i>a</i> optional.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '^ab*' test
-abcdefgh
+<td>grep '^ab*' test</td>
+<td>abcdefgh
 aabbaabb
 abababab
 ab*23
-</pre></td>
+</td>
 <td>Matches all the lines which begin with <i>a</i> followed by zero or more <i>b</i>.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '^\(ab\)\(ab\)*' test
-abcdefgh
+<td>grep '^\(ab\)\(ab\)*' test</td>
+<td>abcdefgh
 abababab
 ab*23
-</pre></td>
+</td>
 <td>Matches all the lines that begin with <i>ab</i> followed by zero or more <i>ab</i>.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '^ab/?' test
-abcdefgh
+<td>grep '^ab/?' test</td>
+<td>abcdefgh
 aabbaabb
 abababab
 ab*23
-</pre></td>
+</td>
 <td>Matches all the lines which begin with <i>a</i> followed by zero or one <i>b</i>.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '^ab\+' test
-abcdefgh
+<td>grep '^ab\+' test</td>
+<td>abcdefgh
 abababab
 ab*23
-</pre></td>
+</td>
 <td>Matches all the lines which begin with <i>a</i> followed by at least one <i>b</i>.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '.\{10\}' test
-Example file for grep.
+<td>grep '.\{10\}' test
+</td>
+<td>Example file for grep.
 ABCDefgh1234
 End of example file.
-</pre></td>
+</td>
 <td>Matches a string exactly 10 characters long.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '.\{6,\}' test
-Example file for grep.
+<td>grep '.\{6,\}' test</td>
+<td>Example file for grep.
 123456
 abcdefgh
 aabbaabb
 abababab
 ABCDefgh1234
 End of example file.
-</pre></td>
+</td>
 <td>Matches a string at least 6 characters long.</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '.\{6,10\}' test
-Example file for grep.
+<td>grep '.\{6,10\}' test</td>
+<td>Example file for grep.
 123456
 abcdefgh
 aabbaabb
 abababab
 ABCDefgh1234
 End of example file.
-</pre></td>
+</td>
 <td>Matches a string at least 6 and at most 10 characters long.</td>
 </tr>
 </table>
@@ -629,50 +594,34 @@ Note: To use the OR operator with basic regex precede it with a backslash.<br />
 <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
 <tr>
 <td>Command</td>
+<td>Output</td>
 <td>Explanation</td>
 </tr>
 <tr>
-<td><pre class="code">
-$ grep '\(^z+\)\|\(1234\)' test
-123456
+<td>grep '\(^z+\)\|\(1234\)' test</td>
+<td>123456
 ABCDefgh1234
-</pre></td>
+</td>
 <td>Matches the lines which start with <i>z</i> or the string <i>1234</i>.</td>
 </tr>
 </table>
 
-<br />
-<br />
-
 <b>Options</b>
-<code>grep</code> has a lot of options. We will only focus on few of the most commonly used options. Rest of the options can be easily learned from the <code>man</code> page.
 
 <br />
+<br />
 
-A) -i, --ignore-case: This option is used to ignore the case distinctions. <br />
-<pre style="code">
-$ grep -i '[a-z]' test
-Example file for grep.
-abcdefgh
-aabbaabb
-abababab
-ABCDefgh1234
-ab*23
-End of example file.
-</pre>
-
-B) -v, --invert-match: This option is used to invert the sense of matching. <br />
-<pre style="code">
-$ grep -v '[A-Za-z][A-Za-z]*' test
-123456
-</pre>
-
-C) -x, --line-regexp: This option is used to select only those matches that exactly match the whole line.
-<pre style="code">
-$ grep -x '[0-9]*' test
-123456
-</pre>
-
+Grep can be used with the following options:
+<br />
+v - 
+<br />
+A -
+<br />
+B -
+<br />
+C - 
+<br />
+o -
 <br />
 <br />
 
@@ -683,10 +632,12 @@ $ grep -x '[0-9]*' test
 
 Grep can also be used in conjunction with other commands using the pipes
 to get the desired outputs.
-<br />
-<br />
 
-<h3>find Command</h3>
+<pre class="code">
+
+</pre>
+
+<h3>Find Command</h3>
 
 <br />
 <br />
