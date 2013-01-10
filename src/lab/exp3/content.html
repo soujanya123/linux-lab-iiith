@@ -173,7 +173,7 @@ edit -->
 		page( type in terminal $man echo)
 	</p>
 	<p>Syntax of echo command<p>
-	<pre class="code"> aditi@mylaptop:~$ echo  < string > </pre>
+	<pre class="code">$ echo  < string-name > </pre>
 	<p>	
 		We shall see how to display sample by
 		using <b>echo command</b>.</p>
@@ -198,7 +198,7 @@ Hello World </pre>
 
 	<p>Syntax of cat command</p>
 	<pre class="code">
-aditi@mylaptop:~$ cat [filename] </pre>
+$ cat [filename] </pre>
 
 	<p>
 		We shall see how to use <b>cat command</b> for displaying
@@ -219,7 +219,7 @@ this a example text file. </pre>
 	</p>
 	<p>Syntax of wc command</p>
 	<pre class="code">
-aditi@mylaptop:~ wc [options] < file-name >	</pre>
+$ wc [options] < file-name >	</pre>
 	<p>
 		Below are the available options for wc command
 	</p>
@@ -255,7 +255,7 @@ Above output is :
 	
         <p>Syntax of head command</p>
 	<pre class="code"> 
-aditi@mylaptop:~head  [file-name] </pre>
+$ head  [file-name] </pre>
 	<p>
 		Below are the available options for head command
 	</p>
@@ -286,7 +286,7 @@ this a example text file.</pre>
 	</p>
 	<p>Syntax of tail command</p>
 	<pre class="code">
-aditi@mylaptop:~tail [file-name] </pre>
+$ tail [file-name] </pre>
 	<p>	
 		We shall see how to display last few lines of a text file
 		content using <b>Tail Command</b>
@@ -307,7 +307,7 @@ The same content was copied to example2.txt </pre>
 	</p>
 	<p>Syntax of diff command</p>
 	<pre class="code">
-aditi@mylaptop:~$ diff  [file-name1] [file-name2]</pre>
+$ diff  [file-name1] [file-name2]</pre>
 	<p>
 		We shall see how to compare two files using <b>diff command</b>
 	</p>
@@ -327,7 +327,7 @@ The same content wass copied to example2.txt</pre>
 	 </p>
 	 <p>	Syntax for sort command</p>
 	 <pre class="code">
-aditi@mylaptop:~$ sort [file] </pre>
+$ sort [file] </pre>
 	 <p>We shall see how to sort a file which contains phone book</p>
 	 <pre class="code">
 aditi@mylaptop:~$ cat  phonebook
@@ -354,7 +354,7 @@ aditi, Kumar  9866223311 </pre>
 	  </p>
 	  <p>Syntax for more command</p>
 	  <pre class="code">
-aditi@mylaptop:~$ more [file-name] </pre>
+$ more [file-name] </pre>
 	  <p>
 		Using more try to view a huge file by using navigating forward.
 	  </p>
@@ -372,7 +372,7 @@ aditi@mylaptop:~$ more /etc/apache2/apache2.conf </pre>
 		Syntax for less command
 	  </p>
 	  <pre class="code">
-aditi@mylaptop:~$less [file-name]</pre>
+$less [file-name]</pre>
      </div>
      </section>
 
@@ -420,13 +420,57 @@ aditi@mylaptop:~$less [file-name]</pre>
 
           <div id="experiment-article-section-5-content" 
           class="content">
-	    <ol>
-	      <li></li>
-	      <li></li>
-	    </ol>
-          </div>
-	  
-        </section>
+	   <p>
+		<ol>
+		  <li>which command can be used to view content of text file by navigation forward and reverse.
+		    <ol style="list-style-type:upper-alpha">
+		      <li>more</li>
+		      <li>less</li>
+		      <li>cat</li>
+		      <li>head</li>
+		    </ol>
+		  </li>
+		<li>Which command is used to count just the number of characters in a file<li>
+                   <ol style="list-style-type:upper-alpha">
+		      <li>wc -l</li>
+                      <li>wc -c</li>
+                      <li>wc -w</li>
+                      <li>wc -r</li>
+		   </ol>
+                 </li>
+                 <li>what is the command to display the first 8 lines of a text file "file.txt"
+		   <ol style="list-style-type:upper-alpha">
+		       <li>head -8 <file name></li>
+                       <li>cat -8 file.txt</li>
+		       <li>tail -9 file.txt</li>
+		       <li>head file.txt</li>
+		    </ol>
+		  </li>
+		  <li>Which command is used to display the content in reverse order<li>
+		    <ol style="list-style-type:upper-alpha">
+			<li>head <file name></li>
+		        <li>sort <file name></li>
+		        <li>sort -r <file name></li>
+		        <li>cat -r <file name></li>
+                    </ol>
+		   <li>which command is used to display the last 20 lines of a file<li>
+		    <ol style="list-style-type:upper-alpha">
+			<li>head -20 <file name>
+			<li>tail</li>
+			<li>tail -20 <file name></li>
+			<li>cat <file name></li>
+		     </ol>
+		    <li>Which command is used to see the difference between two text file<li>
+	             <ol style="list-style-type:upper-alpha">	
+			<li>cat</li>
+			<li>diff</li>
+			<li>sort</li>
+			<li>head</li>
+		      </ol>
+		     </ol>
+	            </p>
+		 </div>
+	       </section>
 
 
         <section id="experiment-article-section-6">
