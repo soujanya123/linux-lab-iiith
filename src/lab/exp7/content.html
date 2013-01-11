@@ -202,7 +202,7 @@ e
 	<p>Here the sorted output of 'f1.txt' is printed in 'f1_sort.txt'.</p>
 	
 	<h3>2&gt; Redirection</h3>
-	<p><b>2></b> passes the error output from the command to the specified file. Here, 2 is a reference to the <i>file descriptor</i> of the error stream (1 is assumed by default, so there is no need to specify the type number for stdout). </p>
+	<p><b>2></b> passes the error output from the command to the specified file. Here, 2 is a reference to the <i>file descriptor</i> of the error stream. When redirecting the output stream, file descriptor 1 is assumed by default and so there is no need to specify the file descriptor number for stdout. </p>
 	<pre class="code">
 aditi@mylaptop$ mkdir /x 2> err.txt
 aditi@mylaptop$ cat err.txt
@@ -389,7 +389,7 @@ example.txt  all_about_console.txt my_project imp 2012-12-31 1142.tar
 
           <div id="experiment-article-section-8-content" 
           class="content">
-	<p>For further information on pipes and redirections, the following links could be useful:
+	<p>For further information on pipes and redirections, please check the following links:
 	 <ul>
 		<li>The wiki page on <a href="http://en.wikipedia.org/wiki/Redirection_%28computing%29">Pipes and Redirection</a> contains a good description.</li>
 		<li>Another webpage with lots of examples on pipes and redirections is <a href="http://en.wikibooks.org/wiki/LPI_Linux_Certification/Use_Streams,_Pipes_And_Redirects">http://en.wikibooks.org/wiki/LPI_Linux_Certification/Use_Streams,_Pipes_And_Redirects</a>.
