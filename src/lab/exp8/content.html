@@ -509,29 +509,61 @@ ab*23</pre>
 
 		<p align="justify">
 
+		  It searches for all the patterns in the text file which start with 'ab'
+		  and may or not have any more 'ab' pattern. 
 
-
+		  <pre class="code">
 $ grep '^ab\?' example.txt
 abcdefgh
 aabbaabb
 abababab
-ab*23
+ab*23</pre>
 
+		</p>
+
+		<p align="justify">
+
+		  It searches for all the patterns which start with 'a' and followed by
+		  zero or one 'b'.
+
+		  <pre class="code">
 $ grep '^ab\+' example.txt
 abcdefgh
 abababab
-ab*23
+ab*23</pre>
 
+		</p>
+
+		<p align="justify">
+
+		  It searches for all the patterns which start with 'a' and followed by
+		  at least one 'b'.
+
+		  <pre class="code">
 $ grep '.\{10\}' example.txt
-ABCDefgh1234
+ABCDefgh1234</pre>
+		
+		</p>
 
+		<p align="justify">
+
+		  It searches for a string exactly 10 characters long.
+
+		  <pre class="code">
 $ grep '.\{6,\}' example.txt
 123456
 abcdefgh
 aabbaabb
 abababab
-ABCDefgh1234
+ABCDefgh1234</pre>
 
+		</p>
+
+		<p align="justify">
+
+		  It searches for a string at least 6 characters long.
+
+		  <pre class="code">
 $ grep '.\{6,10\}' example.txt
 123456
 abcdefgh
@@ -539,142 +571,139 @@ aabbaabb
 abababab
 ABCDefgh1234</pre>
 
-		    <br />
-		    <br />
+		</p>
 
-		    <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
-		      <tr>
-			<td>Command</td>
-			<td>Output</td>
-			<td>Explanation</td>
-		      </tr>
-		      <tr>
-			<td>grep 'a*' test</td>
-			<td>Example file for grep.
-			  123456
-			  abcdefgh
-			  aabbaabb
-			  abababab
-			  ABCDefgh1234
-			  ab*23
-			  End of example file.
-			</td>
-			<td>Since all the lines contain <i>a</i> at least zero times, all the lines are printed as output. Appending <i>*</i> with <i>a</i> makes <i>a</i> optional.</td>
-		      </tr>
-		      <tr>
-			<td>grep '^ab*' test</td>
-			<td>abcdefgh
-			  aabbaabb
-			  abababab
-			  ab*23
-			</td>
-			<td>Matches all the lines which begin with <i>a</i> followed by zero or more <i>b</i>.</td>
-		      </tr>
-		      <tr>
-			<td>grep '^\(ab\)\(ab\)*' test</td>
-			<td>abcdefgh
-			  abababab
-			  ab*23
-			</td>
-			<td>Matches all the lines that begin with <i>ab</i> followed by zero or more <i>ab</i>.</td>
-		      </tr>
-		      <tr>
-			<td>grep '^ab/?' test</td>
-			<td>abcdefgh
-			  aabbaabb
-			  abababab
-			  ab*23
-			</td>
-			<td>Matches all the lines which begin with <i>a</i> followed by zero or one <i>b</i>.</td>
-		      </tr>
-		      <tr>
-			<td>grep '^ab\+' test</td>
-			<td>abcdefgh
-			  abababab
-			  ab*23
-			</td>
-			<td>Matches all the lines which begin with <i>a</i> followed by at least one <i>b</i>.</td>
-		      </tr>
-		      <tr>
-			<td>grep '.\{10\}' test
-			</td>
-			<td>Example file for grep.
-			  ABCDefgh1234
-			  End of example file.
-			</td>
-			<td>Matches a string exactly 10 characters long.</td>
-		      </tr>
-		      <tr>
-			<td>grep '.\{6,\}' test</td>
-			<td>Example file for grep.
-			  123456
-			  abcdefgh
-			  aabbaabb
-			  abababab
-			  ABCDefgh1234
-			  End of example file.
-			</td>
-			<td>Matches a string at least 6 characters long.</td>
-		      </tr>
-		      <tr>
-			<td>grep '.\{6,10\}' test</td>
-			<td>Example file for grep.
-			  123456
-			  abcdefgh
-			  aabbaabb
-			  abababab
-			  ABCDefgh1234
-			  End of example file.
-			</td>
-			<td>Matches a string at least 6 and at most 10 characters long.</td>
-		      </tr>
-		    </table>
+		<p align="justify">
+
+		  It searches for a string at least 6 characters long and at most 10
+		  characters long.
 
 		    <br />
 		    <br />
-		  </li>
-		  <li>
-		    The OR operator (|): The OR operator (|) can be used to join two regular expressions. The resulting pattern matches any string joined by the OR operator.<br />
-		    Note: To use the OR operator with basic regex precede it with a backslash.<br />
 
-		    <table border="1" style="margin-left:auto;margin-right:auto;width:50%">
-		      <tr>
-			<td>Command</td>
-			<td>Output</td>
-			<td>Explanation</td>
-		      </tr>
-		      <tr>
-			<td>grep '\(^z+\)\|\(1234\)' test</td>
-			<td>123456
-			  ABCDefgh1234
-			</td>
-			<td>Matches the lines which start with <i>z</i> or the string <i>1234</i>.</td>
-		      </tr>
-		    </table>
-		  </li>
-		</ol>
+		    10. The OR operator (|): The OR operator (|) can be used
+		    to join two regular expressions.  The resulting
+		    pattern matches any string joined by the OR
+		    operator.
+		    
+		    <br />  
+		    <br />
 
-		<b>Options</b>
+		    Note: The OR operator has to be preceded with a backslash.
 
-		<br />
-		<br />
-
-		Grep can be used with the following options:
-		<br />
-		v - 
-		<br />
-		A -
-		<br />
-		B -
-		<br />
-		C - 
-		<br />
-		o -
-		<br />
-		<br />
+<pre class="code">
+$ grep '\(^z+\)\|\(1234\)' example.txt
+123456
+ABCDefgh1234</pre>
 
 		</p>
-	      
+
+		<p align="justify">
+
+		  It matches the lines which start with 'z' or the string '1234'. 
+
+		  <br />
+		  <br />
+
+		  <b>Options</b>
+
+		  <br />
+		  <br />
+
+		  Grep can be used with the following options:
+
+		  <br />
+
+		  v - it reverses the pattern specified and prints all
+		  the lines that DO NOT match the specified regular expression
+
+		  <pre class="code">
+$ grep '\(^z+\)\|\(1234\)' example.txt
+123456
+ABCDefgh1234
+
+$ grep -v '\(^z+\)\|\(1234\)' example.txt
+abcdefgh
+aabbaabb
+abababab
+ab*23</pre>
+
+		</p>
+
+		<p align="justify">
+		  
+		  Compare the above commands and note the difference. 
+
+		  <br />
+		  <br />
+
+		  A (num) - <code>grep</code> takes a numeric
+		  value <i>num</i> as an argument and prints <i>num</i>
+		  lines of the file text after the pattern match
+
+		  <pre class="code">
+$ grep -A 2 'ab*' example.txt
+abcdefgh
+aabbaabb
+abababab
+ABCDefgh1234
+ab*23</pre>
+
+		</p>
+
+		<p align="justify">
+		  
+		  In the above output, the command prints two lines
+		  after every pattern match.
+
+		  <br />
+		  <br />
+
+		  B (num) - as opposed to the A option, this option
+		  prints <i>num</i> lines of text in the file BEFORE the
+		  pattern match
+
+		  <pre class="code">
+$ grep -B 2 'ab*' example.txt
+123456
+abcdefgh
+aabbaabb
+abababab
+ABCDefgh1234
+ab*23</pre>
+
+		</p>
+
+		<p align="justify">
+		  
+		  c - it prints the number of lines matching the pattern
+		  specified
+
+		  <pre class="code">
+$ grep -c 'ab*' example.txt
+4</pre>
+
+		</p>
+
+		<p align="justify">
+		  
+		  o - the option prints only the matched patterns
+
+		  <pre class="code">
+$ grep -o 'ab*' example.txt
+ab
+a
+abb
+a
+abb
+ab
+ab
+ab
+ab
+ab</pre>
+
+		</p>
+
 	      	<h3>find Command</h3>
 
 		<p align="justify">
