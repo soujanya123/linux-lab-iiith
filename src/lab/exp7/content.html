@@ -87,7 +87,7 @@ edit -->
 	element, You can also include images with <img> tag -->
 	<div id="experiment-article-section-1-content" class="content">	
 	<p>
-	Linux provides a number of commands that are focussed towards a specific and simple task. In practical applications, it is often required to perform complex tasks that involve multiple commands, with the output of one command being used to execute another command. In other words, one may need to manipulate of the input and output of these commands. For this purpose, Linux provides the powerful tool of Pipes and Redirection.
+	Linux shell provides a number of commands that are focussed towards a specific and simple task. In practical applications, it is often required to perform complex tasks that involve multiple commands, with the output of one command being used as input in the execution of another command. In other words, one may need to manipulate the input and output of these commands. For this purpose, Linux shell provides Pipes and Redirection operators.
 	 
 	</p>
 
@@ -115,7 +115,7 @@ edit -->
 	element, we can also include images with <img> tag -->
 	<div id="experiment-article-section-2-content" class="content">
 	<p>
-The objective of this experiment is to learn how to execute multiple commands together and manipulating the input and output of these commands. At the end of this experiment, one should be comfortable with pipes and redirection and be able to use them to manipulate the input and output of commands.
+The objective of this experiment is to learn how to execute multiple commands together and manipulating the input and output of these commands. At the end of this experiment, one should be comfortable with using pipes and redirection.
 </p>
 	</div>
 	</section>
@@ -141,14 +141,15 @@ The objective of this experiment is to learn how to execute multiple commands to
 	<div id="experiment-article-section-3-content" class="content">
 	<h3>Standard Input, Standard Output, Standard Error</h3>
 	<p>There are three important concepts you should know about: standard input, standard output and standard error.</p>
-	<p><b>Standard input</b> (stdin) is the data taken by the program at runtime. By default, the standard input stream is the keyboard. The standard input is classified as <b>Type 0</b>.</p>
-	<p><b>Standard Output</b> (stdout) is where data is written by the program. By default, it is the terminal from where the program is run. The standard output is classified as <b>Type 1</b>.</p>
-	<p><b>Standard Error</b> (stderr) is the output stream where the error messages are written. It is independent of standard output. The default standard error stream is the terminal where the program was run from. The standard error is classified as <b>Type 2</b>.</p>
-	<p>Here, the type 0, 1 and 2 are <i>file descriptors</i>, which is a low-level Linux abstraction. Details of this are not required with regards to this experiment. You can simply consider type 0, type 1 and type 2 as different classifications of the input, output and error streams by the system.</p>
+	<p><b>Standard input</b> (stdin) is the standard input stream. Normally, the standard input stream is the keyboard. The standard input is <i>file descriptor</i> 0.</p>
+	<p><b>Standard Output</b> (stdout) is the standard output stram. Normally, it is the terminal from which the program was run. The standard output is <i>file descriptor</i> 1.</p>
+	<p><b>Standard Error</b> (stderr) is the standard error stream. It is independent of standard output. The default standard error stream is the terminal from which the program was run. The standard error is <i>file descriptor</i> 2.</p>
+	<p><i>File descriptors</i> are a low-level Linux abstraction. Details of this are not required for this experiment. You can simply consider file descriptor 0, file descriptor 1 and file descriptor 2 as different classifications of the input stream, the output stream and the error stream by the system.</p>
 	<h3>Pipes and Redirection</h3>
-	<p>By default, shell commands take input from <i>stdin</i>, write output to <i>stdout</i> and write error output to <i>stderr</i>. It is often desirable to take input from other locations, such as a file or the output of another command. Pipes and redirections are special characters or a set of special characters, which are used to redirect the input and output of commands to another location. 
+	<p>It is often convenient to take input from locations other than the default streams, such as a file or the output of another command. Pipes and redirections are operators which are used to redirect the input and output of commands to another location. 
 Some commonly used pipes and redirects are: &gt;, &gt;&gt;, &lt;, |, 2> and $().
 	</p>
+	<h3>&gt; Redirection</h3>
 	<p>
 	<b>&gt</b> prints the output from the command to the specified file. If the file already exists, it is overwritten.
 	</p>
@@ -159,24 +160,23 @@ aditi@mylaptop$ ls > out.txt
 aditi@mylaptop$ cat out.txt
 example.txt  all_about_console.txt my_project
 	</pre>
+	<h3>&gt;&gt; Redirection</h3>
 	<p>
 	<b>&gt&gt</b> appends the output from the command to the specified file.
 	</p>
 	<pre class="code">
-aditi@mylaptop$ cat >> out.txt
+aditi@mylaptop$ ls >> out.txt
 text appended at end
 aditi@mylaptop$ cat out.txt
 example.txt  all_about_console.txt my_project
-text appended at end
+example.txt  all_about_console.txt my_project
 	</pre>
-	<p>
-	<b>Ctrl+D</b> marks the end of file when taking input from stdin.
-	</p>
+	<h3>&lt; Redirection</h3>
 	<p>
 	<b>&lt</b> reads the command input from the specified file.
 	</p>
 	<pre class="code">
-aditi@mylaptop$ cat > f1.txt
+aditi@mylaptop$ cat f1.txt
 d
 a
 c
@@ -201,7 +201,7 @@ e
 </pre>
 	<p>Here the sorted output of 'f1.txt' is printed in 'f1_sort.txt'.</p>
 	
-	
+	<h3>2&gt; Redirection</h3>
 	<p><b>2></b> passes the error output from the command to the specified file. Here, 2 is a reference to the <i>file descriptor</i> of the error stream (1 is assumed by default, so there is no need to specify the type number for stdout). </p>
 	<pre class="code">
 aditi@mylaptop$ mkdir /x 2> err.txt
@@ -216,20 +216,15 @@ e
 aditi@mylaptop$ cat out.txt
 aditi@mylaptop$ 
 	</pre>
+	<h3>Pipe</h3>
 	<p>
 	<b>|</b> passes the output from the command on the left side of the pipe as input to the command on the right side of the pipe.
 	</p>
 	<pre class="code">
-aditi@mylaptop$ cat | wc
-Pipes can be
-used to combine
-multiple commands
-to form a single
-complex command.
-      5      14      81
+aditi@mylaptop$ ps aux | more
 	</pre>
 	<p>
-	The number of lines, words and characters in the input taken from stdin is printed.
+	All the commands running on the system are displayed one screen at a time.
 	</p>
 	<pre class="code">
 aditi@mylaptop$ cat f1.txt
@@ -246,17 +241,14 @@ d
 e
 </pre>
 	<p>Prints the sorted contents of 'f1.txt'.</p>
-	<pre class="code">
-aditi@mylaptop$ du | more
-	</pre>
-	<p>Prints the output of the <b>du</b> command, one screen at a time.</p>
 
 	</pre>	
+	<h3>$() redirection</h3>
 	<p>
 	<b>$()</b> returns the output of the command, instead of writing it to stdout. Useful for passing it as the parameter of another command. 
 	</p>
 	<pre class="code">
-aditi@mylaptop$ touch $(ls -1 *.c)
+aditi@mylaptop$ touch $(ls *.c)
 	</pre>
 	<p>Updates timestamp on all .c files in current folder</p>
 	<pre class="code">
@@ -264,11 +256,11 @@ aditi@mylaptop$ wc $(ls *.txt)
 	</pre>
 	<p>Displays number of characters, words and lines in all text files in current folder.</p>
 	<pre class="code">
-aditi@mylaptop$ chmod 755 $(ls -1 *.org)
+aditi@mylaptop$ chmod 755 $(ls *.org)
 	</pre>
 	<p>Changes permissions of all .org files in current folder to 755.</p>
 	<pre class="code">
-aditi@mylaptop$ head -n 5 $(ls -1 *.c)
+aditi@mylaptop$ head -n 5 $(ls *.c)
 	</pre>
 	<p>Displays the first five lines (typically include statements) of all C files in current folder.</p>
 	<pre class="code">
@@ -331,14 +323,51 @@ example.txt  all_about_console.txt my_project imp 2012-12-31 1142.tar
 
           <div id="experiment-article-section-6-content" 
           class="content">
-	<h3>True or False</h3>
+	<h3>Multiple Choice Questions</h3>
 	<ol>
-	<li>'less ls -l' displays the output of 'ls -l' in less.</li>
-	<li>'sort &lt; f1.txt &gt; f2.txt' sorts the contents of f2.txt and prints the output to f1.txt.</li>
-	<li>'ls -l > output.txt' overwrites 'output.txt'.</li>
-	<li>'ls -l >> output.txt' overwrites 'output.txt'.</li>
-	<li>'sort -r -k 3 | ps aux' prints the processed sorted on CPU time.</li>
-	<li>$(ls) lists the contents of the current working directory.</li>
+	<li>The 'less ls -l' command:
+		<ol type='A'>
+			<li>Displays the output of 'ls -l' in less.</li>
+			<li>Tries to print the file named 'ls' in less.</li>
+			<li>Produces an error, as a redirection operator should be used to combine the two commands.</li>
+			<li>None of the above.</li>
+		</ol>
+		</li>
+	<li>'sort &lt; f1.txt &gt; f2.txt' command
+		<ol type='A'>
+			<li>Sorts the contents of f2.txt and prints the output to f1.txt.</li>
+			<li>Sorts the contents of f1.txt and prints the output to f2.txt.</li>
+			<li>Is an invalid operation.</li>
+			<li>None of the above.</li>
+		</ol></li>
+	<li>'ls -l > output.txt' command
+		<ol type='A'>
+			<li>Creates a new file 'output.txt'and prints the output of the 'ls -l' in the file.</li>
+			<li>Appends the output of the 'ls -l' command to the file 'output.txt'.</li>
+			<li>Produces an error if the file 'output.txt' does not exist.</li>
+			<li>None of the above.</li>
+		</ol></li>
+	<li>'ls -l >> output.txt' command:
+	<ol type='A'>
+			<li>Creates a new file 'output.txt'and prints the output of the 'ls -l' in the file.</li>
+			<li>Appends the output of the 'ls -l' command to the file 'output.txt'.</li>
+			<li>Produces an error if the file 'output.txt' does not exist.</li>
+			<li>None of the above.</li>
+		</ol></li>
+	<li>'ps aux | head -n 5' command:
+		<ol type="A">
+			<li>Prints the first 5 lines of the output of the 'ps aux' command.</li>
+			<li>Executes the 'ps aux' command, followed by the 'head -n 5' command.</li>
+			<li>Produces an error.</li>
+			<li>None of the above.</li>
+		</ol></li>
+	<li>$(ls) command:
+		<ol type="A">
+			<li>Lists the contents of the current working directory.</li>
+			<li>Returns the output of the 'ls' command.</li>
+			<li>Tries to execute all the existing files and folders in the current working directory.</li>
+			<li>Is an invalid operation.</li>
+		</ol>
 	</ol>
 
           </div>
@@ -355,17 +384,16 @@ example.txt  all_about_console.txt my_project imp 2012-12-31 1142.tar
 
           <div id="experiment-article-section-8-heading" 
           class="heading">
-            Readings
+            Further Readings
           </div>
 
           <div id="experiment-article-section-8-content" 
           class="content">
-	<ul>
-	<li><a href="http://polishlinux.org/console/file-management-in-linux/">http://polishlinux.org/console/file-management-in-linux/</a> </li>
-	<li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?ls">ls man page</a></li>
-	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section3.html</a></li>
-	<li><a href="http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html">http://people.ischool.berkeley.edu/~kevin/unix-tutorial/section4.html</a></li>
-	<li><a href="http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml">http://www.devdaily.com/unix/edu/IntroToUnix/node7.shtml</a></li>
+	<p>For further information on pipes and redirections, the following links could be useful:
+	 <ul>
+		<li>The wiki page on <a href="http://en.wikipedia.org/wiki/Redirection_%28computing%29">Pipes and Redirection</a> contains a good description.</li>
+		<li>Another webpage with lots of examples on pipes and redirections is <a href="http://en.wikibooks.org/wiki/LPI_Linux_Certification/Use_Streams,_Pipes_And_Redirects">http://en.wikibooks.org/wiki/LPI_Linux_Certification/Use_Streams,_Pipes_And_Redirects</a>.
+	
 </ul>
           </div>
 
