@@ -45,3 +45,8 @@ nav#lab-article-navigation ul li a:visited, nav#experiment-article-navigation ul
 	text-align: justify;
 }
 
+.content li
+{
+    margin-right: 50pt;
+    text-align: justify;
+}

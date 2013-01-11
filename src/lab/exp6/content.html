@@ -87,28 +87,12 @@ edit -->
 		 element, You can also include images with <img> tag -->
 	    <div id="experiment-article-section-1-content" class="content">	
 	      <p>
-		Welcome to "Obtaining System Information" experiment
-		of Systems and Software Virtual Lab. This experiment
-		explains how to obtain the information related to
-		system, processes and user's status. This also
-		explains how to check that how much hardware resource
-		has been utilized by the GNU/Linux Operating system
-		which is currently used in the experiment.
-	      </p>
-	      <p>
-		The experimental platform for this experiment is a
-		command line interface which mimics the terminal of a
-		GNU/Linux machine. The command line interface can help
-		in learning the basics of how to get systems
-		information. A series of tasks which can be performed
-		on available command-line interface is also provided.
-	      </p>
-	      <p>
-		Proceed to the theory section to get an overview of
-		the commands. Then move to the experiment section to
-		get some hands-on experience and finish the experiment
-		tasks. After you are done with the experiment, go to
-		the quiz section to test your understanding.
+		This experiment explains how to obtain the information
+		related to system, processes and user's status. This
+		also explains how to check that how much hardware
+		resource has been utilized by the GNU/Linux Operating
+		system which is currently used in the web based shell
+		of the experiment.
 	      </p>
 	    </div>
 	  </section>
@@ -175,100 +159,75 @@ edit -->
 	      <p>
 		In order to understand the output of the commands used
 		in this experiment, one should know the terminologies
-		used. Some of them are given below.</p>
-	      <p>
-		<ul>
-		  <li>
-		    <h4>Process:</h4> 
-		    <p>
-		      A process is a running instance of a program.
-		      Sometimes it can be referred as a task.
-		    </p>
-		    <p> A <b>program</b> is a set of instructions that are
-		      meant to perform a specific task.
-		    </p>
-		  </li>
-		  <li>
-		    <h4>Memory units:</h4>
-		    <p>1 Kilo Byte (KB) = 1024 Bytes </p>
-		    <p>1 Mega Byte (MB) = 1024 Kilo Bytes </p>
-		    <p>1 Giga Byte (GB) = 1024 Mega Bytes </p>
-		    <p>1 Tera Byte (TB) = 1024 Giga Bytes </p>
-		  </li>
-		</ul>
-		<br/><br/>
+		used. Some of them are given below.</p><br/>
+	      <p><b>Process:</b><br/> 
+		A process is a running instance of a program.
+		Sometimes it can be referred to as a task.
+		<br/>
+		A <b>program</b> is a set of instructions that are
+		meant to perform a specific task.</p><br/>
+	      <p><b>Memory units:</b><br/>
+		1 Kilo Byte (KB) = 1024 Bytes<br/>
+		1 Mega Byte (MB) = 1024 Kilo Bytes <br/>
+		1 Giga Byte (GB) = 1024 Mega Bytes <br/>
+		1 Tera Byte (TB) = 1024 Giga Bytes <br/>
+	      </p>
+	      <br/>
 	      <p>
 		The following are the list of Linux commands which are
 		used to get the system information. The commands are
 		divided according to their area of usage.
 	      </p>
+	      <br/>
 	      <u><h2>Main Memory Usage</h2></u>
-	      <ol>
-		<h3>
-		  <li>free
-		</h3> 
-		<p>
-		  The 'free' command prints the amount of total, free
-		  and used RAM (and swap) memory in the system, as
-		  well as the buffers used by the kernel.
-		</p>
-		<pre class="code">
+	      <h3>1. free:</h3> 
+	      <p>
+		The 'free' command prints the amount of total, free
+		and used RAM (and swap) memory in the system, as well
+		as the buffers used by the kernel.
+	      </p>
+	      <pre class="code">
 aditi@mylaptop:~$ free
              total       used       free     shared    buffers     cached
 Mem:       1918584    1549980     368604          0     180488     704172
 -/+ buffers/cache:     665320    1253264
-Swap:      9577468          0    9577468
-		</pre>
-		<p>
-		  "-h" option is used to get the numbers in human
-		  readable format, scaled to shortest three digit unit
-		  and display the units of print out. The units are
-		  mentioned above.
-		</p>
-		<pre class="code">
+Swap:      9577468          0    9577468	      </pre>
+	      <p>
+		"-h" option is used to get the numbers in human
+		readable format, scaled to shortest three digit unit
+		and display the units of print out. The units are
+		mentioned above.
+	      </p>
+	      <pre class="code">
 aditi@mylaptop:~$ free -h
              total       used       free     shared    buffers     cached
 Mem:          1.8G       1.5G       361M         0B       176M       687M
 -/+ buffers/cache:       648M       1.2G
-Swap:         9.1G         0B       9.1G
-		</pre>	
-
-		<p>
-		  <ul>
-		    <li>
-		      The "total" column of "Mem:" row indicates the
-		      memory size of the RAM. Here we can see that the
-		      RAM is of 1.8GB, of which 1.5GB is currently in
-		      use and 361MB is free.
-		    </li>
-		    <li>
-		      Since the memory used for buffers and cache can
-		      easily be reclaimed for use by applications, the
-		      second row (-/+ buffers/cache) provides an
-		      indication of the memory actually used by
-		      applications (the "used" column) or available to
-		      applications (the "free" column). Here we can
-		      see that the actual RAM used by the applications
-		      is 648MB and the available RAM is 1.2GB. That
-		      means, the actual load is of 648MB only.
-		    </li>
-		    <li>
-		      The other options cane be <b>ignored</b> for
-		      now. Run "man free" to see more information
-		      about "free" command.
-		    </li>
-		  </ul>
-		</p>
-              </li>
-            </ol>
-<br/><br/>
-	    <u><h2>Process related commands</h2></u>
-	    <ol>
-	      <h3>
-		<li>ps
-	      </h3>
-	      <p>
-		The ps (process status) command is used to provide
+Swap:         9.1G         0B       9.1G</pre>	
+	      
+	      <ul>
+		<li>The "total" column of "Mem:" row indicates the
+		  memory size of the RAM. Here we can see that the RAM
+		  is of 1.8GB, of which 1.5GB is currently in use and
+		  361MB is free.</li>
+		<li>Since the memory used for buffers and cache can
+		  easily be reclaimed for use by applications, the
+		  second row (-/+ buffers/cache) provides an
+		  indication of the memory actually used by
+		  applications (the "used" column) or available to
+		  applications (the "free" column). Here we can see
+		  that the actual RAM used by the applications is
+		  648MB and the available RAM is 1.2GB. That means,
+		  the actual load is of 648MB only.</li>
+		<li>The other options can be <b>ignored</b> for
+		  now. Run "man free" to see more information about
+		  "free" command.</li>
+	      </ul>
+	      
+              <br/><br/>
+	      <u><h2>Process related commands</h2></u>
+	      <h3>1. ps</h3>
+	      <p>The ps (process status) command is used to provide
 		information about the currently running processes,
 		including their process identification numbers (PIDs).
 		Every process is assigned a unique PID by the system.
@@ -277,8 +236,7 @@ Swap:         9.1G         0B       9.1G
 aditi@mylaptop:~$ ps
  PID TTY          TIME CMD
 5957 pts/2    00:00:00 bash
-6147 pts/2    00:00:00 ps
-	      </pre>
+6147 pts/2    00:00:00 ps</pre>
 	      
 	      <p>
 		When <b>ps</b> is used without any option, it gives
@@ -292,22 +250,22 @@ aditi@mylaptop:~$ ps
 		A common and convenient way of using <b>ps</b> to
 		obtain much more complete information about the
 		processes currently on the system is to use the "aux"
-		option, where:
-		<ul>
-		  <li><h4>a</h4> option is to list the processes of
-		    all users on the system rather than just those of
-		    the current user with the exception of processes
-		    not associated with a terminal.</li>
-		  <li><h4>u</h4> option tells ps to provide detailed
-		    information about each process. This option
-		    doesn't give the processes which do not have a
-		    controlling terminal/shell.</li>
-		  <li><h4>x</h4> option adds to the list processes
-		    that have no controlling terminal, such as
-		    daemons, which are programs that are launched
-		    during booting.</li>
-		</ul>
-	      </p>
+		option, where:</p>
+	      <ul>
+		<li><h4>a</h4>option is to list the processes of
+		  all users on the system rather than just those of
+		  the current user with the exception of processes
+		  not associated with a terminal.</li>
+		<li><h4>u</h4> option tells ps to provide detailed
+		  information about each process. This option
+		  doesn't give the processes which do not have a
+		  controlling terminal/shell.</li>
+		<li><h4>x</h4> option adds to the list processes
+		  that have no controlling terminal, such as
+		  daemons, which are programs that are launched
+		  during booting.</li>
+	      </ul>
+	      
 	      <pre class="code">
 aditi@mylaptop:~$ ps aux
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
@@ -318,8 +276,7 @@ root      3943  0.0  0.0   8040   812 tty5     Ss+  22:04   0:00 /sbin/getty 384
 aditi     6123  0.1  1.5 211404 30320 pts/1    S+   22:53   0:02 emacs overall_commands.org
 www-data  6150  0.0  0.5 243240  9980 ?        S    22:54   0:00 /usr/sbin/apache2 -k start
 root      6242  0.0  0.0      0     0 ?        S    22:56   0:00 [kworker/0:0]
-aditi     6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux
-	      </pre>
+aditi     6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux</pre>
 	      <p>
 		As the list of processes can be quite long and occupy
 		more than a single screen, the output of "ps aux" cant
@@ -330,28 +287,25 @@ aditi     6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux
 	      
 	      <p> The output gives more columns when "aux" is
 		used. Some of the output columns are explained
-		below. The remaining can be <b>ignored</b> for now.
-		<ul>
-		  <li><h4>USER</h4>User who is owning/running the
-		    process</li>
-		  <li><h4>%CPU</h4>It is the CPU time used divided by
-		    the time the process has been running. It means,
-		    the percentage of CPU resource it is using.</li>
-		  <li><h4>%MEM</h4>Percentage of RAM memory it is
-		    using.</li>
-		  <li><h4>START</h4>starting time or date of the
-		    process</li>
-		  <li><h4>TIME</h4>cumulative CPU time the process is
-		    using.</li>
-		  <li><h4>COMMAND</h4>command with all its
-		    arguments. </li>
-		</ul>
-	      </p>
-              </li>
+		below. The remaining can be <b>ignored</b> for now.</p>
+	      <ul>
+		<li><h4>USER</h4>User who is owning/running the
+		  process</li>
+		<li><h4>%CPU</h4>It is the CPU time used divided by
+		  the time the process has been running. It means,
+		  the percentage of CPU resource it is using.</li>
+		<li><h4>%MEM</h4>Percentage of RAM memory it is
+		  using.</li>
+		<li><h4>START</h4>starting time or date of the
+		  process</li>
+		<li><h4>TIME</h4>cumulative CPU time the process is
+		  using.</li>
+		<li><h4>COMMAND</h4>command with all its
+		  arguments. </li>
+	      </ul>
+    
               <br/><br/>
-              <h3>
-		<li>top
-	      </h3>
+              <h3>2. top</h3>
               <p>
 		The top program provides a dynamic real-time view of a
 		running system.  It can display system summary
@@ -383,42 +337,33 @@ KiB Swap:  9577468 total,        0 used,  9577468 free,   795388 cached
    1 root   20   0 10636  832  696 S   0.0  0.0   0:01.03 init
    2 root   20   0     0    0    0 S   0.0  0.0   0:00.00 kthreadd
    3 root   20   0     0    0    0 S   0.0  0.0   0:00.48 ksoftirqd/0
-   6 root   rt   0     0    0    0 S   0.0  0.0   0:00.00 migration/0
-	      </pre>
-	      <p>
-		<ul>
-		  <li>
-		    In the above output, first five lines are called
-		    summary output, which gives the summary of the
-		    system load and processes. In third line, if the
-		    CPUs id (idle percentage) is very less (here, it
-		    is 98.6), then the processor is too busy. One can
-		    check that which process is using more CPU time by
-		    looking at the above sorted table of
-		    processes.</li>
-		  <li>
-		    Press "h" to see the help for the interactive
-		    commands.</li>
-		  <li>Press "q" to quit the "top".</li>
-		  <li>By default, sorting of the process is done based
-		    on the CPU time usage by the processes.</li>
-		  <li>Most of the columns are identical to <b>ps</b>
-		    command output. The other columns can
-		    be <b>ignored</b> for now.</li>
-		</ul>
-              </li>
-            </ol>
-<br/><br/>
-            <u><h2>User information related commands</h2></u>
-	    <ol>
-	      <h3>
-		<li>w
-	      </h3>
+   6 root   rt   0     0    0    0 S   0.0  0.0   0:00.00 migration/0</pre>
+	      <ul>
+		<li>In the above output, first five lines are called
+		  summary output, which gives the summary of the
+		  system load and processes.  In third line, if the
+		  CPUs id (idle percentage) is very less (here, it is
+		  98.6), then the processor is too busy. One can check
+		  that which process is using more CPU time by looking
+		  at the above sorted table of processes.</li>
+		<li>Press "h" to see the help for the interactive
+		  commands.</li>
+		<li>Press "q" to quit the "top".</li>
+		<li>By default, sorting of the process is done based
+		  on the CPU time usage by the processes.</li>
+		<li>Most of the columns are identical to <b>ps</b>
+		  command output. The other columns can
+		  be <b>ignored</b> for now.</li>
+	      </ul>
+	      <br/><br/>
+	      
+	      <u><h2>User information related commands</h2></u>
+	      <h3>1. w</h3>
 	      <p>
 		<b>w</b> displays information about the users
 		currently on the machine, and their current
 		process. </p>
-	     
+	      
 	      <pre class="code">
 aditi@mylaptop:~$ w
 13:45:49 up  5:10,  6 users,  load average: 0.30, 0.51, 0.51
@@ -428,103 +373,78 @@ aditi   tty7     :0               08:37    5:10m  7:24   0.08s gdm-session-worke
 aditi   pts/0    :0               10:19    3:25m  1:05   1:05  emacs content.html
 aditi   pts/1    :0               10:19    3:26m 13.13s 13.02s emacs overall_commands.org
 aditi   pts/2    :0               12:34    0.00s  0.23s  0.00s w
-aditi   pts/3    14.139.82.11     13:50    4.00s  0.15s  0.15s -bash
-	      </pre>
-	      <p>
-		<ul>
-		  <li><h4>The header</h4> The header (first line of
-		    output) shows in the order, the current time,
-		    how long the system has been running, how many
-		    users are currently logged in, and the system load
-		    averages for the past 1, 5, and 15 minutes.</li>
-		  <li><b>USER</b> is the username of the logged in
-		    user.</li>
-		  <li><b>LOGIN@</b> is the time when the user is
-		    logged in.</li>
-		  <li><b>WHAT</b> is the command running currently by
-		    that respective user.</li>
-		  <li><b>Ignore</b> the remaining columns for
-		    now.</li>
-		</ul>
-	      </p>
+aditi   pts/3    14.139.82.11     13:50    4.00s  0.15s  0.15s -bash</pre>
+	      <ul>
+		<li><h4>The header</h4>The header (first line of
+		  output) shows in the order, the current time,
+		  how long the system has been running, how many
+		  users are currently logged in, and the system load
+		  averages for the past 1, 5, and 15 minutes.</li>
+		<li><b>USER</b> is the username of the logged in
+		  user.</li>
+		<li><b>LOGIN@</b> is the time when the user is
+		  logged in.</li>
+		<li><b>WHAT</b> is the command running currently by
+		  that respective user.</li>
+		<li><b>Ignore</b> the remaining columns for
+		  now.</li>
+	      </ul>
+	      
 
-              </li>
-              <h3>
-		<li>whoami
-	      </h3>
+              <h3>2. whoami</h3>
               <p>Prints the user name of the current user. i.e., as
-              which user the "whoami" command is being run.</p>
+		which user the "whoami" command is being run.</p>
 	      <pre class="code">
 aditi@mylaptop:~$ whoami
-aditi
-	      </pre>
-              </li>
-              <h3>
-		<li>users
-	      </h3>
+aditi</pre>
+              <h3>3. users</h3>
               <p>Prints the user names of all users currently logged
 		in to the system.</p>
 	      <pre class="code">
 aditi@mylaptop:~$ users
-aditi aditi aditi root
-	      </pre>
-              </li>
-            </ol>
-<br/><br/>
-            <u><h2>System Information related commands</h2></u>
-	    <ol>
-	      <h3>
-		<li>uname -a
-	      </h3>
+aditi aditi aditi root</pre>
+	      
+	      <br/><br/>
+
+              <u><h2>System Information related commands</h2></u>
+	      <h3>1. uname -a</h3>
               <p>It prints the GNU/Linux distribution (Operating
 		System) information currently running.</p>
-	      <p>
-
+	      <p><b>'-a'</b> prints all the information in the
+	      following order:
 		<ul>
-		  <li><h4>-a</h4>prints all the information in the
-		    following order:</li>
-		  <ul>
-		    <li>the kernel name</li>
-		    <li>the network node hostname</li>
-		    <li>the kernel release</li>
-		    <li>the kernel version</li>
-		    <li>the machine hardware name</li>
-		    <li>the operating system</li>
-		  </ul>
+		  <li>the kernel name</li>
+		  <li>the network node hostname</li>
+		  <li>the kernel release</li>
+		  <li>the kernel version</li>
+		  <li>the machine hardware name</li>
+		  <li>the operating system</li>
 		</ul>
 	      </p>
 	      <pre class="code">
 aditi@mylaptop:~$ uname -a
-Linux debian 3.2.0-3-amd64 #1 SMP Mon Jul 23 02:45:17 UTC 2012 x86_64 GNU/Linux
-	      </pre>
-             </li>
-             <h3>
-	       <li>more /etc/issue
-	     </h3>
-	     <p>
-	       The "/etc/issue" file will contain the information
-	       about the GNU/Linux distribution which is currently
-	       running. </p>
-	     <pre class="code">
+Linux debian 3.2.0-3-amd64 #1 SMP Mon Jul 23 02:45:17 UTC 2012 x86_64 GNU/Linux</pre>
+	      
+              <h3>2. more /etc/issue</h3>
+	      <p>
+		The "/etc/issue" file will contain the information
+		about the GNU/Linux distribution which is currently
+		running. </p>
+	      <pre class="code">
 aditi@mylaptop:~/$ more /etc/issue
 Debian GNU/Linux wheezy/sid \n \l
+	      </pre>
 
-	     </pre>
-	     </li>
-            </ol>
 
-<br/><br/>
-	    <u><h2>CPU information</h2></u>
-	    <ol>
-	      <h3>
-		<li>more /proc/cpuinfo
-	      </h3>
+	      <br/><br/>
+	      <u><h2>CPU information</h2></u>
+	      <h3>1. more /proc/cpuinfo</h3>
               <p>The kernel data Linux exposes in /proc/cpuinfo will
-              show each logical CPU with a unique processor number. A
-              logical CPU can be a hyper-threading sibling, a shared
-              core in a dual or quad core, or a separate physical
-              CPU. Most of the time, all the logical CPUs will have
-              identical values.</p>
+		show each logical CPU with a unique processor number. A
+		logical CPU can be a hyper-threading sibling, a shared
+		core in a dual or quad core, or a separate physical
+		CPU. Most of the time, all the logical CPUs will have
+		identical values.</p>
 	      <pre class="code">
 aditi@mylaptop:~$ more /proc/cpuinfo
 processor	: 0
@@ -558,8 +478,7 @@ bogomips	: 4787.69
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual
-power management:
-	      </pre>
+power management:</pre>
 	      <ul>
 		<li>The above output is for one logical processor. As
 		  it has 4 siblings, the same output will be repeated
@@ -569,7 +488,7 @@ power management:
 		<li>As the output shows, it has 2 CPU cores. That
 		  means, its a dual core processor and each core
 		  processor has one sibling, total of 4 siblings.</li>
-		<li> It also shows that who is the vendor of the
+		<li>It also shows that who is the vendor of the
 		  processor, what is the model name and the capacity
 		  of processor (in GHz). </li>
 		<li>If someone wants to know whether the processor is
@@ -581,18 +500,14 @@ power management:
 		<li>The other fields can be <b>ignored</b> for
 		  now.</li>
 	      </ul>
-             </li>
-           </ol>
-<br/><br/>
-            <u><h2>Disk usage information</h2></u>
-	    <ol>
-	      <h3>
-		<li>df
-	      </h3>
+              
+	      <br/><br/>
+              <u><h2>Disk usage information</h2></u>
+	      <h3>1. df</h3>
 	      <p><b>df</b> displays the amount of disk space
 		available/used on the file system (disk drives)
 		currently being used (mounted). </p>
-
+	      
 	      <p>If an argument is the absolute file name of a disk
 		device node containing a mounted file
 		system, <b>df</b> shows the space available on that
@@ -611,8 +526,7 @@ udev               10M     0   10M   0% /dev
 tmpfs             188M  788K  187M   1% /run
 tmpfs             5.0M     0  5.0M   0% /run/lock
 tmpfs             2.2G  496K  2.2G   1% /run/shm
-/dev/sda4         177G  158G   11G  94% /media/data
-	      </pre>
+/dev/sda4         177G  158G   11G  94% /media/data</pre>
 	      <p>
 		The output shows 
 		<ul>
@@ -625,14 +539,10 @@ tmpfs             2.2G  496K  2.2G   1% /run/shm
 		</ul></p>
 	      <p><B>Ignore</B> the <b>"Mounted on"</b> for now.
 	      </p>
-             </li>
-           </ol>
-<br/><br/>
-            <u><h2>Miscellaneous</h2></u>
-	    <ol>
-	      <h3>
-		<li>date
-	      </h3>
+	      
+	      <br/><br/>
+              <u><h2>Miscellaneous</h2></u>
+	      <h3>1. date</h3>
 	      <p>
 		Displays the current time in the given FORMAT, or set
 		the system date.</p>
@@ -641,18 +551,14 @@ tmpfs             2.2G  496K  2.2G   1% /run/shm
 		current date and time.</p>
 	      <pre class="code">
 aditi@mylaptop:~$ date
-Sat Dec 29 17:04:07 IST 2012
-	      </pre>
+Sat Dec 29 17:04:07 IST 2012</pre>
 
 	      <p>Look for manual page of date command <b> (man
 		  date)</b>to see the FORMAT strings. <b>Ignore</b>
-		  how to set the date and time using <b>date</b>
-		  command for now.</p>
-              </li>
-
-              <h3>
-		<li>cal
-	      </h3>
+		how to set the date and time using <b>date</b>
+		command for now.</p>
+	      
+              <h3>2. cal</h3>
               <p>The 'cal' command displays a simple calendar. When
 		invoked without any arguments, the calendar of the
 		current month is displayed, highlighting the current
@@ -666,28 +572,23 @@ Su Mo Tu We Th Fr Sa
  9 10 11 12 13 14 15  
 16 17 18 19 20 21 22  
 23 24 25 26 27 28 29  
-30 31 
-	      </pre>
-              <p>
-		<h3>Some useful options:</h3>
-                <ul>
-		  <li><h4>-m month</h4>Displays the specified
+30 31 </pre>
+              <h3>Some useful options:</h3>
+              <ul>
+		<li><h4>-m month</h4>Displays the specified
 		  month.</li>
-		  <li><h4>-y year</h4>Displays a calendar for the
+		<li><h4>-y year</h4>Displays a calendar for the
 		  specified year. This option is implied when a year
 		  but no month are specified on the command line.</li>
-		  <li><h4>-3</h4>Display the previous, current and
+		<li><h4>-3</h4>Displays the previous, current and
 		  next month surrounding today.</li>
-		</ul></p>
-                <p>Look for the manual page of cal command <b>(man
-		cal)</b> for more options.
-		</p>
-              </li>
+	      </ul>
+	      <p>Look for the manual page of cal command <b>(man
+		  cal)</b> for more options.
+	      </p>
 
-	      <h3>
-		<li>uptime
-	      </h3>
-	      <p><b>uptime</b> gives a one line display of the
+	      <h3>3. uptime</h3>
+	      <p><b>uptime</b> gives a one-line display of the
 		following information.  The current time, how long the
 		system has been running, how many users are currently
 		logged in, and the system load averages for the past
@@ -696,13 +597,10 @@ Su Mo Tu We Th Fr Sa
 		line displayed by 'w' command. </p>
 	      <pre class="code">
 aditi@mylaptop:~$uptime
-13:45:49 up  5:10,  6 users,  load average: 0.30, 0.51, 0.51
-	      </pre>
+13:45:49 up  5:10,  6 users,  load average: 0.30, 0.51, 0.51</pre>
 	      <br/>
-              </li>
-           </ol>
-          </div>
-        </section>
+            </div>
+          </section>
 
 
 
@@ -754,7 +652,88 @@ aditi@mylaptop:~$uptime
 
           <div id="experiment-article-section-5-content" 
           class="content">
-	    <p>Quiz questions have to be added.</p>
+	    <p>
+	      <ol>
+		<li>
+		  What is the RAM size of the machine you are running
+		  through web shell?
+		  <ul>
+		    <li>14G</li><li>7.8G</li><li>7.5G</li><li>6.6G</li>
+		  </ul>
+		</li>
+		<li>
+		  What is the command to see the all the information
+		  of list of processes running by all users who
+		  associated with a terminal?
+		  <ul>
+		    <li>ps a</li><li>ps ux</li><li>ps au</li><li>ps x</li>
+		  </ul>
+		</li>
+		<li>
+		  What is the interactive command in "top" output, to
+		  change the sorting column (by default, the processes
+		  are sorted by %CPU usage)?
+		  <ul>
+		    <li> 'x' & 'y' </li><li>'<' & '>'</li><li> 'u' &
+		    'U'</li><li>None of them</li>
+		  </ul>
+		</li>
+		<li>
+		  What is the command to print all the usernames who
+		  logged in currently but not their processes?
+		  <ul>
+		    <li>w</li><li>whoami</li><li>users</li><li>None
+		      of them</li>
+		  </ul>
+		</li>
+		<li>
+		  What is the name of the Operating System you are
+		  currently running through web based shell?
+		  <ul>
+		    <li>Linux</li><li>Debian</li><li>GNU/Linux</li><li>None
+		      of them</li>
+		  </ul>
+		</li>
+		<li>
+		  What is the name of the GNU/Linux distribution you
+		  are currently running through web based shell?
+		  <ul>
+		    <li>Linux</li><li>Debian</li><li>GNU/Linux</li><li>None
+		      of them</li>
+		  </ul>
+		</li>
+		<li>
+		  How many logical CPUs the machine has, which you are
+		  running through web based shell?
+		  <ul>
+		    <li>4</li><li>2</li><li>8</li><li>1</li>
+		  </ul>
+		</li>
+		<li>
+		  How much disk space is allocated for the root
+		  partition (/), on which the web based shell is
+		  running?
+		  <ul>
+		    <li>1.3TB</li><li>1308330MB</li><li>Both of
+		    the above</li><li>None of the above</li>
+		  </ul>
+		</li>
+		<li>
+		  Can we set the time and date using "date" command?
+		  <ul>
+		    <li>Yes</li><li>No</li>
+		  </ul>
+		</li>
+		<li>
+		  What is the command (and options) to print the
+		  calendar of the year 2010?
+		  <ul>
+		    <li>cal </li><li>cal -y</li><li>cal
+		    2010</li><li>cal -y 2010</li>
+		  </ul>
+		</li>
+	      </ol>
+	    </p>
           </div>
 
         </section>
