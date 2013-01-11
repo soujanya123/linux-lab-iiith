@@ -90,8 +90,12 @@ edit -->
 		 class="content">	
 	      <p align="justify">
 
-
-
+		Searching is a basic functionality in any Operating System.  Linux
+		provides powerful utilities which not only searches for files and
+		folders but also makes it easy to search for text patterns within any
+		file in any directory.  In this experiment, <code>grep</code>
+		and <code>find</code> have been explained in as much detail and in as
+		simple language as possible for the easy understanding of the beginners.
 
 	      </p>
 
@@ -123,11 +127,13 @@ edit -->
 	      <!-- Second section of the article-->
 	      <p align="justify">
 
-		The objective of this experiment is to familiarize the users with the
-		commands to search files in the machine using command line functions. 
+		The objective of this experiment is to familiarize the
+		users with the commands <code>grep</code>
+		and <code>find</code> to search string patterns and files in the machine
+		using command line functions.
 
 		After finishing the Experiment, the user would be able to use the search
-		functions available in Linux easily. 
+		utilities available in Linux easily. 
 
 	      </p>
 	    </div>
@@ -155,7 +161,7 @@ edit -->
 	    <div id="experiment-article-section-3-content" 
 		 class="content">
 		
-		<h3>grep Command</h3>
+	      <h3>grep Command</h3>
 
 	      <p align="justify">
 
@@ -394,10 +400,6 @@ ab*23 </pre>
 		  ^ - matches the empty string at the beginning of the line
 		  <br />
 		  $ - matches the empty string at the end of the line
-		  <br />
-		  \< - matches empty string at the beginning of a word
-		  <br />
-		  \> - matches empty string at the end of a word
 
 		      <pre class="code">
 $ grep '^ab' example.txt
@@ -406,18 +408,7 @@ abababab
 ab*23
 
 $ grep 'ab$' example.txt
-abababab
-
-$ grep '\<a' example.txt
-abcdefgh
-aabbaabb
-abababab
-ab*23
-
-$ grep 'b\>' example.txt
-aabbaabb
-abababab
-ab*23</pre>
+abababab</pre>
 
 		</p>
 
@@ -425,8 +416,7 @@ ab*23</pre>
 
 		  The first command in the above example outputs the lines which start
 		  with 'ab'.  The second command outputs the lines which end with 'ab'
-		  string.  The third command outputs the lines which start with 'a'.  And,
-		  similarly, the last command outputs the strings which end with 'b'.
+		  string.  
 
 		  <br />
 		  <br />
@@ -880,7 +870,12 @@ $ find test/ -iname abc.org -delete
 
             <div id="experiment-article-section-6-content" 
 		 class="content">
-	      <ol>
+
+	      <p align="justify">
+	      
+		<ol>
+
+		<li><code>grep</code>   </li>		  
 
 		<li>What is the option to use <code>find</code> command on files and folders recursively?</li>
 		<ul>
@@ -901,6 +896,7 @@ $ find test/ -iname abc.org -delete
 		</ul>
 
 	      </ol>
+	      </p>
             </div>
 
           </section>
@@ -924,10 +920,27 @@ $ find test/ -iname abc.org -delete
 	      <p align="justify">
 
 		<ul>
-		  <li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?find">Unix Man Page for <code>find</code> Command</a></li>
-		  <li><a href="http://linux.die.net/man/1/find">Linux Man Page for <code>find</code> Command</a></li>
-		  <li><a href="http://linux.about.com/od/commands/l/blcmdl1_find.htm">Linux Command - Find</a></li>
 
+		  <li><a href="http://ss64.com/bash/grep.html">Grep Usage
+		  Page</a></li>
+
+		  <li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?grep">Unix
+		  Man Page for <code>grep</code> Command</a></li>
+
+  		  <li>Wikipedia provides a comprehensive documentation
+  		  on the <a href="http://en.wikipedia.org/wiki/Grep"><code>grep</code>
+  		  command</a></li>
+
+		  <li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?find">Unix
+		  Man Page for <code>find</code> Command</a></li>
+
+		  <li><a href="http://linux.die.net/man/1/find">Linux
+		  Man Page for <code>find</code> Command</a></li>
+
+		  <li><a href="http://linux.about.com/od/commands/l/blcmdl1_find.htm">Linux
+		  Command - <code>find</code></a></li>
+
+		</ul>  
 
 	      </p>
 
