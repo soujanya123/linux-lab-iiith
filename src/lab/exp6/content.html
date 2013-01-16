@@ -87,12 +87,13 @@ edit -->
 		 element, You can also include images with <img> tag -->
 	    <div id="experiment-article-section-1-content" class="content">	
 	      <p>
-		This experiment explains how to obtain the information
-		related to system, processes and user's status. This
-		also explains how to check that how much hardware
-		resource has been utilized by the GNU/Linux Operating
-		system which is currently used in the web based shell
-		of the experiment.
+		This experiment explains you how to obtain the
+		information related to system, processes and user's
+		status. This also explains how to check that how much
+		hardware resource has been utilized by the GNU/Linux
+		Operating system which is currently used in the web
+		based shell of the experiment which you are going to
+		use.
 	      </p>
 	    </div>
 	  </section>
@@ -125,7 +126,7 @@ edit -->
 		logged in users information.
 	      </p>
 	      <p>
-		After this experiment, one should be able to get the
+		After this experiment, you should be able to get the
 		basic information of Operating system (and kernel),
 		the utilization of hardware resources by the processes
 		and Operating System and the information about the
@@ -158,7 +159,7 @@ edit -->
 		 class="content">
 	      <p>
 		In order to understand the output of the commands used
-		in this experiment, one should know the terminologies
+		in this experiment, you should know the terminologies
 		used. Some of them are given below.</p><br/>
 	      <p><b>Process:</b><br/> 
 		A process is a running instance of a program.
@@ -207,21 +208,21 @@ Swap:         9.1G         0B       9.1G</pre>
 	      
 	      <ul>
 		<li>The "total" column of "Mem:" row indicates the
-		  memory size of the RAM. Here we can see that the RAM
-		  is of 1.8GB, of which 1.5GB is currently in use and
-		  361MB is free.</li>
+		  memory size of the RAM. Here, in the above output,
+		  you can see that the RAM is of 1.8GB, of which 1.5GB
+		  is currently in use and 361MB is free.</li>
 		<li>Since the memory used for buffers and cache can
 		  easily be reclaimed for use by applications, the
 		  second row (-/+ buffers/cache) provides an
 		  indication of the memory actually used by
 		  applications (the "used" column) or available to
-		  applications (the "free" column). Here we can see
+		  applications (the "free" column). Here you can see
 		  that the actual RAM used by the applications is
 		  648MB and the available RAM is 1.2GB. That means,
 		  the actual load is of 648MB only.</li>
 		<li>The other options can be <b>ignored</b> for
-		  now. Run "man free" to see more information about
-		  "free" command.</li>
+		  now. Run manual <b>(man free)</b> to see more
+		  information about "free" command.</li>
 	      </ul>
 	      
               <br/><br/>
@@ -280,9 +281,8 @@ aditi     6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux</pre>
 	      <p>
 		As the list of processes can be quite long and occupy
 		more than a single screen, the output of "ps aux" cant
-		be seen in a single screen. The output of "ps aux" can
-		be piped (transfer) to "less" or "more" commands, which can be
-		explained in the later experiments of this lab.
+		be seen in a single screen. You need to <b>scroll
+		up</b> to see the complete list.
 	      </p>
 	      
 	      <p> The output gives more columns when "aux" is
@@ -313,7 +313,7 @@ aditi     6750  0.0  0.0   8612  1120 pts/2    R+   23:28   0:00 ps aux</pre>
 		currently being managed by the Linux kernel.
 	      </p>
               <p>
-		The program provides an interactive interface for
+		The program provides you an interactive interface for
 		process manipulation as well as for personal
 		configuration.
 	      </p>
@@ -343,7 +343,7 @@ KiB Swap:  9577468 total,        0 used,  9577468 free,   795388 cached
 		  summary output, which gives the summary of the
 		  system load and processes.  In third line, if the
 		  CPUs id (idle percentage) is very less (here, it is
-		  98.6), then the processor is too busy. One can check
+		  98.6), then the processor is too busy. You can check
 		  that which process is using more CPU time by looking
 		  at the above sorted table of processes.</li>
 		<li>Press "h" to see the help for the interactive
@@ -392,14 +392,15 @@ aditi   pts/3    14.139.82.11     13:50    4.00s  0.15s  0.15s -bash</pre>
 	      
 
               <h3>2. whoami</h3>
-              <p>Prints the user name of the current user. i.e., as
-		which user the "whoami" command is being run.</p>
+              <p><b>whoami</b> prints the user name of the current
+		user. i.e., as which user the "whoami" command is
+		being run.</p>
 	      <pre class="code">
 aditi@mylaptop:~$ whoami
 aditi</pre>
               <h3>3. users</h3>
-              <p>Prints the user names of all users currently logged
-		in to the system.</p>
+              <p><b>users</b> prints the user names of all users
+		currently logged in to the system.</p>
 	      <pre class="code">
 aditi@mylaptop:~$ users
 aditi aditi aditi root</pre>
@@ -439,12 +440,13 @@ Debian GNU/Linux wheezy/sid \n \l
 	      <br/><br/>
 	      <u><h2>CPU information</h2></u>
 	      <h3>1. more /proc/cpuinfo</h3>
-              <p>The kernel data Linux exposes in /proc/cpuinfo will
-		show each logical CPU with a unique processor number. A
-		logical CPU can be a hyper-threading sibling, a shared
-		core in a dual or quad core, or a separate physical
-		CPU. Most of the time, all the logical CPUs will have
-		identical values.</p>
+              <p>The kernel data which Linux exposes in<b>
+		/proc/cpuinfo </b>file, will show each logical CPU
+		with a unique processor number. A logical CPU can be a
+		hyper-threading sibling, a shared core in a dual or
+		quad core, or a separate physical CPU. Most of the
+		time, all the logical CPUs will have identical
+		values.</p>
 	      <pre class="code">
 aditi@mylaptop:~$ more /proc/cpuinfo
 processor	: 0
@@ -491,11 +493,11 @@ power management:</pre>
 		<li>It also shows that who is the vendor of the
 		  processor, what is the model name and the capacity
 		  of processor (in GHz). </li>
-		<li>If someone wants to know whether the processor is
-		  of 32bit or 64bit, one has to check the flags. If
-		  "lm" flag is present in the above output of
-		  /proc/cpuinfo (end of 3rd line of flags), then the
-		  processor is of 64bit. If not, its a 32bit
+		<li>If you want to know whether the processor is of
+		  32bit or 64bit, you have to check the flags. If "lm"
+		  flag is present in the above output of <b>"more
+		  /proc/cpuinfo"</b> (end of 3rd line of flags), then
+		  the processor is of 64bit. If not, its a 32bit
 		  processor. </li>
 		<li>The other fields can be <b>ignored</b> for
 		  now.</li>
@@ -537,32 +539,33 @@ tmpfs             2.2G  496K  2.2G   1% /run/shm
 		  <li>how much of the disk space is <b>Available</b> and</li>
 		  <li>how much <b>percentage</b> of disk is used.</li>
 		</ul></p>
-	      <p><B>Ignore</B> the <b>"Mounted on"</b> for now.
+	      <p><B>Ignore</B> the <b>"Mounted on"</b> for now as it
+	      is out of the scope of this tutorial.
 	      </p>
 	      
 	      <br/><br/>
               <u><h2>Miscellaneous</h2></u>
 	      <h3>1. date</h3>
 	      <p>
-		Displays the current time in the given FORMAT, or set
-		the system date.</p>
+		<b>date</b> command displays the current time in the
+		given FORMAT, or set the system date.</p>
 	      <p>
-		If no argument is given, date command prints the
-		current date and time.</p>
+		If no argument is given, <b>date</b> command prints
+		the current date and time.</p>
 	      <pre class="code">
 aditi@mylaptop:~$ date
 Sat Dec 29 17:04:07 IST 2012</pre>
 
 	      <p>Look for manual page of date command <b> (man
-		  date)</b>to see the FORMAT strings. <b>Ignore</b>
-		how to set the date and time using <b>date</b>
-		command for now.</p>
+		  date)</b>to see the FORMAT strings. Setting the date
+		  and time using <b>date</b> is out of the scope of
+		  this tutorial.</p>
 	      
               <h3>2. cal</h3>
-              <p>The 'cal' command displays a simple calendar. When
-		invoked without any arguments, the calendar of the
-		current month is displayed, highlighting the current
-		day.</p>
+              <p>The <b>cal</b> command displays a simple
+		calendar. When <b>cal</b> command is invoked without
+		any arguments, the calendar of the current month is
+		displayed, highlighting the current day.</p>
 	      <pre class="code">
 aditi@mylaptop:~$cal
    December 2012      
@@ -589,12 +592,12 @@ Su Mo Tu We Th Fr Sa
 
 	      <h3>3. uptime</h3>
 	      <p><b>uptime</b> gives a one-line display of the
-		following information.  The current time, how long the
+		information, viz., the current time, how long the
 		system has been running, how many users are currently
 		logged in, and the system load averages for the past
 		1, 5, and 15 minutes.</p>
               <p>This is the same information contained in the header
-		line displayed by 'w' command. </p>
+		line displayed by <b>w</b> command. </p>
 	      <pre class="code">
 aditi@mylaptop:~$uptime
 13:45:49 up  5:10,  6 users,  load average: 0.30, 0.51, 0.51</pre>
