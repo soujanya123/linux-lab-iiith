@@ -90,12 +90,13 @@ edit -->
 		 class="content">	
 	      <p align="justify">
 
-		Searching is a basic functionality in any Operating System.  Linux
-		provides powerful utilities which not only searches for files and
-		folders but also makes it easy to search for text patterns within any
-		file in any directory.  In this experiment, <code>grep</code>
-		and <code>find</code> have been explained in as much detail and in as
-		simple language as possible for the easy understanding of the beginners.
+		Searching is an essential functionality in any Operating
+		System.  Linux provides powerful utilities which not
+		only searches for files and folders but also makes it
+		easy to search for some text snippet within the content
+		of the files in any directory.  In this
+		experiment, <code>grep</code> and <code>find</code>
+		utilities have been explained. 
 
 	      </p>
 
@@ -128,12 +129,15 @@ edit -->
 	      <p align="justify">
 
 		The objective of this experiment is to familiarize the
-		users with the commands <code>grep</code>
-		and <code>find</code> to search string patterns and files in the machine
-		using command line functions.
+		users with the search utilities <code>grep</code>
+		and <code>find</code> to search string patterns and
+		files in the machine using command line functions.
+		
+		<br />
+		<br />
 
-		After finishing the Experiment, the user would be able to use the search
-		utilities available in Linux easily. 
+		After finishing the Experiment, the user would be able
+		to use the above-specified commands easily.
 
 	      </p>
 	    </div>
@@ -166,11 +170,11 @@ edit -->
 	      <p align="justify">
 
 		<code>grep</code> is an extremely powerful search
-		utility.  <code>grep</code> searches the specified files
-		for the lines containing a match to the given pattern
-		specified through a regular expression.  By default, for
-		each line that matches or contains a match to the given
-		pattern, it prints that line as output.
+		utility.  <code>grep</code> searches the specified file
+		for the lines matching the input pattern given as an argument
+		to the command.  By default, for each line that matches
+		or contains a match to the input pattern, it prints that
+		line as an output.
 
 		<br />
 		<br />
@@ -179,16 +183,16 @@ edit -->
 		<br />
 		<code>grep [OPTIONS] PATTERN [FILE...]</code>
 		<br />
-		<code>grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]</code>  
-		<br />
 		where OPTIONS are the various options available with the grep command,
-		PATTERN is the regular expression pattern to search for, FILE is the
-		file containing the text which is matched against the pattern. If no
-		file name is given then grep reads from the standard input. 
+		PATTERN is the input pattern to search for, FILE is the
+		file containing the text which is matched against the pattern. 
 
-		<br /> <br />
-		<b>The regular expression pattern should always be enclosed within
-		  single-quotes.</b> 
+		<br /> 
+		<br />
+
+		<b>The input pattern should always be enclosed within
+		single-quotes.  Input pattern can also be mentioned as a
+		regular expression.</b>
 
 		<br /> 
 		<br />
@@ -196,41 +200,14 @@ edit -->
 		<b>Regular Expressions</b>
 		<br />
 
-		Regular expressions (regex) are used to specify a pattern which matches
-		a sequence of characters given as input.  The characters used for
-		constructing regular expressions are as follows:
-		<ul>
-		  <li>[] - anything inside the square brackets would be matched once and only once</li>
-		  <li>Alphabet Characters - both upper and lower cases - denoted as [a-z] and [A-Z]</li>
-		  <li>Digits denoted as [0-9]</li>
-		  <li>? meta character denotes a character may occur 0 or 1 times</li>
-		  <li>* meta character denotes a character may occur 0 or more times</li>
-		  <li>+ meta character denotes a character may occur 1 or more than 1 time</li>
-		</ul>
-
-		</p>
-
-	      <p align="justify">
-
-		For example, the strings <code>abbde, abde, abbbbde</code> can be
-		denoted using a regular expression <code>a[b]+de</code>. The '+' meta
-		character signifies that 'b' can be repeated more than 1 time.
-		Similarly, a string made of alphabets and digits such as <code>abc09af,
-		  abbbb987, a9876, abbb5</code> can be written using the regular expression
-		<code>[a-z]+[0-9]+[a-z]*</code> where first character should be an
-		alphabet and there may be more of alphabets, one numeric character
-		should follow and more digits can occur there after and more alphabets
-		may or may not occur in the string.
-
-		<br />
-		<br />
-
-		Thus, while using the <code>grep</code> command, regular expressions are
-		very useful in searching for patterns of strings in the file. To
-		demonstrate how <code>grep</code> functions, we take a sample text file
-		and run the commands on it. The text file is as such:
+		Regular expressions are used to specify a sequence of
+		characters given as input.  To explain the usage
+		of <code>grep</code> command with regular expressions, a
+		test file <i>example.txt</i> has been created as shown
+		below.
 
 		<pre class="code">
+$ cat example.txt
 123456
 abcdefgh
 aabbaabb
@@ -242,13 +219,13 @@ ab*23</pre>
 
 	      <p align="justify">
 
-		The rules of constructing regular expressions have been explained as follows:
+		The rules for constructing regular expressions have been explained below. 
 
 		<br />
+		<br />
 
-		1. Any literal character [a-z] is a pattern that matches
-		itself. Thus, each of the literal character is a regular
-		expression in itself.
+		1. Any character is a pattern that matches itself. Thus,
+		each of the character is a regular expression in itself.
 
 		    <pre class="code">
 $ grep 'a' example.txt
@@ -262,19 +239,22 @@ ab*23</pre>
 		<p align="justify">
 
 		    The command matches 'a' in every line of the
-		    file.  <b>Please note that when the command is the
-		    terminal / shell, the pattern given in the command
-		    is highlighted in the output.</b>  Thus, in the
-		    above example, every occurrence of 'a' is
-		    highlighted in red color on the terminal.
+		    file.  <b>Please note that when the command is
+		    executed in the shell, the pattern given in the
+		    command is highlighted in the output.</b>  Thus, in
+		    the above example, every occurrence of 'a' is
+		    highlighted in red color in the shell.
 
 		    <br />
 		    <br />
 
-		    This rule doesn't apply to some meta-characters like
-		    '*','.' etc. which have special meaning.  To match
-		    these meta-characters, backslash ('\') should
+		    This rule doesn't apply to some special characters like
+		    '*','.' etc.  To match
+		    these special characters, backslash ('\') should
 		    precede them to escape the characters.
+
+		    <br />
+		    <br />
 
 		    2. Concatenation: Concatenation is achieved by writing
 		    regular expression in sequence. For example, regular
@@ -309,37 +289,7 @@ $</pre>
 		    <br />
 		    <br />
 
-		    3. Parentheses '()' can be used to denote a regular expressions. 'abcd' is
-		    concatenation of four regular expressions 'a', 'b', 'c'and 'd', but
-		    '(ab)cd' is a concatenation of three regular expressions 'ab', 'c' and
-		    'd'.
-
-		    <br />
-		    <br />
-
-		    Note: Parentheses are treated as part of the string
-		    unless they are escaped with backslash('\').
-
-		    <pre class="code">
-$ grep '(ab)cd' example.txt
-
-$ grep '\(ab\)cd' example.txt
-abcdefgh</pre>
-
-		</p>
-
-		<p align="justify">
-
-		  Since, there is no 'ab' string enclosed within
-		  brackets, the first command does not give any output.
-		  But, the second command matches the string pattern
-		  given because of the use of backslash before the
-		  parentheses.
-
-		  <br />
-		  <br />
-
-		  4. Brackets ([]): A list of characters enclosed within
+		  3. Brackets ([]): A list of characters enclosed within
 		  '[' and ']' matches any single character in that list.
 
 		    <pre class="code">
@@ -353,22 +303,7 @@ ab*23</pre>
 
 		<p align="justify">
 
-		  5. If '^' meta character is placed before the list of
-		  characters in Brackets, the pattern matches including
-		  those characters are ignored. 
-
-		  <pre class="code">
-$ grep '[^abcd]' example.txt
-123456
-abcdefgh
-ABCDefgh1234
-ab*23</pre>
-
-		</p>
-
-		<p align="justify">
-
-		  6. The meta character '-' is used to specify the range
+		  4. The meta character '-' is used to specify the range
 		  of characters for pattern matching.  For example, if a
 		  string might include any alphabet, regular expression
 		  to match the pattern is written as [a-z]. 
@@ -377,32 +312,25 @@ ab*23</pre>
 $ grep '[0-9]' example.txt
 123456
 ABCDefgh1234
-ab*23
-
-$ grep '[^a-z]' example.txt
-123456
-ABCDefgh1234
-ab*23 </pre>
+ab*23</pre>
 
 		</p>
 
 		<p align="justify">
 
 		  The first command matches the lines with numeric
-		  digits in it.  The second command matches all the
-		  lines except the lower case alphabets. 
+		  digits in it.  
 
 		  <br />
 		  <br />
 
-		  7. Matching the empty strings: The meta characters
-		  '^', '$' '\<' and '\>' are used to match the empty
-		  strings.
+		  5. The meta characters '^' and '$' are used to match the
+		  beginning and end strings or patterns.
 
 		  <br />
-		  ^ - matches the empty string at the beginning of the line
+		  ^ - matches the characters or string at the beginning of the line
 		  <br />
-		  $ - matches the empty string at the end of the line
+		  $ - matches the characters or string at the end of the line
 
 		      <pre class="code">
 $ grep '^ab' example.txt
@@ -424,7 +352,7 @@ abababab</pre>
 		  <br />
 		  <br />
 
-		  8. Dot Character: The '.' meta character is used to
+		  6. Dot Character: The '.' meta character is used to
 		  match any single character.  For example, the
 		  following command matches any pattern which start with
 		  'a' and ends with '3' and has any three characters in
@@ -438,7 +366,7 @@ ab*23</pre>
 
 		<p align="justify">
 
-		  9. Repititions: The following operators repeat the occurrence of any
+		  7. Repititions: The following operators repeat the occurrence of any
 		  character to which they are applied. 
 
 		  <br />
@@ -457,11 +385,8 @@ ab*23</pre>
 		  <br />
 		  <br />
 
-		  <b>Note: Except '*' all of the operators described
-		  above lose their special meaning when used with basic
-		  regex. Each of these operators have to be preceded by
-		  a backslash when used with basic regex or they have to
-		  be used extended regex.</b>
+		  <b>Note: Except '*', all the operators have to be
+		  preceded with backslash ('\').</b>
 
 		  <pre class="code">
 $ grep 'a*' example.txt
@@ -476,7 +401,7 @@ ab*23</pre>
 
 		<p align="justify">
 
-		  It outputs all the strings which start with a zero or more times. 
+		  The above command outputs all the strings which start with a zero or more times. 
 
 		  <pre class="code">
 $ grep '^ab*' example.txt
@@ -489,7 +414,7 @@ ab*23</pre>
 
 		<p align="justify">
 
-		  It outputs all the strings which start with 'a' and is followed by 'b'
+		  The above command outputs all the strings which start with 'a' and is followed by 'b'
 		  zero or more times.
 
 		  <pre class="code">
@@ -502,7 +427,7 @@ ab*23</pre>
 
 		<p align="justify">
 
-		  It searches for all the patterns in the text file which start with 'ab'
+		  The above command searches for all the patterns in the text file which start with 'ab'
 		  and may or not have any more 'ab' pattern. 
 
 		  <pre class="code">
@@ -516,7 +441,7 @@ ab*23</pre>
 
 		<p align="justify">
 
-		  It searches for all the patterns which start with 'a' and followed by
+		  The above command searches for all the patterns which start with 'a' and followed by
 		  zero or one 'b'.
 
 		  <pre class="code">
@@ -529,7 +454,7 @@ ab*23</pre>
 
 		<p align="justify">
 
-		  It searches for all the patterns which start with 'a' and followed by
+		  The above command searches for all the patterns which start with 'a' and followed by
 		  at least one 'b'.
 
 		  <pre class="code">
@@ -540,7 +465,7 @@ ABCDefgh1234</pre>
 
 		<p align="justify">
 
-		  It searches for a string exactly 10 characters long.
+		  The above command searches for a string exactly 10 characters long.
 
 		  <pre class="code">
 $ grep '.\{6,\}' example.txt
@@ -554,7 +479,7 @@ ABCDefgh1234</pre>
 
 		<p align="justify">
 
-		  It searches for a string at least 6 characters long.
+		  The above command searches for a string at least 6 characters long.
 
 		  <pre class="code">
 $ grep '.\{6,10\}' example.txt
@@ -568,32 +493,44 @@ ABCDefgh1234</pre>
 
 		<p align="justify">
 
-		  It searches for a string at least 6 characters long and at most 10
+		  The above command searches for a string at least 6 characters long and at most 10
 		  characters long.
 
 		    <br />
 		    <br />
 
-		    10. The OR operator (|): The OR operator (|) can be used
-		    to join two regular expressions.  The resulting
-		    pattern matches any string joined by the OR
-		    operator.
-		    
-		    <br />  
+		    8. Parentheses '()' can be used to denote a regular expressions. 'abcd' is
+		    concatenation of four regular expressions 'a', 'b', 'c'and 'd', but
+		    '(ab)cd' is a concatenation of three regular expressions 'ab', 'c' and
+		    'd'.
+
+		    <br />
 		    <br />
 
-		    Note: The OR operator has to be preceded with a backslash.
+		    Note: Parentheses are treated as part of the string
+		    unless they are escaped with backslash('\').
 
-<pre class="code">
-$ grep '\(^z+\)\|\(1234\)' example.txt
-123456
-ABCDefgh1234</pre>
+		    <pre class="code">
+$ grep '\(ab\)cd' example.txt
+$ grep '\(ab\)*cd' example.txt
+abcdef gefrd geef
+(ab)cd
+abghefcd
+aaaaaaacd
+bbbbbbbcdfeg
+ababababcdefgh
+abcdefgh
+abcdefgh</pre>
 
 		</p>
 
 		<p align="justify">
 
-		  It matches the lines which start with 'z' or the string '1234'. 
+		  Since, there is no 'ab' string enclosed within
+		  brackets, the first command does not give any output.
+		  But, the second command matches the string pattern
+		  given because of the use of backslash before the
+		  parentheses.
 
 		  <br />
 		  <br />
@@ -611,11 +548,11 @@ ABCDefgh1234</pre>
 		  the lines that DO NOT match the specified regular expression
 
 		  <pre class="code">
-$ grep '\(^z+\)\|\(1234\)' example.txt
+$ grep '\(1234\)' example.txt
 123456
 ABCDefgh1234
 
-$ grep -v '\(^z+\)\|\(1234\)' example.txt
+$ grep -v '\(1234\)' example.txt
 abcdefgh
 aabbaabb
 abababab
