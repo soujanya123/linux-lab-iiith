@@ -50,3 +50,9 @@ nav#lab-article-navigation ul li a:visited, nav#experiment-article-navigation ul
     margin-right: 50pt;
     text-align: justify;
 }
+#experiment-article-breadcrumb a:link, #experiment-article-breadcrumb a:visited {
+	color: #fefefe;
+}
+#lab-article-breadcrumb a:link, #lab-article-breadcrumb a:visited {
+	color: #fefefe;
+}

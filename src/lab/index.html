@@ -80,6 +80,9 @@
        
     $('#container').load('content.html #lab', function(response,status,xhr)
     {
+      homePage=$("div#lab-header-heading a").html();
+      breadcrumb="<a href='http://virtual-labs.ac.in/'>Home</a> &gt; <a href='index.html'>" + homePage + "</a>";
+      $("article#lab-article div#lab-article-breadcrumb").html(breadcrumb);
                         
       $("#container .default").each(function()
       {
