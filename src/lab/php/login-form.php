@@ -22,6 +22,6 @@
 
 </head>
 <body>
-<h2><?php echo "This feature is currently unavailable due to server maintenance.  Sorry for the inconvenience.?></h2>
+<h2><?php echo "This feature is currently unavailable due to server maintenance.  Sorry for the inconvenience."?></h2>
 </body>
 </html>
