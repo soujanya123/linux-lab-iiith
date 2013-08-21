@@ -1,5 +1,3 @@
-<?php
-
  <!-- Google Analytics code starts here -->
 
 <script>
