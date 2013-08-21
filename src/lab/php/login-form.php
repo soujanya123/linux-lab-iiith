@@ -1,7 +1,8 @@
 <?php
 
 
-$login_message = "Login";
+//$login_message = "Login";
+$login_message = "This feature is currently unavailable due to server maintenance.  Sorry for the inconvenience.";
 $filename="../exp" . $_REQUEST["expid"] . "/interaction-frame.html";
 //	  echo $filename;
 if (isset($_REQUEST['login'])) {
@@ -45,7 +46,7 @@ if (isset($_REQUEST['login'])) {
 <body>
 <h2><?php echo $login_message;?></h2>
 <p>&nbsp;</p>
-<form id="loginForm" name="loginForm" method="post" action=<?php echo "login-form.php?expid=" .$_REQUEST['expid'] ?>
+<!--form id="loginForm" name="loginForm" method="post" action=<?php echo "login-form.php?expid=" .$_REQUEST['expid'] ?>
   <table width="300" border="0" align="center" cellpadding="2" cellspacing="0">
     <tr>
       <td width="112"><b>Login</b></td>
@@ -62,6 +63,6 @@ if (isset($_REQUEST['login'])) {
   </table>
 
   <center>For new users, <a href="register-form.php">register here</a>.</center> 
-</form>
+</form-->
 </body>
 </html>
