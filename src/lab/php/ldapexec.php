@@ -1,7 +1,7 @@
 <?php
 
 // ldaphost
-$ldap_host = "10.2.48.10";
+$ldap_host = "10.2.52.10";
 $ldap_port = 389;
 
 //Start session
@@ -9,7 +9,7 @@ $ldap_port = 389;
 
 // using ldap bind 
 $ldap_admin_dn  = 'cn=admin,dc=virtual-labs,dc=ac,dc=in';     // ldap rdn or dn 
-$ldap_admin_pass = 'vlead123';  // associated password 
+$ldap_admin_pass = 'VenEucAf0';  // associated password 
 $ldap_base_user_dn = 'ou=People,dc=virtual-labs,dc=ac,dc=in';
 
 function check_user_account($username, $password) {
