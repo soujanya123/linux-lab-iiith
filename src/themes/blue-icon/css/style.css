@@ -341,7 +341,8 @@ aside
 	display:none;
 }
 
-#experiment-article-breadcrumb
+#experiment-article-breadcrumb,
+#lab-article-breadcrumb
 {
   /*margin-left: 30px;*/
   margin: 0 auto;
