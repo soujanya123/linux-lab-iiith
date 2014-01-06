@@ -1,7 +1,7 @@
 <?php
 
 // ldaphost
-$ldap_host = "10.2.52.10";
+$ldap_host = "10.4.14.151";
 $ldap_port = 389;
 
 //Start session
